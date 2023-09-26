@@ -1,0 +1,276 @@
+NHDF-Ad - fibroblasts of dermis
+
+https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM733733
+
+wget -O NHDF_ab_1.bam "https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSM733733&format=file&file=GSM733733%5Fhg19%5FwgEncodeBroadHistoneNhdfadH3k36me3StdAlnRep1%2Ebam"
+wget -O NHDF_ab_2.bam "https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSM733733&format=file&file=GSM733733%5Fhg19%5FwgEncodeBroadHistoneNhdfadH3k36me3StdAlnRep2%2Ebam"
+wget -O NHDF_nc_1.bam "https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSM733750&format=file&file=GSM733750%5Fhg19%5FwgEncodeBroadHistoneNhdfadControlStdAlnRep1%2Ebam"
+wget -O NHDF_nc_2.bam "https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSM733750&format=file&file=GSM733750%5Fhg19%5FwgEncodeBroadHistoneNhdfadControlStdAlnRep2%2Ebam"
+
+
+
+###### Peak-calling with MACS2
+
+
+macs2 callpeak  -t NHDF_ab_1.bam -c NHDF_nc_1.bam -n NHDF_ab_1_nc_1 --outdir nhdf_macs2  -f BAM  -m 2 50  -g hs
+macs2 callpeak  -t NHDF_ab_1.bam -c NHDF_nc_2.bam -n NHDF_ab_1_nc_2 --outdir nhdf_macs2  -f BAM  -m 2 50  -g hs
+macs2 callpeak  -t NHDF_ab_2.bam -c NHDF_nc_1.bam -n NHDF_ab_2_nc_1 --outdir nhdf_macs2  -f BAM  -m 2 50  -g hs
+macs2 callpeak  -t NHDF_ab_2.bam -c NHDF_nc_2.bam -n NHDF_ab_2_nc_2 --outdir nhdf_macs2  -f BAM  -m 2 50  -g hs
+
+macs2 callpeak  -t NHDF_ab_1.bam -c NHDF_nc_1.bam -n NHDF_ab_1_nc_1 --outdir nhdf_macs2  -f BAM  -m 2 50  -g hs --broad
+macs2 callpeak  -t NHDF_ab_1.bam -c NHDF_nc_2.bam -n NHDF_ab_1_nc_2 --outdir nhdf_macs2  -f BAM  -m 2 50  -g hs --broad
+macs2 callpeak  -t NHDF_ab_2.bam -c NHDF_nc_1.bam -n NHDF_ab_2_nc_1 --outdir nhdf_macs2  -f BAM  -m 2 50  -g hs --broad
+macs2 callpeak  -t NHDF_ab_2.bam -c NHDF_nc_2.bam -n NHDF_ab_2_nc_2 --outdir nhdf_macs2  -f BAM  -m 2 50  -g hs --broad
+
+
+###### Intersections with blacklist hg19
+
+https://sites.google.com/site/anshulkundaje/projects/blacklists
+
+
+
+bedtools intersect -v -a NHDF_ab_1_nc_1_peaks.broadPeak  -b ../blacklist_hg19.bed > NHDF_ab_1_nc_1_broad_filtered.bed
+bedtools intersect -v -a NHDF_ab_1_nc_1_peaks.narrowPeak  -b ../blacklist_hg19.bed > NHDF_ab_1_nc_1_narrow_filtered.bed
+
+bedtools intersect -v -a NHDF_ab_1_nc_2_peaks.broadPeak  -b ../blacklist_hg19.bed > NHDF_ab_1_nc_2_broad_filtered.bed
+bedtools intersect -v -a NHDF_ab_1_nc_2_peaks.narrowPeak  -b ../blacklist_hg19.bed > NHDF_ab_1_nc_2_narrow_filtered.bed
+
+bedtools intersect -v -a NHDF_ab_2_nc_1_peaks.broadPeak  -b ../blacklist_hg19.bed > NHDF_ab_2_nc_1_broad_filtered.bed
+bedtools intersect -v -a NHDF_ab_2_nc_1_peaks.narrowPeak  -b ../blacklist_hg19.bed > NHDF_ab_2_nc_1_narrow_filtered.bed
+
+bedtools intersect -v -a NHDF_ab_2_nc_2_peaks.broadPeak  -b ../blacklist_hg19.bed > NHDF_ab_2_nc_2_broad_filtered.bed
+bedtools intersect -v -a NHDF_ab_2_nc_2_peaks.narrowPeak  -b ../blacklist_hg19.bed > NHDF_ab_2_nc_2_narrow_filtered.bed
+
+###### Sorting
+
+
+sort -k1,1 -k2,2n NHDF_ab_1_nc_1_broad_filtered.bed > results/NHDF_ab_1_nc_1_broad_filtered_sorted.bed 
+sort -k1,1 -k2,2n NHDF_ab_1_nc_1_narrow_filtered.bed > results/NHDF_ab_1_nc_1_narrow_filtered_sorted.bed 
+
+sort -k1,1 -k2,2n NHDF_ab_1_nc_2_broad_filtered.bed > results/NHDF_ab_1_nc_2_broad_filtered_sorted.bed 
+sort -k1,1 -k2,2n NHDF_ab_1_nc_2_narrow_filtered.bed > results/NHDF_ab_1_nc_2_narrow_filtered_sorted.bed 
+
+sort -k1,1 -k2,2n NHDF_ab_2_nc_1_broad_filtered.bed > results/NHDF_ab_2_nc_1_broad_filtered_sorted.bed 
+sort -k1,1 -k2,2n NHDF_ab_2_nc_1_narrow_filtered.bed > results/NHDF_ab_2_nc_1_narrow_filtered_sorted.bed 
+
+sort -k1,1 -k2,2n NHDF_ab_2_nc_2_broad_filtered.bed > results/NHDF_ab_2_nc_2_broad_filtered_sorted.bed 
+sort -k1,1 -k2,2n NHDF_ab_2_nc_2_narrow_filtered.bed > results/NHDF_ab_2_nc_2_narrow_filtered_sorted.bed 
+
+
+###### Intersections with nca files
+ 
+
+bedtools intersect -a NHDF_ab_1_nc_1_broad_filtered_sorted.bed -b /home/marakulina/CTD/peaks/NCA/nca_1_broad_sorted.bed -wa -wb > intersect/nhdf_1_1_nca_1_broad.bed 
+bedtools intersect -a NHDF_ab_1_nc_1_narrow_filtered_sorted.bed -b /home/marakulina/CTD/peaks/NCA/nca_1_narrow_sorted.bed -wa -wb > intersect/nhdf_1_1_nca_1_narrow.bed 
+
+bedtools intersect -a NHDF_ab_1_nc_2_broad_filtered_sorted.bed -b /home/marakulina/CTD/peaks/NCA/nca_1_broad_sorted.bed -wa -wb > intersect/nhdf_1_2_nca_1_broad.bed 
+bedtools intersect -a NHDF_ab_1_nc_2_narrow_filtered_sorted.bed -b /home/marakulina/CTD/peaks/NCA/nca_1_narrow_sorted.bed -wa -wb > intersect/nhdf_1_2_nca_1_narrow.bed 
+
+bedtools intersect -a NHDF_ab_2_nc_1_broad_filtered_sorted.bed -b /home/marakulina/CTD/peaks/NCA/nca_1_broad_sorted.bed -wa -wb > intersect/nhdf_2_1_nca_1_broad.bed  
+bedtools intersect -a NHDF_ab_2_nc_1_narrow_filtered_sorted.bed -b /home/marakulina/CTD/peaks/NCA/nca_1_narrow_sorted.bed -wa -wb > intersect/nhdf_2_1_nca_1_narrow.bed 
+
+bedtools intersect -a NHDF_ab_2_nc_2_broad_filtered_sorted.bed -b /home/marakulina/CTD/peaks/NCA/nca_1_broad_sorted.bed -wa -wb > intersect/nhdf_2_2_nca_1_broad.bed 
+bedtools intersect -a NHDF_ab_2_nc_2_narrow_filtered_sorted.bed -b /home/marakulina/CTD/peaks/NCA/nca_1_narrow_sorted.bed -wa -wb > intersect/nhdf_2_2_nca_1_narrow.bed
+
+
+
+
+bedtools intersect -a NHDF_ab_1_nc_1_broad_filtered_sorted.bed -b /home/marakulina/CTD/peaks/NCA/nca_2_broad_sorted.bed -wa -wb > intersect/nhdf_1_1_nca_2_broad.bed 
+bedtools intersect -a NHDF_ab_1_nc_1_narrow_filtered_sorted.bed -b /home/marakulina/CTD/peaks/NCA/nca_2_narrow_sorted.bed -wa -wb > intersect/nhdf_1_1_nca_2_narrow.bed 
+
+bedtools intersect -a NHDF_ab_1_nc_2_broad_filtered_sorted.bed -b /home/marakulina/CTD/peaks/NCA/nca_2_broad_sorted.bed -wa -wb > intersect/nhdf_1_2_nca_2_broad.bed 
+bedtools intersect -a NHDF_ab_1_nc_2_narrow_filtered_sorted.bed -b /home/marakulina/CTD/peaks/NCA/nca_2_narrow_sorted.bed -wa -wb > intersect/nhdf_1_2_nca_2_narrow.bed 
+
+bedtools intersect -a NHDF_ab_2_nc_1_broad_filtered_sorted.bed -b /home/marakulina/CTD/peaks/NCA/nca_2_broad_sorted.bed -wa -wb > intersect/nhdf_2_1_nca_2_broad.bed  
+bedtools intersect -a NHDF_ab_2_nc_1_narrow_filtered_sorted.bed -b /home/marakulina/CTD/peaks/NCA/nca_2_narrow_sorted.bed -wa -wb > intersect/nhdf_2_1_nca_2_narrow.bed 
+
+bedtools intersect -a NHDF_ab_2_nc_2_broad_filtered_sorted.bed -b /home/marakulina/CTD/peaks/NCA/nca_2_broad_sorted.bed -wa -wb > intersect/nhdf_2_2_nca_2_broad.bed 
+bedtools intersect -a NHDF_ab_2_nc_2_narrow_filtered_sorted.bed -b /home/marakulina/CTD/peaks/NCA/nca_2_narrow_sorted.bed -wa -wb > intersect/nhdf_2_2_nca_2_narrow.bed
+
+
+###### Peak-calling with SICER2
+
+sicer  -t ../NHDF_ab_1.bam  -c ../NHDF_nc_1.bam  -s hg19 --cpu 16 --false_discovery_rate 0.05
+sicer  -t ../NHDF_ab_1.bam  -c ../NHDF_nc_2.bam  -s hg19 --cpu 16 --false_discovery_rate 0.05
+sicer  -t ../NHDF_ab_2.bam  -c ../NHDF_nc_1.bam  -s hg19 --cpu 16 --false_discovery_rate 0.05
+sicer  -t ../NHDF_ab_2.bam  -c ../NHDF_nc_2.bam  -s hg19 --cpu 16 --false_discovery_rate 0.05
+
+
+###### Intersections with blacklist hg19
+
+
+sed 's/[\t]*$//' NHDF_ab_1_nc_1.bed > NHDF_ab_1_nc_1_corrected.bed
+bedtools intersect -v -a NHDF_ab_1_nc_1_corrected.bed -b ../blacklist_hg19.bed >  NHDF_ab_1_nc_1_filtered.bed
+sed 's/[\t]*$//' NHDF_ab_1_nc_2.bed > NHDF_ab_1_nc_2_corrected.bed
+bedtools intersect -v -a NHDF_ab_1_nc_2_corrected.bed -b ../blacklist_hg19.bed >  NHDF_ab_1_nc_2_filtered.bed
+
+sed 's/[\t]*$//' NHDF_ab_2_nc_1.bed > NHDF_ab_2_nc_1_corrected.bed
+bedtools intersect -v -a NHDF_ab_2_nc_1_corrected.bed -b ../blacklist_hg19.bed >  NHDF_ab_2_nc_1_filtered.bed
+sed 's/[\t]*$//' NHDF_ab_2_nc_2.bed > NHDF_ab_2_nc_2_corrected.bed
+bedtools intersect -v -a NHDF_ab_2_nc_2_corrected.bed -b ../blacklist_hg19.bed >  NHDF_ab_2_nc_2_filtered.bed
+
+
+###### Sorting
+
+
+sort -k1,1 -k2,2n NHDF_ab_1_nc_1_filtered.bed > results/NHDF_ab_1_nc_1_filtered_sorted.bed 
+sort -k1,1 -k2,2n NHDF_ab_1_nc_2_filtered.bed > results/NHDF_ab_1_nc_2_filtered_sorted.bed 
+sort -k1,1 -k2,2n NHDF_ab_2_nc_1_filtered.bed > results/NHDF_ab_2_nc_1_filtered_sorted.bed 
+sort -k1,1 -k2,2n NHDF_ab_2_nc_2_filtered.bed > results/NHDF_ab_2_nc_2_filtered_sorted.bed 
+
+
+
+###### Intersections with nca files
+
+
+bedtools intersect -a NHDF_ab_1_nc_1_filtered_sorted.bed -b /home/marakulina/CTD/peaks/NCA/nca_2_sicer_sorted.bed -wa -wb > intersect/nhdf_1_1_nca_2_sicer.bed 
+bedtools intersect -a NHDF_ab_1_nc_2_filtered_sorted.bed -b /home/marakulina/CTD/peaks/NCA/nca_2_sicer_sorted.bed -wa -wb > intersect/nhdf_1_2_nca_2_sicer.bed 
+bedtools intersect -a NHDF_ab_2_nc_1_filtered_sorted.bed -b /home/marakulina/CTD/peaks/NCA/nca_2_sicer_sorted.bed -wa -wb > intersect/nhdf_2_1_nca_2_sicer.bed  
+bedtools intersect -a NHDF_ab_2_nc_2_filtered_sorted.bed -b /home/marakulina/CTD/peaks/NCA/nca_2_sicer_sorted.bed -wa -wb > intersect/nhdf_2_2_nca_2_sicer.bed 
+
+bedtools intersect -a NHDF_ab_1_nc_1_filtered_sorted.bed -b /home/marakulina/CTD/peaks/NCA/nca_1_sicer_sorted.bed -wa -wb > intersect/nhdf_1_1_nca_1_sicer.bed 
+bedtools intersect -a NHDF_ab_1_nc_2_filtered_sorted.bed -b /home/marakulina/CTD/peaks/NCA/nca_1_sicer_sorted.bed -wa -wb > intersect/nhdf_1_2_nca_1_sicer.bed 
+bedtools intersect -a NHDF_ab_2_nc_1_filtered_sorted.bed -b /home/marakulina/CTD/peaks/NCA/nca_1_sicer_sorted.bed -wa -wb > intersect/nhdf_2_1_nca_1_sicer.bed  
+bedtools intersect -a NHDF_ab_2_nc_2_filtered_sorted.bed -b /home/marakulina/CTD/peaks/NCA/nca_1_sicer_sorted.bed -wa -wb > intersect/nhdf_2_2_nca_1_sicer.bed 
+
+
+
+
+
+#############################################################################################################
+#############################################################################################################
+#############################################################################################################
+#############################################################################################################
+#############################################################################################################
+
+
+WITHOUT INPUT
+
+
+
+
+
+
+###### Peak-calling with MACS2
+
+
+macs2 callpeak  -t NHDF_ab_1.bam  -n NHDF_1 --outdir nhdf2_macs2  -f BAM  -m 2 50  -g hs
+macs2 callpeak  -t NHDF_ab_2.bam -n NHDF_2 --outdir nhdf2_macs2  -f BAM  -m 2 50  -g hs
+
+macs2 callpeak  -t NHDF_ab_1.bam -n NHDF_1 --outdir nhdf2_macs2  -f BAM  -m 2 50  -g hs --broad
+macs2 callpeak  -t NHDF_ab_2.bam -n NHDF_2 --outdir nhdf2_macs2  -f BAM  -m 2 50  -g hs --broad
+
+
+cd nhdf2_macs2
+###### Intersections with blacklist hg19
+
+https://sites.google.com/site/anshulkundaje/projects/blacklists
+
+bedtools intersect -v -a NHDF_1_peaks.broadPeak  -b ../blacklist_hg19.bed > NHDF_1_broad_filtered.bed
+bedtools intersect -v -a NHDF_1_peaks.narrowPeak  -b ../blacklist_hg19.bed > NHDF_1_narrow_filtered.bed
+
+bedtools intersect -v -a NHDF_2_peaks.broadPeak  -b ../blacklist_hg19.bed > NHDF_2_broad_filtered.bed
+bedtools intersect -v -a NHDF_2_peaks.narrowPeak  -b ../blacklist_hg19.bed > NHDF_2_narrow_filtered.bed
+
+mkdir results
+
+###### Sorting
+
+
+sort -k1,1 -k2,2n NHDF_1_broad_filtered.bed > results/NHDF_1_broad_filtered_sorted.bed 
+sort -k1,1 -k2,2n NHDF_1_narrow_filtered.bed > results/NHDF_1_narrow_filtered_sorted.bed 
+
+sort -k1,1 -k2,2n NHDF_2_broad_filtered.bed > results/NHDF_2_broad_filtered_sorted.bed 
+sort -k1,1 -k2,2n NHDF_2_narrow_filtered.bed > results/NHDF_2_narrow_filtered_sorted.bed 
+
+
+###### Intersections with nca files
+ 
+
+bedtools intersect -a NHDF_1_broad_filtered_sorted.bed -b /home/marakulina/CTD/peaks/NCA/nca_1_broad_sorted.bed -wa -wb > intersect/nhdf_1_nca_1_broad.bed 
+bedtools intersect -a NHDF_1_narrow_filtered_sorted.bed -b /home/marakulina/CTD/peaks/NCA/nca_1_narrow_sorted.bed -wa -wb > intersect/nhdf_1_nca_1_narrow.bed 
+
+bedtools intersect -a NHDF_2_broad_filtered_sorted.bed -b /home/marakulina/CTD/peaks/NCA/nca_1_broad_sorted.bed -wa -wb > intersect/nhdf_2_nca_1_broad.bed  
+bedtools intersect -a NHDF_2_narrow_filtered_sorted.bed -b /home/marakulina/CTD/peaks/NCA/nca_1_narrow_sorted.bed -wa -wb > intersect/nhdf_2_nca_1_narrow.bed 
+
+
+
+bedtools intersect -a NHDF_1_broad_filtered_sorted.bed -b /home/marakulina/CTD/peaks/NCA/nca_2_broad_sorted.bed -wa -wb > intersect/nhdf_1_nca_2_broad.bed 
+bedtools intersect -a NHDF_1_narrow_filtered_sorted.bed -b /home/marakulina/CTD/peaks/NCA/nca_2_narrow_sorted.bed -wa -wb > intersect/nhdf_1_nca_2_narrow.bed 
+
+bedtools intersect -a NHDF_2_broad_filtered_sorted.bed -b /home/marakulina/CTD/peaks/NCA/nca_2_broad_sorted.bed -wa -wb > intersect/nhdf_2_nca_2_broad.bed  
+bedtools intersect -a NHDF_2_narrow_filtered_sorted.bed -b /home/marakulina/CTD/peaks/NCA/nca_2_narrow_sorted.bed -wa -wb > intersect/nhdf_2_nca_2_narrow.bed 
+
+
+###### Peak-calling with SICER2
+
+sicer  -t ../NHDF_ab_1.bam  -s hg19 --cpu 16 --false_discovery_rate 0.05
+sicer  -t ../NHDF_ab_2.bam  -s hg19 --cpu 16 --false_discovery_rate 0.05
+
+
+###### Intersections with blacklist hg19
+
+
+sed 's/[\t]*$//' NHDF_1.bed > NHDF_1_corrected.bed
+bedtools intersect -v -a NHDF_1_corrected.bed -b ../blacklist_hg19.bed >  NHDF_1_filtered.bed
+sed 's/[\t]*$//' NHDF_2.bed > NHDF_2_corrected.bed
+bedtools intersect -v -a NHDF_2_corrected.bed -b ../blacklist_hg19.bed >  NHDF_2_filtered.bed
+
+
+###### Sorting
+mkdir results
+
+sort -k1,1 -k2,2n NHDF_1_filtered.bed > results/NHDF_1_filtered_sorted.bed 
+sort -k1,1 -k2,2n NHDF_2_filtered.bed > results/NHDF_2_filtered_sorted.bed 
+
+
+
+###### Intersections with nca files
+cd results
+mkdir intersect
+
+bedtools intersect -a NHDF_1_filtered_sorted.bed -b /home/marakulina/CTD/peaks/NCA/nca_1_sicer_sorted.bed -wa -wb > intersect/nhdf_1_nca_1_sicer.bed 
+bedtools intersect -a NHDF_2_filtered_sorted.bed -b /home/marakulina/CTD/peaks/NCA/nca_1_sicer_sorted.bed -wa -wb > intersect/nhdf_2_nca_1_sicer.bed 
+
+bedtools intersect -a NHDF_1_filtered_sorted.bed -b /home/marakulina/CTD/peaks/NCA/nca_2_sicer_sorted.bed -wa -wb > intersect/nhdf_1_nca_2_sicer.bed 
+bedtools intersect -a NHDF_2_filtered_sorted.bed -b /home/marakulina/CTD/peaks/NCA/nca_2_sicer_sorted.bed -wa -wb > intersect/nhdf_2_nca_2_sicer.bed 
+
+
+
+#############################################################################################################
+#############################################################################################################
+#############################################################################################################
+#############################################################################################################
+#############################################################################################################
+
+
+GEO broad file
+
+wget -O NHDF.broadPeak.gz "https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSM733733&format=file&file=GSM733733%5Fhg19%5FwgEncodeBroadHistoneNhdfadH3k36me3StdPk%2EbroadPeak%2Egz"
+
+gzip -d NHDF.broadPeak.gz
+
+
+mkdir nhdf_broad
+###### Intersections with blacklist hg19
+
+https://sites.google.com/site/anshulkundaje/projects/blacklists
+
+bedtools intersect -v -a NHDF.broadPeak  -b ../blacklist_hg19.bed > nhdf_broad/NHDF_broad_filtered.bed
+
+cd nhdf_broad
+mkdir results
+
+###### Sorting
+
+
+sort -k1,1 -k2,2n NHDF_broad_filtered.bed > results/NHDF_broad_filtered_sorted.bed 
+
+
+###### Intersections with nca files
+ cd results
+ mkdir intersect
+
+bedtools intersect -a NHDF_broad_filtered_sorted.bed  -b /home/marakulina/CTD/peaks/NCA/nca_1_broad_sorted.bed -wa -wb > intersect/nhdf_broad_nca_1.bed 
+
+bedtools intersect -a NHDF_broad_filtered_sorted.bed  -b /home/marakulina/CTD/peaks/NCA/nca_2_broad_sorted.bed -wa -wb > intersect/nhdf_broad_nca_2.bed 

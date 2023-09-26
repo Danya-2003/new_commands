@@ -1,0 +1,189 @@
+FILE FORMATS
+https://ucdavis-bioinformatics-training.github.io/2017-June-RNA-Seq-Workshop/tuesday/Filetypes.pdf
+https://samtools.github.io/hts-specs/SAMv1.pdf
+
+
+######## INDEXING
+https://www.biostars.org/p/15847/
+samtools index -c C-1_.sorted_for_index.bam -@ 16
+samtools index -c C-2_.sorted_for_index.bam -@ 16
+samtools index -c C-3_.sorted_for_index.bam -@ 16
+samtools index -c C-4_.sorted_for_index.bam -@ 16
+samtools index -c C-5_.sorted_for_index.bam -@ 16
+samtools index -c C-6_.sorted_for_index.bam -@ 16
+samtools index -c C-7_.sorted_for_index.bam -@ 16
+samtools index -c C-8_.sorted_for_index.bam -@ 16
+samtools index -c C-9_.sorted_for_index.bam -@ 16
+samtools index -c C-10.sorted_for_index.bam -@ 16
+samtools index -c C-11.sorted_for_index.bam -@ 16
+samtools index -c C-12.sorted_for_index.bam -@ 16
+samtools index -c C-13.sorted_for_index.bam -@ 16
+samtools index -c C-14.sorted_for_index.bam -@ 16
+samtools index -c C-15.sorted_for_index.bam -@ 16
+samtools index -c C-16.sorted_for_index.bam -@ 16
+samtools index -c C-17.sorted_for_index.bam -@ 16
+samtools index -c C-18.sorted_for_index.bam -@ 16
+samtools index -c C-19.sorted_for_index.bam -@ 16
+samtools index -c C-20.sorted_for_index.bam -@ 16
+samtools index -c C-21.sorted_for_index.bam -@ 16
+samtools index -c C-22.sorted_for_index.bam -@ 16
+samtools index -c C-23.sorted_for_index.bam -@ 16
+samtools index -c C-24.sorted_for_index.bam -@ 16
+samtools index -c C-25.sorted_for_index.bam -@ 16
+samtools index -c C-26.sorted_for_index.bam -@ 16
+samtools index -c C-27.sorted_for_index.bam -@ 16
+samtools index -c C-28.sorted_for_index.bam -@ 16
+
+samtools index -c I-1_.sorted_for_index.bam -@ 16
+samtools index -c I-2_.sorted_for_index.bam -@ 16
+samtools index -c I-3_.sorted_for_index.bam -@ 16
+samtools index -c I-4_.sorted_for_index.bam -@ 16
+samtools index -c I-5_.sorted_for_index.bam -@ 16
+samtools index -c I-6_.sorted_for_index.bam -@ 16
+samtools index -c I-7_.sorted_for_index.bam -@ 16
+samtools index -c I-8_.sorted_for_index.bam -@ 16
+samtools index -c I-9_.sorted_for_index.bam -@ 16
+samtools index -c I-10.sorted_for_index.bam -@ 16
+samtools index -c I-11.sorted_for_index.bam -@ 16
+samtools index -c I-12.sorted_for_index.bam -@ 16
+samtools index -c I-13.sorted_for_index.bam -@ 16
+samtools index -c I-14.sorted_for_index.bam -@ 16
+samtools index -c I-15.sorted_for_index.bam -@ 16
+samtools index -c I-16.sorted_for_index.bam -@ 16
+samtools index -c I-17.sorted_for_index.bam -@ 16
+samtools index -c I-18.sorted_for_index.bam -@ 16
+samtools index -c I-19.sorted_for_index.bam -@ 16
+samtools index -c I-20.sorted_for_index.bam -@ 16
+samtools index -c I-21.sorted_for_index.bam -@ 16
+samtools index -c I-22.sorted_for_index.bam -@ 16
+samtools index -c I-23.sorted_for_index.bam -@ 16
+samtools index -c I-24.sorted_for_index.bam -@ 16
+samtools index -c I-25.sorted_for_index.bam -@ 16
+samtools index -c I-26.sorted_for_index.bam -@ 16
+samtools index -c I-27.sorted_for_index.bam -@ 16
+samtools index -c I-28.sorted_for_index.bam -@ 16
+
+######## NUMBERING
+https://www.metagenomics.wiki/tools/samtools/numbef-reads-in-bam-file
+http://quinlanlab.org/tutorials/samtools/samtools.html
+
+samtools view -c C-1_.sorted_for_index.bam -@ 16
+samtools view -c C-2_.sorted_for_index.bam -@ 16
+samtools view -c C-3_.sorted_for_index.bam -@ 16
+samtools view -c C-4_.sorted_for_index.bam -@ 16
+samtools view -c C-5_.sorted_for_index.bam -@ 16
+samtools view -c C-6_.sorted_for_index.bam -@ 16
+samtools view -c C-7_.sorted_for_index.bam -@ 16
+samtools view -c C-8_.sorted_for_index.bam -@ 16
+samtools view -c C-9_.sorted_for_index.bam -@ 16
+samtools view -c C-10.sorted_for_index.bam -@ 16
+samtools view -c C-11.sorted_for_index.bam -@ 16
+samtools view -c C-12.sorted_for_index.bam -@ 16
+samtools view -c C-13.sorted_for_index.bam -@ 16
+samtools view -c C-14.sorted_for_index.bam -@ 16
+samtools view -c C-15.sorted_for_index.bam -@ 16
+samtools view -c C-16.sorted_for_index.bam -@ 16
+samtools view -c C-17.sorted_for_index.bam -@ 16
+samtools view -c C-18.sorted_for_index.bam -@ 16
+samtools view -c C-19.sorted_for_index.bam -@ 16
+samtools view -c C-20.sorted_for_index.bam -@ 16
+samtools view -c C-21.sorted_for_index.bam -@ 16
+samtools view -c C-22.sorted_for_index.bam -@ 16
+samtools view -c C-23.sorted_for_index.bam -@ 16
+samtools view -c C-24.sorted_for_index.bam -@ 16
+samtools view -c C-25.sorted_for_index.bam -@ 16
+samtools view -c C-26.sorted_for_index.bam -@ 16
+samtools view -c C-27.sorted_for_index.bam -@ 16
+samtools view -c C-28.sorted_for_index.bam -@ 16
+
+samtools view -c I-1_.sorted_for_index.bam -@ 16
+samtools view -c I-2_.sorted_for_index.bam -@ 16
+samtools view -c I-3_.sorted_for_index.bam -@ 16
+samtools view -c I-4_.sorted_for_index.bam -@ 16
+samtools view -c I-5_.sorted_for_index.bam -@ 16
+samtools view -c I-6_.sorted_for_index.bam -@ 16
+samtools view -c I-7_.sorted_for_index.bam -@ 16
+samtools view -c I-8_.sorted_for_index.bam -@ 16
+samtools view -c I-9_.sorted_for_index.bam -@ 16
+samtools view -c I-10.sorted_for_index.bam -@ 16
+samtools view -c I-11.sorted_for_index.bam -@ 16
+samtools view -c I-12.sorted_for_index.bam -@ 16
+samtools view -c I-13.sorted_for_index.bam -@ 16
+samtools view -c I-14.sorted_for_index.bam -@ 16
+samtools view -c I-15.sorted_for_index.bam -@ 16
+samtools view -c I-16.sorted_for_index.bam -@ 16
+samtools view -c I-17.sorted_for_index.bam -@ 16
+samtools view -c I-18.sorted_for_index.bam -@ 16
+samtools view -c I-19.sorted_for_index.bam -@ 16
+samtools view -c I-20.sorted_for_index.bam -@ 16
+samtools view -c I-21.sorted_for_index.bam -@ 16
+samtools view -c I-22.sorted_for_index.bam -@ 16
+samtools view -c I-23.sorted_for_index.bam -@ 16
+samtools view -c I-24.sorted_for_index.bam -@ 16
+samtools view -c I-25.sorted_for_index.bam -@ 16
+samtools view -c I-26.sorted_for_index.bam -@ 16
+samtools view -c I-27.sorted_for_index.bam -@ 16
+samtools view -c I-28.sorted_for_index.bam -@ 16
+
+
+######## NUMBERING AFTER SAMBAMBA
+
+
+
+samtools view -c C-1_.bam -@ 16
+samtools view -c C-2_.bam -@ 16
+samtools view -c C-3_.bam -@ 16
+samtools view -c C-4_.bam -@ 16
+samtools view -c C-5_.bam -@ 16
+samtools view -c C-6_.bam -@ 16
+samtools view -c C-7_.bam -@ 16
+samtools view -c C-8_.bam -@ 16
+samtools view -c C-9_.bam -@ 16
+samtools view -c C-10.bam -@ 16
+samtools view -c C-11.bam -@ 16
+samtools view -c C-12.bam -@ 16
+samtools view -c C-13.bam -@ 16
+samtools view -c C-14.bam -@ 16
+samtools view -c C-15.bam -@ 16
+samtools view -c C-16.bam -@ 16
+samtools view -c C-17.bam -@ 16
+samtools view -c C-18.bam -@ 16
+samtools view -c C-19.bam -@ 16
+samtools view -c C-20.bam -@ 16
+samtools view -c C-21.bam -@ 16
+samtools view -c C-22.bam -@ 16
+samtools view -c C-23.bam -@ 16
+samtools view -c C-24.bam -@ 16
+samtools view -c C-25.bam -@ 16
+samtools view -c C-26.bam -@ 16
+samtools view -c C-27.bam -@ 16
+samtools view -c C-28.bam -@ 16
+
+samtools view -c I-1_.bam -@ 16
+samtools view -c I-2_.bam -@ 16
+samtools view -c I-3_.bam -@ 16
+samtools view -c I-4_.bam -@ 16
+samtools view -c I-5_.bam -@ 16
+samtools view -c I-6_.bam -@ 16
+samtools view -c I-7_.bam -@ 16
+samtools view -c I-8_.bam -@ 16
+samtools view -c I-9_.bam -@ 16
+samtools view -c I-10.bam -@ 16
+samtools view -c I-11.bam -@ 16
+samtools view -c I-12.bam -@ 16
+samtools view -c I-13.bam -@ 16
+samtools view -c I-14.bam -@ 16
+samtools view -c I-15.bam -@ 16
+samtools view -c I-16.bam -@ 16
+samtools view -c I-17.bam -@ 16
+samtools view -c I-18.bam -@ 16
+samtools view -c I-19.bam -@ 16
+samtools view -c I-20.bam -@ 16
+samtools view -c I-21.bam -@ 16
+samtools view -c I-22.bam -@ 16
+samtools view -c I-23.bam -@ 16
+samtools view -c I-24.bam -@ 16
+samtools view -c I-25.bam -@ 16
+samtools view -c I-26.bam -@ 16
+samtools view -c I-27.bam -@ 16
+samtools view -c I-28.bam -@ 16

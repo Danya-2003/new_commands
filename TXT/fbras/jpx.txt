@@ -1,0 +1,245 @@
+/home/ebogdan/hESC_IP_JPX_peaks.bed 
+/home/ebogdan/hESC_input_JPX_peaks.bed 
+/home/ebogdan/K562_IP_JPX_peaks.bed 
+/home/ebogdan/K562_input_JPX_peaks.bed
+~/chip_data/sambamba/C-17.bam
+~/chip_data/sambamba/C-18.bam
+~/chip_data/sambamba/C-11.bam
+~/chip_data/sambamba/C-12.bam
+~/chip_data/sambamba/I-17.bam
+~/chip_data/sambamba/I-18.bam
+~/chip_data/sambamba/I-11.bam
+~/chip_data/sambamba/I-12.bam
+
+
+############# Scaling factor
+
+###### Count matrix. Rows: regions of bed file. Columns: counts in each bam.
+
+sort -k1,1 -k2,2n /home/ebogdan/hESC_IP_JPX_peaks.bed > ~/jpx/hESC_IP_JPX_peaks_sorted.bed
+sort -k1,1 -k2,2n /home/ebogdan/hESC_input_JPX_peaks.bed > ~/jpx/hESC_input_JPX_peaks_sorted.bed
+sort -k1,1 -k2,2n /home/ebogdan/K562_IP_JPX_peaks.bed > ~/jpx/K562_IP_JPX_peaks_sorted.bed
+sort -k1,1 -k2,2n /home/ebogdan/K562_input_JPX_peaks.bed > ~/jpx/K562_input_JPX_peaks_sorted.bed
+
+
+bedtools intersect -wa -c -names -F 0.50 -sorted -a ~/jpx/hESC_IP_JPX_peaks_sorted.bed -b ~/chip_data/sambamba/C-17.bam > ~/jpx_intersect/hESC_IP_C-17.bed
+
+bedtools intersect -wa -c -names -F 0.50 -sorted -a ~/jpx/hESC_IP_JPX_peaks_sorted.bed -b ~/chip_data/sambamba/C-18.bam > ~/jpx_intersect/hESC_IP_C-18.bed
+
+bedtools intersect -wa -c -names -F 0.50 -sorted -a ~/jpx/hESC_IP_JPX_peaks_sorted.bed -b ~/chip_data/sambamba/C-11.bam > ~/jpx_intersect/hESC_IP_C-11.bed
+
+bedtools intersect -wa -c -names -F 0.50 -sorted -a ~/jpx/hESC_IP_JPX_peaks_sorted.bed -b ~/chip_data/sambamba/C-12.bam > ~/jpx_intersect/hESC_IP_C-12.bed
+
+bedtools intersect -wa -c -names -F 0.50 -sorted -a ~/jpx/hESC_IP_JPX_peaks_sorted.bed -b ~/chip_data/sambamba/I-17.bam > ~/jpx_intersect/hESC_IP_I-17.bed
+
+bedtools intersect -wa -c -names -F 0.50 -sorted -a ~/jpx/hESC_IP_JPX_peaks_sorted.bed -b ~/chip_data/sambamba/I-18.bam > ~/jpx_intersect/hESC_IP_I-18.bed
+
+bedtools intersect -wa -c -names -F 0.50 -sorted -a ~/jpx/hESC_IP_JPX_peaks_sorted.bed -b ~/chip_data/sambamba/I-11.bam > ~/jpx_intersect/hESC_IP_I-11.bed
+
+bedtools intersect -wa -c -names -F 0.50 -sorted -a ~/jpx/hESC_IP_JPX_peaks_sorted.bed -b ~/chip_data/sambamba/I-12.bam > ~/jpx_intersect/hESC_IP_I-12.bed
+
+
+
+bedtools intersect -wa -c -names -F 0.50 -sorted -a ~/jpx/hESC_input_JPX_peaks_sorted.bed -b ~/chip_data/sambamba/C-17.bam > ~/jpx_intersect/hESC_input_C-17.bed
+
+bedtools intersect -wa -c -names -F 0.50 -sorted -a ~/jpx/hESC_input_JPX_peaks_sorted.bed -b ~/chip_data/sambamba/C-18.bam > ~/jpx_intersect/hESC_input_C-18.bed
+
+bedtools intersect -wa -c -names -F 0.50 -sorted -a ~/jpx/hESC_input_JPX_peaks_sorted.bed -b ~/chip_data/sambamba/C-11.bam > ~/jpx_intersect/hESC_input_C-11.bed
+
+bedtools intersect -wa -c -names -F 0.50 -sorted -a ~/jpx/hESC_input_JPX_peaks_sorted.bed -b ~/chip_data/sambamba/C-12.bam > ~/jpx_intersect/hESC_input_C-12.bed
+
+bedtools intersect -wa -c -names -F 0.50 -sorted -a ~/jpx/hESC_input_JPX_peaks_sorted.bed -b ~/chip_data/sambamba/I-17.bam > ~/jpx_intersect/hESC_input_I-17.bed
+
+bedtools intersect -wa -c -names -F 0.50 -sorted -a ~/jpx/hESC_input_JPX_peaks_sorted.bed -b ~/chip_data/sambamba/I-18.bam > ~/jpx_intersect/hESC_input_I-18.bed
+
+bedtools intersect -wa -c -names -F 0.50 -sorted -a ~/jpx/hESC_input_JPX_peaks_sorted.bed -b ~/chip_data/sambamba/I-11.bam > ~/jpx_intersect/hESC_input_I-11.bed
+
+bedtools intersect -wa -c -names -F 0.50 -sorted -a ~/jpx/hESC_input_JPX_peaks_sorted.bed -b ~/chip_data/sambamba/I-12.bam > ~/jpx_intersect/hESC_input_I-12.bed
+
+
+
+bedtools intersect -wa -c -names -F 0.50 -sorted -a ~/jpx/K562_IP_JPX_peaks_sorted.bed -b ~/chip_data/sambamba/C-17.bam > ~/jpx_intersect/K562_IP_C-17.bed
+
+bedtools intersect -wa -c -names -F 0.50 -sorted -a ~/jpx/K562_IP_JPX_peaks_sorted.bed -b ~/chip_data/sambamba/C-18.bam > ~/jpx_intersect/K562_IP_C-18.bed
+
+bedtools intersect -wa -c -names -F 0.50 -sorted -a ~/jpx/K562_IP_JPX_peaks_sorted.bed -b ~/chip_data/sambamba/C-11.bam > ~/jpx_intersect/K562_IP_C-11.bed
+
+bedtools intersect -wa -c -names -F 0.50 -sorted -a ~/jpx/K562_IP_JPX_peaks_sorted.bed -b ~/chip_data/sambamba/C-12.bam > ~/jpx_intersect/K562_IP_C-12.bed
+
+bedtools intersect -wa -c -names -F 0.50 -sorted -a ~/jpx/K562_IP_JPX_peaks_sorted.bed -b ~/chip_data/sambamba/I-17.bam > ~/jpx_intersect/K562_IP_I-17.bed
+
+bedtools intersect -wa -c -names -F 0.50 -sorted -a ~/jpx/K562_IP_JPX_peaks_sorted.bed -b ~/chip_data/sambamba/I-18.bam > ~/jpx_intersect/K562_IP_I-18.bed
+
+bedtools intersect -wa -c -names -F 0.50 -sorted -a ~/jpx/K562_IP_JPX_peaks_sorted.bed -b ~/chip_data/sambamba/I-11.bam > ~/jpx_intersect/K562_IP_I-11.bed
+
+bedtools intersect -wa -c -names -F 0.50 -sorted -a ~/jpx/K562_IP_JPX_peaks_sorted.bed -b ~/chip_data/sambamba/I-12.bam > ~/jpx_intersect/K562_IP_I-12.bed
+
+
+
+bedtools intersect -wa -c -names -F 0.50 -sorted -a ~/jpx/K562_input_JPX_peaks_sorted.bed -b ~/chip_data/sambamba/C-17.bam > ~/jpx_intersect/K562_input_C-17.bed
+
+bedtools intersect -wa -c -names -F 0.50 -sorted -a ~/jpx/K562_input_JPX_peaks_sorted.bed -b ~/chip_data/sambamba/C-18.bam > ~/jpx_intersect/K562_input_C-18.bed
+
+bedtools intersect -wa -c -names -F 0.50 -sorted -a ~/jpx/K562_input_JPX_peaks_sorted.bed -b ~/chip_data/sambamba/C-11.bam > ~/jpx_intersect/K562_input_C-11.bed
+
+bedtools intersect -wa -c -names -F 0.50 -sorted -a ~/jpx/K562_input_JPX_peaks_sorted.bed -b ~/chip_data/sambamba/C-12.bam > ~/jpx_intersect/K562_input_C-12.bed
+
+bedtools intersect -wa -c -names -F 0.50 -sorted -a ~/jpx/K562_input_JPX_peaks_sorted.bed -b ~/chip_data/sambamba/I-17.bam > ~/jpx_intersect/K562_input_I-17.bed
+
+bedtools intersect -wa -c -names -F 0.50 -sorted -a ~/jpx/K562_input_JPX_peaks_sorted.bed -b ~/chip_data/sambamba/I-18.bam > ~/jpx_intersect/K562_input_I-18.bed
+
+bedtools intersect -wa -c -names -F 0.50 -sorted -a ~/jpx/K562_input_JPX_peaks_sorted.bed -b ~/chip_data/sambamba/I-11.bam > ~/jpx_intersect/K562_input_I-11.bed
+
+bedtools intersect -wa -c -names -F 0.50 -sorted -a ~/jpx/K562_input_JPX_peaks_sorted.bed -b ~/chip_data/sambamba/I-12.bam > ~/jpx_intersect/K562_input_I-12.bed
+
+###### Peak-calling
+
+macs2 callpeak  -t ~/chip_data/sambamba/C-11.bam -c ~/chip_data/sambamba/I-11.bam -n C-I-11 --outdir ~/chip_data/sambamba/macs2_broad -f BAM  -m 2 50 -g hs --broad
+macs2 callpeak  -t ~/chip_data/sambamba/C-12.bam -c ~/chip_data/sambamba/I-12.bam -n C-I-12 --outdir ~/chip_data/sambamba/macs2_broad -f BAM  -m 2 50 -g hs --broad
+macs2 callpeak  -t ~/chip_data/sambamba/C-17.bam -c ~/chip_data/sambamba/I-17.bam -n C-I-17 --outdir ~/chip_data/sambamba/macs2_broad -f BAM  -m 2 50 -g hs --broad
+macs2 callpeak  -t ~/chip_data/sambamba/C-18.bam -c ~/chip_data/sambamba/I-18.bam -n C-I-18 --outdir ~/chip_data/sambamba/macs2_broad -f BAM  -m 2 50 -g hs --broad
+
+macs2 callpeak  -t ~/chip_data/sambamba/I-11.bam -n I-11 --outdir ~/chip_data/sambamba/macs2_broad -f BAM  -m 2 50 -g hs --broad
+macs2 callpeak  -t ~/chip_data/sambamba/I-12.bam -n I-12 --outdir ~/chip_data/sambamba/macs2_broad -f BAM  -m 2 50 -g hs --broad
+macs2 callpeak  -t ~/chip_data/sambamba/I-17.bam -n I-17 --outdir ~/chip_data/sambamba/macs2_broad -f BAM  -m 2 50 -g hs --broad
+macs2 callpeak  -t ~/chip_data/sambamba/I-18.bam -n I-18 --outdir ~/chip_data/sambamba/macs2_broad -f BAM  -m 2 50 -g hs --broad
+
+macs2 callpeak  -t ~/chip_data/sambamba/C-11.bam -n C-11 --outdir ~/chip_data/sambamba/macs2_broad -f BAM  -m 2 50 -g hs --broad
+macs2 callpeak  -t ~/chip_data/sambamba/C-12.bam -n C-12 --outdir ~/chip_data/sambamba/macs2_broad -f BAM  -m 2 50 -g hs --broad
+macs2 callpeak  -t ~/chip_data/sambamba/C-17.bam -n C-17 --outdir ~/chip_data/sambamba/macs2_broad -f BAM  -m 2 50 -g hs --broad
+macs2 callpeak  -t ~/chip_data/sambamba/C-18.bam -n C-18 --outdir ~/chip_data/sambamba/macs2_broad -f BAM  -m 2 50 -g hs --broad
+
+###### Black-list intersection
+
+bedtools intersect -v -a ~/chip_data/sambamba/macs2_broad/C-I-11_peaks.broadPeak -b ~/blacklist_hg38.bed > ~/chip_data/sambamba/macs2_broad/filtered/C-I-11_peaks.broad.filtered.bed
+bedtools intersect -v -a ~/chip_data/sambamba/macs2_broad/C-I-12_peaks.broadPeak -b ~/blacklist_hg38.bed > ~/chip_data/sambamba/macs2_broad/filtered/C-I-12_peaks.broad.filtered.bed
+bedtools intersect -v -a ~/chip_data/sambamba/macs2_broad/C-I-17_peaks.broadPeak -b ~/blacklist_hg38.bed > ~/chip_data/sambamba/macs2_broad/filtered/C-I-17_peaks.broad.filtered.bed
+bedtools intersect -v -a ~/chip_data/sambamba/macs2_broad/C-I-18_peaks.broadPeak -b ~/blacklist_hg38.bed > ~/chip_data/sambamba/macs2_broad/filtered/C-I-18_peaks.broad.filtered.bed
+
+bedtools intersect -v -a ~/chip_data/sambamba/macs2_broad/I-11_peaks.broadPeak -b ~/blacklist_hg38.bed > ~/chip_data/sambamba/macs2_broad/filtered/I-11_peaks.broad.filtered.bed
+bedtools intersect -v -a ~/chip_data/sambamba/macs2_broad/I-12_peaks.broadPeak -b ~/blacklist_hg38.bed > ~/chip_data/sambamba/macs2_broad/filtered/I-12_peaks.broad.filtered.bed
+bedtools intersect -v -a ~/chip_data/sambamba/macs2_broad/I-17_peaks.broadPeak -b ~/blacklist_hg38.bed > ~/chip_data/sambamba/macs2_broad/filtered/I-17_peaks.broad.filtered.bed
+bedtools intersect -v -a ~/chip_data/sambamba/macs2_broad/I-18_peaks.broadPeak -b ~/blacklist_hg38.bed > ~/chip_data/sambamba/macs2_broad/filtered/I-18_peaks.broad.filtered.bed
+
+bedtools intersect -v -a ~/chip_data/sambamba/macs2_broad/C-11_peaks.broadPeak -b ~/blacklist_hg38.bed > ~/chip_data/sambamba/macs2_broad/filtered/C-11_peaks.broad.filtered.bed
+bedtools intersect -v -a ~/chip_data/sambamba/macs2_broad/C-12_peaks.broadPeak -b ~/blacklist_hg38.bed > ~/chip_data/sambamba/macs2_broad/filtered/C-12_peaks.broad.filtered.bed
+bedtools intersect -v -a ~/chip_data/sambamba/macs2_broad/C-17_peaks.broadPeak -b ~/blacklist_hg38.bed > ~/chip_data/sambamba/macs2_broad/filtered/C-17_peaks.broad.filtered.bed
+bedtools intersect -v -a ~/chip_data/sambamba/macs2_broad/C-18_peaks.broadPeak -b ~/blacklist_hg38.bed > ~/chip_data/sambamba/macs2_broad/filtered/C-18_peaks.broad.filtered.bed
+
+sort -k1,1 -k2,2n ~/chip_data/sambamba/macs2_broad/filtered/C-I-11_peaks.broad.filtered.bed > ~/chip_data/sambamba/macs2_broad/filtered/C-I-11_peaks.broad.filtered.sorted.bed
+sort -k1,1 -k2,2n ~/chip_data/sambamba/macs2_broad/filtered/C-I-12_peaks.broad.filtered.bed > ~/chip_data/sambamba/macs2_broad/filtered/C-I-12_peaks.broad.filtered.sorted.bed
+sort -k1,1 -k2,2n ~/chip_data/sambamba/macs2_broad/filtered/C-I-17_peaks.broad.filtered.bed > ~/chip_data/sambamba/macs2_broad/filtered/C-I-17_peaks.broad.filtered.sorted.bed
+sort -k1,1 -k2,2n ~/chip_data/sambamba/macs2_broad/filtered/C-I-18_peaks.broad.filtered.bed > ~/chip_data/sambamba/macs2_broad/filtered/C-I-18_peaks.broad.filtered.sorted.bed
+
+sort -k1,1 -k2,2n ~/chip_data/sambamba/macs2_broad/filtered/I-11_peaks.broad.filtered.bed > ~/chip_data/sambamba/macs2_broad/filtered/I-11_peaks.broad.filtered.sorted.bed
+sort -k1,1 -k2,2n ~/chip_data/sambamba/macs2_broad/filtered/I-12_peaks.broad.filtered.bed > ~/chip_data/sambamba/macs2_broad/filtered/I-12_peaks.broad.filtered.sorted.bed
+sort -k1,1 -k2,2n ~/chip_data/sambamba/macs2_broad/filtered/I-17_peaks.broad.filtered.bed > ~/chip_data/sambamba/macs2_broad/filtered/I-17_peaks.broad.filtered.sorted.bed
+sort -k1,1 -k2,2n ~/chip_data/sambamba/macs2_broad/filtered/I-18_peaks.broad.filtered.bed > ~/chip_data/sambamba/macs2_broad/filtered/I-18_peaks.broad.filtered.sorted.bed
+
+sort -k1,1 -k2,2n ~/chip_data/sambamba/macs2_broad/filtered/C-11_peaks.broad.filtered.bed > ~/chip_data/sambamba/macs2_broad/filtered/C-11_peaks.broad.filtered.sorted.bed
+sort -k1,1 -k2,2n ~/chip_data/sambamba/macs2_broad/filtered/C-12_peaks.broad.filtered.bed > ~/chip_data/sambamba/macs2_broad/filtered/C-12_peaks.broad.filtered.sorted.bed
+sort -k1,1 -k2,2n ~/chip_data/sambamba/macs2_broad/filtered/C-17_peaks.broad.filtered.bed > ~/chip_data/sambamba/macs2_broad/filtered/C-17_peaks.broad.filtered.sorted.bed
+sort -k1,1 -k2,2n ~/chip_data/sambamba/macs2_broad/filtered/C-18_peaks.broad.filtered.bed > ~/chip_data/sambamba/macs2_broad/filtered/C-18_peaks.broad.filtered.sorted.bed
+
+
+###### Making .saf for featureCounts
+
+
+awk 'OFS="\t" {print $1"."$2"."$3, $1, $2+1, $3, "."}' ~/chip_data/sambamba/macs2_broad/filtered/C-I-11_peaks.broad.filtered.sorted.bed > ~/jpx/C-I-11.saf
+awk 'OFS="\t" {print $1"."$2"."$3, $1, $2+1, $3, "."}' ~/chip_data/sambamba/macs2_broad/filtered/C-I-12_peaks.broad.filtered.sorted.bed > ~/jpx/C-I-12.saf
+awk 'OFS="\t" {print $1"."$2"."$3, $1, $2+1, $3, "."}' ~/chip_data/sambamba/macs2_broad/filtered/C-I-17_peaks.broad.filtered.sorted.bed > ~/jpx/C-I-17.saf
+awk 'OFS="\t" {print $1"."$2"."$3, $1, $2+1, $3, "."}' ~/chip_data/sambamba/macs2_broad/filtered/C-I-18_peaks.broad.filtered.sorted.bed > ~/jpx/C-I-18.saf
+
+awk 'OFS="\t" {print $1"."$2"."$3, $1, $2+1, $3, "."}' ~/chip_data/sambamba/macs2_broad/filtered/I-11_peaks.broad.filtered.sorted.bed > ~/jpx/I-11.saf
+awk 'OFS="\t" {print $1"."$2"."$3, $1, $2+1, $3, "."}' ~/chip_data/sambamba/macs2_broad/filtered/I-12_peaks.broad.filtered.sorted.bed > ~/jpx/I-12.saf
+awk 'OFS="\t" {print $1"."$2"."$3, $1, $2+1, $3, "."}' ~/chip_data/sambamba/macs2_broad/filtered/I-17_peaks.broad.filtered.sorted.bed > ~/jpx/I-17.saf
+awk 'OFS="\t" {print $1"."$2"."$3, $1, $2+1, $3, "."}' ~/chip_data/sambamba/macs2_broad/filtered/I-18_peaks.broad.filtered.sorted.bed > ~/jpx/I-18.saf
+
+awk 'OFS="\t" {print $1"."$2"."$3, $1, $2+1, $3, "."}' ~/chip_data/sambamba/macs2_broad/filtered/C-11_peaks.broad.filtered.sorted.bed > ~/jpx/C-11.saf
+awk 'OFS="\t" {print $1"."$2"."$3, $1, $2+1, $3, "."}' ~/chip_data/sambamba/macs2_broad/filtered/C-12_peaks.broad.filtered.sorted.bed > ~/jpx/C-12.saf
+awk 'OFS="\t" {print $1"."$2"."$3, $1, $2+1, $3, "."}' ~/chip_data/sambamba/macs2_broad/filtered/C-17_peaks.broad.filtered.sorted.bed > ~/jpx/C-17.saf
+awk 'OFS="\t" {print $1"."$2"."$3, $1, $2+1, $3, "."}' ~/chip_data/sambamba/macs2_broad/filtered/C-18_peaks.broad.filtered.sorted.bed > ~/jpx/C-18.saf
+
+
+###### Making .saf for featureCounts
+
+
+featureCounts -O -F 'SAF' -t '.' -T 4 -a ~/jpx/C-I-11.saf -o ~/jpx/C-I-11.count.txt ~/chip_data/sambamba/C-11.bam
+featureCounts -O -F 'SAF' -t '.' -T 4 -a ~/jpx/C-I-12.saf -o ~/jpx/C-I-12.count.txt ~/chip_data/sambamba/C-12.bam
+featureCounts -O -F 'SAF' -t '.' -T 4 -a ~/jpx/C-I-17.saf -o ~/jpx/C-I-17.count.txt ~/chip_data/sambamba/C-17.bam
+featureCounts -O -F 'SAF' -t '.' -T 4 -a ~/jpx/C-I-18.saf -o ~/jpx/C-I-18.count.txt ~/chip_data/sambamba/C-18.bam 
+
+featureCounts -O -F 'SAF' -t '.' -T 4 -a ~/jpx/C-I-11.saf -o ~/jpx/C-I-11.count.txt ~/chip_data/sambamba/I-11.bam
+featureCounts -O -F 'SAF' -t '.' -T 4 -a ~/jpx/C-I-12.saf -o ~/jpx/C-I-12.count.txt ~/chip_data/sambamba/I-12.bam
+featureCounts -O -F 'SAF' -t '.' -T 4 -a ~/jpx/C-I-17.saf -o ~/jpx/C-I-17.count.txt ~/chip_data/sambamba/I-17.bam
+featureCounts -O -F 'SAF' -t '.' -T 4 -a ~/jpx/C-I-18.saf -o ~/jpx/C-I-18.count.txt ~/chip_data/sambamba/I-18.bam 
+
+featureCounts -O -F 'SAF' -t '.' -T 4 -a ~/jpx/C-11.saf -o ~/jpx/C-11.count.txt ~/chip_data/sambamba/C-11.bam
+featureCounts -O -F 'SAF' -t '.' -T 4 -a ~/jpx/C-12.saf -o ~/jpx/C-12.count.txt ~/chip_data/sambamba/C-12.bam
+featureCounts -O -F 'SAF' -t '.' -T 4 -a ~/jpx/C-17.saf -o ~/jpx/C-17.count.txt ~/chip_data/sambamba/C-17.bam
+featureCounts -O -F 'SAF' -t '.' -T 4 -a ~/jpx/C-18.saf -o ~/jpx/C-18.count.txt ~/chip_data/sambamba/C-18.bam 
+
+featureCounts -O -F 'SAF' -t '.' -T 4 -a ~/jpx/I-11.saf -o ~/jpx/I-11.count.txt ~/chip_data/sambamba/I-11.bam
+featureCounts -O -F 'SAF' -t '.' -T 4 -a ~/jpx/I-12.saf -o ~/jpx/I-12.count.txt ~/chip_data/sambamba/I-12.bam
+featureCounts -O -F 'SAF' -t '.' -T 4 -a ~/jpx/I-17.saf -o ~/jpx/I-17.count.txt ~/chip_data/sambamba/I-17.bam
+featureCounts -O -F 'SAF' -t '.' -T 4 -a ~/jpx/I-18.saf -o ~/jpx/I-18.count.txt ~/chip_data/sambamba/I-18.bam 
+
+
+###### R
+
+Calculate scaleFactor
+
+###### deepTools
+
+bamCoverage (normalization) -> bigwigCompare (normalization against input) -> computeMatrix -> plotProfile
+
+bamCoverage --bam C-17.bam -o ~/jpx/bamcoverage/C-17.bigWig -of bigwig \
+    --binSize 10
+    --smoothLength
+    --normalizeUsing RPGC
+    --effectiveGenomeSize 2862010578
+    --ignoreForNormalization chrX
+    
+
+RPKM = Reads Per Kilobase per Million mapped reads; 
+CPM = Counts Per Million mapped reads, same as CPM in RNA-seq; 
+BPM = Bins Per Million mapped reads, same as TPM in RNA-seq; 
+RPGC = reads per genomic content (1x normalization);
+
+nc_01   nc_02   kd_01   kd_02   nc_01_input nc_02_input kd_01_input kd_02_input 
+0.04172250 0.04546258   0.05137462  0.06330995  0.06881275  0.04180970  0.12617894  0.13990676
+
+
+bamCoverage -b ~/chip_data/sambamba/C-17.bam -o ~/jpx/bamcoverage/C-17.bigWig -of bigwig -bl ~/blacklist_hg38.bed --binSize 50 --smoothLength 80 --normalizeUsing BPM --effectiveGenomeSize 2862010578 --scaleFactor 0.04172250
+
+bamCoverage -b ~/chip_data/sambamba/C-18.bam -o ~/jpx/bamcoverage/C-18.bigWig -of bigwig -bl ~/blacklist_hg38.bed --binSize 50 --smoothLength 80 --normalizeUsing BPM --effectiveGenomeSize 2862010578 --scaleFactor 0.04546258
+
+bamCoverage -b ~/chip_data/sambamba/C-11.bam -o ~/jpx/bamcoverage/C-11.bigWig -of bigwig -bl ~/blacklist_hg38.bed --binSize 50 --smoothLength 80 --normalizeUsing BPM --effectiveGenomeSize 2862010578 --scaleFactor 0.05137462
+
+bamCoverage -b ~/chip_data/sambamba/C-12.bam -o ~/jpx/bamcoverage/C-12.bigWig -of bigwig -bl ~/blacklist_hg38.bed --binSize 50 --smoothLength 80 --normalizeUsing BPM --effectiveGenomeSize 2862010578 --scaleFactor 0.06330995
+
+bamCoverage -b ~/chip_data/sambamba/I-11.bam -o ~/jpx/bamcoverage/I-11.bigWig -of bigwig -bl ~/blacklist_hg38.bed --binSize 50 --smoothLength 80 --normalizeUsing BPM --effectiveGenomeSize 2862010578 --scaleFactor 0.06881275
+
+bamCoverage -b ~/chip_data/sambamba/I-12.bam -o ~/jpx/bamcoverage/I-12.bigWig -of bigwig -bl ~/blacklist_hg38.bed --binSize 50 --smoothLength 80 --normalizeUsing BPM --effectiveGenomeSize 2862010578 --scaleFactor 0.04180970
+
+bamCoverage -b ~/chip_data/sambamba/I-17.bam -o ~/jpx/bamcoverage/I-17.bigWig -of bigwig -bl ~/blacklist_hg38.bed --binSize 50 --smoothLength 80 --normalizeUsing BPM --effectiveGenomeSize 2862010578 --scaleFactor 0.12617894
+
+bamCoverage -b ~/chip_data/sambamba/I-18.bam -o ~/jpx/bamcoverage/I-18.bigWig -of bigwig -bl ~/blacklist_hg38.bed --binSize 40 --smoothLength 80 --normalizeUsing BPM --effectiveGenomeSize 2862010578 --scaleFactor 0.13990676
+
+
+bigwigCompare -b1 ~/jpx/bamcoverage/C-11.bigWig -b2 ~/jpx/bamcoverage/I-11.bigWig -o ~/jpx/bigwigcompare/JPX_05.bigWig -of bigwig
+
+bigwigCompare -b1 ~/jpx/bamcoverage/C-12.bigWig -b2 ~/jpx/bamcoverage/I-12.bigWig -o ~/jpx/bigwigcompare/JPX_AD04.bigWig -of bigwig
+
+bigwigCompare -b1 ~/jpx/bamcoverage/C-17.bigWig -b2 ~/jpx/bamcoverage/I-17.bigWig -o ~/jpx/bigwigcompare/NCA_H3K9me3_1.bigWig -of bigwig
+
+bigwigCompare -b1 ~/jpx/bamcoverage/C-18.bigWig -b2 ~/jpx/bamcoverage/I-18.bigWig -o ~/jpx/bigwigcompare/NCA_H3K9me3_2.bigWig -of bigwig
+
+
+
+
+computeMatrix scale-regions -S ~/jpx/bigwigcompare/NCA_H3K9me3_1.bigWig ~/jpx/bigwigcompare/NCA_H3K9me3_2.bigWig ~/jpx/bigwigcompare/JPX_05.bigWig ~/jpx/bigwigcompare/JPX_AD04.bigWig -R /home/ebogdan/hESC_IP_JPX_peaks.bed /home/ebogdan/hESC_input_JPX_peaks.bed /home/ebogdan/K562_IP_JPX_peaks.bed /home/ebogdan/K562_input_JPX_peaks.bed -o ~/jpx/computematrix/jpx_ctcf.mat.gz -m 6000 -a 2000 -b 2000 --endLabel 3 --startLabel 5
+
+plotProfile -m ~/jpx/computematrix/jpx_ctcf.mat.gz -out ~/jpx/plotprofile/jpx_ctcf_per_group.png --perGroup --numPlotsPerRow 2 --plotTitle "JPX_CTCF"
+
+plotProfile -m ~/jpx/computematrix/jpx_ctcf.mat.gz -out ~/jpx/plotprofile/jpx_ctcf.png --numPlotsPerRow 2 --plotTitle "JPX_CTCF"

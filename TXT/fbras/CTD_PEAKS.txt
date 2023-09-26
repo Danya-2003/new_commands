@@ -1,0 +1,63 @@
+###### Peak-calling with SICER2
+
+cd ~/chip_data/sicer
+
+sicer -t ~/chip_data/sambamba/C-9_.bam -c ~/chip_data/sambamba/I-9_.bam -s hg38 -w 50 -g 100 --cpu 16 --false_discovery_rate 0.01
+sicer -t ~/chip_data/sambamba/C-10.bam -c ~/chip_data/sambamba/I-10.bam -s hg38 -w 50 -g 100 --cpu 16 --false_discovery_rate 0.01
+
+
+sicer -t ~/chip_data/sambamba/C-19.bam -c ~/chip_data/sambamba/I-19.bam -s hg38 -w 50 -g 100 --cpu 16 --false_discovery_rate 0.01
+sicer -t ~/chip_data/sambamba/C-20.bam -c ~/chip_data/sambamba/I-20.bam -s hg38 -w 50 -g 100 --cpu 16 --false_discovery_rate 0.01
+
+###### Intersections with blacklist hg38
+
+mkdir filtered
+
+sed 's/[\t]*$//' C-9_-W50-G100-FDR0.01-island.bed > filtered/C-I-9__sicer_corrected.bed
+sed 's/[\t]*$//' C-10-W50-G100-FDR0.01-island.bed > filtered/C-I-10_sicer_corrected.bed
+
+sed 's/[\t]*$//' C-19-W50-G100-FDR0.01-island.bed > filtered/C-I-19_sicer_corrected.bed
+sed 's/[\t]*$//' C-20-W50-G100-FDR0.01-island.bed > filtered/C-I-20_sicer_corrected.bed
+
+
+bedtools intersect -v -a filtered/C-I-9__sicer_corrected.bed-b ~/blacklist_hg19.bed > filtered/C-I-9__sicer_corrected_filtered.bed
+bedtools intersect -v -a filtered/C-I-10_sicer_corrected.bed-b ~/blacklist_hg19.bed > filtered/C-I-10_sicer_corrected_filtered.bed
+
+bedtools intersect -v -a filtered/C-I-19_sicer_corrected.bed-b ~/blacklist_hg19.bed > filtered/C-I-19_sicer_corrected_filtered.bed
+bedtools intersect -v -a filtered/C-I-20_sicer_corrected.bed-b ~/blacklist_hg19.bed > filtered/C-I-20_sicer_corrected_filtered.bed
+
+
+###### Sorting
+
+cd filtered
+
+sort -k1,1 -k2,2n C-I-9__sicer_corrected_filtered.bed > C-I-9__sicer_sorted.bed
+sort -k1,1 -k2,2n C-I-10_sicer_corrected_filtered.bed > C-I-10_sicer_sorted.bed
+
+sort -k1,1 -k2,2n C-I-19_sicer_corrected_filtered.bed > C-I-19_sicer_sorted.bed
+sort -k1,1 -k2,2n C-I-20_sicer_corrected_filtered.bed > C-I-20_sicer_sorted.bed
+
+#merge peaks to one file
+
+
+      cut -f1,2,3 C-I-9__sicer_sorted.bed > peaks_01.bed
+      cut -f1,2,3 C-I-19_sicer_sorted.bed >> peaks_01.bed
+      cut -f1,2,3 C-I-20_sicer_sorted.bed >> peaks_01.bed
+
+      
+ bedtools sort -i peaks_01.bed > peaks_01_sorted.bed
+ bedtools merge -i peaks_01_sorted.bed > peaks_01_merged.bed
+
+ bedtools multicov -bams ~/chip_data/sambamba/C-9_.bam ~/chip_data/sambamba/C-19.bam ~/chip_data/sambamba/C-20.bam -bed peaks_01_merged.bed > coverage_01.txt
+
+
+
+
+      cut -f1,2,3 C-I-10_sicer_sorted.bed > peaks_03.bed
+      cut -f1,2,3 C-I-19_sicer_sorted.bed >> peaks_03.bed
+      cut -f1,2,3 C-I-20_sicer_sorted.bed >> peaks_03.bed
+
+ bedtools sort -i peaks_03.bed > peaks_03_sorted.bed
+ bedtools merge -i peaks_03_sorted.bed > peaks_03_merged.bed
+
+ bedtools multicov -bams ~/chip_data/sambamba/C-10.bam ~/chip_data/sambamba/C-19.bam ~/chip_data/sambamba/C-20.bam -bed peaks_03_merged.bed > coverage_03.txt

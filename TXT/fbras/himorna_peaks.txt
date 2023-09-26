@@ -1,0 +1,339 @@
+cd ~/_my/DataLog/2022/0704.peaks4dasha
+
+###
+
+# HiMoRNA p-values
+ln -s /data/mazurovev/all_marks/H3K27ac
+ln -s /data/mazurovev/all_marks/H3K9ac
+ln -s /data/mazurovev/all_marks/H3K36me3
+
+# all F6 ASOs
+wget  https://raw.githubusercontent.com/vanya-antonov/article_assa_and_f6/master/data/ASO_names.info
+
+###
+
+### Get ASO names 
+# RP11-398K22.12 (ENSG00000229852)  &  H3K27ac
+
+
+grep  'RP11-398K22.12'  ASO_names.info
+# ASO_G0229852_03 ASO_G0229852_05
+
+# Get statistics for HiMoRNA and FANTOM6 genes (and their overlap, i.e. Genya' confusion matrix counts)
+
+head -n 1  H3K27ac/our_fantom_fantom_aso_genes_association.tsv
+grep 'RP11-398K22.12'  H3K27ac/our_fantom_fantom_aso_genes_association.tsv
+
+# Get all HiMoRNA H3K27ac peak names(!) for lncRNA ENSG00000229852 (RP11-398K22.12): 1508 peaks and 1475 genes
+grep  '^ENSG00000229852'  H3K27ac/lncRNA_peaks_gene_association.tsv | cut -f 2 | sort | uniq | wc -l
+grep  '^ENSG00000229852'  H3K27ac/lncRNA_peaks_gene_association.tsv | cut -f 3 | sort | uniq | wc -l
+
+
+grep  '^ENSG00000229852'  H3K27ac/lncRNA_peaks_gene_association.tsv | cut -f 2,4 | sort | uniq  >  RP11_398K22.peak_names.txt
+
+/home/ivan/bin/join_tables_by_ids.pl  --id_cols 1,4  RP11_398K22.peak_names.txt  H3K27ac/merged_peaks_first_in_biosample.bed  \
+| perl -ne '@v = split /\s+/; print join("\t", @v[2,3,4,0,1])."\n";'  \
+| sort -k1,1 -k2,2n \
+> RP11_398K22.himorna_peaks.bed
+
+# "RP11-398K22.12 has 1747 correlated H3K27ac peaks"
+
+wc -l H3K27ac/fantom_margi/ENSG00000229852_ASO_G0229852_03.bed
+cp -v H3K27ac/fantom_margi/ENSG00000229852_ASO_G0229852_03.bed   RP11-398K22.12_peaks_himorna.bed
+
+wc -l H3K27ac/fantom_margi/ENSG00000229852_ASO_G0229852_05.bed
+cp -v H3K27ac/fantom_margi/ENSG00000229852_ASO_G0229852_05.bed   RP11-398K22.12_peaks_himorna.bed
+
+# Count DEGs
+grep ASO_G0229852_03  oligo_DE_Summary_gene_filtered.tsv   | wc -l
+grep ASO_G0229852_05  oligo_DE_Summary_gene_filtered.tsv   | wc -l
+
+# Get Genya' confusion matrix counts
+head -n 1            our_fantom_fantom_aso_genes_association.tsv
+grep RP11-398K22.12  our_fantom_fantom_aso_genes_association.tsv
+
+# Get Genya' p-values
+head -n 1            our_fantom_fantom_aso_genes_association_pvalues.tsv
+grep RP11-398K22.12  our_fantom_fantom_aso_genes_association_pvalues.tsv
+
+
+# "RP11-398K22.12 has 1747 correlated H3K27ac peaks"
+wc -l H3K27ac/fantom_margi/ENSG00000229852_ASO_G0229852_03.bed
+cp -v H3K27ac/fantom_margi/ENSG00000229852_ASO_G0229852_03.bed   _peaks_himorna.bed
+
+# 251 iMARGI peaks
+grep ENSG00000229852  iMARGI_data_with_fantom_rna_names.bed | cut -f3-5 > _peaks_imargi.bed
+
+
+# Get the genometricorr results
+mkdir fantom_genometric_margi_results
+cp -v H3K27ac/fantom_genometric_margi_results/ENSG00000229852_ASO_G0229852_03.pdf  fantom_genometric_margi_results
+cp -v H3K27ac/fantom_genometric_margi_results/ENSG00000229852_ASO_G0229852_05.pdf  fantom_genometric_margi_results
+
+
+# Intersect HiMoRNA with iMARGI -- 1 peak (gene: COG5)
+bedtools  intersect  -a _peaks_himorna.bed  -b _peaks_imargi.bed
+
+# Intersect HiMoRNA with ATAC diff -- 2 peaks (genes: DIAPH3, OLA1)
+bedtools  intersect  -a _peaks_himorna.bed  -b atac_diff_peaks.bed
+
+# There genes are not among the DE-genes.
+grep RP11-398K22.12  oligo_DE_Summary_gene_filtered.tsv   |  grep  -P 'COG5|DIAPH3|OLA1'
+
+
+
+
+
+
+
+
+
+### Get ASO names 
+#CTD-2587H24.5 & H3K36me3
+
+grep  'CTD-2587H24.5'  ASO_names.info
+# ASO_G0267577_01 ASO_G0267577_03
+
+# Get statistics for HiMoRNA and FANTOM6 genes (and their overlap, i.e. Genya' confusion matrix counts)
+
+head -n 1  H3K36me3/our_fantom_fantom_aso_genes_association.tsv
+grep 'CTD-2587H24.5'  H3K36me3/our_fantom_fantom_aso_genes_association.tsv
+
+# Get all HiMoRNA H3K36me3 peak names(!) for lncRNA ENSG00000267577 (CTD-2587H24.5): 485 peaks and 535 genes
+grep  '^ENSG00000267577'  H3K36me3/lncRNA_peaks_gene_association.tsv | cut -f 2 | sort | uniq | wc -l
+grep  '^ENSG00000267577'  H3K36me3/lncRNA_peaks_gene_association.tsv | cut -f 3 | sort | uniq | wc -l
+
+
+grep  '^ENSG00000267577'  H3K36me3/lncRNA_peaks_gene_association.tsv | cut -f 2,4 | sort | uniq  >  CTD-2587H24.5.peak_names.txt
+
+/home/ivan/bin/join_tables_by_ids.pl  --id_cols 1,4  CTD-2587H24.5.peak_names.txt  H3K36me3/merged_peaks_first_in_biosample.bed  \
+| perl -ne '@v = split /\s+/; print join("\t", @v[2,3,4,0,1])."\n";'  \
+| sort -k1,1 -k2,2n \
+> CTD-2587H24.5.himorna_peaks.bed
+
+
+# "CTD-2587H24.5 has 739 correlated H3K27ac peaks"
+
+wc -l H3K36me3/fantom_margi/ENSG00000267577_ASO_G0267577_01.bed
+cp -v H3K36me3/fantom_margi/ENSG00000267577_ASO_G0267577_01.bed   CTD-2587H24.5_peaks_himorna.bed
+
+wc -l H3K36me3/fantom_margi/ENSG00000267577_ASO_G0267577_03.bed
+cp -v H3K36me3/fantom_margi/ENSG00000267577_ASO_G0267577_03.bed   CTD-2587H24.5_peaks_himorna.bed
+
+
+
+
+
+# Count DEGs
+grep ASO_G0229852_03  oligo_DE_Summary_gene_filtered.tsv   | wc -l
+grep ASO_G0229852_05  oligo_DE_Summary_gene_filtered.tsv   | wc -l
+
+# Get Genya' confusion matrix counts
+head -n 1            our_fantom_fantom_aso_genes_association.tsv
+grep RP11-398K22.12  our_fantom_fantom_aso_genes_association.tsv
+
+# Get Genya' p-values
+head -n 1            our_fantom_fantom_aso_genes_association_pvalues.tsv
+grep RP11-398K22.12  our_fantom_fantom_aso_genes_association_pvalues.tsv
+
+
+# "RP11-398K22.12 has 1747 correlated H3K27ac peaks"
+wc -l H3K27ac/fantom_margi/ENSG00000229852_ASO_G0229852_03.bed
+cp -v H3K27ac/fantom_margi/ENSG00000229852_ASO_G0229852_03.bed   _peaks_himorna.bed
+
+# 251 iMARGI peaks
+grep ENSG00000229852  iMARGI_data_with_fantom_rna_names.bed | cut -f3-5 > _peaks_imargi.bed
+
+
+
+# Get the genometricorr results
+mkdir fantom_genometric_margi_results
+cp -v H3K27ac/fantom_genometric_margi_results/ENSG00000229852_ASO_G0229852_03.pdf  fantom_genometric_margi_results
+cp -v H3K27ac/fantom_genometric_margi_results/ENSG00000229852_ASO_G0229852_05.pdf  fantom_genometric_margi_results
+
+
+# Intersect HiMoRNA with iMARGI -- 1 peak (gene: COG5)
+bedtools  intersect  -a _peaks_himorna.bed  -b _peaks_imargi.bed
+
+# Intersect HiMoRNA with ATAC diff -- 2 peaks (genes: DIAPH3, OLA1)
+bedtools  intersect  -a _peaks_himorna.bed  -b atac_diff_peaks.bed
+
+# There genes are not among the DE-genes.
+grep RP11-398K22.12  oligo_DE_Summary_gene_filtered.tsv   |  grep  -P 'COG5|DIAPH3|OLA1'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+cp -v ../0609.ATAC_seq/_peaks_himorna.bed  .
+cp -v ../0609.ATAC_seq/_peaks_imargi.bed   .
+cp -v ../0609.ATAC_seq/atac_diff_peaks.bed  .
+
+ln -s /home/mazurovev/annotation/F6_CAT.transcript.gtf
+
+cp -v /home/mazurovev/fantom6/oligo_DE_Summary_gene_filtered.tsv  .
+
+###
+
+# https://colab.research.google.com/github/mazurovEV/lab_scripts/blob/master/PeaksAnnotation_R.ipynb
+time  Rscript PeaksAnnotation.R  _peaks_himorna.bed    _himorna_peaks_anno.txt
+time  Rscript PeaksAnnotation.R  _peaks_imargi.bed     _imargi_peaks_anno.txt
+time  Rscript PeaksAnnotation.R  atac_diff_peaks.bed   _atac_peaks_anno.txt
+
+
+tail -n +2 _himorna_peaks_anno.txt | cut -f 8 | perl -pe 's/\.\d+$//' | sort | uniq > _himorna_genes.txt
+tail -n +2 _imargi_peaks_anno.txt  | cut -f 8 | perl -pe 's/\.\d+$//' | sort | uniq > _imargi_genes.txt
+tail -n +2 _atac_peaks_anno.txt    | cut -f 8 | perl -pe 's/\.\d+$//' | sort | uniq > _atac_genes.txt
+
+# FANTOM6 DE genes (downregulated) = uniq(97+596) = 681
+cat oligo_DE_Summary_gene_filtered.tsv  |\
+grep -P 'ASO_G0229852_05|ASO_G0229852_03'  |\
+perl -ne '@v = split /\s+/; print if $v[2] < 0;' |\
+cut -f1 | sort | uniq \
+> _fantom_genes.txt
+
+
+join_tables_by_ids.pl  --match_all  _himorna_genes.txt    _fantom_genes.txt
+
+join_tables_by_ids.pl  --match_all  _himorna_genes.txt    _atac_genes.txt
+
+join_tables_by_ids.pl  --match_all  _himorna_genes.txt    _atac_genes.txt  _fantom_genes.txt
+
+
+join_tables_by_ids.pl  --match_all  _himorna_genes.txt    _fantom_genes.txt   _imargi_genes.txt
+
+
+join_tables_by_ids.pl  --match_all  _fantom_genes.txt   _himorna_genes.txt  _imargi_genes.txt   _atac_genes.txt
+
+
+cat *_genes.txt | sort | uniq > _tmp.txt
+join_tables_by_ids.pl  --match_all  _tmp.txt  *_genes.txt
+
+
+join_tables_by_ids.pl  _fantom_genes.txt   _himorna_genes.txt  _imargi_genes.txt   _atac_peaks_anno.txt
+
+
+
+
+cp -v _peaks_himorna.bed   ~/_my/github/lab_scripts/data/ENSG00000229852_H3K27ac.himorna_peaks.bed
+cp -v _peaks_imargi.bed    ~/_my/github/lab_scripts/data/ENSG00000229852.imargi_peaks.bed
+cp -v atac_diff_peaks.bed  ~/_my/github/lab_scripts/data/ENSG00000229852.atac_diff_peaks.bed
+
+cp -v _himorna_peaks_anno.txt   ~/_my/github/lab_scripts/data/ENSG00000229852_H3K27ac.himorna_peaks_anno.txt
+cp -v _imargi_peaks_anno.txt    ~/_my/github/lab_scripts/data/ENSG00000229852.imargi_peaks_anno.txt
+cp -v _atac_peaks_anno.txt      ~/_my/github/lab_scripts/data/ENSG00000229852.atac_diff_peaks_anno.txt
+
+head -n 1 oligo_DE_Summary_gene_filtered.tsv                                         >  ~/_my/github/lab_scripts/data/ENSG00000229852.fantom_two_aso.DE_Summary.txt
+cat oligo_DE_Summary_gene_filtered.tsv  | grep -P 'ASO_G0229852_05|ASO_G0229852_03'  >> ~/_my/github/lab_scripts/data/ENSG00000229852.fantom_two_aso.DE_Summary.txt
+
+ENSG00000229852
+_fantom_genes.txt
+
+
+
+track visibility=dense name="ATAC"  color=50,50,200   description="ENSG00000229852.atac_diff_peaks.bed"
+https://raw.githubusercontent.com/mazurovEV/lab_scripts/master/data/ENSG00000229852.atac_diff_peaks.bed
+
+track visibility=dense name="iMARGI"  color=50,50,200   description="ENSG00000229852.imargi_peaks.bed"
+https://raw.githubusercontent.com/mazurovEV/lab_scripts/master/data/ENSG00000229852.imargi_peaks.bed
+
+track visibility=dense name="HiMoRNA"  color=50,50,200   description="ENSG00000229852_H3K27ac.himorna_peaks.bed"
+https://raw.githubusercontent.com/mazurovEV/lab_scripts/master/data/ENSG00000229852_H3K27ac.himorna_peaks.bed
+
+
+
+
+
+
+
+
+
+
+/data/mazurovev/all_marks/H3K27ac
+
+###
+
+
+# All HiMoRNA peaks for lncRNA RP11-398K22.12 (ENSG00000229852) = 1896
+grep '^ENSG00000229852' lncRNA_peaks_gene_association.tsv | wc -l
+
+# All HiMoRNA genes for lncRNA RP11-398K22.12 (ENSG00000229852) = 1475
+grep '^ENSG00000229852' lncRNA_peaks_gene_association.tsv | cut -f3 | sort | uniq | wc -l
+
+
+### ?? OR ?? ###
+
+# These are associations with FANTOM6 genes??
+
+# All HiMoRNA peaks for lncRNA RP11-398K22.12 (ENSG00000229852) = 2852 peaks
+grep '^ENSG00000229852' lncRNA_peaks_fantom_gene_association.tsv | wc -l
+
+# All HiMoRNA genes for lncRNA RP11-398K22.12 (ENSG00000229852) = 2309 genes
+grep '^ENSG00000229852' lncRNA_peaks_fantom_gene_association.tsv | cut -f3 | sort | uniq | wc -l
+
+
+
+####
+
+
+ENSG00000229852	peak_579	ENSG00000157933.10	-0.5611878037452698
+
+grep '^peak_579\s' peaks_signal_matrix_norm.csv
+grep '^ENSG00000229852'  lncRNA_matrix_filtered_norm.csv
+
+
+grep '^ENSG00000229852'  lncRNA_peaks_fantom_gene_association.tsv | head
+
+# 
+grep '^ENSG00000229852'  lncRNA_peaks_fantom_gene_association.tsv |\
+perl -ne '@v = split /\s+/; print if $v[-1] > 0;' |\
+cut -f3 | sort | uniq \
+> ~/_my/DataLog/0622.Genay/_ENSG00000229852_pos_corr_genes.txt
+
+
+
+# Get Genya' confusion matrix counts
+head -n 1            our_fantom_fantom_aso_genes_association.tsv
+grep RP11-398K22.12  our_fantom_fantom_aso_genes_association.tsv
+
+
+
+
+with h5py.File('our_fantom_fantom_genes_common_set.hdf5', 'r') as f:
+    our_fantom_genes_common_set = f['set'][:]
+
+from pathlib import Path
+Path('/home/ivan/_our_fantom_genes_common_set.txt').write_text("\n".join([str(s) for s in our_fantom_genes_common_set]))
+
+
+cat  _our_fantom_genes_common_set.txt | perl -pe "s/^b'//; s/'$//;"  > _our_fantom_genes_common_set.good.txt
+
+print_lines_with_unique_id_from_2_files.pl --invert _ENSG00000229852_pos_corr_genes.txt _our_fantom_genes_common_set.good.txt | wc -l
+
+
+
+####
+####
+
+cd /home/mazurovev/fantom6
+
+# 97 FANTOM6 DE genes (downregulated)
+grep ASO_G0229852_05 oligo_DE_Summary_gene_filtered.tsv | perl -ne '@v = split /\s+/; print if $v[2] < 0;' | wc -l

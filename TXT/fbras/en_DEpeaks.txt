@@ -1,0 +1,27 @@
+cd bed_diffpeak
+
+
+bedtools intersect -a ~/bed_diffpeak/DEpeaks_deseq_ctd.bed -b /home/ekalika/EMX2OS/enhancers.bed -u -F 0.90 > ~/bed_diffpeak/enchancers/en_DEpeaks_deseq_ctd.bed
+bedtools intersect -a ~/bed_diffpeak/DEpeaks_deseq_ctd_01.bed -b /home/ekalika/EMX2OS/enhancers.bed -u -F 0.90 > ~/bed_diffpeak/enchancers/en_DEpeaks_deseq_ctd_01.bed
+bedtools intersect -a ~/bed_diffpeak/DEpeaks_deseq_ctd_03.bed -b /home/ekalika/EMX2OS/enhancers.bed -u -F 0.90 > ~/bed_diffpeak/enchancers/en_DEpeaks_deseq_ctd_03.bed
+
+bedtools intersect -a ~/bed_diffpeak/DEpeaks_medips_ctd.bed -b /home/ekalika/EMX2OS/enhancers.bed -u -F 0.90 > ~/bed_diffpeak/enchancers/en_DEpeaks_medips_ctd.bed
+bedtools intersect -a ~/bed_diffpeak/DEpeaks_medips_ctd_01.bed -b /home/ekalika/EMX2OS/enhancers.bed -u -F 0.90 > ~/bed_diffpeak/enchancers/en_DEpeaks_medips_ctd_01.bed
+bedtools intersect -a ~/bed_diffpeak/DEpeaks_medips_ctd_03.bed -b /home/ekalika/EMX2OS/enhancers.bed -u -F 0.90 > ~/bed_diffpeak/enchancers/en_DEpeaks_medips_ctd_03.bed
+
+wc -l /home/ekalika/EMX2OS/enhancers.bed >> ~/bed_diffpeak/enchancers/file.txt
+wc -l ~/bed_diffpeak/enchancers/en_DEpeaks_deseq_ctd.bed >> ~/bed_diffpeak/enchancers/file.txt
+wc -l ~/bed_diffpeak/enchancers/en_DEpeaks_deseq_ctd_01.bed >> ~/bed_diffpeak/enchancers/file.txt
+wc -l ~/bed_diffpeak/enchancers/en_DEpeaks_deseq_ctd_03.bed >> ~/bed_diffpeak/enchancers/file.txt
+wc -l ~/bed_diffpeak/enchancers/en_DEpeaks_medips_ctd.bed >> ~/bed_diffpeak/enchancers/file.txt
+wc -l ~/bed_diffpeak/enchancers/en_DEpeaks_medips_ctd_01.bed >> ~/bed_diffpeak/enchancers/file.txt
+wc -l ~/bed_diffpeak/enchancers/en_DEpeaks_medips_ctd_03.bed >> ~/bed_diffpeak/enchancers/file.txt
+
+
+bedtools intersect -a ~/bed_diffpeak/DEpeaks_medips_rp11.bed -b /home/ekalika/EMX2OS/enhancers.bed -u -F 0.90 > ~/bed_diffpeak/enchancers/en_DEpeaks_medips_rp11.bed
+bedtools intersect -a ~/bed_diffpeak/DEpeaks_medips_rp11_03.bed -b /home/ekalika/EMX2OS/enhancers.bed -u -F 0.90 > ~/bed_diffpeak/enchancers/en_DEpeaks_medips_rp11_03.bed
+bedtools intersect -a ~/bed_diffpeak/DEpeaks_medips_rp11_05.bed -b /home/ekalika/EMX2OS/enhancers.bed -u -F 0.90 > ~/bed_diffpeak/enchancers/en_DEpeaks_medips_rp11_05.bed
+
+wc -l ~/bed_diffpeak/enchancers/en_DEpeaks_medips_rp11.bed >> ~/bed_diffpeak/enchancers/file.txt
+wc -l ~/bed_diffpeak/enchancers/en_DEpeaks_medips_rp11_03.bed >> ~/bed_diffpeak/enchancers/file.txt
+wc -l ~/bed_diffpeak/enchancers/en_DEpeaks_medips_rp11_05.bed >> ~/bed_diffpeak/enchancers/file.txt

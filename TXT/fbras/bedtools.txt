@@ -1,0 +1,102 @@
+sort -k1,1 -k2,2n CTD_peaks_fantom_himorna.bed > CTD_peaks_fantom_himorna_sorted.bed
+sort -k1,1 -k2,2n CTD_peaks_himorna.bed > CTD_peaks_himorna_sorted.bed
+
+sort -k1,1 -k2,2n CTD_01_broad_promoter.bed > CTD_01_broad_promoter_sorted.bed
+sort -k1,1 -k2,2n CTD_03_broad_promoter.bed > CTD_03_broad_promoter_sorted.bed
+sort -k1,1 -k2,2n CTD_01_broad_both.bed > CTD_01_broad_both_sorted.bed
+sort -k1,1 -k2,2n CTD_03_broad_both.bed > CTD_03_broad_both_sorted.bed
+
+sort -k1,1 -k2,2n CTD_01_narrow_promoter.bed > CTD_01_narrow_promoter_sorted.bed
+sort -k1,1 -k2,2n CTD_03_narrow_promoter.bed > CTD_03_narrow_promoter_sorted.bed
+sort -k1,1 -k2,2n CTD_01_narrow_both.bed > CTD_01_narrow_both_sorted.bed
+sort -k1,1 -k2,2n CTD_03_narrow_both.bed > CTD_03_narrow_both_sorted.bed
+
+sort -k1,1 -k2,2n CTD_01_sicer_promoter.bed > CTD_01_sicer_promoter_sorted.bed
+sort -k1,1 -k2,2n CTD_03_sicer_promoter.bed > CTD_03_sicer_promoter_sorted.bed
+sort -k1,1 -k2,2n CTD_01_sicer_both.bed > CTD_01_sicer_both_sorted.bed
+sort -k1,1 -k2,2n CTD_03_sicer_both.bed > CTD_03_sicer_both_sorted.bed
+
+
+ bedtools closest -d -a CTD_01_broad_promoter_sorted.bed -b ../CTD_peaks_fantom_himorna_sorted.bed > results/CTD_01_broad_promoter-f.bed
+ bedtools closest -d -a CTD_03_broad_promoter_sorted.bed -b ../CTD_peaks_fantom_himorna_sorted.bed > results/CTD_03_broad_promoter-f.bed
+ bedtools closest -d -a CTD_01_broad_both_sorted.bed -b ../CTD_peaks_fantom_himorna_sorted.bed > results/CTD_01_broad_both-f.bed
+ bedtools closest -d -a CTD_03_broad_both_sorted.bed -b ../CTD_peaks_fantom_himorna_sorted.bed > results/CTD_03_broad_both-f.bed
+
+ bedtools closest -d -a CTD_01_narrow_promoter_sorted.bed -b ../CTD_peaks_fantom_himorna_sorted.bed > results/CTD_01_narrow_promoter-f.bed
+ bedtools closest -d -a CTD_03_narrow_promoter_sorted.bed -b ../CTD_peaks_fantom_himorna_sorted.bed > results/CTD_03_narrow_promoter-f.bed
+ bedtools closest -d -a CTD_01_narrow_both_sorted.bed -b ../CTD_peaks_fantom_himorna_sorted.bed > results/CTD_01_narrow_both-f.bed
+ bedtools closest -d -a CTD_03_narrow_both_sorted.bed -b ../CTD_peaks_fantom_himorna_sorted.bed > results/CTD_03_narrow_both-f.bed
+
+ bedtools closest -d -a CTD_01_sicer_promoter_sorted.bed -b ../CTD_peaks_fantom_himorna_sorted.bed > results/CTD_01_sicer_promoter-f.bed
+ bedtools closest -d -a CTD_03_sicer_promoter_sorted.bed -b ../CTD_peaks_fantom_himorna_sorted.bed > results/CTD_03_sicer_promoter-f.bed
+ bedtools closest -d -a CTD_01_sicer_both_sorted.bed -b ../CTD_peaks_fantom_himorna_sorted.bed > results/CTD_01_sicer_both-f.bed
+ bedtools closest -d -a CTD_03_sicer_both_sorted.bed -b ../CTD_peaks_fantom_himorna_sorted.bed > results/CTD_03_sicer_both-f.bed 
+
+ bedtools closest -d -a ../CTD_peaks_fantom_himorna_sorted.bed -b CTD_01_broad_promoter_sorted.bed > results/f-CTD_01_broad_promoter.bed
+ bedtools closest -d -a ../CTD_peaks_fantom_himorna_sorted.bed -b CTD_03_broad_promoter_sorted.bed > results/f-CTD_03_broad_promoter.bed
+ bedtools closest -d -a ../CTD_peaks_fantom_himorna_sorted.bed -b CTD_01_broad_both_sorted.bed > results/f-CTD_01_broad_both.bed
+ bedtools closest -d -a ../CTD_peaks_fantom_himorna_sorted.bed -b CTD_03_broad_both_sorted.bed > results/f-CTD_03_broad_both.bed
+
+ bedtools closest -d -a ../CTD_peaks_fantom_himorna_sorted.bed -b CTD_01_narrow_promoter_sorted.bed > results/f-CTD_01_narrow_promoter.bed
+ bedtools closest -d -a ../CTD_peaks_fantom_himorna_sorted.bed -b CTD_03_narrow_promoter_sorted.bed > results/f-CTD_03_narrow_promoter.bed
+ bedtools closest -d -a ../CTD_peaks_fantom_himorna_sorted.bed -b CTD_01_narrow_both_sorted.bed > results/f-CTD_01_narrow_both.bed
+ bedtools closest -d -a ../CTD_peaks_fantom_himorna_sorted.bed -b CTD_03_narrow_both_sorted.bed > results/f-CTD_03_narrow_both.bed
+
+ bedtools closest -d -a ../CTD_peaks_fantom_himorna_sorted.bed -b CTD_01_sicer_promoter_sorted.bed > results/f-CTD_01_sicer_promoter.bed
+ bedtools closest -d -a ../CTD_peaks_fantom_himorna_sorted.bed -b CTD_03_sicer_promoter_sorted.bed > results/f-CTD_03_sicer_promoter.bed
+ bedtools closest -d -a ../CTD_peaks_fantom_himorna_sorted.bed -b CTD_01_sicer_both_sorted.bed > results/f-CTD_01_sicer_both.bed
+ bedtools closest -d -a ../CTD_peaks_fantom_himorna_sorted.bed -b CTD_03_sicer_both_sorted.bed > results/f-CTD_03_sicer_both.bed 
+
+
+############################################################
+
+sort -k1,1 -k2,2n ctd_01_broad.bed > ctd_01_broad_sorted.bed
+sort -k1,1 -k2,2n ctd_01_narrow.bed > ctd_01_narrow_sorted.bed
+sort -k1,1 -k2,2n ctd_01_sicer.bed > ctd_01_sicer_sorted.bed
+sort -k1,1 -k2,2n ctd_03_broad.bed > ctd_03_broad_sorted.bed
+sort -k1,1 -k2,2n ctd_03_narrow.bed > ctd_03_narrow_sorted.bed
+sort -k1,1 -k2,2n ctd_03_sicer.bed > ctd_03_sicer_sorted.bed
+
+bedtools closest -d -a ctd_01_broad_sorted.bed -b /home/marakulina/CTD/CTD_peaks_fantom_himorna_sorted.bed > results/ctd_01_broad-f.bed
+bedtools closest -d -a ctd_01_narrow_sorted.bed -b /home/marakulina/CTD/CTD_peaks_fantom_himorna_sorted.bed > results/ctd_01_narrow-f.bed
+bedtools closest -d -a ctd_01_sicer_sorted.bed -b /home/marakulina/CTD/CTD_peaks_fantom_himorna_sorted.bed > results/ctd_01_sicer-f.bed
+bedtools closest -d -a ctd_03_broad_sorted.bed -b /home/marakulina/CTD/CTD_peaks_fantom_himorna_sorted.bed > results/ctd_03_broad-f.bed
+bedtools closest -d -a ctd_03_narrow_sorted.bed -b /home/marakulina/CTD/CTD_peaks_fantom_himorna_sorted.bed > results/ctd_03_narrow-f.bed
+bedtools closest -d -a ctd_03_sicer_sorted.bed -b /home/marakulina/CTD/CTD_peaks_fantom_himorna_sorted.bed > results/ctd_03_sicer-f.bed
+
+bedtools closest -d -a /home/marakulina/CTD/CTD_peaks_fantom_himorna_sorted.bed -b ctd_01_broad_sorted.bed > results/f-ctd_01_broad.bed
+bedtools closest -d -a /home/marakulina/CTD/CTD_peaks_fantom_himorna_sorted.bed -b ctd_01_narrow_sorted.bed > results/f-ctd_01_narrow.bed
+bedtools closest -d -a /home/marakulina/CTD/CTD_peaks_fantom_himorna_sorted.bed -b ctd_01_sicer_sorted.bed > results/f-ctd_01_sicer.bed
+bedtools closest -d -a /home/marakulina/CTD/CTD_peaks_fantom_himorna_sorted.bed -b ctd_03_broad_sorted.bed > results/f-ctd_03_broad.bed
+bedtools closest -d -a /home/marakulina/CTD/CTD_peaks_fantom_himorna_sorted.bed -b ctd_03_narrow_sorted.bed > results/f-ctd_03_narrow.bed
+bedtools closest -d -a /home/marakulina/CTD/CTD_peaks_fantom_himorna_sorted.bed -b ctd_03_sicer_sorted.bed > results/f-ctd_03_sicer.bed
+
+
+
+
+sort -k1,1 -k2,2n nca_1_broad.bed > nca_1_broad_sorted.bed
+sort -k1,1 -k2,2n nca_1_narrow.bed > nca_1_narrow_sorted.bed
+sort -k1,1 -k2,2n nca_1_sicer.bed > nca_1_sicer_sorted.bed
+sort -k1,1 -k2,2n nca_2_broad.bed > nca_2_broad_sorted.bed
+sort -k1,1 -k2,2n nca_2_narrow.bed > nca_2_narrow_sorted.bed
+sort -k1,1 -k2,2n nca_2_sicer.bed > nca_2_sicer_sorted.bed
+
+bedtools closest -d -a nca_1_broad_sorted.bed -b /home/marakulina/CTD/CTD_peaks_fantom_himorna_sorted.bed > results/nca_1_broad-f.bed
+bedtools closest -d -a nca_1_narrow_sorted.bed -b /home/marakulina/CTD/CTD_peaks_fantom_himorna_sorted.bed > results/nca_1_narrow-f.bed
+bedtools closest -d -a nca_1_sicer_sorted.bed -b /home/marakulina/CTD/CTD_peaks_fantom_himorna_sorted.bed > results/nca_1_sicer-f.bed
+bedtools closest -d -a nca_2_broad_sorted.bed -b /home/marakulina/CTD/CTD_peaks_fantom_himorna_sorted.bed > results/nca_2_broad-f.bed
+bedtools closest -d -a nca_2_narrow_sorted.bed -b /home/marakulina/CTD/CTD_peaks_fantom_himorna_sorted.bed > results/nca_2_narrow-f.bed
+bedtools closest -d -a nca_2_sicer_sorted.bed -b /home/marakulina/CTD/CTD_peaks_fantom_himorna_sorted.bed > results/nca_2_sicer-f.bed
+
+bedtools closest -d -a /home/marakulina/CTD/CTD_peaks_fantom_himorna_sorted.bed -b nca_1_broad_sorted.bed > results/f-nca_1_broad.bed
+bedtools closest -d -a /home/marakulina/CTD/CTD_peaks_fantom_himorna_sorted.bed -b nca_1_narrow_sorted.bed > results/f-nca_1_narrow.bed
+bedtools closest -d -a /home/marakulina/CTD/CTD_peaks_fantom_himorna_sorted.bed -b nca_1_sicer_sorted.bed > results/f-nca_1_sicer.bed
+bedtools closest -d -a /home/marakulina/CTD/CTD_peaks_fantom_himorna_sorted.bed -b nca_2_broad_sorted.bed > results/f-nca_2_broad.bed
+bedtools closest -d -a /home/marakulina/CTD/CTD_peaks_fantom_himorna_sorted.bed -b nca_2_narrow_sorted.bed > results/f-nca_2_narrow.bed
+bedtools closest -d -a /home/marakulina/CTD/CTD_peaks_fantom_himorna_sorted.bed -b nca_2_sicer_sorted.bed > results/f-nca_2_sicer.bed
+
+
+
+
+
+

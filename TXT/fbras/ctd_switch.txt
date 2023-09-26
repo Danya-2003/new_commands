@@ -1,0 +1,224 @@
+cd ~/fasta/promoters
+
+
+bedtools getfasta -fi ~/fasta/hg38.fa -bed ~/ctd_promoters/ctd_result_01_minus.bed -fo ctd_result_01_minus.fasta
+bedtools getfasta -fi ~/fasta/hg38.fa -bed ~/ctd_promoters/ctd_result_03_minus.bed -fo ctd_result_03_minus.fasta
+bedtools getfasta -fi ~/fasta/hg38.fa -bed ~/ctd_promoters/ctd_result_01_plus.bed -fo ctd_result_01_plus.fasta
+bedtools getfasta -fi ~/fasta/hg38.fa -bed ~/ctd_promoters/ctd_result_03_plus.bed -fo ctd_result_03_plus.fasta
+
+bedtools getfasta -fi ~/fasta/hg38.fa -bed ~/ctd_promoters/ctd_cpm_01_minus.bed -fo ctd_cpm_01_minus.fasta
+bedtools getfasta -fi ~/fasta/hg38.fa -bed ~/ctd_promoters/ctd_cpm_03_minus.bed -fo ctd_cpm_03_minus.fasta
+bedtools getfasta -fi ~/fasta/hg38.fa -bed ~/ctd_promoters/ctd_cpm_01_plus.bed -fo ctd_cpm_01_plus.fasta
+bedtools getfasta -fi ~/fasta/hg38.fa -bed ~/ctd_promoters/ctd_cpm_03_plus.bed -fo ctd_cpm_03_plus.fasta
+
+bedtools getfasta -fi ~/fasta/hg38.fa -bed ~/ctd_promoters/ctd_cpm_minus.bed -fo ctd_cpm_minus.fasta
+bedtools getfasta -fi ~/fasta/hg38.fa -bed ~/ctd_promoters/ctd_cpm_plus.bed -fo ctd_cpm_plus.fasta
+bedtools getfasta -fi ~/fasta/hg38.fa -bed ~/ctd_promoters/ctd_result_minus.bed -fo ctd_result_minus.fasta
+bedtools getfasta -fi ~/fasta/hg38.fa -bed ~/ctd_promoters/ctd_result_plus.bed -fo ctd_result_plus.fasta
+
+cd ~/fasta/triplex
+
+triplexator  -ss ~/fasta/XR_007067344.1.exons.fa -ds ../promoters/ctd_result_01_minus.fasta -l 10 -e 20 -g 40 -o XR_007067344_g40_ctd_result_01_minus
+triplexator  -ss ~/fasta/XR_007067344.1.exons.fa -ds ../promoters/ctd_result_03_minus.fasta -l 10 -e 20 -g 40 -o XR_007067344_g40_ctd_result_03_minus
+triplexator  -ss ~/fasta/XR_007067344.1.exons.fa -ds ../promoters/ctd_result_01_plus.fasta -l 10 -e 20 -g 40 -o XR_007067344_g40_ctd_result_01_plus
+triplexator  -ss ~/fasta/XR_007067344.1.exons.fa -ds ../promoters/ctd_result_03_plus.fasta -l 10 -e 20 -g 40 -o XR_007067344_g40_ctd_result_03_plus
+
+triplexator  -ss ~/fasta/XR_007067344.1.exons.fa -ds ../promoters/ctd_cpm_01_minus.fasta -l 10 -e 20 -g 40 -o XR_007067344_g40_ctd_cpm_01_minus
+triplexator  -ss ~/fasta/XR_007067344.1.exons.fa -ds ../promoters/ctd_cpm_03_minus.fasta -l 10 -e 20 -g 40 -o XR_007067344_g40_ctd_cpm_03_minus
+triplexator  -ss ~/fasta/XR_007067344.1.exons.fa -ds ../promoters/ctd_cpm_01_plus.fasta -l 10 -e 20 -g 40 -o XR_007067344_g40_ctd_cpm_01_plus
+triplexator  -ss ~/fasta/XR_007067344.1.exons.fa -ds ../promoters/ctd_cpm_03_plus.fasta -l 10 -e 20 -g 40 -o XR_007067344_g40_ctd_cpm_03_plus
+
+triplexator  -ss ~/fasta/XR_007067344.1.exons.fa -ds ../promoters/ctd_cpm_minus.fasta -l 10 -e 20 -g 40 -o XR_007067344_g40_ctd_cpm_minus
+triplexator  -ss ~/fasta/XR_007067344.1.exons.fa -ds ../promoters/ctd_cpm_plus.fasta -l 10 -e 20 -g 40 -o XR_007067344_g40_ctd_cpm_plus
+triplexator  -ss ~/fasta/XR_007067344.1.exons.fa -ds ../promoters/ctd_result_minus.fasta -l 10 -e 20 -g 40 -o XR_007067344_g40_ctd_result_minus
+triplexator  -ss ~/fasta/XR_007067344.1.exons.fa -ds ../promoters/ctd_result_plus.fasta -l 10 -e 20 -g 40 -o XR_007067344_g40_ctd_result_plus
+
+
+
+triplexator  -ss ~/fasta/XR_007067344.1.exons.fa -ds ../promoters/ctd_result_01_minus.fasta -l 10 -e 20 -g 70 -o XR_007067344_g70_ctd_result_01_minus
+triplexator  -ss ~/fasta/XR_007067344.1.exons.fa -ds ../promoters/ctd_result_03_minus.fasta -l 10 -e 20 -g 70 -o XR_007067344_g70_ctd_result_03_minus
+triplexator  -ss ~/fasta/XR_007067344.1.exons.fa -ds ../promoters/ctd_result_01_plus.fasta -l 10 -e 20 -g 70 -o XR_007067344_g70_ctd_result_01_plus
+triplexator  -ss ~/fasta/XR_007067344.1.exons.fa -ds ../promoters/ctd_result_03_plus.fasta -l 10 -e 20 -g 70 -o XR_007067344_g70_ctd_result_03_plus
+
+triplexator  -ss ~/fasta/XR_007067344.1.exons.fa -ds ../promoters/ctd_cpm_01_minus.fasta -l 10 -e 20 -g 70 -o XR_007067344_g70_ctd_cpm_01_minus
+triplexator  -ss ~/fasta/XR_007067344.1.exons.fa -ds ../promoters/ctd_cpm_03_minus.fasta -l 10 -e 20 -g 70 -o XR_007067344_g70_ctd_cpm_03_minus
+triplexator  -ss ~/fasta/XR_007067344.1.exons.fa -ds ../promoters/ctd_cpm_01_plus.fasta -l 10 -e 20 -g 70 -o XR_007067344_g70_ctd_cpm_01_plus
+triplexator  -ss ~/fasta/XR_007067344.1.exons.fa -ds ../promoters/ctd_cpm_03_plus.fasta -l 10 -e 20 -g 70 -o XR_007067344_g70_ctd_cpm_03_plus
+
+triplexator  -ss ~/fasta/XR_007067344.1.exons.fa -ds ../promoters/ctd_cpm_minus.fasta -l 10 -e 20 -g 70 -o XR_007067344_g70_ctd_cpm_minus
+triplexator  -ss ~/fasta/XR_007067344.1.exons.fa -ds ../promoters/ctd_cpm_plus.fasta -l 10 -e 20 -g 70 -o XR_007067344_g70_ctd_cpm_plus
+triplexator  -ss ~/fasta/XR_007067344.1.exons.fa -ds ../promoters/ctd_result_minus.fasta -l 10 -e 20 -g 70 -o XR_007067344_g70_ctd_result_minus
+triplexator  -ss ~/fasta/XR_007067344.1.exons.fa -ds ../promoters/ctd_result_plus.fasta -l 10 -e 20 -g 70 -o XR_007067344_g70_ctd_result_plus
+
+
+
+
+triplexator  -ss ~/fasta/XR_007067345.1.exons.fa -ds ../promoters/ctd_result_01_minus.fasta -l 10 -e 20 -g 40 -o XR_007067345_g40_ctd_result_01_minus
+triplexator  -ss ~/fasta/XR_007067345.1.exons.fa -ds ../promoters/ctd_result_03_minus.fasta -l 10 -e 20 -g 40 -o XR_007067345_g40_ctd_result_03_minus
+triplexator  -ss ~/fasta/XR_007067345.1.exons.fa -ds ../promoters/ctd_result_01_plus.fasta -l 10 -e 20 -g 40 -o XR_007067345_g40_ctd_result_01_plus
+triplexator  -ss ~/fasta/XR_007067345.1.exons.fa -ds ../promoters/ctd_result_03_plus.fasta -l 10 -e 20 -g 40 -o XR_007067345_g40_ctd_result_03_plus
+
+triplexator  -ss ~/fasta/XR_007067345.1.exons.fa -ds ../promoters/ctd_cpm_01_minus.fasta -l 10 -e 20 -g 40 -o XR_007067345_g40_ctd_cpm_01_minus
+triplexator  -ss ~/fasta/XR_007067345.1.exons.fa -ds ../promoters/ctd_cpm_03_minus.fasta -l 10 -e 20 -g 40 -o XR_007067345_g40_ctd_cpm_03_minus
+triplexator  -ss ~/fasta/XR_007067345.1.exons.fa -ds ../promoters/ctd_cpm_01_plus.fasta -l 10 -e 20 -g 40 -o XR_007067345_g40_ctd_cpm_01_plus
+triplexator  -ss ~/fasta/XR_007067345.1.exons.fa -ds ../promoters/ctd_cpm_03_plus.fasta -l 10 -e 20 -g 40 -o XR_007067345_g40_ctd_cpm_03_plus
+
+triplexator  -ss ~/fasta/XR_007067345.1.exons.fa -ds ../promoters/ctd_cpm_minus.fasta -l 10 -e 20 -g 40 -o XR_007067345_g40_ctd_cpm_minus
+triplexator  -ss ~/fasta/XR_007067345.1.exons.fa -ds ../promoters/ctd_cpm_plus.fasta -l 10 -e 20 -g 40 -o XR_007067345_g40_ctd_cpm_plus
+triplexator  -ss ~/fasta/XR_007067345.1.exons.fa -ds ../promoters/ctd_result_minus.fasta -l 10 -e 20 -g 40 -o XR_007067345_g40_ctd_result_minus
+triplexator  -ss ~/fasta/XR_007067345.1.exons.fa -ds ../promoters/ctd_result_plus.fasta -l 10 -e 20 -g 40 -o XR_007067345_g40_ctd_result_plus
+
+
+
+triplexator  -ss ~/fasta/XR_007067345.1.exons.fa -ds ../promoters/ctd_result_01_minus.fasta -l 10 -e 20 -g 70 -o XR_007067345_g70_ctd_result_01_minus
+triplexator  -ss ~/fasta/XR_007067345.1.exons.fa -ds ../promoters/ctd_result_03_minus.fasta -l 10 -e 20 -g 70 -o XR_007067345_g70_ctd_result_03_minus
+triplexator  -ss ~/fasta/XR_007067345.1.exons.fa -ds ../promoters/ctd_result_01_plus.fasta -l 10 -e 20 -g 70 -o XR_007067345_g70_ctd_result_01_plus
+triplexator  -ss ~/fasta/XR_007067345.1.exons.fa -ds ../promoters/ctd_result_03_plus.fasta -l 10 -e 20 -g 70 -o XR_007067345_g70_ctd_result_03_plus
+
+triplexator  -ss ~/fasta/XR_007067345.1.exons.fa -ds ../promoters/ctd_cpm_01_minus.fasta -l 10 -e 20 -g 70 -o XR_007067345_g70_ctd_cpm_01_minus
+triplexator  -ss ~/fasta/XR_007067345.1.exons.fa -ds ../promoters/ctd_cpm_03_minus.fasta -l 10 -e 20 -g 70 -o XR_007067345_g70_ctd_cpm_03_minus
+triplexator  -ss ~/fasta/XR_007067345.1.exons.fa -ds ../promoters/ctd_cpm_01_plus.fasta -l 10 -e 20 -g 70 -o XR_007067345_g70_ctd_cpm_01_plus
+triplexator  -ss ~/fasta/XR_007067345.1.exons.fa -ds ../promoters/ctd_cpm_03_plus.fasta -l 10 -e 20 -g 70 -o XR_007067345_g70_ctd_cpm_03_plus
+
+triplexator  -ss ~/fasta/XR_007067345.1.exons.fa -ds ../promoters/ctd_cpm_minus.fasta -l 10 -e 20 -g 70 -o XR_007067345_g70_ctd_cpm_minus
+triplexator  -ss ~/fasta/XR_007067345.1.exons.fa -ds ../promoters/ctd_cpm_plus.fasta -l 10 -e 20 -g 70 -o XR_007067345_g70_ctd_cpm_plus
+triplexator  -ss ~/fasta/XR_007067345.1.exons.fa -ds ../promoters/ctd_result_minus.fasta -l 10 -e 20 -g 70 -o XR_007067345_g70_ctd_result_minus
+triplexator  -ss ~/fasta/XR_007067345.1.exons.fa -ds ../promoters/ctd_result_plus.fasta -l 10 -e 20 -g 70 -o XR_007067345_g70_ctd_result_plus
+
+sort -u -t \e -k1,1 XR_007067344_g40_ctd_result_01_minus.summary > unique.txt
+wc -l unique.txt >> file.txt
+sort -u -t \e -k1,1 XR_007067344_g40_ctd_result_03_minus.summary > unique.txt
+wc -l unique.txt >> file.txt
+sort -u -t \e -k1,1 XR_007067344_g40_ctd_result_minus.summary > unique.txt
+wc -l unique.txt >> file.txt
+sort -u -t \e -k1,1 XR_007067344_g40_ctd_cpm_01_minus.summary > unique.txt
+wc -l unique.txt >> file.txt
+sort -u -t \e -k1,1 XR_007067344_g40_ctd_cpm_03_minus.summary > unique.txt
+wc -l unique.txt >> file.txt
+sort -u -t \e -k1,1 XR_007067344_g40_ctd_cpm_minus.summary > unique.txt
+wc -l unique.txt >> file.txt
+sort -u -t \e -k1,1 XR_007067344_g40_ctd_result_01_plus.summary > unique.txt
+wc -l unique.txt >> file.txt
+sort -u -t \e -k1,1 XR_007067344_g40_ctd_result_03_plus.summary > unique.txt
+wc -l unique.txt >> file.txt
+sort -u -t \e -k1,1 XR_007067344_g40_ctd_result_plus.summary > unique.txt
+wc -l unique.txt >> file.txt
+sort -u -t \e -k1,1 XR_007067344_g40_ctd_cpm_01_plus.summary > unique.txt
+wc -l unique.txt >> file.txt
+sort -u -t \e -k1,1 XR_007067344_g40_ctd_cpm_03_plus.summary > unique.txt
+wc -l unique.txt >> file.txt
+sort -u -t \e -k1,1 XR_007067344_g40_ctd_cpm_plus.summary > unique.txt
+wc -l unique.txt >> file.txt
+
+sort -u -t \e -k1,1 XR_007067344_g70_ctd_result_01_minus.summary > unique.txt
+wc -l unique.txt >> file.txt
+sort -u -t \e -k1,1 XR_007067344_g70_ctd_result_03_minus.summary > unique.txt
+wc -l unique.txt >> file.txt
+sort -u -t \e -k1,1 XR_007067344_g70_ctd_result_minus.summary > unique.txt
+wc -l unique.txt >> file.txt
+sort -u -t \e -k1,1 XR_007067344_g70_ctd_cpm_01_minus.summary > unique.txt
+wc -l unique.txt >> file.txt
+sort -u -t \e -k1,1 XR_007067344_g70_ctd_cpm_03_minus.summary > unique.txt
+wc -l unique.txt >> file.txt
+sort -u -t \e -k1,1 XR_007067344_g70_ctd_cpm_minus.summary > unique.txt
+wc -l unique.txt >> file.txt
+sort -u -t \e -k1,1 XR_007067344_g70_ctd_result_01_plus.summary > unique.txt
+wc -l unique.txt >> file.txt
+sort -u -t \e -k1,1 XR_007067344_g70_ctd_result_03_plus.summary > unique.txt
+wc -l unique.txt >> file.txt
+sort -u -t \e -k1,1 XR_007067344_g70_ctd_result_plus.summary > unique.txt
+wc -l unique.txt >> file.txt
+sort -u -t \e -k1,1 XR_007067344_g70_ctd_cpm_01_plus.summary > unique.txt
+wc -l unique.txt >> file.txt
+sort -u -t \e -k1,1 XR_007067344_g70_ctd_cpm_03_plus.summary > unique.txt
+wc -l unique.txt >> file.txt
+sort -u -t \e -k1,1 XR_007067344_g70_ctd_cpm_plus.summary > unique.txt
+wc -l unique.txt >> file.txt
+
+sort -u -t \e -k1,1 XR_007067345_g40_ctd_result_01_minus.summary > unique.txt
+wc -l unique.txt >> file.txt
+sort -u -t \e -k1,1 XR_007067345_g40_ctd_result_03_minus.summary > unique.txt
+wc -l unique.txt >> file.txt
+sort -u -t \e -k1,1 XR_007067345_g40_ctd_result_minus.summary > unique.txt
+wc -l unique.txt >> file.txt
+sort -u -t \e -k1,1 XR_007067345_g40_ctd_cpm_01_minus.summary > unique.txt
+wc -l unique.txt >> file.txt
+sort -u -t \e -k1,1 XR_007067345_g40_ctd_cpm_03_minus.summary > unique.txt
+wc -l unique.txt >> file.txt
+sort -u -t \e -k1,1 XR_007067345_g40_ctd_cpm_minus.summary > unique.txt
+wc -l unique.txt >> file.txt
+sort -u -t \e -k1,1 XR_007067345_g40_ctd_result_01_plus.summary > unique.txt
+wc -l unique.txt >> file.txt
+sort -u -t \e -k1,1 XR_007067345_g40_ctd_result_03_plus.summary > unique.txt
+wc -l unique.txt >> file.txt
+sort -u -t \e -k1,1 XR_007067345_g40_ctd_result_plus.summary > unique.txt
+wc -l unique.txt >> file.txt
+sort -u -t \e -k1,1 XR_007067345_g40_ctd_cpm_01_plus.summary > unique.txt
+wc -l unique.txt >> file.txt
+sort -u -t \e -k1,1 XR_007067345_g40_ctd_cpm_03_plus.summary > unique.txt
+wc -l unique.txt >> file.txt
+sort -u -t \e -k1,1 XR_007067345_g40_ctd_cpm_plus.summary > unique.txt
+wc -l unique.txt >> file.txt
+
+sort -u -t \e -k1,1 XR_007067345_g70_ctd_result_01_minus.summary > unique.txt
+wc -l unique.txt >> file.txt
+sort -u -t \e -k1,1 XR_007067345_g70_ctd_result_03_minus.summary > unique.txt
+wc -l unique.txt >> file.txt
+sort -u -t \e -k1,1 XR_007067345_g70_ctd_result_minus.summary > unique.txt
+wc -l unique.txt >> file.txt
+sort -u -t \e -k1,1 XR_007067345_g70_ctd_cpm_01_minus.summary > unique.txt
+wc -l unique.txt >> file.txt
+sort -u -t \e -k1,1 XR_007067345_g70_ctd_cpm_03_minus.summary > unique.txt
+wc -l unique.txt >> file.txt
+sort -u -t \e -k1,1 XR_007067345_g70_ctd_cpm_minus.summary > unique.txt
+wc -l unique.txt >> file.txt
+sort -u -t \e -k1,1 XR_007067345_g70_ctd_result_01_plus.summary > unique.txt
+wc -l unique.txt >> file.txt
+sort -u -t \e -k1,1 XR_007067345_g70_ctd_result_03_plus.summary > unique.txt
+wc -l unique.txt >> file.txt
+sort -u -t \e -k1,1 XR_007067345_g70_ctd_result_plus.summary > unique.txt
+wc -l unique.txt >> file.txt
+sort -u -t \e -k1,1 XR_007067345_g70_ctd_cpm_01_plus.summary > unique.txt
+wc -l unique.txt >> file.txt
+sort -u -t \e -k1,1 XR_007067345_g70_ctd_cpm_03_plus.summary > unique.txt
+wc -l unique.txt >> file.txt
+sort -u -t \e -k1,1 XR_007067345_g70_ctd_cpm_plus.summary > unique.txt
+wc -l unique.txt >> file.txt
+
+
+wc -l ctd_result_01_minus.bed >> file.txt
+wc -l ctd_result_03_minus.bed >> file.txt
+wc -l ctd_result_minus.bed >> file.txt
+wc -l ctd_cpm_01_minus.bed >> file.txt
+wc -l ctd_cpm_03_minus.bed >> file.txt
+wc -l ctd_cpm_minus.bed >> file.txt
+wc -l ctd_result_01_plus.bed >> file.txt
+wc -l ctd_result_03_plus.bed >> file.txt
+wc -l ctd_result_plus.bed >> file.txt
+wc -l ctd_cpm_01_plus.bed >> file.txt
+wc -l ctd_cpm_03_plus.bed >> file.txt
+wc -l ctd_cpm_plus.bed >> file.txt
+
+
+computeMatrix scale-regions -S ~/deeptools_output/bamcompare/CTD-2587H24.5_01_H3K36me3.bigWig ~/deeptools_output/bamcompare/CTD-2587H24.5_03_H3K36me3.bigWig ~/deeptools_output/bamcompare/NCA_H3K36me3_1.bigWig ~/deeptools_output/bamcompare/NCA_H3K36me3_2.bigWig -R ~/ctd_promoters/ctd_result_01_minus.bed ~/ctd_promoters/ctd_result_01_plus.bed ~/ctd_promoters/ctd_result_03_minus.bed ~/ctd_promoters/ctd_result_03_plus.bed -o ~/deeptools_output/computematrix/CTD-2587H24.5_H3K36me3_promoters_result.mat.gz -a 2000 -b 2000
+
+plotProfile -m ~/deeptools_output/computematrix/CTD-2587H24.5_H3K36me3_promoters_result.mat.gz -out ~/deeptools_output/plotprofile/CTD-2587H24.5_H3K36me3_promoters_result_1.png --numPlotsPerRow 2 --plotTitle "CTD-2587H24.5_H3K36me3_promoters_result"
+
+plotProfile -m ~/deeptools_output/computematrix/CTD-2587H24.5_H3K36me3_promoters_result.mat.gz -out ~/deeptools_output/plotprofile/CTD-2587H24.5_H3K36me3_promoters_result_2.png --perGroup --numPlotsPerRow 2 --plotTitle "CTD-2587H24.5_H3K36me3_promoters_result"
+
+
+
+computeMatrix scale-regions -S ~/deeptools_output/bamcompare/CTD-2587H24.5_01_H3K36me3.bigWig ~/deeptools_output/bamcompare/CTD-2587H24.5_03_H3K36me3.bigWig ~/deeptools_output/bamcompare/NCA_H3K36me3_1.bigWig ~/deeptools_output/bamcompare/NCA_H3K36me3_2.bigWig -R ~/ctd_promoters/ctd_cpm_01_minus.bed ~/ctd_promoters/ctd_cpm_01_plus.bed ~/ctd_promoters/ctd_cpm_03_minus.bed ~/ctd_promoters/ctd_cpm_03_plus.bed -o ~/deeptools_output/computematrix/CTD-2587H24.5_H3K36me3_promoters_cpm.mat.gz -a 2000 -b 2000
+
+plotProfile -m ~/deeptools_output/computematrix/CTD-2587H24.5_H3K36me3_promoters_cpm.mat.gz -out ~/deeptools_output/plotprofile/CTD-2587H24.5_H3K36me3_promoters_cpm_1.png --numPlotsPerRow 2 --plotTitle "CTD-2587H24.5_H3K36me3_promoters_cpm"
+
+plotProfile -m ~/deeptools_output/computematrix/CTD-2587H24.5_H3K36me3_promoters_cpm.mat.gz -out ~/deeptools_output/plotprofile/CTD-2587H24.5_H3K36me3_promoters_cpm_2.png --perGroup --numPlotsPerRow 2 --plotTitle "CTD-2587H24.5_H3K36me3_promoters_cpm"
+
+
+
+computeMatrix scale-regions -S ~/deeptools_output/bamcompare/CTD-2587H24.5_01_H3K36me3.bigWig ~/deeptools_output/bamcompare/CTD-2587H24.5_03_H3K36me3.bigWig ~/deeptools_output/bamcompare/NCA_H3K36me3_1.bigWig ~/deeptools_output/bamcompare/NCA_H3K36me3_2.bigWig -R ~/ctd_promoters/ctd_cpm_minus.bed ~/ctd_promoters/ctd_cpm_plus.bed ~/ctd_promoters/ctd_result_minus.bed ~/ctd_promoters/ctd_result_plus.bed -o ~/deeptools_output/computematrix/CTD-2587H24.5_H3K36me3_promoters_cpm_result.mat.gz -a 2000 -b 2000
+
+plotProfile -m ~/deeptools_output/computematrix/CTD-2587H24.5_H3K36me3_promoters_cpm_result.mat.gz -out ~/deeptools_output/plotprofile/CTD-2587H24.5_H3K36me3_promoters_cpm_result_1.png --numPlotsPerRow 2 --plotTitle "CTD-2587H24.5_H3K36me3_promoters_cpm_result"
+
+plotProfile -m ~/deeptools_output/computematrix/CTD-2587H24.5_H3K36me3_promoters_cpm_result.mat.gz -out ~/deeptools_output/plotprofile/CTD-2587H24.5_H3K36me3_promoters_cpm_result_2.png --perGroup --numPlotsPerRow 2 --plotTitle "CTD-2587H24.5_H3K36me3_promoters_cpm_result"
+

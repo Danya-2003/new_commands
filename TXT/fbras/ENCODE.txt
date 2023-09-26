@@ -1,0 +1,127 @@
+### NHDF-Ad - fibroblasts of dermis
+
+### Input https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM733750
+
+wget -O nhdf_nca_1.bam "https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSM733750&format=file&file=GSM733750%5Fhg19%5FwgEncodeBroadHistoneNhdfadControlStdAlnRep1%2Ebam"
+wget -O nhdf_nca_2.bam "https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSM733750&format=file&file=GSM733750%5Fhg19%5FwgEncodeBroadHistoneNhdfadControlStdAlnRep2%2Ebam"
+
+### H3K9ac, hg19 https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM733709
+
+wget -O nhdf_h3k9ac_1.bam "https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSM733709&format=file&file=GSM733709%5Fhg19%5FwgEncodeBroadHistoneNhdfadH3k9acStdAlnRep1%2Ebam"
+wget -O nhdf_h3k9ac_2.bam "https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSM733709&format=file&file=GSM733709%5Fhg19%5FwgEncodeBroadHistoneNhdfadH3k9acStdAlnRep2%2Ebam"
+wget -O nhdf_h3k9ac_0_peaks.broadPeak.gz "https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSM733709&format=file&file=GSM733709%5Fhg19%5FwgEncodeBroadHistoneNhdfadH3k9acStdPk%2EbroadPeak%2Egz"
+
+
+### H3K9me3, hg19 https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM1003553
+
+wget -O nhdf_h3k9me3_0_peaks.broadPeak.gz "https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSM1003553&format=file&file=GSM1003553%5Fhg19%5FwgEncodeBroadHistoneNhdfadH3k09me3Pk%2EbroadPeak%2Egz"
+
+
+### H3K27ac, hg19 https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM733662
+
+wget -O nhdf_h3k27ac_1.bam "https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSM733662&format=file&file=GSM733662%5Fhg19%5FwgEncodeBroadHistoneNhdfadH3k27acStdAlnRep1%2Ebam"
+wget -O nhdf_h3k27ac_2.bam "https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSM733662&format=file&file=GSM733662%5Fhg19%5FwgEncodeBroadHistoneNhdfadH3k27acStdAlnRep2%2Ebam"
+wget -O nhdf_h3k27a_0_peaks.broadPeak.gz "https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSM733662&format=file&file=GSM733662%5Fhg19%5FwgEncodeBroadHistoneNhdfadH3k27acStdPk%2EbroadPeak%2Egz"
+
+
+### H3K36me3, hg19 https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM733733
+
+wget -O nhdf_h3k36me3_1.bam "https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSM733733&format=file&file=GSM733733%5Fhg19%5FwgEncodeBroadHistoneNhdfadH3k36me3StdAlnRep1%2Ebam"
+wget -O nhdf_h3k36me3_2.bam "https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSM733733&format=file&file=GSM733733%5Fhg19%5FwgEncodeBroadHistoneNhdfadH3k36me3StdAlnRep2%2Ebam"
+wget -O nhdf_h3k36me3_0_peaks.broadPeak.gz "https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSM733733&format=file&file=GSM733733%5Fhg19%5FwgEncodeBroadHistoneNhdfadH3k36me3StdPk%2EbroadPeak%2Egz"
+
+
+### H3K27me3, hg19 https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM733745
+
+wget -O nhdf_h3k27me3_1.bam "https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSM733745&format=file&file=GSM733745%5Fhg19%5FwgEncodeBroadHistoneNhdfadH3k27me3StdAlnRep1%2Ebam"
+wget -O nhdf_h3k27me3_2.bam "https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSM733745&format=file&file=GSM733745%5Fhg19%5FwgEncodeBroadHistoneNhdfadH3k27me3StdAlnRep2%2Ebam"
+wget -O nhdf_h3k27me3_0_peaks.broadPeak.gz "https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSM733745&format=file&file=GSM733745%5Fhg19%5FwgEncodeBroadHistoneNhdfadH3k27me3StdPk%2EbroadPeak%2Egz"
+
+
+### H3K4me3, hg19 https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM733650
+
+wget -O nhdf_h3k4me3_1.bam "https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSM733650&format=file&file=GSM733650%5Fhg19%5FwgEncodeBroadHistoneNhdfadH3k4me3StdAlnRep1%2Ebam"
+wget -O nhdf_h3k4me3_2.bam "https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSM733650&format=file&file=GSM733650%5Fhg19%5FwgEncodeBroadHistoneNhdfadH3k4me3StdAlnRep2%2Ebam"
+wget -O nhdf_h3k4me3_0_peaks.broadPeak.gz "https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSM733650&format=file&file=GSM733650%5Fhg19%5FwgEncodeBroadHistoneNhdfadH3k4me3StdPk%2EbroadPeak%2Egz"
+
+
+
+ngs.plot.r -G hg19 -R tss -C ~/encode/nhdf_h3k9ac_1.bam:~/encode/nhdf_nca_1.bam -O ../ngsplot_output/nhdf/nhdf_h3k9ac_1_nca_1.tss -T h3k9ac_1_nca_1
+ngs.plot.r -G hg19 -R tss -C ~/encode/nhdf_h3k9ac_2.bam:~/encode/nhdf_nca_1.bam -O ../ngsplot_output/nhdf/nhdf_h3k9ac_2_nca_1.tss -T h3k9ac_2_nca_1
+ngs.plot.r -G hg19 -R tss -C ~/encode/nhdf_h3k27ac_1.bam:~/encode/nhdf_nca_1.bam -O ../ngsplot_output/nhdf/nhdf_h3k27ac_1_nca_1.tss -T h3k27ac_1_nca_1
+ngs.plot.r -G hg19 -R tss -C ~/encode/nhdf_h3k27ac_2.bam:~/encode/nhdf_nca_1.bam -O ../ngsplot_output/nhdf/nhdf_h3k27ac_2_nca_1.tss -T h3k27ac_2_nca_1
+ngs.plot.r -G hg19 -R tss -C ~/encode/nhdf_h3k36me3_1.bam:~/encode/nhdf_nca_1.bam -O ../ngsplot_output/nhdf/nhdf_h3k36me3_1_nca_1.tss -T h3k36me3_1_nca_1
+ngs.plot.r -G hg19 -R tss -C ~/encode/nhdf_h3k36me3_2.bam:~/encode/nhdf_nca_1.bam -O ../ngsplot_output/nhdf/nhdf_h3k36me3_2_nca_1.tss -T h3k36me3_2_nca_1
+ngs.plot.r -G hg19 -R tss -C ~/encode/nhdf_h3k27me3_1.bam:~/encode/nhdf_nca_1.bam -O ../ngsplot_output/nhdf/nhdf_h3k27me3_1_nca_1.tss -T h3k27me3_1_nca_1
+ngs.plot.r -G hg19 -R tss -C ~/encode/nhdf_h3k27me3_2.bam:~/encode/nhdf_nca_1.bam -O ../ngsplot_output/nhdf/nhdf_h3k27me3_2_nca_1.tss -T h3k27me3_2_nca_1
+ngs.plot.r -G hg19 -R tss -C ~/encode/nhdf_h3k4me3_1.bam:~/encode/nhdf_nca_1.bam -O ../ngsplot_output/nhdf/nhdf_h3k4me3_1_nca_1.tss -T h3k4me3_1_nca_1
+ngs.plot.r -G hg19 -R tss -C ~/encode/nhdf_h3k4me3_2.bam:~/encode/nhdf_nca_1.bam -O ../ngsplot_output/nhdf/nhdf_h3k4me3_2_nca_1.tss -T h3k4me3_2_nca_1
+
+ngs.plot.r -G hg19 -R tss -C ~/encode/nhdf_h3k9ac_1.bam:~/encode/nhdf_nca_2.bam -O ../ngsplot_output/nhdf/nhdf_h3k9ac_1_nca_2.tss -T h3k9ac_1_nca_2
+ngs.plot.r -G hg19 -R tss -C ~/encode/nhdf_h3k9ac_2.bam:~/encode/nhdf_nca_2.bam -O ../ngsplot_output/nhdf/nhdf_h3k9ac_2_nca_2.tss -T h3k9ac_2_nca_2
+ngs.plot.r -G hg19 -R tss -C ~/encode/nhdf_h3k27ac_1.bam:~/encode/nhdf_nca_2.bam -O ../ngsplot_output/nhdf/nhdf_h3k27ac_1_nca_2.tss -T h3k27ac_1_nca_2
+ngs.plot.r -G hg19 -R tss -C ~/encode/nhdf_h3k27ac_2.bam:~/encode/nhdf_nca_2.bam -O ../ngsplot_output/nhdf/nhdf_h3k27ac_2_nca_2.tss -T h3k27ac_2_nca_2
+ngs.plot.r -G hg19 -R tss -C ~/encode/nhdf_h3k36me3_1.bam:~/encode/nhdf_nca_2.bam -O ../ngsplot_output/nhdf/nhdf_h3k36me3_1_nca_2.tss -T h3k36me3_1_nca_2
+ngs.plot.r -G hg19 -R tss -C ~/encode/nhdf_h3k36me3_2.bam:~/encode/nhdf_nca_2.bam -O ../ngsplot_output/nhdf/nhdf_h3k36me3_2_nca_2.tss -T h3k36me3_2_nca_2
+ngs.plot.r -G hg19 -R tss -C ~/encode/nhdf_h3k27me3_1.bam:~/encode/nhdf_nca_2.bam -O ../ngsplot_output/nhdf/nhdf_h3k27me3_1_nca_2.tss -T h3k27me3_1_nca_2
+ngs.plot.r -G hg19 -R tss -C ~/encode/nhdf_h3k27me3_2.bam:~/encode/nhdf_nca_2.bam -O ../ngsplot_output/nhdf/nhdf_h3k27me3_2_nca_2.tss -T h3k27me3_2_nca_2
+ngs.plot.r -G hg19 -R tss -C ~/encode/nhdf_h3k4me3_1.bam:~/encode/nhdf_nca_2.bam -O ../ngsplot_output/nhdf/nhdf_h3k4me3_1_nca_2.tss -T h3k4me3_1_nca_2
+ngs.plot.r -G hg19 -R tss -C ~/encode/nhdf_h3k4me3_2.bam:~/encode/nhdf_nca_2.bam -O ../ngsplot_output/nhdf/nhdf_h3k4me3_2_nca_2.tss -T h3k4me3_2_nca_2
+
+
+ngs.plot.r -G hg19 -R genebody -C ~/encode/nhdf_h3k9ac_1.bam:~/encode/nhdf_nca_1.bam -O ../ngsplot_output/nhdf/nhdf_h3k9ac_1_nca_1.genebody -T h3k9ac_1_nca_1
+ngs.plot.r -G hg19 -R genebody -C ~/encode/nhdf_h3k9ac_2.bam:~/encode/nhdf_nca_1.bam -O ../ngsplot_output/nhdf/nhdf_h3k9ac_2_nca_1.genebody -T h3k9ac_2_nca_1
+ngs.plot.r -G hg19 -R genebody -C ~/encode/nhdf_h3k27ac_1.bam:~/encode/nhdf_nca_1.bam -O ../ngsplot_output/nhdf/nhdf_h3k27ac_1_nca_1.genebody -T h3k27ac_1_nca_1
+ngs.plot.r -G hg19 -R genebody -C ~/encode/nhdf_h3k27ac_2.bam:~/encode/nhdf_nca_1.bam -O ../ngsplot_output/nhdf/nhdf_h3k27ac_2_nca_1.genebody -T h3k27ac_2_nca_1
+ngs.plot.r -G hg19 -R genebody -C ~/encode/nhdf_h3k36me3_1.bam:~/encode/nhdf_nca_1.bam -O ../ngsplot_output/nhdf/nhdf_h3k36me3_1_nca_1.genebody -T h3k36me3_1_nca_1
+ngs.plot.r -G hg19 -R genebody -C ~/encode/nhdf_h3k36me3_2.bam:~/encode/nhdf_nca_1.bam -O ../ngsplot_output/nhdf/nhdf_h3k36me3_2_nca_1.genebody -T h3k36me3_2_nca_1
+ngs.plot.r -G hg19 -R genebody -C ~/encode/nhdf_h3k27me3_1.bam:~/encode/nhdf_nca_1.bam -O ../ngsplot_output/nhdf/nhdf_h3k27me3_1_nca_1.genebody -T h3k27me3_1_nca_1
+ngs.plot.r -G hg19 -R genebody -C ~/encode/nhdf_h3k27me3_2.bam:~/encode/nhdf_nca_1.bam -O ../ngsplot_output/nhdf/nhdf_h3k27me3_2_nca_1.genebody -T h3k27me3_2_nca_1
+ngs.plot.r -G hg19 -R genebody -C ~/encode/nhdf_h3k4me3_1.bam:~/encode/nhdf_nca_1.bam -O ../ngsplot_output/nhdf/nhdf_h3k4me3_1_nca_1.genebody -T h3k4me3_1_nca_1
+ngs.plot.r -G hg19 -R genebody -C ~/encode/nhdf_h3k4me3_2.bam:~/encode/nhdf_nca_1.bam -O ../ngsplot_output/nhdf/nhdf_h3k4me3_2_nca_1.genebody -T h3k4me3_2_nca_1
+
+ngs.plot.r -G hg19 -R genebody -C ~/encode/nhdf_h3k9ac_1.bam:~/encode/nhdf_nca_2.bam -O ../ngsplot_output/nhdf/nhdf_h3k9ac_1_nca_2.genebody -T h3k9ac_1_nca_2
+ngs.plot.r -G hg19 -R genebody -C ~/encode/nhdf_h3k9ac_2.bam:~/encode/nhdf_nca_2.bam -O ../ngsplot_output/nhdf/nhdf_h3k9ac_2_nca_2.genebody -T h3k9ac_2_nca_2
+ngs.plot.r -G hg19 -R genebody -C ~/encode/nhdf_h3k27ac_1.bam:~/encode/nhdf_nca_2.bam -O ../ngsplot_output/nhdf/nhdf_h3k27ac_1_nca_2.genebody -T h3k27ac_1_nca_2
+ngs.plot.r -G hg19 -R genebody -C ~/encode/nhdf_h3k27ac_2.bam:~/encode/nhdf_nca_2.bam -O ../ngsplot_output/nhdf/nhdf_h3k27ac_2_nca_2.genebody -T h3k27ac_2_nca_2
+ngs.plot.r -G hg19 -R genebody -C ~/encode/nhdf_h3k36me3_1.bam:~/encode/nhdf_nca_2.bam -O ../ngsplot_output/nhdf/nhdf_h3k36me3_1_nca_2.genebody -T h3k36me3_1_nca_2
+ngs.plot.r -G hg19 -R genebody -C ~/encode/nhdf_h3k36me3_2.bam:~/encode/nhdf_nca_2.bam -O ../ngsplot_output/nhdf/nhdf_h3k36me3_2_nca_2.genebody -T h3k36me3_2_nca_2
+ngs.plot.r -G hg19 -R genebody -C ~/encode/nhdf_h3k27me3_1.bam:~/encode/nhdf_nca_2.bam -O ../ngsplot_output/nhdf/nhdf_h3k27me3_1_nca_2.genebody -T h3k27me3_1_nca_2
+ngs.plot.r -G hg19 -R genebody -C ~/encode/nhdf_h3k27me3_2.bam:~/encode/nhdf_nca_2.bam -O ../ngsplot_output/nhdf/nhdf_h3k27me3_2_nca_2.genebody -T h3k27me3_2_nca_2
+ngs.plot.r -G hg19 -R genebody -C ~/encode/nhdf_h3k4me3_1.bam:~/encode/nhdf_nca_2.bam -O ../ngsplot_output/nhdf/nhdf_h3k4me3_1_nca_2.genebody -T h3k4me3_1_nca_2
+ngs.plot.r -G hg19 -R genebody -C ~/encode/nhdf_h3k4me3_2.bam:~/encode/nhdf_nca_2.bam -O ../ngsplot_output/nhdf/nhdf_h3k4me3_2_nca_2.genebody -T h3k4me3_2_nca_2
+
+
+nhdf_h3k9ac_1.bam
+nhdf_h3k9ac_2.bam
+nhdf_h3k27ac_1.bam
+nhdf_h3k27ac_2.bam
+nhdf_h3k36me3_1.bam
+nhdf_h3k36me3_2.bam
+nhdf_h3k27me3_1.bam
+nhdf_h3k27me3_2.bam
+nhdf_h3k4me3_1.bam
+nhdf_h3k4me3_2.bam
+
+nhdf_h3k9ac_1_nca_1.tss
+nhdf_h3k9ac_2_nca_1.tss
+nhdf_h3k27ac_1_nca_1.tss
+nhdf_h3k27ac_2_nca_1.tss
+nhdf_h3k36me3_1_nca_1.tss
+nhdf_h3k36me3_2_nca_1.tss
+nhdf_h3k27me3_1_nca_1.tss
+nhdf_h3k27me3_2_nca_1.tss
+nhdf_h3k4me3_1_nca_1.tss
+nhdf_h3k4me3_2_nca_1.tss
+nhdf_h3k9ac_1_nca_2.tss
+nhdf_h3k9ac_2_nca_2.tss
+nhdf_h3k27ac_1_nca_2.tss
+nhdf_h3k27ac_2_nca_2.tss
+nhdf_h3k36me3_1_nca_2.tss
+nhdf_h3k36me3_2_nca_2.tss
+nhdf_h3k27me3_1_nca_2.tss
+nhdf_h3k27me3_2_nca_2.tss
+nhdf_h3k4me3_1_nca_2.tss
+nhdf_h3k4me3_2_nca_2.tss
+
+

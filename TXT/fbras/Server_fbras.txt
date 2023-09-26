@@ -1,0 +1,170 @@
+ssh marakulina@himorna.fbras.ru
+ssh marakulina@10.0.1.38
+200399
+
+https://github.com/orgs/hbctraining/repositories?type=all
+
+scp marakulina@10.0.1.38:/home/marakulina/chip_data/sambamba/C-1_.bam
+cp -R /data/budkina/chipseq_methylseq_rnaseq/chip_seq_data /data/marakulina/chip_fastq
+
+chmod u=rwx tests/test_produceTSSmaps.pl
+
+htop
+
+########### SCREEN
+
+screen -S marakulina
+commands
+Ctrl+A+D
+screen -r epifactors2
+screen -ls
+Ctrl+D - close
+screen -D 25480.deep2
+screen -XS 20680 quit
+killall SCREEN
+
+########### Lines numbering
+
+https://selectel.ru/blog/tutorials/linux-redirection/
+
+wc -l < file01.txt
+wc -l file01.txt
+wc -l file01.txt >> file.txt
+
+nano file.txt
+
+echo "newline" >> ~/file.txt
+
+sed 's/.*/[['&1']]/'
+
+###### sort unique rows in tables with space as delimiter
+
+awk -F" " '!_[$1]++'
+sort -u -t \e -k1,1 triplex_search.summary > unique.txt
+
+########### HIMORNA
+
+cd /data/mazurovev/all_marks/H3K9me3
+grep '^ENSG00000225470' lncRNA_peaks_gene_association.tsv | cut -f3 | sort | uniq >> ~/file.txt
+
+########### ANACONDA
+
+https://docs.anaconda.com/anaconda/install/linux/
+
+############ CONDA
+
+bash
+
+conda info --envs
+conda --version
+conda update
+
+conda create -n py2.7 python=2.7
+conda create -n deeptools python=3.9 numpy=1.8.0 scipy=0.17.0 py2bit=0.1.0 pyBigWig=0.2.1 pysam=0.8 matplotlib=1.4.0
+conda env remove -n py2
+conda env remove -n py2
+conda activate py2.7
+conda activate ngsplot
+conda activate test_env
+conda activate base
+conda deactivate
+
+
+
+
+conda install  r-base
+conda install  -c r r-essentials
+conda install -c r r
+
+conda config --describe channel_priority
+conda config --get channels
+conda config --set channel_priority flexible (true)
+conda config --set channel_priority strict (false)
+Go to your home directory and open .condarc in an editor. Go to channels and edit the priority:
+
+conda config --show channels
+conda config --show default_channels
+
+conda config --remove channels NOT_WANTED
+conda config --append channels CHANNEL_NAME
+conda config --add channels new_channel
+
+
+conda config --set allow_conda_downgrades true
+conda install conda=4.10.1
+
+conda install anaconda-clean
+anaconda-clean --yes
+
+
+############ NGS_PLOT
+https://github.com/shenlab-sinai/ngsplot
+
+tar xzvf ngsplot-2.61.tar.gz
+
+echo 'export PATH=~/ngs_plot/ngsplot/bin:$PATH' >>~/.bash_profile
+
+echo 'export NGSPLOT=~/ngs_plot/ngsplot' >>~/.bash_profile
+
+echo 'export PATH="$HOME/.local/bin:$PATH"' >>~/.bash_profile
+
+source ~/.bash_profile
+
+echo 'NGSPLOT=/home/marakulina/ngs_plot/ngsplot bash -c 'ngs.plot.r XXX'' >>~/.bash_profile
+mkdir
+nano ~/.bash_profile
+
+conda install -c bioconda r-ngsplotdb-hg38
+conda install r-ngsplotdb-hg38
+ngsplotdb.py install ngsplotdb_hg38_76_3.00.tar.gz
+
+
+R
+
+if (!require("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+BiocManager::install(version = "3.16")
+
+BiocManager::install("BSgenome")
+
+BiocManager::install("Rsamtools")
+
+BiocManager::install("ShortRead")
+
+q()
+
+
+############ ChIP-SEQ ANALYSIS
+
+https://hbctraining.github.io/Intro-to-ChIPseq/lessons/03_align_and_filtering.html
+
+https://www.sciencedirect.com/science/article/pii/S1046202320300591?via%3Dihub#b0100
+
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3431496/
+
+############ SAMBAMBA
+
+https://github.com/biod/sambamba/releases
+
+
+############ FILTERING OF RAW BAM
+
+
+samtools fixmate -@ 16  -m C-11.sorted.bam C-11.fixmate.bam
+samtools sort -@ 16  -o C-11.fixmate.positionsort.bam C-11.fixmate.bam
+samtools markdup -@ 24 -r -s  C-11.fixmate.positionsort.bam  C-11.dedup.bam 2> C-11.dedup.report
+samtools sort -@ 24 C-11.dedup.bam > C-11.sorted_for_index.bam
+samtools index C-11.sorted_for_index.bam
+
+
+
+############ BLACKLISTS
+
+
+wget -O GRCh38_V29.gtf "https://www.encodeproject.org/files/ENCFF159KBI/"
+wget -O blacklist_hg38.bed.gz "https://www.encodeproject.org/files/ENCFF356LFX/@@download/ENCFF356LFX.bed.gz"
+wget -O blacklist_hg19.bed.gz "https://www.encodeproject.org/files/ENCFF001TDO/@@download/ENCFF001TDO.bed.gz"
+
+gzip -d blacklist_hg38.bed.gz
+gzip -d blacklist_hg19.bed.gz
+

@@ -1,0 +1,141 @@
+git
+git --version
+git --help
+
+visual studio redactor
+
+Меняем директорию на рабочую командами dir (ls), cd
+Инициализируем гит 
+git init
+Создалась системная папка .git - записывается техническая информация, необходимая для системы контроля версий
+
+git status - статус проекта
+
+on branch master - находимся в мастер-ветке
+comits - фиксация версий
+
+git add smth.html
+git rm --cached smth.html
+git add.
+
+После изменения файлов необходимо заново добавлять их в гит
+
+git commit -m "first commit"
+ить гитом
+Корневая папка .gitignore - список папок, которые не сохраняются в гит. Саму папку нужно затрэкать гитом командой add
+
+
+git branch - в какой ветке находимся
+git branch test - создать новую ветку с названием test
+git branch -D test - удалить ветку test
+git branch readme
+git checkout readme - сменить ветку на readme
+ 
+git merge readme - сливает карент ветку с readme
+
+git-hub
+marakulina.da@phystech.edu
+Danya-2003
+Тгылщдлщьщятщ200399
+
+git config --global user.name ""
+git config --global user.email ""
+
+Залить проект на репозиторий:
+git remote add origin https://...
+git push -u origin master - вместо master название основной ветки
+
+при дальнейших изменениях:
+status
+add
+commit
+git push -m ''	
+
+Скачать проект:
+в директории для дальнейшей работы команда git clone https://
+
+git pull - забирают последние изменения с репозитория
+
+sudo apt-get update
+sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev software-properties-common libffi-dev 
+
+git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
+echo 'eval "$(rbenv init -)"' >> ~/.bashrc
+exec $SHELL
+
+git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+echo 'export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"' >> ~/.bashrc
+exec $SHELL
+
+rbenv install 2.5.9
+rbenv global 2.5.9
+
+ruby -v
+
+gem install bundler
+
+ruby  2.5.x installer for windows
+
+gem install bundler
+bundle install
+
+rake db:setup
+rake data:store_excel_to_db
+(опционально) rake data:load_expressions 
+
+rails s -- запуск сервера (на http://localhost:3000 )
+
+исправлять нужно xlsx файлы
+'public/public_data/current/EpiGenes_main.xlsx'
+'public/public_data/current/EpiGenes_complexes.xlsx'
+'public/public_data/current/EpiGenes_histones.xlsx'
+и после исправлений в таблицах выполнять
+rake db:drop
+rake db:setup
+rake data:store_excel_to_db
+
+
+rake -T  (посмотреть список всех команд)
+
+
+Содать новую версию табличек и пометить её актуальной
+cd public/public_data/
+cp -r v1.7.3 v1.8.0
+ln -s v1.8.0 current
+
+
+если последняя команда ln не сработает (на windows это возможно), то можно удалить папку v1.8.0 (чтобы не мешалась) и сделать вместо ссылки копию старой версии 1.7.3 в папку current:
+rm -r v1.8.0
+cp -r v1.7.3 current
+
+
+ID и hgnc approved symbol менять нельзя
+
+Cделать аналоги вот таких файлов:
+* https://github.com/autosome-ru/epifactors_webapp/blob/master/app/models/gene.rb
+* https://github.com/autosome-ru/epifactors_webapp/blob/master/app/controllers/genes_controller.rb
+* https://github.com/autosome-ru/epifactors_webapp/tree/master/app/views/genes
+
+Добавить пути к URL сюда: https://github.com/autosome-ru/epifactors_webapp/blob/master/config/routes.rb
+
+Спец.форматирование данных вот здесь:
+* https://github.com/autosome-ru/epifactors_webapp/blob/master/app/assets/javascripts/formatters.js
+
+Вот здесь странички, где тексты главной страницы итп:
+* https://github.com/autosome-ru/epifactors_webapp/tree/master/app/views/epigene_welcome
+
+Пересчёт экспрессии:
+* https://github.com/autosome-ru/epifactors_webapp/tree/master/lib/tasks
+можно запустить команду rake -T db чтобы глянуть, какие есть задачи
+
+
+Установка Ruby:
+
+1. https://nodejs.org/ru/
+	https://github.com/nodejs/node-gyp
+
+
+https://www.digitalocean.com/community/tutorials/how-to-install-ruby-on-rails-with-rbenv-on-ubuntu-18-04-ru
+https://gorails.com/setup/windows/10
+https://github.com/autosome-ru/epifactors_webapp/

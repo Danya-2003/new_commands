@@ -1,0 +1,277 @@
+###### Download
+
+mkdir fantom
+
+cd fantom
+
+  count: The values in the tables show the raw tag counts
+  tpm: The values in the tables show the noramlized TPM values based on the RLE method (in edgeR)
+  gene: Each row indicates a CAT gene
+  promoter: Each row indicates a promoter
+  None: non perturbed (reference) sample
+  ASO: knocked-down by ASO gapmers
+
+
+wget -O expression.count.gene.ASO.tsv.bz2 "https://fantom.gsc.riken.jp/6/datafiles/Core_FANTOM6/RELEASE_latest/expression_tables/Set1_human_dermal_fibroblasts/CAGE/expression.count.gene.nAnT-iCAGE.ASO.human_dermal_fibroblasts.tsv.bz2"
+
+wget -O expression.count.gene.None.tsv.bz2 "https://fantom.gsc.riken.jp/6/datafiles/Core_FANTOM6/RELEASE_latest/expression_tables/Set1_human_dermal_fibroblasts/CAGE/expression.count.gene.nAnT-iCAGE.None.human_dermal_fibroblasts.tsv.bz2"
+
+wget -O expression.count.promoter.ASO.tsv.bz2 "https://fantom.gsc.riken.jp/6/datafiles/Core_FANTOM6/RELEASE_latest/expression_tables/Set1_human_dermal_fibroblasts/CAGE/expression.count.promoter.nAnT-iCAGE.ASO.human_dermal_fibroblasts.tsv.bz2"
+
+wget -O expression.count.promoter.None.tsv.bz2 "https://fantom.gsc.riken.jp/6/datafiles/Core_FANTOM6/RELEASE_latest/expression_tables/Set1_human_dermal_fibroblasts/CAGE/expression.count.promoter.nAnT-iCAGE.None.human_dermal_fibroblasts.tsv.bz2"
+
+
+
+wget -O expression.tpm.gene.ASO.tsv.bz2 "https://fantom.gsc.riken.jp/6/datafiles/Core_FANTOM6/RELEASE_latest/expression_tables/Set1_human_dermal_fibroblasts/CAGE/expression.tpm.gene.nAnT-iCAGE.ASO.human_dermal_fibroblasts.tsv.bz2"
+
+wget -O expression.tpm.gene.None.tsv.bz2 "https://fantom.gsc.riken.jp/6/datafiles/Core_FANTOM6/RELEASE_latest/expression_tables/Set1_human_dermal_fibroblasts/CAGE/expression.tpm.gene.nAnT-iCAGE.None.human_dermal_fibroblasts.tsv.bz2"
+
+wget -O expression.tpm.promoter.ASO.tsv.bz2 "https://fantom.gsc.riken.jp/6/datafiles/Core_FANTOM6/RELEASE_latest/expression_tables/Set1_human_dermal_fibroblasts/CAGE/expression.tpm.promoter.nAnT-iCAGE.ASO.human_dermal_fibroblasts.tsv.bz2"
+
+wget -O expression.tpm.promoter.None.tsv.bz2 "https://fantom.gsc.riken.jp/6/datafiles/Core_FANTOM6/RELEASE_latest/expression_tables/Set1_human_dermal_fibroblasts/CAGE/expression.tpm.promoter.nAnT-iCAGE.None.human_dermal_fibroblasts.tsv.bz2"
+
+
+bzip2 -d expression.count.gene.ASO.tsv.bz2
+bzip2 -d expression.count.gene.None.tsv.bz2
+bzip2 -d expression.count.promoter.ASO.tsv.bz2
+bzip2 -d expression.count.promoter.None.tsv.bz2
+bzip2 -d expression.tpm.gene.ASO.tsv.bz2
+bzip2 -d expression.tpm.gene.None.tsv.bz2
+bzip2 -d expression.tpm.promoter.ASO.tsv.bz2
+bzip2 -d expression.tpm.promoter.None.tsv.bz2
+
+expression.tpm.gene.ASO.tsv
+expression.tpm.gene.None.tsv
+
+
+https://github.com/shenlab-sinai/ngsplot/wiki/HowtoMakeThingsRight
+
+config:
+
+C-1_.bam
+C-2_.bam
+C-3_.bam
+C-4_.bam
+C-5_.bam
+C-6_.bam
+C-7_.bam
+C-8_.bam
+C-9_.bam
+C-10.bam
+C-11.bam
+C-12.bam
+C-13.bam
+C-14.bam
+C-15.bam
+C-16.bam
+C-17.bam
+C-18.bam
+C-19.bam
+C-20.bam
+C-21.bam
+C-22.bam
+C-23.bam
+C-24.bam
+C-25.bam
+C-26.bam
+C-27.bam
+C-28.bam
+
+I-1_.bam
+I-2_.bam
+I-3_.bam
+I-4_.bam
+I-5_.bam
+I-6_.bam
+I-7_.bam
+I-8_.bam
+I-9_.bam
+I-10.bam
+I-11.bam
+I-12.bam
+I-13.bam
+I-14.bam
+I-15.bam
+I-16.bam
+I-17.bam
+I-18.bam
+I-19.bam
+I-20.bam
+I-21.bam
+I-22.bam
+I-23.bam
+I-24.bam
+I-25.bam
+I-26.bam
+I-27.bam
+I-28.bam
+
+C-1_.bam I-1_.bam
+C-2_.bam I-2_.bam
+C-3_.bam I-3_.bam
+C-4_.bam I-4_.bam
+C-5_.bam I-5_.bam
+C-6_.bam I-6_.bam
+C-7_.bam I-7_.bam
+C-8_.bam I-8_.bam
+C-9_.bam I-9_.bam
+C-10.bam I-10.bam
+C-11.bam I-11.bam
+C-12.bam I-12.bam
+C-13.bam I-13.bam
+C-14.bam I-14.bam
+C-15.bam I-15.bam
+C-16.bam I-16.bam
+C-17.bam I-17.bam
+C-18.bam I-18.bam
+C-19.bam I-19.bam
+C-20.bam I-20.bam
+C-21.bam I-21.bam
+C-22.bam I-22.bam
+C-23.bam I-23.bam
+C-24.bam I-24.bam
+C-25.bam I-25.bam
+C-26.bam I-26.bam
+C-27.bam I-27.bam
+C-28.bam I-28.bam
+
+ac_02_high
+ac_02_med_high
+ac_02_med_low
+ac_02_low
+ac_03_high
+ac_03_med_high
+ac_03_med_low
+ac_03_low
+
+fgd5_04_high
+fgd5_04_med_high
+fgd5_04_med_low
+fgd5_04_low
+fgd5_ad03_high
+fgd5_ad03_med_high
+fgd5_ad03_med_low
+fgd5_ad03_low
+
+fgd5_04_high
+fgd5_04_med_high
+fgd5_04_med_low
+fgd5_04_low
+fgd5_ad03_high
+fgd5_ad03_med_high
+fgd5_ad03_med_low
+fgd5_ad03_low
+
+rp11_03_high
+rp11_03_med_high
+rp11_03_med_low
+rp11_03_low
+rp11_05_high
+rp11_05_med_high
+rp11_05_med_low
+rp11_05_low
+
+mapkapk_06_high
+mapkapk_06_med_high
+mapkapk_06_med_low
+mapkapk_06_low
+mapkapk_ad04_high
+mapkapk_ad04_med_high
+mapkapk_ad04_med_low
+mapkapk_ad04_low
+
+ctd_01_high
+ctd_01_med_high
+ctd_01_med_low
+ctd_01_low
+ctd_03_high
+ctd_03_med_high
+ctd_03_med_low
+ctd_03_low
+
+nc_high
+nc_med_high
+nc_med_low
+nc_low
+
+###### bed
+
+
+ngs.plot.r -G hg38 -R bed -C config_bed/config.ctd.1.txt -O ../ngsplot_output/chip_sambamba/ctd_01.bed
+ngs.plot.r -G hg38 -R bed -C config_bed/config.ctd.2.txt -O ../ngsplot_output/chip_sambamba/ctd_03.bed
+ngs.plot.r -G hg38 -R bed -C config_bed/config.ctd.txt -O ../ngsplot_output/chip_sambamba/ctd.bed
+
+ngs.plot.r -G hg38 -R bed -C config_bed/config.fgd5.1.txt -O ../ngsplot_output/chip_sambamba/fgd5_04.bed
+ngs.plot.r -G hg38 -R bed -C config_bed/config.fgd5.2.txt -O ../ngsplot_output/chip_sambamba/fgd5_ad03.bed
+ngs.plot.r -G hg38 -R bed -C config_bed/config.fgd5.txt -O ../ngsplot_output/chip_sambamba/fgd5.bed
+
+ngs.plot.r -G hg38 -R bed -C config_bed/config.rp11.1.txt -O ../ngsplot_output/chip_sambamba/rp11_03.bed
+ngs.plot.r -G hg38 -R bed -C config_bed/config.rp11.2.txt -O ../ngsplot_output/chip_sambamba/rp11_05.bed
+ngs.plot.r -G hg38 -R bed -C config_bed/config.rp11.txt -O ../ngsplot_output/chip_sambamba/rp11.bed
+
+ngs.plot.r -G hg38 -R bed -C config_bed/config.ac.1.txt -O ../ngsplot_output/chip_sambamba/ac_02.bed
+ngs.plot.r -G hg38 -R bed -C config_bed/config.ac.2.txt -O ../ngsplot_output/chip_sambamba/ac_03.bed
+ngs.plot.r -G hg38 -R bed -C config_bed/config.ac.txt -O ../ngsplot_output/chip_sambamba/ac.bed
+
+ngs.plot.r -G hg38 -R bed -C config_bed/config.mapkapk27.1.txt -O ../ngsplot_output/chip_sambamba/mapkapk27_06.bed
+ngs.plot.r -G hg38 -R bed -C config_bed/config.mapkapk27.2.txt -O ../ngsplot_output/chip_sambamba/mapkapk27_ad04.bed
+ngs.plot.r -G hg38 -R bed -C config_bed/config.mapkapk27.txt -O ../ngsplot_output/chip_sambamba/mapkapk27.bed
+
+ngs.plot.r -G hg38 -R bed -C config_bed/config.mapkapk4.1.txt -O ../ngsplot_output/chip_sambamba/mapkapk4_06.bed
+ngs.plot.r -G hg38 -R bed -C config_bed/config.mapkapk4.2.txt -O ../ngsplot_output/chip_sambamba/mapkapk4_ad04.bed
+ngs.plot.r -G hg38 -R bed -C config_bed/config.mapkapk4.txt -O ../ngsplot_output/chip_sambamba/mapkapk4.bed
+
+###### genebody
+
+
+ngs.plot.r -G hg38 -R genebody -C config_txt/config.ctd.1.txt -O ../ngsplot_output/chip_refseq/ctd_01.genebody -D refseq
+ngs.plot.r -G hg38 -R genebody -C config_txt/config.ctd.2.txt -O ../ngsplot_output/chip_refseq/ctd_03.genebody -D refseq
+ngs.plot.r -G hg38 -R genebody -C config_txt/config.ctd.txt -O ../ngsplot_output/chip_refseq/ctd.genebody -D refseq
+
+ngs.plot.r -G hg38 -R genebody -C config_txt/config.fgd5.1.txt -O ../ngsplot_output/chip_refseq/fgd5_04.genebody -D refseq
+ngs.plot.r -G hg38 -R genebody -C config_txt/config.fgd5.2.txt -O ../ngsplot_output/chip_refseq/fgd5_ad03.genebody -D refseq
+ngs.plot.r -G hg38 -R genebody -C config_txt/config.fgd5.txt -O ../ngsplot_output/chip_refseq/fgd5.genebody -D refseq
+
+ngs.plot.r -G hg38 -R genebody -C config_txt/config.rp11.1.txt -O ../ngsplot_output/chip_refseq/rp11_03.genebody -D refseq
+ngs.plot.r -G hg38 -R genebody -C config_txt/config.rp11.2.txt -O ../ngsplot_output/chip_refseq/rp11_05.genebody -D refseq
+ngs.plot.r -G hg38 -R genebody -C config_txt/config.rp11.txt -O ../ngsplot_output/chip_refseq/rp11.genebody -D refseq
+
+ngs.plot.r -G hg38 -R genebody -C config_txt/config.ac.1.txt -O ../ngsplot_output/chip_refseq/ac_02.genebody -D refseq
+ngs.plot.r -G hg38 -R genebody -C config_txt/config.ac.2.txt -O ../ngsplot_output/chip_refseq/ac_03.genebody -D refseq
+ngs.plot.r -G hg38 -R genebody -C config_txt/config.ac.txt -O ../ngsplot_output/chip_refseq/ac.genebody -D refseq
+
+ngs.plot.r -G hg38 -R genebody -C config_txt/config.mapkapk27.1.txt -O ../ngsplot_output/chip_refseq/mapkapk27_06.genebody -D refseq
+ngs.plot.r -G hg38 -R genebody -C config_txt/config.mapkapk27.2.txt -O ../ngsplot_output/chip_refseq/mapkapk27_ad04.genebody -D refseq
+ngs.plot.r -G hg38 -R genebody -C config_txt/config.mapkapk27.txt -O ../ngsplot_output/chip_refseq/mapkapk27.genebody -D refseq
+
+ngs.plot.r -G hg38 -R genebody -C config_txt/config.mapkapk4.1.txt -O ../ngsplot_output/chip_refseq/mapkapk4_06.genebody -D refseq
+ngs.plot.r -G hg38 -R genebody -C config_txt/config.mapkapk4.2.txt -O ../ngsplot_output/chip_refseq/mapkapk4_ad04.genebody -D refseq
+ngs.plot.r -G hg38 -R genebody -C config_txt/config.mapkapk4.txt -O ../ngsplot_output/chip_refseq/mapkapk4.genebody -D refseq
+
+#
+
+ngs.plot.r -G hg38 -R genebody -C config_txt/config.ctd.1.txt -O ../ngsplot_output/chip_refseq/ctd_01.genebody -D ensembl
+ngs.plot.r -G hg38 -R genebody -C config_txt/config.ctd.2.txt -O ../ngsplot_output/chip_refseq/ctd_03.genebody -D ensembl
+ngs.plot.r -G hg38 -R genebody -C config_txt/config.ctd.txt -O ../ngsplot_output/chip_refseq/ctd.genebody -D ensembl
+
+ngs.plot.r -G hg38 -R genebody -C config_txt/config.fgd5.1.txt -O ../ngsplot_output/chip_refseq/fgd5_04.genebody -D ensembl
+ngs.plot.r -G hg38 -R genebody -C config_txt/config.fgd5.2.txt -O ../ngsplot_output/chip_refseq/fgd5_ad03.genebody -D ensembl
+ngs.plot.r -G hg38 -R genebody -C config_txt/config.fgd5.txt -O ../ngsplot_output/chip_refseq/fgd5.genebody -D ensembl
+
+ngs.plot.r -G hg38 -R genebody -C config_txt/config.rp11.1.txt -O ../ngsplot_output/chip_refseq/rp11_03.genebody -D ensembl
+ngs.plot.r -G hg38 -R genebody -C config_txt/config.rp11.2.txt -O ../ngsplot_output/chip_refseq/rp11_05.genebody -D ensembl
+ngs.plot.r -G hg38 -R genebody -C config_txt/config.rp11.txt -O ../ngsplot_output/chip_refseq/rp11.genebody -D ensembl
+
+ngs.plot.r -G hg38 -R genebody -C config_txt/config.ac.1.txt -O ../ngsplot_output/chip_refseq/ac_02.genebody -D ensembl
+ngs.plot.r -G hg38 -R genebody -C config_txt/config.ac.2.txt -O ../ngsplot_output/chip_refseq/ac_03.genebody -D ensembl
+ngs.plot.r -G hg38 -R genebody -C config_txt/config.ac.txt -O ../ngsplot_output/chip_refseq/ac.genebody -D ensembl
+
+ngs.plot.r -G hg38 -R genebody -C config_txt/config.mapkapk27.1.txt -O ../ngsplot_output/chip_refseq/mapkapk27_06.genebody -D ensembl
+ngs.plot.r -G hg38 -R genebody -C config_txt/config.mapkapk27.2.txt -O ../ngsplot_output/chip_refseq/mapkapk27_ad04.genebody -D ensembl
+ngs.plot.r -G hg38 -R genebody -C config_txt/config.mapkapk27.txt -O ../ngsplot_output/chip_refseq/mapkapk27.genebody -D ensembl
+
+ngs.plot.r -G hg38 -R genebody -C config_txt/config.mapkapk4.1.txt -O ../ngsplot_output/chip_refseq/mapkapk4_06.genebody -D ensembl
+ngs.plot.r -G hg38 -R genebody -C config_txt/config.mapkapk4.2.txt -O ../ngsplot_output/chip_refseq/mapkapk4_ad04.genebody -D ensembl
+ngs.plot.r -G hg38 -R genebody -C config_txt/config.mapkapk4.txt -O ../ngsplot_output/chip_refseq/mapkapk4.genebody -D ensembl
+
+

@@ -1,0 +1,33 @@
+wget -O rna_seq_L001_R1.fastq.gz 'https://fantom.gsc.riken.jp/6/datafiles/Core_FANTOM6/RELEASE_latest/raw_data/Set1_human_dermal_fibroblasts/RNA_Seq/seqs/RNhi10425_NoIndex_L001_R1_001.fastq.gz'
+wget -O rna_seq_L001_R2.fastq.gz 'https://fantom.gsc.riken.jp/6/datafiles/Core_FANTOM6/RELEASE_latest/raw_data/Set1_human_dermal_fibroblasts/RNA_Seq/seqs/RNhi10425_NoIndex_L001_R2_001.fastq.gz'
+wget -O rna_seq_L002_R1.fastq.gz 'https://fantom.gsc.riken.jp/6/datafiles/Core_FANTOM6/RELEASE_latest/raw_data/Set1_human_dermal_fibroblasts/RNA_Seq/seqs/RNhi10426_NoIndex_L002_R1_001.fastq.gz'
+wget -O rna_seq_L002_R2.fastq.gz 'https://fantom.gsc.riken.jp/6/datafiles/Core_FANTOM6/RELEASE_latest/raw_data/Set1_human_dermal_fibroblasts/RNA_Seq/seqs/RNhi10426_NoIndex_L002_R2_001.fastq.gz'
+
+wget 'https://hgdownload.cse.ucsc.edu/goldenpath/hg38/chromosomes/chr1.fa.gz'
+
+gzip -d chr1.fa.gz
+
+gzip -d rna_seq_L001_R1.fastq.gz
+gzip -d rna_seq_L001_R2.fastq.gz
+gzip -d rna_seq_L002_R1.fastq.gz
+gzip -d rna_seq_L002_R2.fastq.gz
+
+fastqc -o ~/fantom/fastqc -t 2 rna_seq_L001_R1.fastq
+fastqc -o ~/fantom/fastqc -t 4 rna_seq_L001_R2.fastq
+fastqc -o ~/fantom/fastqc -t 4 rna_seq_L002_R1.fastq
+fastqc -o ~/fantom/fastqc -t 4 rna_seq_L002_R2.fastq
+
+cd ~/hg38_index
+
+bowtie2-build ~/for_triplexator/hg38.fa hg38
+
+STAR --runThreadN 2 --runMode genomeGenerate --genomeDir chr1_hg38_index \
+--genomeFastaFiles /n/groups/hbctraining/intro_rnaseq_hpc/reference_data_ensembl38/Homo_sapiens.GRCh38.dna.chromosome.1.fa \
+--sjdbGTFfile /n/groups/hbctraining/intro_rnaseq_hpc/reference_data_ensembl38/Homo_sapiens.GRCh38.92.gtf \
+--sjdbOverhang 99
+
+
+
+
+
+

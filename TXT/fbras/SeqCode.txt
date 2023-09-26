@@ -1,0 +1,372 @@
+###### SETUP
+
+http://ldicrocelab.crg.eu/05_Docs/standalone/setup.php
+
+###### FILES FORMATES
+
+http://ldicrocelab.crg.eu/05_Docs/standalone/formats.php
+
+http://hgdownload.soe.ucsc.edu/goldenPath/hg38/database/
+
+ChromInfo
+wget "http://hgdownload.soe.ucsc.edu/goldenPath/hg38/database/chromInfo.txt.gz"
+
+gzip -d chromInfo.txt.gz
+
+RefGene
+wget "http://hgdownload.soe.ucsc.edu/goldenPath/hg38/database/refGene.txt.gz"
+
+gzip -d refGene.txt.gz
+
+###### SUBSTRACT INPUT
+
+??????
+https://www.biostars.org/p/278159/
+
+###### PRODUCE GENE PLOTS
+
+http://ldicrocelab.crg.eu/05_Docs/standalone/produceGENEplots.php
+
+bin/produceGENEplots -h
+-u : Generate a uniform plot with Y axis in [0-1].
+
+produceGENEplots [-bBfF <Rcolor>][-d][-g][-l <bp>][-s <reads>][-u][-w <bp>][-v][-x prefix][-h]
+	<chrom_info> <refGene.txt> <SAM file> <targetGenes.txt> <name> <length>
+
+bin/produceGENEplots -v -u -x ../seqcode_output/experiment ../ChromInfo.txt ../refGene.txt ../chip_data/sambamba/C-00.bam ../expr_refseq/all.txt X  2000
+
+
+
+###### ALL GENES
+
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-1_.bam ~/expr_refseq/all.txt FGD5-AS1_04_H3K9ac 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-2_.bam ~/expr_refseq/all.txt FGD5-AS1_AD03_H3K9ac 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-3_.bam ~/expr_refseq/all.txt EMX2OS_AD02_H3K9ac 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-4_.bam ~/expr_refseq/all.txt EMX2OS_AD04_H3K9ac 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-5_.bam ~/expr_refseq/all.txt AC005592.2_02_H3K9me3 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-6_.bam ~/expr_refseq/all.txt AC005592.2_03_H3K9me3 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-7_.bam ~/expr_refseq/all.txt RP11-398K22.12_03_H3K27ac 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-8_.bam ~/expr_refseq/all.txt RP11-398K22.12_05_H3K27ac 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-9_.bam ~/expr_refseq/all.txt CTD-2587H24.5_01_H3K36me3 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-10.bam ~/expr_refseq/all.txt CTD-2587H24.5_03_H3K36me3 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-11.bam ~/expr_refseq/all.txt JPX_05_H3K9me3 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-12.bam ~/expr_refseq/all.txt JPX_AD04_H3K9me3 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-13.bam ~/expr_refseq/all.txt MAPKAPK5-AS1_06_H3K27me3 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-14.bam ~/expr_refseq/all.txt MAPKAPK5-AS1_06_H3K4me3 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-15.bam ~/expr_refseq/all.txt MAPKAPK5-AS1_AD04_H3K27me3 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-16.bam ~/expr_refseq/all.txt MAPKAPK5-AS1_AD04_H3K4me3 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-17.bam ~/expr_refseq/all.txt NCA_H3K9me3_1 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-18.bam ~/expr_refseq/all.txt NCA_H3K9me3_2 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-19.bam ~/expr_refseq/all.txt NCA_H3K36me3_1 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-20.bam ~/expr_refseq/all.txt NCA_H3K36me3_2 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-21.bam ~/expr_refseq/all.txt NCA_H3K9ac_1 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-22.bam ~/expr_refseq/all.txt NCA_H3K9ac_2 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-23.bam ~/expr_refseq/all.txt NCA_H3K27ac_1 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-24.bam ~/expr_refseq/all.txt NCA_H3K27ac_2 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-25.bam ~/expr_refseq/all.txt NCA_H3K27me3_1 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-26.bam ~/expr_refseq/all.txt NCA_H3K4me3_1 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-27.bam ~/expr_refseq/all.txt NCA_H3K27me3_2 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-28.bam ~/expr_refseq/all.txt NCA_H3K4me3_2 2000
+
+bin/produceGENEplots -v -u -x ~/seqcode_output/input ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-1_.bam ~/expr_refseq/all.txt FGD5-AS1_04 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-2_.bam ~/expr_refseq/all.txt FGD5-AS1_AD03 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-3_.bam ~/expr_refseq/all.txt EMX2OS_AD02 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-4_.bam ~/expr_refseq/all.txt EMX2OS_AD04 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-5_.bam ~/expr_refseq/all.txt AC005592.2_02 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-6_.bam ~/expr_refseq/all.txt AC005592.2_03 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-7_.bam ~/expr_refseq/all.txt RP11-398K22.12_03 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-8_.bam ~/expr_refseq/all.txt RP11-398K22.12_05 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-9_.bam ~/expr_refseq/all.txt CTD-2587H24.5_01 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-10.bam ~/expr_refseq/all.txt CTD-2587H24.5_03 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-11.bam ~/expr_refseq/all.txt JPX_05 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-12.bam ~/expr_refseq/all.txt JPX_AD04 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-13.bam ~/expr_refseq/all.txt MAPKAPK5-AS1_06_1 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-14.bam ~/expr_refseq/all.txt MAPKAPK5-AS1_06_2 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-15.bam ~/expr_refseq/all.txt MAPKAPK5-AS1_AD04_1 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-16.bam ~/expr_refseq/all.txt MAPKAPK5-AS1_AD04_2 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-17.bam ~/expr_refseq/all.txt NCA_1 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-18.bam ~/expr_refseq/all.txt NCA_2 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-19.bam ~/expr_refseq/all.txt NCA_3 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-20.bam ~/expr_refseq/all.txt NCA_4 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-21.bam ~/expr_refseq/all.txt NCA_5 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-22.bam ~/expr_refseq/all.txt NCA_6 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-23.bam ~/expr_refseq/all.txt NCA_7 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-24.bam ~/expr_refseq/all.txt NCA_8 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-25.bam ~/expr_refseq/all.txt NCA_9 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-26.bam ~/expr_refseq/all.txt NCA_10 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-27.bam ~/expr_refseq/all.txt NCA_11 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-28.bam ~/expr_refseq/all.txt NCA_12 2000
+
+###### HIGH
+
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-1_.bam ~/expr_refseq/fgd5_04_high.txt FGD5-AS1_04_H3K9ac_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-2_.bam ~/expr_refseq/fgd5_ad03_high.txt FGD5-AS1_AD03_H3K9ac_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-5_.bam ~/expr_refseq/ac_02_high.txt AC005592.2_02_H3K9me3_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-6_.bam ~/expr_refseq/ac_03_high.txt AC005592.2_03_H3K9me3_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-7_.bam ~/expr_refseq/rp11_03_high.txt RP11-398K22.12_03_H3K27ac_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-8_.bam ~/expr_refseq/rp11_05_high.txt RP11-398K22.12_05_H3K27ac_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-9_.bam ~/expr_refseq/ctd_01_high.txt CTD-2587H24.5_01_H3K36me3_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-10.bam ~/expr_refseq/ctd_03_high.txt CTD-2587H24.5_03_H3K36me3_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-13.bam ~/expr_refseq/mapkapk_06_high.txt MAPKAPK5-AS1_06_H3K27me3_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-14.bam ~/expr_refseq/mapkapk_06_high.txt MAPKAPK5-AS1_06_H3K4me3_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-15.bam ~/expr_refseq/mapkapk_ad04_high.txt MAPKAPK5-AS1_AD04_H3K27me3_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-16.bam ~/expr_refseq/mapkapk_ad04_high.txt MAPKAPK5-AS1_AD04_H3K4me3_HIGH 2000
+
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-1_.bam ~/expr_refseq/fgd5_04_high.txt FGD5-AS1_04_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-2_.bam ~/expr_refseq/fgd5_ad03_high.txt FGD5-AS1_AD03_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-5_.bam ~/expr_refseq/ac_02_high.txt AC005592.2_02_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-6_.bam ~/expr_refseq/ac_03_high.txt AC005592.2_03_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-7_.bam ~/expr_refseq/rp11_03_high.txt RP11-398K22.12_03_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-8_.bam ~/expr_refseq/rp11_05_high.txt RP11-398K22.12_05_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-9_.bam ~/expr_refseq/ctd_01_high.txt CTD-2587H24.5_01_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-10.bam ~/expr_refseq/ctd_03_high.txt CTD-2587H24.5_03_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-13.bam ~/expr_refseq/mapkapk_06_high.txt MAPKAPK5-AS1_06_1_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-14.bam ~/expr_refseq/mapkapk_06_high.txt MAPKAPK5-AS1_06_2_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-15.bam ~/expr_refseq/mapkapk_ad04_high.txt MAPKAPK5-AS1_AD04_1_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-16.bam ~/expr_refseq/mapkapk_ad04_high.txt MAPKAPK5-AS1_AD04_2_HIGH 2000
+
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-17.bam ~/expr_refseq/nc_high.txt NCA_H3K9me3_1_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-18.bam ~/expr_refseq/nc_high.txt NCA_H3K9me3_2_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-19.bam ~/expr_refseq/nc_high.txt NCA_H3K36me3_1_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-20.bam ~/expr_refseq/nc_high.txt NCA_H3K36me3_2_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-21.bam ~/expr_refseq/nc_high.txt NCA_H3K9ac_1_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-22.bam ~/expr_refseq/nc_high.txt NCA_H3K9ac_2_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-23.bam ~/expr_refseq/nc_high.txt NCA_H3K27ac_1_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-24.bam ~/expr_refseq/nc_high.txt NCA_H3K27ac_2_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-25.bam ~/expr_refseq/nc_high.txt NCA_H3K27me3_1_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-26.bam ~/expr_refseq/nc_high.txt NCA_H3K4me3_1_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-27.bam ~/expr_refseq/nc_high.txt NCA_H3K27me3_2_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-28.bam ~/expr_refseq/nc_high.txt NCA_H3K4me3_2_HIGH 2000
+
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-17.bam ~/expr_refseq/nc_high.txt NCA_1_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-18.bam ~/expr_refseq/nc_high.txt NCA_2_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-19.bam ~/expr_refseq/nc_high.txt NCA_3_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-20.bam ~/expr_refseq/nc_high.txt NCA_4_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-21.bam ~/expr_refseq/nc_high.txt NCA_5_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-22.bam ~/expr_refseq/nc_high.txt NCA_6_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-23.bam ~/expr_refseq/nc_high.txt NCA_7_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-24.bam ~/expr_refseq/nc_high.txt NCA_8_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-25.bam ~/expr_refseq/nc_high.txt NCA_9_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-26.bam ~/expr_refseq/nc_high.txt NCA_10_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-27.bam ~/expr_refseq/nc_high.txt NCA_11_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-28.bam ~/expr_refseq/nc_high.txt NCA_12_HIGH 2000
+
+###### MED_HIGH
+
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/med_high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-1_.bam ~/expr_refseq/fgd5_04_med_high.txt FGD5-AS1_04_H3K9ac_MED_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/med_high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-2_.bam ~/expr_refseq/fgd5_ad03_med_high.txt FGD5-AS1_AD03_H3K9ac_MED_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/med_high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-5_.bam ~/expr_refseq/ac_02_med_high.txt AC005592.2_02_H3K9me3_MED_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/med_high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-6_.bam ~/expr_refseq/ac_03_med_high.txt AC005592.2_03_H3K9me3_MED_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/med_high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-7_.bam ~/expr_refseq/rp11_03_med_high.txt RP11-398K22.12_03_H3K27ac_MED_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/med_high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-8_.bam ~/expr_refseq/rp11_05_med_high.txt RP11-398K22.12_05_H3K27ac_MED_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/med_high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-9_.bam ~/expr_refseq/ctd_01_med_high.txt CTD-2587H24.5_01_H3K36me3_MED_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/med_high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-10.bam ~/expr_refseq/ctd_03_med_high.txt CTD-2587H24.5_03_H3K36me3_MED_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/med_high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-13.bam ~/expr_refseq/mapkapk_06_med_high.txt MAPKAPK5-AS1_06_H3K27me3_MED_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/med_high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-14.bam ~/expr_refseq/mapkapk_06_med_high.txt MAPKAPK5-AS1_06_H3K4me3_MED_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/med_high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-15.bam ~/expr_refseq/mapkapk_ad04_med_high.txt MAPKAPK5-AS1_AD04_H3K27me3_MED_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/med_high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-16.bam ~/expr_refseq/mapkapk_ad04_med_high.txt MAPKAPK5-AS1_AD04_H3K4me3_MED_HIGH 2000
+
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/med_high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-1_.bam ~/expr_refseq/fgd5_04_med_high.txt FGD5-AS1_04_MED_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/med_high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-2_.bam ~/expr_refseq/fgd5_ad03_med_high.txt FGD5-AS1_AD03_MED_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/med_high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-5_.bam ~/expr_refseq/ac_02_med_high.txt AC005592.2_02_MED_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/med_high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-6_.bam ~/expr_refseq/ac_03_med_high.txt AC005592.2_03_MED_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/med_high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-7_.bam ~/expr_refseq/rp11_03_med_high.txt RP11-398K22.12_03_MED_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/med_high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-8_.bam ~/expr_refseq/rp11_05_med_high.txt RP11-398K22.12_05_MED_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/med_high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-9_.bam ~/expr_refseq/ctd_01_med_high.txt CTD-2587H24.5_01_MED_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/med_high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-10.bam ~/expr_refseq/ctd_03_med_high.txt CTD-2587H24.5_03_MED_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/med_high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-13.bam ~/expr_refseq/mapkapk_06_med_high.txt MAPKAPK5-AS1_06_1_MED_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/med_high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-14.bam ~/expr_refseq/mapkapk_06_med_high.txt MAPKAPK5-AS1_06_2_MED_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/med_high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-15.bam ~/expr_refseq/mapkapk_ad04_med_high.txt MAPKAPK5-AS1_AD04_1_MED_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/med_high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-16.bam ~/expr_refseq/mapkapk_ad04_med_high.txt MAPKAPK5-AS1_AD04_2_MED_HIGH 2000
+
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/med_high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-17.bam ~/expr_refseq/nc_med_high.txt NCA_H3K9me3_1_MED_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/med_high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-18.bam ~/expr_refseq/nc_med_high.txt NCA_H3K9me3_2_MED_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/med_high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-19.bam ~/expr_refseq/nc_med_high.txt NCA_H3K36me3_1_MED_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/med_high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-20.bam ~/expr_refseq/nc_med_high.txt NCA_H3K36me3_2_MED_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/med_high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-21.bam ~/expr_refseq/nc_med_high.txt NCA_H3K9ac_1_MED_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/med_high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-22.bam ~/expr_refseq/nc_med_high.txt NCA_H3K9ac_2_MED_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/med_high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-23.bam ~/expr_refseq/nc_med_high.txt NCA_H3K27ac_1_MED_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/med_high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-24.bam ~/expr_refseq/nc_med_high.txt NCA_H3K27ac_2_MED_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/med_high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-25.bam ~/expr_refseq/nc_med_high.txt NCA_H3K27me3_1_MED_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/med_high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-26.bam ~/expr_refseq/nc_med_high.txt NCA_H3K4me3_1_MED_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/med_high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-27.bam ~/expr_refseq/nc_med_high.txt NCA_H3K27me3_2_MED_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/med_high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-28.bam ~/expr_refseq/nc_med_high.txt NCA_H3K4me3_2_MED_HIGH 2000
+
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/med_high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-17.bam ~/expr_refseq/nc_med_high.txt NCA_1_MED_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/med_high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-18.bam ~/expr_refseq/nc_med_high.txt NCA_2_MED_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/med_high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-19.bam ~/expr_refseq/nc_med_high.txt NCA_3_MED_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/med_high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-20.bam ~/expr_refseq/nc_med_high.txt NCA_4_MED_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/med_high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-21.bam ~/expr_refseq/nc_med_high.txt NCA_5_MED_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/med_high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-22.bam ~/expr_refseq/nc_med_high.txt NCA_6_MED_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/med_high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-23.bam ~/expr_refseq/nc_med_high.txt NCA_7_MED_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/med_high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-24.bam ~/expr_refseq/nc_med_high.txt NCA_8_MED_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/med_high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-25.bam ~/expr_refseq/nc_med_high.txt NCA_9_MED_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/med_high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-26.bam ~/expr_refseq/nc_med_high.txt NCA_10_MED_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/med_high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-27.bam ~/expr_refseq/nc_med_high.txt NCA_11_MED_HIGH 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/med_high ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-28.bam ~/expr_refseq/nc_med_high.txt NCA_12_MED_HIGH 2000
+
+###### MED_LOW
+
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/med_low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-1_.bam ~/expr_refseq/fgd5_04_med_low.txt FGD5-AS1_04_H3K9ac_MED_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/med_low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-2_.bam ~/expr_refseq/fgd5_ad03_med_low.txt FGD5-AS1_AD03_H3K9ac_MED_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/med_low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-5_.bam ~/expr_refseq/ac_02_med_low.txt AC005592.2_02_H3K9me3_MED_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/med_low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-6_.bam ~/expr_refseq/ac_03_med_low.txt AC005592.2_03_H3K9me3_MED_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/med_low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-7_.bam ~/expr_refseq/rp11_03_med_low.txt RP11-398K22.12_03_H3K27ac_MED_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/med_low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-8_.bam ~/expr_refseq/rp11_05_med_low.txt RP11-398K22.12_05_H3K27ac_MED_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/med_low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-9_.bam ~/expr_refseq/ctd_01_med_low.txt CTD-2587H24.5_01_H3K36me3_MED_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/med_low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-10.bam ~/expr_refseq/ctd_03_med_low.txt CTD-2587H24.5_03_H3K36me3_MED_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/med_low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-13.bam ~/expr_refseq/mapkapk_06_med_low.txt MAPKAPK5-AS1_06_H3K27me3_MED_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/med_low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-14.bam ~/expr_refseq/mapkapk_06_med_low.txt MAPKAPK5-AS1_06_H3K4me3_MED_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/med_low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-15.bam ~/expr_refseq/mapkapk_ad04_med_low.txt MAPKAPK5-AS1_AD04_H3K27me3_MED_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/med_low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-16.bam ~/expr_refseq/mapkapk_ad04_med_low.txt MAPKAPK5-AS1_AD04_H3K4me3_MED_LOW 2000
+
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/med_low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-1_.bam ~/expr_refseq/fgd5_04_med_low.txt FGD5-AS1_04_MED_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/med_low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-2_.bam ~/expr_refseq/fgd5_ad03_med_low.txt FGD5-AS1_AD03_MED_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/med_low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-5_.bam ~/expr_refseq/ac_02_med_low.txt AC005592.2_02_MED_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/med_low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-6_.bam ~/expr_refseq/ac_03_med_low.txt AC005592.2_03_MED_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/med_low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-7_.bam ~/expr_refseq/rp11_03_med_low.txt RP11-398K22.12_03_MED_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/med_low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-8_.bam ~/expr_refseq/rp11_05_med_low.txt RP11-398K22.12_05_MED_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/med_low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-9_.bam ~/expr_refseq/ctd_01_med_low.txt CTD-2587H24.5_01_MED_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/med_low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-10.bam ~/expr_refseq/ctd_03_med_low.txt CTD-2587H24.5_03_MED_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/med_low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-13.bam ~/expr_refseq/mapkapk_06_med_low.txt MAPKAPK5-AS1_06_1_MED_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/med_low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-14.bam ~/expr_refseq/mapkapk_06_med_low.txt MAPKAPK5-AS1_06_2_MED_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/med_low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-15.bam ~/expr_refseq/mapkapk_ad04_med_low.txt MAPKAPK5-AS1_AD04_1_MED_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/med_low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-16.bam ~/expr_refseq/mapkapk_ad04_med_low.txt MAPKAPK5-AS1_AD04_2_MED_LOW 2000
+
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/med_low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-17.bam ~/expr_refseq/nc_med_low.txt NCA_H3K9me3_1_MED_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/med_low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-18.bam ~/expr_refseq/nc_med_low.txt NCA_H3K9me3_2_MED_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/med_low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-19.bam ~/expr_refseq/nc_med_low.txt NCA_H3K36me3_1_MED_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/med_low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-20.bam ~/expr_refseq/nc_med_low.txt NCA_H3K36me3_2_MED_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/med_low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-21.bam ~/expr_refseq/nc_med_low.txt NCA_H3K9ac_1_MED_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/med_low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-22.bam ~/expr_refseq/nc_med_low.txt NCA_H3K9ac_2_MED_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/med_low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-23.bam ~/expr_refseq/nc_med_low.txt NCA_H3K27ac_1_MED_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/med_low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-24.bam ~/expr_refseq/nc_med_low.txt NCA_H3K27ac_2_MED_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/med_low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-25.bam ~/expr_refseq/nc_med_low.txt NCA_H3K27me3_1_MED_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/med_low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-26.bam ~/expr_refseq/nc_med_low.txt NCA_H3K4me3_1_MED_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/med_low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-27.bam ~/expr_refseq/nc_med_low.txt NCA_H3K27me3_2_MED_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/med_low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-28.bam ~/expr_refseq/nc_med_low.txt NCA_H3K4me3_2_MED_LOW 2000
+
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/med_low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-17.bam ~/expr_refseq/nc_med_low.txt NCA_1_MED_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/med_low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-18.bam ~/expr_refseq/nc_med_low.txt NCA_2_MED_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/med_low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-19.bam ~/expr_refseq/nc_med_low.txt NCA_3_MED_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/med_low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-20.bam ~/expr_refseq/nc_med_low.txt NCA_4_MED_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/med_low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-21.bam ~/expr_refseq/nc_med_low.txt NCA_5_MED_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/med_low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-22.bam ~/expr_refseq/nc_med_low.txt NCA_6_MED_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/med_low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-23.bam ~/expr_refseq/nc_med_low.txt NCA_7_MED_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/med_low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-24.bam ~/expr_refseq/nc_med_low.txt NCA_8_MED_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/med_low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-25.bam ~/expr_refseq/nc_med_low.txt NCA_9_MED_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/med_low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-26.bam ~/expr_refseq/nc_med_low.txt NCA_10_MED_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/med_low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-27.bam ~/expr_refseq/nc_med_low.txt NCA_11_MED_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/med_low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-28.bam ~/expr_refseq/nc_med_low.txt NCA_12_MED_LOW 2000
+
+###### LOW
+
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-1_.bam ~/expr_refseq/fgd5_04_low.txt FGD5-AS1_04_H3K9ac_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-2_.bam ~/expr_refseq/fgd5_ad03_low.txt FGD5-AS1_AD03_H3K9ac_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-5_.bam ~/expr_refseq/ac_02_low.txt AC005592.2_02_H3K9me3_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-6_.bam ~/expr_refseq/ac_03_low.txt AC005592.2_03_H3K9me3_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-7_.bam ~/expr_refseq/rp11_03_low.txt RP11-398K22.12_03_H3K27ac_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-8_.bam ~/expr_refseq/rp11_05_low.txt RP11-398K22.12_05_H3K27ac_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-9_.bam ~/expr_refseq/ctd_01_low.txt CTD-2587H24.5_01_H3K36me3_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-10.bam ~/expr_refseq/ctd_03_low.txt CTD-2587H24.5_03_H3K36me3_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-13.bam ~/expr_refseq/mapkapk_06_low.txt MAPKAPK5-AS1_06_H3K27me3_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-14.bam ~/expr_refseq/mapkapk_06_low.txt MAPKAPK5-AS1_06_H3K4me3_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-15.bam ~/expr_refseq/mapkapk_ad04_low.txt MAPKAPK5-AS1_AD04_H3K27me3_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-16.bam ~/expr_refseq/mapkapk_ad04_low.txt MAPKAPK5-AS1_AD04_H3K4me3_LOW 2000
+
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-1_.bam ~/expr_refseq/fgd5_04_low.txt FGD5-AS1_04_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-2_.bam ~/expr_refseq/fgd5_ad03_low.txt FGD5-AS1_AD03_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-5_.bam ~/expr_refseq/ac_02_low.txt AC005592.2_02_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-6_.bam ~/expr_refseq/ac_03_low.txt AC005592.2_03_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-7_.bam ~/expr_refseq/rp11_03_low.txt RP11-398K22.12_03_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-8_.bam ~/expr_refseq/rp11_05_low.txt RP11-398K22.12_05_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-9_.bam ~/expr_refseq/ctd_01_low.txt CTD-2587H24.5_01_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-10.bam ~/expr_refseq/ctd_03_low.txt CTD-2587H24.5_03_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-13.bam ~/expr_refseq/mapkapk_06_low.txt MAPKAPK5-AS1_06_1_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-14.bam ~/expr_refseq/mapkapk_06_low.txt MAPKAPK5-AS1_06_2_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-15.bam ~/expr_refseq/mapkapk_ad04_low.txt MAPKAPK5-AS1_AD04_1_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-16.bam ~/expr_refseq/mapkapk_ad04_low.txt MAPKAPK5-AS1_AD04_2_LOW 2000
+
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-17.bam ~/expr_refseq/nc_low.txt NCA_H3K9me3_1_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-18.bam ~/expr_refseq/nc_low.txt NCA_H3K9me3_2_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-19.bam ~/expr_refseq/nc_low.txt NCA_H3K36me3_1_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-20.bam ~/expr_refseq/nc_low.txt NCA_H3K36me3_2_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-21.bam ~/expr_refseq/nc_low.txt NCA_H3K9ac_1_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-22.bam ~/expr_refseq/nc_low.txt NCA_H3K9ac_2_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-23.bam ~/expr_refseq/nc_low.txt NCA_H3K27ac_1_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-24.bam ~/expr_refseq/nc_low.txt NCA_H3K27ac_2_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-25.bam ~/expr_refseq/nc_low.txt NCA_H3K27me3_1_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-26.bam ~/expr_refseq/nc_low.txt NCA_H3K4me3_1_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-27.bam ~/expr_refseq/nc_low.txt NCA_H3K27me3_2_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/experiment/low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-28.bam ~/expr_refseq/nc_low.txt NCA_H3K4me3_2_LOW 2000
+
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-17.bam ~/expr_refseq/nc_low.txt NCA_1_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-18.bam ~/expr_refseq/nc_low.txt NCA_2_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-19.bam ~/expr_refseq/nc_low.txt NCA_3_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-20.bam ~/expr_refseq/nc_low.txt NCA_4_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-21.bam ~/expr_refseq/nc_low.txt NCA_5_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-22.bam ~/expr_refseq/nc_low.txt NCA_6_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-23.bam ~/expr_refseq/nc_low.txt NCA_7_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-24.bam ~/expr_refseq/nc_low.txt NCA_8_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-25.bam ~/expr_refseq/nc_low.txt NCA_9_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-26.bam ~/expr_refseq/nc_low.txt NCA_10_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-27.bam ~/expr_refseq/nc_low.txt NCA_11_LOW 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/input/low ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/I-28.bam ~/expr_refseq/nc_low.txt NCA_12_LOW 2000
+
+
+################
+
+bin/findPeaks -v -x ~/seqcode_output/ex/findPeaks ~/ChromInfo.txt ~/chip_data/sambamba/C-9_.bam CTD-2587H24.5_01_H3K36me3
+bin/findPeaks -v -x ~/seqcode_output/ex/findPeaks ~/ChromInfo.txt ~/chip_data/sambamba/C-10.bam CTD-2587H24.5_03_H3K36me3
+bin/findPeaks -v -x ~/seqcode_output/ex/findPeaks ~/ChromInfo.txt ~/chip_data/sambamba/C-19.bam NCA_H3K36me3_1
+bin/findPeaks -v -x ~/seqcode_output/ex/findPeaks ~/ChromInfo.txt ~/chip_data/sambamba/C-20.bam NCA_H3K36me3_2
+
+################
+
+bin/genomeDistribution -x ~/seqcode_output/ex/genomeDistribution ~/ChromInfo.txt ~/refGene.txt ~/seqcode_output/ex/findPeaks/CTD-2587H24.5_01_H3K36me3.bed CTD-2587H24.5_01_H3K36me3_det
+bin/genomeDistribution -x ~/seqcode_output/ex/genomeDistribution ~/ChromInfo.txt ~/refGene.txt ~/seqcode_output/ex/findPeaks/NCA_H3K36me3_1.bed NCA_H3K36me3_1_det
+
+################
+
+bin/matchpeaks -v -x ~/seqcode_output/ex ~/seqcode_output/ex/findPeaks/CTD-2587H24.5_01_H3K36me3.bed  ~/chip_data/sicer/C-9_-W200-G600-FDR0.05-island.bed CTD_01_seqcode CTD_01_sicer
+
+################
+
+bin/matchpeaksgenes -u 2500  ~/seqcode_output/ex/findPeaks/CTD-2587H24.5_01_H3K36me3.bed ~/refGene.txt > ~/seqcode_output/ex/CTD_01_H3K36me3_RefSeq_genes.txt
+
+################
+
+
+
+
+
+bin/produceTESmaps -v -u -x ~/seqcode_output/ex/plots ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-9_.bam ~/expr_refseq/all.txt CTD-2587H24.5_01_H3K36me3 2000
+bin/produceTESmaps -v -u -x ~/seqcode_output/ex/plots ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-20.bam ~/expr_refseq/all.txt NCA_H3K36me3_2 2000
+
+bin/produceTESplots -v -u -x ~/seqcode_output/ex/plots ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-9_.bam ~/expr_refseq/all.txt CTD-2587H24.5_01_H3K36me3 2000
+bin/produceTESplots -v -u -x ~/seqcode_output/ex/plots ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-20.bam ~/expr_refseq/all.txt NCA_H3K36me3_2 2000
+
+
+bin/produceGENEmaps -v -u -x ~/seqcode_output/ex/plots ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-9_.bam ~/expr_refseq/all.txt CTD-2587H24.5_01_H3K36me3 2000
+bin/produceGENEmaps -v -u -x ~/seqcode_output/ex/plots ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-20.bam ~/expr_refseq/all.txt NCA_H3K36me3_2 2000
+
+bin/produceGENEplots -v -u -x ~/seqcode_output/ex/plots ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-9_.bam ~/expr_refseq/all.txt CTD-2587H24.5_01_H3K36me3 2000
+bin/produceGENEplots -v -u -x ~/seqcode_output/ex/plots ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-20.bam ~/expr_refseq/all.txt NCA_H3K36me3_2 2000
+
+
+bin/produceTSSmaps -v -u -x ~/seqcode_output/ex/plots ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-9_.bam ~/expr_refseq/all.txt CTD-2587H24.5_01_H3K36me3 2000
+bin/produceTSSmaps -v -u -x ~/seqcode_output/ex/plots ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-20.bam ~/expr_refseq/all.txt NCA_H3K36me3_2 2000
+
+bin/produceTSSplots -v -u -x ~/seqcode_output/ex/plots ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-9_.bam ~/expr_refseq/all.txt CTD-2587H24.5_01_H3K36me3 2000
+bin/produceTSSplots -v -u -x ~/seqcode_output/ex/plots ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-20.bam ~/expr_refseq/all.txt NCA_H3K36me3_2 
+
+
+bin/producePEAKmaps -v -u -x ~/seqcode_output/ex/plots ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-9_.bam ~/expr_refseq/all.txt CTD-2587H24.5_01_H3K36me3 2000
+
+bin/producePEAKmaps -v -u -x ~/seqcode_output/ex/plots ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-20.bam ~/expr_refseq/all.txt NCA_H3K36me3_2 2000
+
+bin/producePEAKplots -v -u -x ~/seqcode_output/ex/plots ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-9_.bam ~/expr_refseq/all.txt CTD-2587H24.5_01_H3K36me3 2000
+
+bin/producePEAKplots -v -u -x ~/seqcode_output/ex/plots ~/ChromInfo.txt ~/refGene.txt ~/chip_data/sambamba/C-20.bam ~/expr_refseq/all.txt NCA_H3K36me3_2 2000
+
+

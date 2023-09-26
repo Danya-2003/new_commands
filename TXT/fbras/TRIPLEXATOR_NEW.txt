@@ -1,0 +1,516 @@
+TRIPLEXATOR_NEW
+https://docs.google.com/document/d/1lSvl85OHygOxcCTl54Kp-4FOOtXxk1HkWdWVNjLIaKM/edit
+
+
+###### DOWNLOAD FASTA OF HUMAN GENOME AND CTD TRANSCRIPT
+https://www.ncbi.nlm.nih.gov/genome/guide/human/
+http://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/
+
+wget -O hg38.fna.gz 'https://ftp.ncbi.nlm.nih.gov/refseq/H_sapiens/annotation/GRCh38_latest/refseq_identifiers/GRCh38_latest_genomic.fna.gz'
+
+gzip -d hg38.fna.gz
+
+
+###### GET FASTA https://bedtools.readthedocs.io/en/latest/content/tools/getfasta.html
+
+bedtools getfasta [OPTIONS] -fi <input FASTA> -bed <BED/GFF/VCF>
+
+cd ~/for_triplexator/promoters_fasta_new
+
+
+wc -l ~/for_triplexator/promoters_bed/ctd_deg.bed >> file.txt
+wc -l ~/for_triplexator/promoters_bed/ctd_deg_plus.bed >> file.txt
+wc -l ~/for_triplexator/promoters_bed/ctd_deg_minus.bed >> file.txt
+wc -l ~/for_triplexator/promoters_bed/ctd_undeg.bed >> file.txt
+
+wc -l ~/for_triplexator/promoters_bed/ctd_switch.bed >> file.txt
+
+wc -l ~/for_triplexator/promoters_bed/ctd_switch_01.bed >> file.txt
+wc -l ~/for_triplexator/promoters_bed/ctd_switch_minus_01.bed >> file.txt
+wc -l ~/for_triplexator/promoters_bed/ctd_switch_plus_01.bed >> file.txt
+
+wc -l ~/for_triplexator/promoters_bed/ctd_switch_03.bed >> file.txt
+wc -l ~/for_triplexator/promoters_bed/ctd_switch_minus_03.bed >> file.txt
+wc -l ~/for_triplexator/promoters_bed/ctd_switch_plus_03.bed >> file.txt
+
+wc -l ~/for_triplexator/promoters_bed/ctd_unswitch.bed >> file.txt
+wc -l ~/for_triplexator/promoters_bed/ctd_unswitch_01.bed >> file.txt
+wc -l ~/for_triplexator/promoters_bed/ctd_unswitch_03.bed >> file.txt
+
+
+bedtools getfasta -fi ~/for_triplexator/hg38.fa -bed ~/for_triplexator/promoters_bed/ctd_deg.bed -fo ctd_deg.fasta
+bedtools getfasta -fi ~/for_triplexator/hg38.fa -bed ~/for_triplexator/promoters_bed/ctd_deg_plus.bed -fo ctd_deg_plus.fasta
+bedtools getfasta -fi ~/for_triplexator/hg38.fa -bed ~/for_triplexator/promoters_bed/ctd_deg_minus.bed -fo ctd_deg_minus.fasta
+bedtools getfasta -fi ~/for_triplexator/hg38.fa -bed ~/for_triplexator/promoters_bed/ctd_undeg.bed -fo ctd_undeg.fasta
+
+bedtools getfasta -fi ~/for_triplexator/hg38.fa -bed ~/for_triplexator/promoters_bed/ctd_switch.bed -fo ctd_switch.fasta
+
+bedtools getfasta -fi ~/for_triplexator/hg38.fa -bed ~/for_triplexator/promoters_bed/ctd_switch_01.bed -fo ctd_switch_01.fasta
+bedtools getfasta -fi ~/for_triplexator/hg38.fa -bed ~/for_triplexator/promoters_bed/ctd_switch_minus_01.bed -fo ctd_switch_minus_01.fasta
+bedtools getfasta -fi ~/for_triplexator/hg38.fa -bed ~/for_triplexator/promoters_bed/ctd_switch_plus_01.bed -fo ctd_switch_plus_01.fasta
+
+bedtools getfasta -fi ~/for_triplexator/hg38.fa -bed ~/for_triplexator/promoters_bed/ctd_switch_03.bed -fo ctd_switch_03.fasta
+bedtools getfasta -fi ~/for_triplexator/hg38.fa -bed ~/for_triplexator/promoters_bed/ctd_switch_minus_03.bed -fo ctd_switch_minus_03.fasta
+bedtools getfasta -fi ~/for_triplexator/hg38.fa -bed ~/for_triplexator/promoters_bed/ctd_switch_plus_03.bed -fo ctd_switch_plus_03.fasta
+
+bedtools getfasta -fi ~/for_triplexator/hg38.fa -bed ~/for_triplexator/promoters_bed/ctd_unswitch.bed -fo ctd_unswitch.fasta
+bedtools getfasta -fi ~/for_triplexator/hg38.fa -bed ~/for_triplexator/promoters_bed/ctd_unswitch_01.bed -fo ctd_unswitch_01.fasta
+bedtools getfasta -fi ~/for_triplexator/hg38.fa -bed ~/for_triplexator/promoters_bed/ctd_unswitch_03.bed -fo ctd_unswitch_03.fasta
+
+
+cd ~/for_triplexator/triplex/ENST00000591665.1/g40
+
+triplexator  -ss ~/for_triplexator/ENST00000591665.1.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_deg.fasta -l 10 -e 20 -g 40 -od ~/for_triplexator/triplex/ENST00000591665.1/g40 -o ctd_deg
+triplexator  -ss ~/for_triplexator/ENST00000591665.1.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_deg_plus.fasta -l 10 -e 20 -g 40 -od ~/for_triplexator/triplex/ENST00000591665.1/g40 -o ctd_deg_plus
+triplexator  -ss ~/for_triplexator/ENST00000591665.1.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_deg_minus.fasta -l 10 -e 20 -g 40 -od ~/for_triplexator/triplex/ENST00000591665.1/g40 -o ctd_deg_minus
+triplexator  -ss ~/for_triplexator/ENST00000591665.1.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_undeg.fasta -l 10 -e 20 -g 40 -od ~/for_triplexator/triplex/ENST00000591665.1/g40 -o ctd_undeg
+
+triplexator  -ss ~/for_triplexator/ENST00000591665.1.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_switch.fasta -l 10 -e 20 -g 40 -od ~/for_triplexator/triplex/ENST00000591665.1/g40 -o ctd_switch
+
+triplexator  -ss ~/for_triplexator/ENST00000591665.1.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_switch_01.fasta -l 10 -e 20 -g 40 -od ~/for_triplexator/triplex/ENST00000591665.1/g40 -o ctd_switch_01
+triplexator  -ss ~/for_triplexator/ENST00000591665.1.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_switch_minus_01.fasta -l 10 -e 20 -g 40 -od ~/for_triplexator/triplex/ENST00000591665.1/g40 -o ctd_switch_minus_01
+triplexator  -ss ~/for_triplexator/ENST00000591665.1.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_switch_plus_01.fasta -l 10 -e 20 -g 40 -od ~/for_triplexator/triplex/ENST00000591665.1/g40 -o ctd_switch_plus_01
+
+triplexator  -ss ~/for_triplexator/ENST00000591665.1.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_switch_03.fasta -l 10 -e 20 -g 40 -od ~/for_triplexator/triplex/ENST00000591665.1/g40 -o ctd_switch_03
+triplexator  -ss ~/for_triplexator/ENST00000591665.1.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_switch_minus_03.fasta -l 10 -e 20 -g 40 -od ~/for_triplexator/triplex/ENST00000591665.1/g40 -o ctd_switch_minus_03
+triplexator  -ss ~/for_triplexator/ENST00000591665.1.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_switch_plus_03.fasta -l 10 -e 20 -g 40 -od ~/for_triplexator/triplex/ENST00000591665.1/g40 -o ctd_switch_plus_03
+
+triplexator  -ss ~/for_triplexator/ENST00000591665.1.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_unswitch.fasta -l 10 -e 20 -g 40 -od ~/for_triplexator/triplex/ENST00000591665.1/g40 -o ctd_unswitch
+triplexator  -ss ~/for_triplexator/ENST00000591665.1.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_unswitch_01.fasta -l 10 -e 20 -g 40 -od ~/for_triplexator/triplex/ENST00000591665.1/g40 -o ctd_unswitch_01
+triplexator  -ss ~/for_triplexator/ENST00000591665.1.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_unswitch_03.fasta -l 10 -e 20 -g 40 -od ~/for_triplexator/triplex/ENST00000591665.1/g40 -o ctd_unswitch_03
+
+
+cut -f1 ctd_deg.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+cut -f1 ctd_deg_plus.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+cut -f1 ctd_deg_minus.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+cut -f1 ctd_undeg.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+
+cut -f1 ctd_switch.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+
+cut -f1 ctd_switch_01.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+cut -f1 ctd_switch_minus_01.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+cut -f1 ctd_switch_plus_01.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+
+cut -f1 ctd_switch_03.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+cut -f1 ctd_switch_minus_03.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+cut -f1 ctd_switch_plus_03.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+
+cut -f1 ctd_unswitch.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+cut -f1 ctd_unswitch_01.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+cut -f1 ctd_unswitch_03.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+
+
+cd ~/for_triplexator/triplex/ENST00000591665.1/g70
+
+triplexator  -ss ~/for_triplexator/ENST00000591665.1.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_deg.fasta -l 10 -e 20 -g 70 -od ~/for_triplexator/triplex/ENST00000591665.1/g70 -o ctd_deg
+triplexator  -ss ~/for_triplexator/ENST00000591665.1.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_deg_plus.fasta -l 10 -e 20 -g 70 -od ~/for_triplexator/triplex/ENST00000591665.1/g70 -o ctd_deg_plus
+triplexator  -ss ~/for_triplexator/ENST00000591665.1.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_deg_minus.fasta -l 10 -e 20 -g 70 -od ~/for_triplexator/triplex/ENST00000591665.1/g70 -o ctd_deg_minus
+triplexator  -ss ~/for_triplexator/ENST00000591665.1.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_undeg.fasta -l 10 -e 20 -g 70 -od ~/for_triplexator/triplex/ENST00000591665.1/g70 -o ctd_undeg
+
+triplexator  -ss ~/for_triplexator/ENST00000591665.1.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_switch.fasta -l 10 -e 20 -g 70 -od ~/for_triplexator/triplex/ENST00000591665.1/g70 -o ctd_switch
+
+triplexator  -ss ~/for_triplexator/ENST00000591665.1.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_switch_01.fasta -l 10 -e 20 -g 70 -od ~/for_triplexator/triplex/ENST00000591665.1/g70 -o ctd_switch_01
+triplexator  -ss ~/for_triplexator/ENST00000591665.1.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_switch_minus_01.fasta -l 10 -e 20 -g 70 -od ~/for_triplexator/triplex/ENST00000591665.1/g70 -o ctd_switch_minus_01
+triplexator  -ss ~/for_triplexator/ENST00000591665.1.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_switch_plus_01.fasta -l 10 -e 20 -g 70 -od ~/for_triplexator/triplex/ENST00000591665.1/g70 -o ctd_switch_plus_01
+
+triplexator  -ss ~/for_triplexator/ENST00000591665.1.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_switch_03.fasta -l 10 -e 20 -g 70 -od ~/for_triplexator/triplex/ENST00000591665.1/g70 -o ctd_switch_03
+triplexator  -ss ~/for_triplexator/ENST00000591665.1.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_switch_minus_03.fasta -l 10 -e 20 -g 70 -od ~/for_triplexator/triplex/ENST00000591665.1/g70 -o ctd_switch_minus_03
+triplexator  -ss ~/for_triplexator/ENST00000591665.1.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_switch_plus_03.fasta -l 10 -e 20 -g 70 -od ~/for_triplexator/triplex/ENST00000591665.1/g70 -o ctd_switch_plus_03
+
+triplexator  -ss ~/for_triplexator/ENST00000591665.1.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_unswitch.fasta -l 10 -e 20 -g 70 -od ~/for_triplexator/triplex/ENST00000591665.1/g70 -o ctd_unswitch
+triplexator  -ss ~/for_triplexator/ENST00000591665.1.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_unswitch_01.fasta -l 10 -e 20 -g 70 -od ~/for_triplexator/triplex/ENST00000591665.1/g70 -o ctd_unswitch_01
+triplexator  -ss ~/for_triplexator/ENST00000591665.1.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_unswitch_03.fasta -l 10 -e 20 -g 70 -od ~/for_triplexator/triplex/ENST00000591665.1/g70 -o ctd_unswitch_03
+
+
+cut -f1 ctd_deg.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+cut -f1 ctd_deg_plus.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+cut -f1 ctd_deg_minus.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+cut -f1 ctd_undeg.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+
+cut -f1 ctd_switch.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+
+cut -f1 ctd_switch_01.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+cut -f1 ctd_switch_minus_01.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+cut -f1 ctd_switch_plus_01.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+
+cut -f1 ctd_switch_03.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+cut -f1 ctd_switch_minus_03.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+cut -f1 ctd_switch_plus_03.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+
+cut -f1 ctd_unswitch.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+cut -f1 ctd_unswitch_01.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+cut -f1 ctd_unswitch_03.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+
+
+
+cd ~/for_triplexator/triplex/masked_50_1643/g40
+
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_50_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_deg.fasta -l 10 -e 20 -g 40 -od ~/for_triplexator/triplex/masked_50_1643/g40 -o ctd_deg
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_50_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_deg_plus.fasta -l 10 -e 20 -g 40 -od ~/for_triplexator/triplex/masked_50_1643/g40 -o ctd_deg_plus
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_50_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_deg_minus.fasta -l 10 -e 20 -g 40 -od ~/for_triplexator/triplex/masked_50_1643/g40 -o ctd_deg_minus
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_50_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_undeg.fasta -l 10 -e 20 -g 40 -od ~/for_triplexator/triplex/masked_50_1643/g40 -o ctd_undeg
+
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_50_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_switch.fasta -l 10 -e 20 -g 40 -od ~/for_triplexator/triplex/masked_50_1643/g40 -o ctd_switch
+
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_50_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_switch_01.fasta -l 10 -e 20 -g 40 -od ~/for_triplexator/triplex/masked_50_1643/g40 -o ctd_switch_01
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_50_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_switch_minus_01.fasta -l 10 -e 20 -g 40 -od ~/for_triplexator/triplex/masked_50_1643/g40 -o ctd_switch_minus_01
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_50_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_switch_plus_01.fasta -l 10 -e 20 -g 40 -od ~/for_triplexator/triplex/masked_50_1643/g40 -o ctd_switch_plus_01
+
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_50_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_switch_03.fasta -l 10 -e 20 -g 40 -od ~/for_triplexator/triplex/masked_50_1643/g40 -o ctd_switch_03
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_50_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_switch_minus_03.fasta -l 10 -e 20 -g 40 -od ~/for_triplexator/triplex/masked_50_1643/g40 -o ctd_switch_minus_03
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_50_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_switch_plus_03.fasta -l 10 -e 20 -g 40 -od ~/for_triplexator/triplex/masked_50_1643/g40 -o ctd_switch_plus_03
+
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_50_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_unswitch.fasta -l 10 -e 20 -g 40 -od ~/for_triplexator/triplex/masked_50_1643/g40 -o ctd_unswitch
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_50_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_unswitch_01.fasta -l 10 -e 20 -g 40 -od ~/for_triplexator/triplex/masked_50_1643/g40 -o ctd_unswitch_01
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_50_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_unswitch_03.fasta -l 10 -e 20 -g 40 -od ~/for_triplexator/triplex/masked_50_1643/g40 -o ctd_unswitch_03
+
+
+cut -f1 ctd_deg.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+cut -f1 ctd_deg_plus.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+cut -f1 ctd_deg_minus.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+cut -f1 ctd_undeg.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+
+cut -f1 ctd_switch.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+
+cut -f1 ctd_switch_01.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+cut -f1 ctd_switch_minus_01.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+cut -f1 ctd_switch_plus_01.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+
+cut -f1 ctd_switch_03.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+cut -f1 ctd_switch_minus_03.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+cut -f1 ctd_switch_plus_03.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+
+cut -f1 ctd_unswitch.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+cut -f1 ctd_unswitch_01.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+cut -f1 ctd_unswitch_03.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+
+
+cd ~/for_triplexator/triplex/masked_50_1643/g70
+
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_50_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_deg.fasta -l 10 -e 20 -g 70 -od ~/for_triplexator/triplex/masked_50_1643/g70 -o ctd_deg
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_50_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_deg_plus.fasta -l 10 -e 20 -g 70 -od ~/for_triplexator/triplex/masked_50_1643/g70 -o ctd_deg_plus
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_50_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_deg_minus.fasta -l 10 -e 20 -g 70 -od ~/for_triplexator/triplex/masked_50_1643/g70 -o ctd_deg_minus
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_50_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_undeg.fasta -l 10 -e 20 -g 70 -od ~/for_triplexator/triplex/masked_50_1643/g70 -o ctd_undeg
+
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_50_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_switch.fasta -l 10 -e 20 -g 70 -od ~/for_triplexator/triplex/masked_50_1643/g70 -o ctd_switch
+
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_50_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_switch_01.fasta -l 10 -e 20 -g 70 -od ~/for_triplexator/triplex/masked_50_1643/g70 -o ctd_switch_01
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_50_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_switch_minus_01.fasta -l 10 -e 20 -g 70 -od ~/for_triplexator/triplex/masked_50_1643/g70 -o ctd_switch_minus_01
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_50_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_switch_plus_01.fasta -l 10 -e 20 -g 70 -od ~/for_triplexator/triplex/masked_50_1643/g70 -o ctd_switch_plus_01
+
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_50_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_switch_03.fasta -l 10 -e 20 -g 70 -od ~/for_triplexator/triplex/masked_50_1643/g70 -o ctd_switch_03
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_50_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_switch_minus_03.fasta -l 10 -e 20 -g 70 -od ~/for_triplexator/triplex/masked_50_1643/g70 -o ctd_switch_minus_03
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_50_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_switch_plus_03.fasta -l 10 -e 20 -g 70 -od ~/for_triplexator/triplex/masked_50_1643/g70 -o ctd_switch_plus_03
+
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_50_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_unswitch.fasta -l 10 -e 20 -g 70 -od ~/for_triplexator/triplex/masked_50_1643/g70 -o ctd_unswitch
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_50_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_unswitch_01.fasta -l 10 -e 20 -g 70 -od ~/for_triplexator/triplex/masked_50_1643/g70 -o ctd_unswitch_01
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_50_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_unswitch_03.fasta -l 10 -e 20 -g 70 -od ~/for_triplexator/triplex/masked_50_1643/g70 -o ctd_unswitch_03
+
+
+cut -f1 ctd_deg.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+cut -f1 ctd_deg_plus.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+cut -f1 ctd_deg_minus.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+cut -f1 ctd_undeg.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+
+cut -f1 ctd_switch.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+
+cut -f1 ctd_switch_01.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+cut -f1 ctd_switch_minus_01.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+cut -f1 ctd_switch_plus_01.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+
+cut -f1 ctd_switch_03.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+cut -f1 ctd_switch_minus_03.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+cut -f1 ctd_switch_plus_03.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+
+cut -f1 ctd_unswitch.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+cut -f1 ctd_unswitch_01.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+cut -f1 ctd_unswitch_03.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+
+
+
+cd ~/for_triplexator/triplex/masked_70_1643/g40
+
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_70_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_deg.fasta -l 10 -e 20 -g 40 -od ~/for_triplexator/triplex/masked_70_1643/g40 -o ctd_deg
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_70_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_deg_plus.fasta -l 10 -e 20 -g 40 -od ~/for_triplexator/triplex/masked_70_1643/g40 -o ctd_deg_plus
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_70_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_deg_minus.fasta -l 10 -e 20 -g 40 -od ~/for_triplexator/triplex/masked_70_1643/g40 -o ctd_deg_minus
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_70_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_undeg.fasta -l 10 -e 20 -g 40 -od ~/for_triplexator/triplex/masked_70_1643/g40 -o ctd_undeg
+
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_70_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_switch.fasta -l 10 -e 20 -g 40 -od ~/for_triplexator/triplex/masked_70_1643/g40 -o ctd_switch
+
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_70_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_switch_01.fasta -l 10 -e 20 -g 40 -od ~/for_triplexator/triplex/masked_70_1643/g40 -o ctd_switch_01
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_70_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_switch_minus_01.fasta -l 10 -e 20 -g 40 -od ~/for_triplexator/triplex/masked_70_1643/g40 -o ctd_switch_minus_01
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_70_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_switch_plus_01.fasta -l 10 -e 20 -g 40 -od ~/for_triplexator/triplex/masked_70_1643/g40 -o ctd_switch_plus_01
+
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_70_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_switch_03.fasta -l 10 -e 20 -g 40 -od ~/for_triplexator/triplex/masked_70_1643/g40 -o ctd_switch_03
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_70_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_switch_minus_03.fasta -l 10 -e 20 -g 40 -od ~/for_triplexator/triplex/masked_70_1643/g40 -o ctd_switch_minus_03
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_70_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_switch_plus_03.fasta -l 10 -e 20 -g 40 -od ~/for_triplexator/triplex/masked_70_1643/g40 -o ctd_switch_plus_03
+
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_70_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_unswitch.fasta -l 10 -e 20 -g 40 -od ~/for_triplexator/triplex/masked_70_1643/g40 -o ctd_unswitch
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_70_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_unswitch_01.fasta -l 10 -e 20 -g 40 -od ~/for_triplexator/triplex/masked_70_1643/g40 -o ctd_unswitch_01
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_70_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_unswitch_03.fasta -l 10 -e 20 -g 40 -od ~/for_triplexator/triplex/masked_70_1643/g40 -o ctd_unswitch_03
+
+
+cut -f1 ctd_deg.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+cut -f1 ctd_deg_plus.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+cut -f1 ctd_deg_minus.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+cut -f1 ctd_undeg.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+
+cut -f1 ctd_switch.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+
+cut -f1 ctd_switch_01.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+cut -f1 ctd_switch_minus_01.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+cut -f1 ctd_switch_plus_01.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+
+cut -f1 ctd_switch_03.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+cut -f1 ctd_switch_minus_03.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+cut -f1 ctd_switch_plus_03.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+
+cut -f1 ctd_unswitch.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+cut -f1 ctd_unswitch_01.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+cut -f1 ctd_unswitch_03.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+
+
+
+cd ~/for_triplexator/triplex/masked_70_1643/g70
+
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_70_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_deg.fasta -l 10 -e 20 -g 70 -od ~/for_triplexator/triplex/masked_70_1643/g70 -o ctd_deg
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_70_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_deg_plus.fasta -l 10 -e 20 -g 70 -od ~/for_triplexator/triplex/masked_70_1643/g70 -o ctd_deg_plus
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_70_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_deg_minus.fasta -l 10 -e 20 -g 70 -od ~/for_triplexator/triplex/masked_70_1643/g70 -o ctd_deg_minus
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_70_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_undeg.fasta -l 10 -e 20 -g 70 -od ~/for_triplexator/triplex/masked_70_1643/g70 -o ctd_undeg
+
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_70_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_switch.fasta -l 10 -e 20 -g 70 -od ~/for_triplexator/triplex/masked_70_1643/g70 -o ctd_switch
+
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_70_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_switch_01.fasta -l 10 -e 20 -g 70 -od ~/for_triplexator/triplex/masked_70_1643/g70 -o ctd_switch_01
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_70_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_switch_minus_01.fasta -l 10 -e 20 -g 70 -od ~/for_triplexator/triplex/masked_70_1643/g70 -o ctd_switch_minus_01
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_70_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_switch_plus_01.fasta -l 10 -e 20 -g 70 -od ~/for_triplexator/triplex/masked_70_1643/g70 -o ctd_switch_plus_01
+
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_70_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_switch_03.fasta -l 10 -e 20 -g 70 -od ~/for_triplexator/triplex/masked_70_1643/g70 -o ctd_switch_03
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_70_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_switch_minus_03.fasta -l 10 -e 20 -g 70 -od ~/for_triplexator/triplex/masked_70_1643/g70 -o ctd_switch_minus_03
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_70_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_switch_plus_03.fasta -l 10 -e 20 -g 70 -od ~/for_triplexator/triplex/masked_70_1643/g70 -o ctd_switch_plus_03
+
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_70_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_unswitch.fasta -l 10 -e 20 -g 70 -od ~/for_triplexator/triplex/masked_70_1643/g70 -o ctd_unswitch
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_70_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_unswitch_01.fasta -l 10 -e 20 -g 70 -od ~/for_triplexator/triplex/masked_70_1643/g70 -o ctd_unswitch_01
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_70_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_unswitch_03.fasta -l 10 -e 20 -g 70 -od ~/for_triplexator/triplex/masked_70_1643/g70 -o ctd_unswitch_03
+
+cut -f1 ctd_deg.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+cut -f1 ctd_deg_plus.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+cut -f1 ctd_deg_minus.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+cut -f1 ctd_undeg.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+
+cut -f1 ctd_switch.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+
+cut -f1 ctd_switch_01.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+cut -f1 ctd_switch_minus_01.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+cut -f1 ctd_switch_plus_01.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+
+cut -f1 ctd_switch_03.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+cut -f1 ctd_switch_minus_03.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+cut -f1 ctd_switch_plus_03.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+
+cut -f1 ctd_unswitch.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+cut -f1 ctd_unswitch_01.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+cut -f1 ctd_unswitch_03.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+
+
+
+cd ~/for_triplexator/triplex/masked_90_1643/g40
+
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_90_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_deg.fasta -l 10 -e 20 -g 40 -od ~/for_triplexator/triplex/masked_90_1643/g40 -o ctd_deg
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_90_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_deg_plus.fasta -l 10 -e 20 -g 40 -od ~/for_triplexator/triplex/masked_90_1643/g40 -o ctd_deg_plus
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_90_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_deg_minus.fasta -l 10 -e 20 -g 40 -od ~/for_triplexator/triplex/masked_90_1643/g40 -o ctd_deg_minus
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_90_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_undeg.fasta -l 10 -e 20 -g 40 -od ~/for_triplexator/triplex/masked_90_1643/g40 -o ctd_undeg
+
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_90_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_switch.fasta -l 10 -e 20 -g 40 -od ~/for_triplexator/triplex/masked_90_1643/g40 -o ctd_switch
+
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_90_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_switch_01.fasta -l 10 -e 20 -g 40 -od ~/for_triplexator/triplex/masked_90_1643/g40 -o ctd_switch_01
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_90_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_switch_minus_01.fasta -l 10 -e 20 -g 40 -od ~/for_triplexator/triplex/masked_90_1643/g40 -o ctd_switch_minus_01
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_90_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_switch_plus_01.fasta -l 10 -e 20 -g 40 -od ~/for_triplexator/triplex/masked_90_1643/g40 -o ctd_switch_plus_01
+
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_90_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_switch_03.fasta -l 10 -e 20 -g 40 -od ~/for_triplexator/triplex/masked_90_1643/g40 -o ctd_switch_03
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_90_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_switch_minus_03.fasta -l 10 -e 20 -g 40 -od ~/for_triplexator/triplex/masked_90_1643/g40 -o ctd_switch_minus_03
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_90_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_switch_plus_03.fasta -l 10 -e 20 -g 40 -od ~/for_triplexator/triplex/masked_90_1643/g40 -o ctd_switch_plus_03
+
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_90_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_unswitch.fasta -l 10 -e 20 -g 40 -od ~/for_triplexator/triplex/masked_90_1643/g40 -o ctd_unswitch
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_90_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_unswitch_01.fasta -l 10 -e 20 -g 40 -od ~/for_triplexator/triplex/masked_90_1643/g40 -o ctd_unswitch_01
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_90_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_unswitch_03.fasta -l 10 -e 20 -g 40 -od ~/for_triplexator/triplex/masked_90_1643/g40 -o ctd_unswitch_03
+
+
+cut -f1 ctd_deg.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+cut -f1 ctd_deg_plus.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+cut -f1 ctd_deg_minus.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+cut -f1 ctd_undeg.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+
+cut -f1 ctd_switch.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+
+cut -f1 ctd_switch_01.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+cut -f1 ctd_switch_minus_01.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+cut -f1 ctd_switch_plus_01.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+
+cut -f1 ctd_switch_03.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+cut -f1 ctd_switch_minus_03.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+cut -f1 ctd_switch_plus_03.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+
+cut -f1 ctd_unswitch.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+cut -f1 ctd_unswitch_01.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+cut -f1 ctd_unswitch_03.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+
+
+
+
+cd ~/for_triplexator/triplex/masked_90_1643/g70
+
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_90_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_deg.fasta -l 10 -e 20 -g 70 -od ~/for_triplexator/triplex/masked_90_1643/g70 -o ctd_deg
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_90_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_deg_plus.fasta -l 10 -e 20 -g 70 -od ~/for_triplexator/triplex/masked_90_1643/g70 -o ctd_deg_plus
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_90_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_deg_minus.fasta -l 10 -e 20 -g 70 -od ~/for_triplexator/triplex/masked_90_1643/g70 -o ctd_deg_minus
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_90_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_undeg.fasta -l 10 -e 20 -g 70 -od ~/for_triplexator/triplex/masked_90_1643/g70 -o ctd_undeg
+
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_90_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_switch.fasta -l 10 -e 20 -g 70 -od ~/for_triplexator/triplex/masked_90_1643/g70 -o ctd_switch
+
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_90_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_switch_01.fasta -l 10 -e 20 -g 70 -od ~/for_triplexator/triplex/masked_90_1643/g70 -o ctd_switch_01
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_90_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_switch_minus_01.fasta -l 10 -e 20 -g 70 -od ~/for_triplexator/triplex/masked_90_1643/g70 -o ctd_switch_minus_01
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_90_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_switch_plus_01.fasta -l 10 -e 20 -g 70 -od ~/for_triplexator/triplex/masked_90_1643/g70 -o ctd_switch_plus_01
+
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_90_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_switch_03.fasta -l 10 -e 20 -g 70 -od ~/for_triplexator/triplex/masked_90_1643/g70 -o ctd_switch_03
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_90_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_switch_minus_03.fasta -l 10 -e 20 -g 70 -od ~/for_triplexator/triplex/masked_90_1643/g70 -o ctd_switch_minus_03
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_90_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_switch_plus_03.fasta -l 10 -e 20 -g 70 -od ~/for_triplexator/triplex/masked_90_1643/g70 -o ctd_switch_plus_03
+
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_90_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_unswitch.fasta -l 10 -e 20 -g 70 -od ~/for_triplexator/triplex/masked_90_1643/g70 -o ctd_unswitch
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_90_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_unswitch_01.fasta -l 10 -e 20 -g 70 -od ~/for_triplexator/triplex/masked_90_1643/g70 -o ctd_unswitch_01
+triplexator  -ss ~/for_triplexator/DNAAF3-AS1_masked_duplexes_90_1643.fa  -ds ~/for_triplexator/promoters_fasta_new/ctd_unswitch_03.fasta -l 10 -e 20 -g 70 -od ~/for_triplexator/triplex/masked_90_1643/g70 -o ctd_unswitch_03
+
+
+
+cut -f1 ctd_deg.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+cut -f1 ctd_deg_plus.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+cut -f1 ctd_deg_minus.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+cut -f1 ctd_undeg.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+
+cut -f1 ctd_switch.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+
+cut -f1 ctd_switch_01.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+cut -f1 ctd_switch_minus_01.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+cut -f1 ctd_switch_plus_01.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+
+cut -f1 ctd_switch_03.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+cut -f1 ctd_switch_minus_03.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+cut -f1 ctd_switch_plus_03.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+
+cut -f1 ctd_unswitch.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+cut -f1 ctd_unswitch_01.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+cut -f1 ctd_unswitch_03.summary | sort -u  > unique.txt
+wc -l unique.txt >> file.txt
+
+
+
+

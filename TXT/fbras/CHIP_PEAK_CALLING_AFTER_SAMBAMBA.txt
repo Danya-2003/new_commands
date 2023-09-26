@@ -1,0 +1,538 @@
+CHIP_PEAK_CALLING_AFTER_SAMBAMBA
+
+cd ~/chip_data
+
+###### Peak-calling with MACS2 BROAD
+
+macs2 callpeak  -t sambamba/C-1_.bam -c sambamba/I-1_.bam -n C-I-1_ --outdir macs2_broad -f BAM  -m 2 50 -g hs --broad
+macs2 callpeak  -t sambamba/C-2_.bam -c sambamba/I-2_.bam -n C-I-2_ --outdir macs2_broad -f BAM  -m 2 50 -g hs --broad
+macs2 callpeak  -t sambamba/C-3_.bam -c sambamba/I-3_.bam -n C-I-3_ --outdir macs2_broad -f BAM  -m 2 50 -g hs --broad
+macs2 callpeak  -t sambamba/C-4_.bam -c sambamba/I-4_.bam -n C-I-4_ --outdir macs2_broad -f BAM  -m 2 50 -g hs --broad
+macs2 callpeak  -t sambamba/C-5_.bam -c sambamba/I-5_.bam -n C-I-5_ --outdir macs2_broad -f BAM  -m 2 50 -g hs --broad
+macs2 callpeak  -t sambamba/C-6_.bam -c sambamba/I-6_.bam -n C-I-6_ --outdir macs2_broad -f BAM  -m 2 50 -g hs --broad
+macs2 callpeak  -t sambamba/C-7_.bam -c sambamba/I-7_.bam -n C-I-7_ --outdir macs2_broad -f BAM  -m 2 50 -g hs --broad
+macs2 callpeak  -t sambamba/C-8_.bam -c sambamba/I-8_.bam -n C-I-8_ --outdir macs2_broad -f BAM  -m 2 50 -g hs --broad
+macs2 callpeak  -t sambamba/C-9_.bam -c sambamba/I-9_.bam -n C-I-9_ --outdir macs2_broad -f BAM  -m 2 50 -g hs --broad
+macs2 callpeak  -t sambamba/C-10.bam -c sambamba/I-10.bam -n C-I-10 --outdir macs2_broad -f BAM  -m 2 50 -g hs --broad
+macs2 callpeak  -t sambamba/C-11.bam -c sambamba/I-11.bam -n C-I-11 --outdir macs2_broad -f BAM  -m 2 50 -g hs --broad
+macs2 callpeak  -t sambamba/C-12.bam -c sambamba/I-12.bam -n C-I-12 --outdir macs2_broad -f BAM  -m 2 50 -g hs --broad
+macs2 callpeak  -t sambamba/C-13.bam -c sambamba/I-13.bam -n C-I-13 --outdir macs2_broad -f BAM  -m 2 50 -g hs --broad
+macs2 callpeak  -t sambamba/C-14.bam -c sambamba/I-14.bam -n C-I-14 --outdir macs2_broad -f BAM  -m 2 50 -g hs --broad
+macs2 callpeak  -t sambamba/C-15.bam -c sambamba/I-15.bam -n C-I-15 --outdir macs2_broad -f BAM  -m 2 50 -g hs --broad
+macs2 callpeak  -t sambamba/C-16.bam -c sambamba/I-16.bam -n C-I-16 --outdir macs2_broad -f BAM  -m 2 50 -g hs --broad
+macs2 callpeak  -t sambamba/C-17.bam -c sambamba/I-17.bam -n C-I-17 --outdir macs2_broad -f BAM  -m 2 50 -g hs --broad
+macs2 callpeak  -t sambamba/C-18.bam -c sambamba/I-18.bam -n C-I-18 --outdir macs2_broad -f BAM  -m 2 50 -g hs --broad
+macs2 callpeak  -t sambamba/C-19.bam -c sambamba/I-19.bam -n C-I-19 --outdir macs2_broad -f BAM  -m 2 50 -g hs --broad
+macs2 callpeak  -t sambamba/C-20.bam -c sambamba/I-20.bam -n C-I-20 --outdir macs2_broad -f BAM  -m 2 50 -g hs --broad
+macs2 callpeak  -t sambamba/C-21.bam -c sambamba/I-21.bam -n C-I-21 --outdir macs2_broad -f BAM  -m 2 50 -g hs --broad
+macs2 callpeak  -t sambamba/C-22.bam -c sambamba/I-22.bam -n C-I-22 --outdir macs2_broad -f BAM  -m 2 50 -g hs --broad
+macs2 callpeak  -t sambamba/C-23.bam -c sambamba/I-23.bam -n C-I-23 --outdir macs2_broad -f BAM  -m 2 50 -g hs --broad
+macs2 callpeak  -t sambamba/C-24.bam -c sambamba/I-24.bam -n C-I-24 --outdir macs2_broad -f BAM  -m 2 50 -g hs --broad
+macs2 callpeak  -t sambamba/C-25.bam -c sambamba/I-25.bam -n C-I-25 --outdir macs2_broad -f BAM  -m 2 50 -g hs --broad
+macs2 callpeak  -t sambamba/C-26.bam -c sambamba/I-26.bam -n C-I-26 --outdir macs2_broad -f BAM  -m 2 50 -g hs --broad
+macs2 callpeak  -t sambamba/C-27.bam -c sambamba/I-27.bam -n C-I-27 --outdir macs2_broad -f BAM  -m 2 50 -g hs --broad
+macs2 callpeak  -t sambamba/C-28.bam -c sambamba/I-28.bam -n C-I-28 --outdir macs2_broad -f BAM  -m 2 50 -g hs --broad
+
+
+###### Intersections with blacklist hg38
+
+cd macs2_broad
+mkdir filtered
+
+bedtools intersect -v -a C-I-1__peaks.broadPeak -b ~/blacklist_hg38.bed > filtered/C-I-1__peaks.broad.filtered.bed
+bedtools intersect -v -a C-I-2__peaks.broadPeak -b ~/blacklist_hg38.bed > filtered/C-I-2__peaks.broad.filtered.bed
+bedtools intersect -v -a C-I-3__peaks.broadPeak -b ~/blacklist_hg38.bed > filtered/C-I-3__peaks.broad.filtered.bed
+bedtools intersect -v -a C-I-4__peaks.broadPeak -b ~/blacklist_hg38.bed > filtered/C-I-4__peaks.broad.filtered.bed
+bedtools intersect -v -a C-I-5__peaks.broadPeak -b ~/blacklist_hg38.bed > filtered/C-I-5__peaks.broad.filtered.bed
+bedtools intersect -v -a C-I-6__peaks.broadPeak -b ~/blacklist_hg38.bed > filtered/C-I-6__peaks.broad.filtered.bed
+bedtools intersect -v -a C-I-7__peaks.broadPeak -b ~/blacklist_hg38.bed > filtered/C-I-7__peaks.broad.filtered.bed
+bedtools intersect -v -a C-I-8__peaks.broadPeak -b ~/blacklist_hg38.bed > filtered/C-I-8__peaks.broad.filtered.bed
+bedtools intersect -v -a C-I-9__peaks.broadPeak -b ~/blacklist_hg38.bed > filtered/C-I-9__peaks.broad.filtered.bed
+bedtools intersect -v -a C-I-10_peaks.broadPeak -b ~/blacklist_hg38.bed > filtered/C-I-10_peaks.broad.filtered.bed
+bedtools intersect -v -a C-I-11_peaks.broadPeak -b ~/blacklist_hg38.bed > filtered/C-I-11_peaks.broad.filtered.bed
+bedtools intersect -v -a C-I-12_peaks.broadPeak -b ~/blacklist_hg38.bed > filtered/C-I-12_peaks.broad.filtered.bed
+bedtools intersect -v -a C-I-13_peaks.broadPeak -b ~/blacklist_hg38.bed > filtered/C-I-13_peaks.broad.filtered.bed
+bedtools intersect -v -a C-I-14_peaks.broadPeak -b ~/blacklist_hg38.bed > filtered/C-I-14_peaks.broad.filtered.bed
+bedtools intersect -v -a C-I-15_peaks.broadPeak -b ~/blacklist_hg38.bed > filtered/C-I-15_peaks.broad.filtered.bed
+bedtools intersect -v -a C-I-16_peaks.broadPeak -b ~/blacklist_hg38.bed > filtered/C-I-16_peaks.broad.filtered.bed
+bedtools intersect -v -a C-I-17_peaks.broadPeak -b ~/blacklist_hg38.bed > filtered/C-I-17_peaks.broad.filtered.bed
+bedtools intersect -v -a C-I-18_peaks.broadPeak -b ~/blacklist_hg38.bed > filtered/C-I-18_peaks.broad.filtered.bed
+bedtools intersect -v -a C-I-19_peaks.broadPeak -b ~/blacklist_hg38.bed > filtered/C-I-19_peaks.broad.filtered.bed
+bedtools intersect -v -a C-I-20_peaks.broadPeak -b ~/blacklist_hg38.bed > filtered/C-I-20_peaks.broad.filtered.bed
+bedtools intersect -v -a C-I-21_peaks.broadPeak -b ~/blacklist_hg38.bed > filtered/C-I-21_peaks.broad.filtered.bed
+bedtools intersect -v -a C-I-22_peaks.broadPeak -b ~/blacklist_hg38.bed > filtered/C-I-22_peaks.broad.filtered.bed
+bedtools intersect -v -a C-I-23_peaks.broadPeak -b ~/blacklist_hg38.bed > filtered/C-I-23_peaks.broad.filtered.bed
+bedtools intersect -v -a C-I-24_peaks.broadPeak -b ~/blacklist_hg38.bed > filtered/C-I-24_peaks.broad.filtered.bed
+bedtools intersect -v -a C-I-25_peaks.broadPeak -b ~/blacklist_hg38.bed > filtered/C-I-25_peaks.broad.filtered.bed
+bedtools intersect -v -a C-I-26_peaks.broadPeak -b ~/blacklist_hg38.bed > filtered/C-I-26_peaks.broad.filtered.bed
+bedtools intersect -v -a C-I-27_peaks.broadPeak -b ~/blacklist_hg38.bed > filtered/C-I-27_peaks.broad.filtered.bed
+bedtools intersect -v -a C-I-28_peaks.broadPeak -b ~/blacklist_hg38.bed > filtered/C-I-28_peaks.broad.filtered.bed
+
+###### Sorting
+
+cd filtered
+
+sort -k1,1 -k2,2n C-I-1__peaks.broad.filtered.bed > C-I-1__peaks.broad.filtered.sorted.bed
+sort -k1,1 -k2,2n C-I-2__peaks.broad.filtered.bed > C-I-2__peaks.broad.filtered.sorted.bed
+sort -k1,1 -k2,2n C-I-3__peaks.broad.filtered.bed > C-I-3__peaks.broad.filtered.sorted.bed
+sort -k1,1 -k2,2n C-I-4__peaks.broad.filtered.bed > C-I-4__peaks.broad.filtered.sorted.bed
+sort -k1,1 -k2,2n C-I-5__peaks.broad.filtered.bed > C-I-5__peaks.broad.filtered.sorted.bed
+sort -k1,1 -k2,2n C-I-6__peaks.broad.filtered.bed > C-I-6__peaks.broad.filtered.sorted.bed
+sort -k1,1 -k2,2n C-I-7__peaks.broad.filtered.bed > C-I-7__peaks.broad.filtered.sorted.bed
+sort -k1,1 -k2,2n C-I-8__peaks.broad.filtered.bed > C-I-8__peaks.broad.filtered.sorted.bed
+sort -k1,1 -k2,2n C-I-9__peaks.broad.filtered.bed > C-I-9__peaks.broad.filtered.sorted.bed
+sort -k1,1 -k2,2n C-I-10_peaks.broad.filtered.bed > C-I-10_peaks.broad.filtered.sorted.bed
+sort -k1,1 -k2,2n C-I-11_peaks.broad.filtered.bed > C-I-11_peaks.broad.filtered.sorted.bed
+sort -k1,1 -k2,2n C-I-12_peaks.broad.filtered.bed > C-I-12_peaks.broad.filtered.sorted.bed
+sort -k1,1 -k2,2n C-I-13_peaks.broad.filtered.bed > C-I-13_peaks.broad.filtered.sorted.bed
+sort -k1,1 -k2,2n C-I-14_peaks.broad.filtered.bed > C-I-14_peaks.broad.filtered.sorted.bed
+sort -k1,1 -k2,2n C-I-15_peaks.broad.filtered.bed > C-I-15_peaks.broad.filtered.sorted.bed
+sort -k1,1 -k2,2n C-I-16_peaks.broad.filtered.bed > C-I-16_peaks.broad.filtered.sorted.bed
+sort -k1,1 -k2,2n C-I-17_peaks.broad.filtered.bed > C-I-17_peaks.broad.filtered.sorted.bed
+sort -k1,1 -k2,2n C-I-18_peaks.broad.filtered.bed > C-I-18_peaks.broad.filtered.sorted.bed
+sort -k1,1 -k2,2n C-I-19_peaks.broad.filtered.bed > C-I-19_peaks.broad.filtered.sorted.bed
+sort -k1,1 -k2,2n C-I-20_peaks.broad.filtered.bed > C-I-20_peaks.broad.filtered.sorted.bed
+sort -k1,1 -k2,2n C-I-21_peaks.broad.filtered.bed > C-I-21_peaks.broad.filtered.sorted.bed
+sort -k1,1 -k2,2n C-I-22_peaks.broad.filtered.bed > C-I-22_peaks.broad.filtered.sorted.bed
+sort -k1,1 -k2,2n C-I-23_peaks.broad.filtered.bed > C-I-23_peaks.broad.filtered.sorted.bed
+sort -k1,1 -k2,2n C-I-24_peaks.broad.filtered.bed > C-I-24_peaks.broad.filtered.sorted.bed
+sort -k1,1 -k2,2n C-I-25_peaks.broad.filtered.bed > C-I-25_peaks.broad.filtered.sorted.bed
+sort -k1,1 -k2,2n C-I-26_peaks.broad.filtered.bed > C-I-26_peaks.broad.filtered.sorted.bed
+sort -k1,1 -k2,2n C-I-27_peaks.broad.filtered.bed > C-I-27_peaks.broad.filtered.sorted.bed
+sort -k1,1 -k2,2n C-I-28_peaks.broad.filtered.bed > C-I-28_peaks.broad.filtered.sorted.bed
+
+
+###### Peak-calling with MACS2 NARROW
+
+cd ~/chip_data
+
+macs2 callpeak  -t sambamba/C-1_.bam -c sambamba/I-1_.bam -n C-I-1_ --outdir macs2_narrow -f BAM  -m 2 50 -g hs
+macs2 callpeak  -t sambamba/C-2_.bam -c sambamba/I-2_.bam -n C-I-2_ --outdir macs2_narrow -f BAM  -m 2 50 -g hs
+macs2 callpeak  -t sambamba/C-3_.bam -c sambamba/I-3_.bam -n C-I-3_ --outdir macs2_narrow -f BAM  -m 2 50 -g hs
+macs2 callpeak  -t sambamba/C-4_.bam -c sambamba/I-4_.bam -n C-I-4_ --outdir macs2_narrow -f BAM  -m 2 50 -g hs
+macs2 callpeak  -t sambamba/C-5_.bam -c sambamba/I-5_.bam -n C-I-5_ --outdir macs2_narrow -f BAM  -m 2 50 -g hs
+macs2 callpeak  -t sambamba/C-6_.bam -c sambamba/I-6_.bam -n C-I-6_ --outdir macs2_narrow -f BAM  -m 2 50 -g hs
+macs2 callpeak  -t sambamba/C-7_.bam -c sambamba/I-7_.bam -n C-I-7_ --outdir macs2_narrow -f BAM  -m 2 50 -g hs
+macs2 callpeak  -t sambamba/C-8_.bam -c sambamba/I-8_.bam -n C-I-8_ --outdir macs2_narrow -f BAM  -m 2 50 -g hs
+macs2 callpeak  -t sambamba/C-9_.bam -c sambamba/I-9_.bam -n C-I-9_ --outdir macs2_narrow -f BAM  -m 2 50 -g hs
+macs2 callpeak  -t sambamba/C-10.bam -c sambamba/I-10.bam -n C-I-10 --outdir macs2_narrow -f BAM  -m 2 50 -g hs
+macs2 callpeak  -t sambamba/C-11.bam -c sambamba/I-11.bam -n C-I-11 --outdir macs2_narrow -f BAM  -m 2 50 -g hs
+macs2 callpeak  -t sambamba/C-12.bam -c sambamba/I-12.bam -n C-I-12 --outdir macs2_narrow -f BAM  -m 2 50 -g hs
+macs2 callpeak  -t sambamba/C-13.bam -c sambamba/I-13.bam -n C-I-13 --outdir macs2_narrow -f BAM  -m 2 50 -g hs
+macs2 callpeak  -t sambamba/C-14.bam -c sambamba/I-14.bam -n C-I-14 --outdir macs2_narrow -f BAM  -m 2 50 -g hs
+macs2 callpeak  -t sambamba/C-15.bam -c sambamba/I-15.bam -n C-I-15 --outdir macs2_narrow -f BAM  -m 2 50 -g hs
+macs2 callpeak  -t sambamba/C-16.bam -c sambamba/I-16.bam -n C-I-16 --outdir macs2_narrow -f BAM  -m 2 50 -g hs
+macs2 callpeak  -t sambamba/C-17.bam -c sambamba/I-17.bam -n C-I-17 --outdir macs2_narrow -f BAM  -m 2 50 -g hs
+macs2 callpeak  -t sambamba/C-18.bam -c sambamba/I-18.bam -n C-I-19 --outdir macs2_narrow -f BAM  -m 2 50 -g hs
+macs2 callpeak  -t sambamba/C-19.bam -c sambamba/I-19.bam -n C-I-20 --outdir macs2_narrow -f BAM  -m 2 50 -g hs
+macs2 callpeak  -t sambamba/C-20.bam -c sambamba/I-20.bam -n C-I-21 --outdir macs2_narrow -f BAM  -m 2 50 -g hs
+macs2 callpeak  -t sambamba/C-21.bam -c sambamba/I-21.bam -n C-I-22 --outdir macs2_narrow -f BAM  -m 2 50 -g hs
+macs2 callpeak  -t sambamba/C-22.bam -c sambamba/I-22.bam -n C-I-23 --outdir macs2_narrow -f BAM  -m 2 50 -g hs
+macs2 callpeak  -t sambamba/C-23.bam -c sambamba/I-23.bam -n C-I-24 --outdir macs2_narrow -f BAM  -m 2 50 -g hs
+macs2 callpeak  -t sambamba/C-24.bam -c sambamba/I-24.bam -n C-I-25 --outdir macs2_narrow -f BAM  -m 2 50 -g hs
+macs2 callpeak  -t sambamba/C-25.bam -c sambamba/I-25.bam -n C-I-26 --outdir macs2_narrow -f BAM  -m 2 50 -g hs
+macs2 callpeak  -t sambamba/C-26.bam -c sambamba/I-26.bam -n C-I-27 --outdir macs2_narrow -f BAM  -m 2 50 -g hs
+macs2 callpeak  -t sambamba/C-27.bam -c sambamba/I-27.bam -n C-I-28 --outdir macs2_narrow -f BAM  -m 2 50 -g hs
+macs2 callpeak  -t sambamba/C-28.bam -c sambamba/I-28.bam -n C-I-29 --outdir macs2_narrow -f BAM  -m 2 50 -g hs
+
+###### Intersections with blacklist hg38
+
+cd macs2_narrow
+mkdir filtered
+
+bedtools intersect -v -a C-I-1__peaks.narrowPeak -b ~/blacklist_hg38.bed > filtered/C-I-1__peaks.narrow.filtered.bed
+bedtools intersect -v -a C-I-2__peaks.narrowPeak -b ~/blacklist_hg38.bed > filtered/C-I-2__peaks.narrow.filtered.bed
+bedtools intersect -v -a C-I-3__peaks.narrowPeak -b ~/blacklist_hg38.bed > filtered/C-I-3__peaks.narrow.filtered.bed
+bedtools intersect -v -a C-I-4__peaks.narrowPeak -b ~/blacklist_hg38.bed > filtered/C-I-4__peaks.narrow.filtered.bed
+bedtools intersect -v -a C-I-5__peaks.narrowPeak -b ~/blacklist_hg38.bed > filtered/C-I-5__peaks.narrow.filtered.bed
+bedtools intersect -v -a C-I-6__peaks.narrowPeak -b ~/blacklist_hg38.bed > filtered/C-I-6__peaks.narrow.filtered.bed
+bedtools intersect -v -a C-I-7__peaks.narrowPeak -b ~/blacklist_hg38.bed > filtered/C-I-7__peaks.narrow.filtered.bed
+bedtools intersect -v -a C-I-8__peaks.narrowPeak -b ~/blacklist_hg38.bed > filtered/C-I-8__peaks.narrow.filtered.bed
+bedtools intersect -v -a C-I-9__peaks.narrowPeak -b ~/blacklist_hg38.bed > filtered/C-I-9__peaks.narrow.filtered.bed
+bedtools intersect -v -a C-I-10_peaks.narrowPeak -b ~/blacklist_hg38.bed > filtered/C-I-10_peaks.narrow.filtered.bed
+bedtools intersect -v -a C-I-11_peaks.narrowPeak -b ~/blacklist_hg38.bed > filtered/C-I-11_peaks.narrow.filtered.bed
+bedtools intersect -v -a C-I-12_peaks.narrowPeak -b ~/blacklist_hg38.bed > filtered/C-I-12_peaks.narrow.filtered.bed
+bedtools intersect -v -a C-I-13_peaks.narrowPeak -b ~/blacklist_hg38.bed > filtered/C-I-13_peaks.narrow.filtered.bed
+bedtools intersect -v -a C-I-14_peaks.narrowPeak -b ~/blacklist_hg38.bed > filtered/C-I-14_peaks.narrow.filtered.bed
+bedtools intersect -v -a C-I-15_peaks.narrowPeak -b ~/blacklist_hg38.bed > filtered/C-I-15_peaks.narrow.filtered.bed
+bedtools intersect -v -a C-I-16_peaks.narrowPeak -b ~/blacklist_hg38.bed > filtered/C-I-16_peaks.narrow.filtered.bed
+bedtools intersect -v -a C-I-17_peaks.narrowPeak -b ~/blacklist_hg38.bed > filtered/C-I-17_peaks.narrow.filtered.bed
+bedtools intersect -v -a C-I-18_peaks.narrowPeak -b ~/blacklist_hg38.bed > filtered/C-I-18_peaks.narrow.filtered.bed
+bedtools intersect -v -a C-I-19_peaks.narrowPeak -b ~/blacklist_hg38.bed > filtered/C-I-19_peaks.narrow.filtered.bed
+bedtools intersect -v -a C-I-20_peaks.narrowPeak -b ~/blacklist_hg38.bed > filtered/C-I-20_peaks.narrow.filtered.bed
+bedtools intersect -v -a C-I-21_peaks.narrowPeak -b ~/blacklist_hg38.bed > filtered/C-I-21_peaks.narrow.filtered.bed
+bedtools intersect -v -a C-I-22_peaks.narrowPeak -b ~/blacklist_hg38.bed > filtered/C-I-22_peaks.narrow.filtered.bed
+bedtools intersect -v -a C-I-23_peaks.narrowPeak -b ~/blacklist_hg38.bed > filtered/C-I-23_peaks.narrow.filtered.bed
+bedtools intersect -v -a C-I-24_peaks.narrowPeak -b ~/blacklist_hg38.bed > filtered/C-I-24_peaks.narrow.filtered.bed
+bedtools intersect -v -a C-I-25_peaks.narrowPeak -b ~/blacklist_hg38.bed > filtered/C-I-25_peaks.narrow.filtered.bed
+bedtools intersect -v -a C-I-26_peaks.narrowPeak -b ~/blacklist_hg38.bed > filtered/C-I-26_peaks.narrow.filtered.bed
+bedtools intersect -v -a C-I-27_peaks.narrowPeak -b ~/blacklist_hg38.bed > filtered/C-I-27_peaks.narrow.filtered.bed
+bedtools intersect -v -a C-I-28_peaks.narrowPeak -b ~/blacklist_hg38.bed > filtered/C-I-28_peaks.narrow.filtered.bed
+
+
+###### Sorting
+
+cd filtered
+
+sort -k1,1 -k2,2n C-I-1__peaks.narrow.filtered.bed > C-I-1__peaks.narrow.filtered.sorted.bed
+sort -k1,1 -k2,2n C-I-2__peaks.narrow.filtered.bed > C-I-2__peaks.narrow.filtered.sorted.bed
+sort -k1,1 -k2,2n C-I-3__peaks.narrow.filtered.bed > C-I-3__peaks.narrow.filtered.sorted.bed
+sort -k1,1 -k2,2n C-I-4__peaks.narrow.filtered.bed > C-I-4__peaks.narrow.filtered.sorted.bed
+sort -k1,1 -k2,2n C-I-5__peaks.narrow.filtered.bed > C-I-5__peaks.narrow.filtered.sorted.bed
+sort -k1,1 -k2,2n C-I-6__peaks.narrow.filtered.bed > C-I-6__peaks.narrow.filtered.sorted.bed
+sort -k1,1 -k2,2n C-I-7__peaks.narrow.filtered.bed > C-I-7__peaks.narrow.filtered.sorted.bed
+sort -k1,1 -k2,2n C-I-8__peaks.narrow.filtered.bed > C-I-8__peaks.narrow.filtered.sorted.bed
+sort -k1,1 -k2,2n C-I-9__peaks.narrow.filtered.bed > C-I-9__peaks.narrow.filtered.sorted.bed
+sort -k1,1 -k2,2n C-I-10_peaks.narrow.filtered.bed > C-I-10_peaks.narrow.filtered.sorted.bed
+sort -k1,1 -k2,2n C-I-11_peaks.narrow.filtered.bed > C-I-11_peaks.narrow.filtered.sorted.bed
+sort -k1,1 -k2,2n C-I-12_peaks.narrow.filtered.bed > C-I-12_peaks.narrow.filtered.sorted.bed
+sort -k1,1 -k2,2n C-I-13_peaks.narrow.filtered.bed > C-I-13_peaks.narrow.filtered.sorted.bed
+sort -k1,1 -k2,2n C-I-14_peaks.narrow.filtered.bed > C-I-14_peaks.narrow.filtered.sorted.bed
+sort -k1,1 -k2,2n C-I-15_peaks.narrow.filtered.bed > C-I-15_peaks.narrow.filtered.sorted.bed
+sort -k1,1 -k2,2n C-I-16_peaks.narrow.filtered.bed > C-I-16_peaks.narrow.filtered.sorted.bed
+sort -k1,1 -k2,2n C-I-17_peaks.narrow.filtered.bed > C-I-17_peaks.narrow.filtered.sorted.bed
+sort -k1,1 -k2,2n C-I-18_peaks.narrow.filtered.bed > C-I-18_peaks.narrow.filtered.sorted.bed
+sort -k1,1 -k2,2n C-I-19_peaks.narrow.filtered.bed > C-I-19_peaks.narrow.filtered.sorted.bed
+sort -k1,1 -k2,2n C-I-20_peaks.narrow.filtered.bed > C-I-20_peaks.narrow.filtered.sorted.bed
+sort -k1,1 -k2,2n C-I-21_peaks.narrow.filtered.bed > C-I-21_peaks.narrow.filtered.sorted.bed
+sort -k1,1 -k2,2n C-I-22_peaks.narrow.filtered.bed > C-I-22_peaks.narrow.filtered.sorted.bed
+sort -k1,1 -k2,2n C-I-23_peaks.narrow.filtered.bed > C-I-23_peaks.narrow.filtered.sorted.bed
+sort -k1,1 -k2,2n C-I-24_peaks.narrow.filtered.bed > C-I-24_peaks.narrow.filtered.sorted.bed
+sort -k1,1 -k2,2n C-I-25_peaks.narrow.filtered.bed > C-I-25_peaks.narrow.filtered.sorted.bed
+sort -k1,1 -k2,2n C-I-26_peaks.narrow.filtered.bed > C-I-26_peaks.narrow.filtered.sorted.bed
+sort -k1,1 -k2,2n C-I-27_peaks.narrow.filtered.bed > C-I-27_peaks.narrow.filtered.sorted.bed
+sort -k1,1 -k2,2n C-I-28_peaks.narrow.filtered.bed > C-I-28_peaks.narrow.filtered.sorted.bed
+
+
+###### Peak-calling with SICER2
+
+cd ~/chip_data/sicer
+
+sicer -t ../sambamba/C-1_.bam -c ../sambamba/I-1_.bam -s hg38 --cpu 16 --false_discovery_rate 0.05
+sicer -t ../sambamba/C-2_.bam -c ../sambamba/I-2_.bam -s hg38 --cpu 16 --false_discovery_rate 0.05
+sicer -t ../sambamba/C-3_.bam -c ../sambamba/I-3_.bam -s hg38 --cpu 16 --false_discovery_rate 0.05
+sicer -t ../sambamba/C-4_.bam -c ../sambamba/I-4_.bam -s hg38 --cpu 16 --false_discovery_rate 0.05
+sicer -t ../sambamba/C-5_.bam -c ../sambamba/I-5_.bam -s hg38 --cpu 16 --false_discovery_rate 0.05
+sicer -t ../sambamba/C-6_.bam -c ../sambamba/I-6_.bam -s hg38 --cpu 16 --false_discovery_rate 0.05
+sicer -t ../sambamba/C-7_.bam -c ../sambamba/I-7_.bam -s hg38 --cpu 16 --false_discovery_rate 0.05
+sicer -t ../sambamba/C-8_.bam -c ../sambamba/I-8_.bam -s hg38 --cpu 16 --false_discovery_rate 0.05
+sicer -t ../sambamba/C-9_.bam -c ../sambamba/I-9_.bam -s hg38 --cpu 16 --false_discovery_rate 0.05
+sicer -t ../sambamba/C-10.bam -c ../sambamba/I-10.bam -s hg38 --cpu 16 --false_discovery_rate 0.05
+sicer -t ../sambamba/C-11.bam -c ../sambamba/I-11.bam -s hg38 --cpu 16 --false_discovery_rate 0.05
+sicer -t ../sambamba/C-12.bam -c ../sambamba/I-12.bam -s hg38 --cpu 16 --false_discovery_rate 0.05
+sicer -t ../sambamba/C-13.bam -c ../sambamba/I-13.bam -s hg38 --cpu 16 --false_discovery_rate 0.05
+sicer -t ../sambamba/C-14.bam -c ../sambamba/I-14.bam -s hg38 --cpu 16 --false_discovery_rate 0.05
+sicer -t ../sambamba/C-15.bam -c ../sambamba/I-15.bam -s hg38 --cpu 16 --false_discovery_rate 0.05
+sicer -t ../sambamba/C-16.bam -c ../sambamba/I-16.bam -s hg38 --cpu 16 --false_discovery_rate 0.05
+sicer -t ../sambamba/C-17.bam -c ../sambamba/I-17.bam -s hg38 --cpu 16 --false_discovery_rate 0.05
+sicer -t ../sambamba/C-18.bam -c ../sambamba/I-18.bam -s hg38 --cpu 16 --false_discovery_rate 0.05
+sicer -t ../sambamba/C-19.bam -c ../sambamba/I-19.bam -s hg38 --cpu 16 --false_discovery_rate 0.05
+sicer -t ../sambamba/C-20.bam -c ../sambamba/I-20.bam -s hg38 --cpu 16 --false_discovery_rate 0.05
+sicer -t ../sambamba/C-21.bam -c ../sambamba/I-21.bam -s hg38 --cpu 16 --false_discovery_rate 0.05
+sicer -t ../sambamba/C-22.bam -c ../sambamba/I-22.bam -s hg38 --cpu 16 --false_discovery_rate 0.05
+sicer -t ../sambamba/C-23.bam -c ../sambamba/I-23.bam -s hg38 --cpu 16 --false_discovery_rate 0.05
+sicer -t ../sambamba/C-24.bam -c ../sambamba/I-24.bam -s hg38 --cpu 16 --false_discovery_rate 0.05
+sicer -t ../sambamba/C-25.bam -c ../sambamba/I-25.bam -s hg38 --cpu 16 --false_discovery_rate 0.05
+sicer -t ../sambamba/C-26.bam -c ../sambamba/I-26.bam -s hg38 --cpu 16 --false_discovery_rate 0.05
+sicer -t ../sambamba/C-27.bam -c ../sambamba/I-27.bam -s hg38 --cpu 16 --false_discovery_rate 0.05
+sicer -t ../sambamba/C-28.bam -c ../sambamba/I-28.bam -s hg38 --cpu 16 --false_discovery_rate 0.05
+
+
+###### Intersections with blacklist hg38
+
+mkdir filtered
+
+sed 's/[\t]*$//' C-1_-W200-G600-FDR0.05-island.bed > filtered/C-I-1__sicer_corrected.bed
+sed 's/[\t]*$//' C-2_-W200-G600-FDR0.05-island.bed > filtered/C-I-2__sicer_corrected.bed
+sed 's/[\t]*$//' C-3_-W200-G600-FDR0.05-island.bed > filtered/C-I-3__sicer_corrected.bed
+sed 's/[\t]*$//' C-4_-W200-G600-FDR0.05-island.bed > filtered/C-I-4__sicer_corrected.bed
+sed 's/[\t]*$//' C-5_-W200-G600-FDR0.05-island.bed > filtered/C-I-5__sicer_corrected.bed
+sed 's/[\t]*$//' C-6_-W200-G600-FDR0.05-island.bed > filtered/C-I-6__sicer_corrected.bed
+sed 's/[\t]*$//' C-7_-W200-G600-FDR0.05-island.bed > filtered/C-I-7__sicer_corrected.bed
+sed 's/[\t]*$//' C-8_-W200-G600-FDR0.05-island.bed > filtered/C-I-8__sicer_corrected.bed
+sed 's/[\t]*$//' C-9_-W200-G600-FDR0.05-island.bed > filtered/C-I-9__sicer_corrected.bed
+sed 's/[\t]*$//' C-10-W200-G600-FDR0.05-island.bed > filtered/C-I-10_sicer_corrected.bed
+sed 's/[\t]*$//' C-11-W200-G600-FDR0.05-island.bed > filtered/C-I-11_sicer_corrected.bed
+sed 's/[\t]*$//' C-12-W200-G600-FDR0.05-island.bed > filtered/C-I-12_sicer_corrected.bed
+sed 's/[\t]*$//' C-13-W200-G600-FDR0.05-island.bed > filtered/C-I-13_sicer_corrected.bed
+sed 's/[\t]*$//' C-14-W200-G600-FDR0.05-island.bed > filtered/C-I-14_sicer_corrected.bed
+sed 's/[\t]*$//' C-15-W200-G600-FDR0.05-island.bed > filtered/C-I-15_sicer_corrected.bed
+sed 's/[\t]*$//' C-16-W200-G600-FDR0.05-island.bed > filtered/C-I-16_sicer_corrected.bed
+sed 's/[\t]*$//' C-17-W200-G600-FDR0.05-island.bed > filtered/C-I-17_sicer_corrected.bed
+sed 's/[\t]*$//' C-18-W200-G600-FDR0.05-island.bed > filtered/C-I-18_sicer_corrected.bed
+sed 's/[\t]*$//' C-19-W200-G600-FDR0.05-island.bed > filtered/C-I-19_sicer_corrected.bed
+sed 's/[\t]*$//' C-20-W200-G600-FDR0.05-island.bed > filtered/C-I-20_sicer_corrected.bed
+sed 's/[\t]*$//' C-21-W200-G600-FDR0.05-island.bed > filtered/C-I-21_sicer_corrected.bed
+sed 's/[\t]*$//' C-22-W200-G600-FDR0.05-island.bed > filtered/C-I-22_sicer_corrected.bed
+sed 's/[\t]*$//' C-23-W200-G600-FDR0.05-island.bed > filtered/C-I-23_sicer_corrected.bed
+sed 's/[\t]*$//' C-24-W200-G600-FDR0.05-island.bed > filtered/C-I-24_sicer_corrected.bed
+sed 's/[\t]*$//' C-25-W200-G600-FDR0.05-island.bed > filtered/C-I-25_sicer_corrected.bed
+sed 's/[\t]*$//' C-26-W200-G600-FDR0.05-island.bed > filtered/C-I-26_sicer_corrected.bed
+sed 's/[\t]*$//' C-27-W200-G600-FDR0.05-island.bed > filtered/C-I-27_sicer_corrected.bed
+sed 's/[\t]*$//' C-28-W200-G600-FDR0.05-island.bed > filtered/C-I-28_sicer_corrected.bed
+
+bedtools intersect -v -a filtered/C-I-1__sicer_corrected.bed-b ~/blacklist_hg19.bed > filtered/C-I-1__sicer_corrected_filtered.bed
+bedtools intersect -v -a filtered/C-I-2__sicer_corrected.bed-b ~/blacklist_hg19.bed > filtered/C-I-2__sicer_corrected_filtered.bed
+bedtools intersect -v -a filtered/C-I-3__sicer_corrected.bed-b ~/blacklist_hg19.bed > filtered/C-I-3__sicer_corrected_filtered.bed
+bedtools intersect -v -a filtered/C-I-4__sicer_corrected.bed-b ~/blacklist_hg19.bed > filtered/C-I-4__sicer_corrected_filtered.bed
+bedtools intersect -v -a filtered/C-I-5__sicer_corrected.bed-b ~/blacklist_hg19.bed > filtered/C-I-5__sicer_corrected_filtered.bed
+bedtools intersect -v -a filtered/C-I-6__sicer_corrected.bed-b ~/blacklist_hg19.bed > filtered/C-I-6__sicer_corrected_filtered.bed
+bedtools intersect -v -a filtered/C-I-7__sicer_corrected.bed-b ~/blacklist_hg19.bed > filtered/C-I-7__sicer_corrected_filtered.bed
+bedtools intersect -v -a filtered/C-I-8__sicer_corrected.bed-b ~/blacklist_hg19.bed > filtered/C-I-8__sicer_corrected_filtered.bed
+bedtools intersect -v -a filtered/C-I-9__sicer_corrected.bed-b ~/blacklist_hg19.bed > filtered/C-I-9__sicer_corrected_filtered.bed
+bedtools intersect -v -a filtered/C-I-10_sicer_corrected.bed-b ~/blacklist_hg19.bed > filtered/C-I-10_sicer_corrected_filtered.bed
+bedtools intersect -v -a filtered/C-I-11_sicer_corrected.bed-b ~/blacklist_hg19.bed > filtered/C-I-11_sicer_corrected_filtered.bed
+bedtools intersect -v -a filtered/C-I-12_sicer_corrected.bed-b ~/blacklist_hg19.bed > filtered/C-I-12_sicer_corrected_filtered.bed
+bedtools intersect -v -a filtered/C-I-13_sicer_corrected.bed-b ~/blacklist_hg19.bed > filtered/C-I-13_sicer_corrected_filtered.bed
+bedtools intersect -v -a filtered/C-I-14_sicer_corrected.bed-b ~/blacklist_hg19.bed > filtered/C-I-14_sicer_corrected_filtered.bed
+bedtools intersect -v -a filtered/C-I-15_sicer_corrected.bed-b ~/blacklist_hg19.bed > filtered/C-I-15_sicer_corrected_filtered.bed
+bedtools intersect -v -a filtered/C-I-16_sicer_corrected.bed-b ~/blacklist_hg19.bed > filtered/C-I-16_sicer_corrected_filtered.bed
+bedtools intersect -v -a filtered/C-I-17_sicer_corrected.bed-b ~/blacklist_hg19.bed > filtered/C-I-17_sicer_corrected_filtered.bed
+bedtools intersect -v -a filtered/C-I-18_sicer_corrected.bed-b ~/blacklist_hg19.bed > filtered/C-I-18_sicer_corrected_filtered.bed
+bedtools intersect -v -a filtered/C-I-19_sicer_corrected.bed-b ~/blacklist_hg19.bed > filtered/C-I-19_sicer_corrected_filtered.bed
+bedtools intersect -v -a filtered/C-I-20_sicer_corrected.bed-b ~/blacklist_hg19.bed > filtered/C-I-20_sicer_corrected_filtered.bed
+bedtools intersect -v -a filtered/C-I-21_sicer_corrected.bed-b ~/blacklist_hg19.bed > filtered/C-I-21_sicer_corrected_filtered.bed
+bedtools intersect -v -a filtered/C-I-22_sicer_corrected.bed-b ~/blacklist_hg19.bed > filtered/C-I-22_sicer_corrected_filtered.bed
+bedtools intersect -v -a filtered/C-I-23_sicer_corrected.bed-b ~/blacklist_hg19.bed > filtered/C-I-23_sicer_corrected_filtered.bed
+bedtools intersect -v -a filtered/C-I-24_sicer_corrected.bed-b ~/blacklist_hg19.bed > filtered/C-I-24_sicer_corrected_filtered.bed
+bedtools intersect -v -a filtered/C-I-25_sicer_corrected.bed-b ~/blacklist_hg19.bed > filtered/C-I-25_sicer_corrected_filtered.bed
+bedtools intersect -v -a filtered/C-I-26_sicer_corrected.bed-b ~/blacklist_hg19.bed > filtered/C-I-26_sicer_corrected_filtered.bed
+bedtools intersect -v -a filtered/C-I-27_sicer_corrected.bed-b ~/blacklist_hg19.bed > filtered/C-I-27_sicer_corrected_filtered.bed
+bedtools intersect -v -a filtered/C-I-28_sicer_corrected.bed-b ~/blacklist_hg19.bed > filtered/C-I-28_sicer_corrected_filtered.bed
+
+
+###### Sorting
+
+cd filtered
+
+sort -k1,1 -k2,2n C-I-1__sicer_corrected_filtered.bed > C-I-1__sicer_sorted.bed
+sort -k1,1 -k2,2n C-I-2__sicer_corrected_filtered.bed > C-I-2__sicer_sorted.bed
+sort -k1,1 -k2,2n C-I-3__sicer_corrected_filtered.bed > C-I-3__sicer_sorted.bed
+sort -k1,1 -k2,2n C-I-4__sicer_corrected_filtered.bed > C-I-4__sicer_sorted.bed
+sort -k1,1 -k2,2n C-I-5__sicer_corrected_filtered.bed > C-I-5__sicer_sorted.bed
+sort -k1,1 -k2,2n C-I-6__sicer_corrected_filtered.bed > C-I-6__sicer_sorted.bed
+sort -k1,1 -k2,2n C-I-7__sicer_corrected_filtered.bed > C-I-7__sicer_sorted.bed
+sort -k1,1 -k2,2n C-I-8__sicer_corrected_filtered.bed > C-I-8__sicer_sorted.bed
+sort -k1,1 -k2,2n C-I-9__sicer_corrected_filtered.bed > C-I-9__sicer_sorted.bed
+sort -k1,1 -k2,2n C-I-10_sicer_corrected_filtered.bed > C-I-10_sicer_sorted.bed
+sort -k1,1 -k2,2n C-I-11_sicer_corrected_filtered.bed > C-I-11_sicer_sorted.bed
+sort -k1,1 -k2,2n C-I-12_sicer_corrected_filtered.bed > C-I-12_sicer_sorted.bed
+sort -k1,1 -k2,2n C-I-13_sicer_corrected_filtered.bed > C-I-13_sicer_sorted.bed
+sort -k1,1 -k2,2n C-I-14_sicer_corrected_filtered.bed > C-I-14_sicer_sorted.bed
+sort -k1,1 -k2,2n C-I-15_sicer_corrected_filtered.bed > C-I-15_sicer_sorted.bed
+sort -k1,1 -k2,2n C-I-16_sicer_corrected_filtered.bed > C-I-16_sicer_sorted.bed
+sort -k1,1 -k2,2n C-I-17_sicer_corrected_filtered.bed > C-I-17_sicer_sorted.bed
+sort -k1,1 -k2,2n C-I-18_sicer_corrected_filtered.bed > C-I-18_sicer_sorted.bed
+sort -k1,1 -k2,2n C-I-19_sicer_corrected_filtered.bed > C-I-19_sicer_sorted.bed
+sort -k1,1 -k2,2n C-I-20_sicer_corrected_filtered.bed > C-I-20_sicer_sorted.bed
+sort -k1,1 -k2,2n C-I-21_sicer_corrected_filtered.bed > C-I-21_sicer_sorted.bed
+sort -k1,1 -k2,2n C-I-22_sicer_corrected_filtered.bed > C-I-22_sicer_sorted.bed
+sort -k1,1 -k2,2n C-I-23_sicer_corrected_filtered.bed > C-I-23_sicer_sorted.bed
+sort -k1,1 -k2,2n C-I-24_sicer_corrected_filtered.bed > C-I-24_sicer_sorted.bed
+sort -k1,1 -k2,2n C-I-25_sicer_corrected_filtered.bed > C-I-25_sicer_sorted.bed
+sort -k1,1 -k2,2n C-I-26_sicer_corrected_filtered.bed > C-I-26_sicer_sorted.bed
+sort -k1,1 -k2,2n C-I-27_sicer_corrected_filtered.bed > C-I-27_sicer_sorted.bed
+sort -k1,1 -k2,2n C-I-28_sicer_corrected_filtered.bed > C-I-28_sicer_sorted.bed
+
+
+###### Names
+
+C-1_.bam I-1_.bam
+C-2_.bam I-2_.bam
+C-3_.bam I-3_.bam
+C-4_.bam I-4_.bam
+C-5_.bam I-5_.bam
+C-6_.bam I-6_.bam
+C-7_.bam I-7_.bam
+C-8_.bam I-8_.bam
+C-9_.bam I-9_.bam
+C-10.bam I-10.bam
+C-11.bam I-11.bam
+C-12.bam I-12.bam
+C-13.bam I-13.bam
+C-14.bam I-14.bam
+C-15.bam I-15.bam
+C-16.bam I-16.bam
+C-17.bam I-17.bam
+C-18.bam I-18.bam
+C-19.bam I-19.bam
+C-20.bam I-20.bam
+C-21.bam I-21.bam
+C-22.bam I-22.bam
+C-23.bam I-23.bam
+C-24.bam I-24.bam
+C-25.bam I-25.bam
+C-26.bam I-26.bam
+C-27.bam I-27.bam
+C-28.bam I-28.bam
+
+C-1_-W200-G600-FDR0.05-island
+C-2_-W200-G600-FDR0.05-island
+C-3_-W200-G600-FDR0.05-island
+C-4_-W200-G600-FDR0.05-island
+C-5_-W200-G600-FDR0.05-island
+C-6_-W200-G600-FDR0.05-island
+C-7_-W200-G600-FDR0.05-island
+C-8_-W200-G600-FDR0.05-island
+C-9_-W200-G600-FDR0.05-island
+C-10-W200-G600-FDR0.05-island
+C-11-W200-G600-FDR0.05-island
+C-12-W200-G600-FDR0.05-island
+C-13-W200-G600-FDR0.05-island
+C-14-W200-G600-FDR0.05-island
+C-15-W200-G600-FDR0.05-island
+C-16-W200-G600-FDR0.05-island
+C-17-W200-G600-FDR0.05-island
+C-18-W200-G600-FDR0.05-island
+C-19-W200-G600-FDR0.05-island
+C-20-W200-G600-FDR0.05-island
+C-21-W200-G600-FDR0.05-island
+C-22-W200-G600-FDR0.05-island
+C-23-W200-G600-FDR0.05-island
+C-24-W200-G600-FDR0.05-island
+C-25-W200-G600-FDR0.05-island
+C-26-W200-G600-FDR0.05-island
+C-27-W200-G600-FDR0.05-island
+C-28-W200-G600-FDR0.05-island
+
+C-I-1__sicer_corrected.bed
+C-I-2__sicer_corrected.bed
+C-I-3__sicer_corrected.bed
+C-I-4__sicer_corrected.bed
+C-I-5__sicer_corrected.bed
+C-I-6__sicer_corrected.bed
+C-I-7__sicer_corrected.bed
+C-I-8__sicer_corrected.bed
+C-I-9__sicer_corrected.bed
+C-I-10_sicer_corrected.bed
+C-I-11_sicer_corrected.bed
+C-I-12_sicer_corrected.bed
+C-I-13_sicer_corrected.bed
+C-I-14_sicer_corrected.bed
+C-I-15_sicer_corrected.bed
+C-I-16_sicer_corrected.bed
+C-I-17_sicer_corrected.bed
+C-I-18_sicer_corrected.bed
+C-I-19_sicer_corrected.bed
+C-I-20_sicer_corrected.bed
+C-I-21_sicer_corrected.bed
+C-I-22_sicer_corrected.bed
+C-I-23_sicer_corrected.bed
+C-I-24_sicer_corrected.bed
+C-I-25_sicer_corrected.bed
+C-I-26_sicer_corrected.bed
+C-I-27_sicer_corrected.bed
+C-I-28_sicer_corrected.bed
+
+
+###### Peaks numbering
+
+nano peak_number_broad.txt
+nano peak_number_narrow.txt
+nano peak_number_sicer.txt
+
+cd ~/chip_data/macs2_broad/filtered
+
+wc -l < C-I-1__peaks.broad.filtered.sorted.bed >> ~/peak_number_broad.txt
+wc -l < C-I-2__peaks.broad.filtered.sorted.bed >> ~/peak_number_broad.txt
+wc -l < C-I-3__peaks.broad.filtered.sorted.bed >> ~/peak_number_broad.txt
+wc -l < C-I-4__peaks.broad.filtered.sorted.bed >> ~/peak_number_broad.txt
+wc -l < C-I-5__peaks.broad.filtered.sorted.bed >> ~/peak_number_broad.txt
+wc -l < C-I-6__peaks.broad.filtered.sorted.bed >> ~/peak_number_broad.txt
+wc -l < C-I-7__peaks.broad.filtered.sorted.bed >> ~/peak_number_broad.txt
+wc -l < C-I-8__peaks.broad.filtered.sorted.bed >> ~/peak_number_broad.txt
+wc -l < C-I-9__peaks.broad.filtered.sorted.bed >> ~/peak_number_broad.txt
+wc -l < C-I-10_peaks.broad.filtered.sorted.bed >> ~/peak_number_broad.txt
+wc -l < C-I-11_peaks.broad.filtered.sorted.bed >> ~/peak_number_broad.txt
+wc -l < C-I-12_peaks.broad.filtered.sorted.bed >> ~/peak_number_broad.txt
+wc -l < C-I-13_peaks.broad.filtered.sorted.bed >> ~/peak_number_broad.txt
+wc -l < C-I-14_peaks.broad.filtered.sorted.bed >> ~/peak_number_broad.txt
+wc -l < C-I-15_peaks.broad.filtered.sorted.bed >> ~/peak_number_broad.txt
+wc -l < C-I-16_peaks.broad.filtered.sorted.bed >> ~/peak_number_broad.txt
+wc -l < C-I-17_peaks.broad.filtered.sorted.bed >> ~/peak_number_broad.txt
+wc -l < C-I-18_peaks.broad.filtered.sorted.bed >> ~/peak_number_broad.txt
+wc -l < C-I-19_peaks.broad.filtered.sorted.bed >> ~/peak_number_broad.txt
+wc -l < C-I-20_peaks.broad.filtered.sorted.bed >> ~/peak_number_broad.txt
+wc -l < C-I-21_peaks.broad.filtered.sorted.bed >> ~/peak_number_broad.txt
+wc -l < C-I-22_peaks.broad.filtered.sorted.bed >> ~/peak_number_broad.txt
+wc -l < C-I-23_peaks.broad.filtered.sorted.bed >> ~/peak_number_broad.txt
+wc -l < C-I-24_peaks.broad.filtered.sorted.bed >> ~/peak_number_broad.txt
+wc -l < C-I-25_peaks.broad.filtered.sorted.bed >> ~/peak_number_broad.txt
+wc -l < C-I-26_peaks.broad.filtered.sorted.bed >> ~/peak_number_broad.txt
+wc -l < C-I-27_peaks.broad.filtered.sorted.bed >> ~/peak_number_broad.txt
+wc -l < C-I-28_peaks.broad.filtered.sorted.bed >> ~/peak_number_broad.txt
+
+cd ~/chip_data/macs2_narrow/filtered
+
+wc -l < C-I-1__peaks.narrow.filtered.sorted.bed >> ~/peak_number_narrow.txt
+wc -l < C-I-2__peaks.narrow.filtered.sorted.bed >> ~/peak_number_narrow.txt
+wc -l < C-I-3__peaks.narrow.filtered.sorted.bed >> ~/peak_number_narrow.txt
+wc -l < C-I-4__peaks.narrow.filtered.sorted.bed >> ~/peak_number_narrow.txt
+wc -l < C-I-5__peaks.narrow.filtered.sorted.bed >> ~/peak_number_narrow.txt
+wc -l < C-I-6__peaks.narrow.filtered.sorted.bed >> ~/peak_number_narrow.txt
+wc -l < C-I-7__peaks.narrow.filtered.sorted.bed >> ~/peak_number_narrow.txt
+wc -l < C-I-8__peaks.narrow.filtered.sorted.bed >> ~/peak_number_narrow.txt
+wc -l < C-I-9__peaks.narrow.filtered.sorted.bed >> ~/peak_number_narrow.txt
+wc -l < C-I-10_peaks.narrow.filtered.sorted.bed >> ~/peak_number_narrow.txt
+wc -l < C-I-11_peaks.narrow.filtered.sorted.bed >> ~/peak_number_narrow.txt
+wc -l < C-I-12_peaks.narrow.filtered.sorted.bed >> ~/peak_number_narrow.txt
+wc -l < C-I-13_peaks.narrow.filtered.sorted.bed >> ~/peak_number_narrow.txt
+wc -l < C-I-14_peaks.narrow.filtered.sorted.bed >> ~/peak_number_narrow.txt
+wc -l < C-I-15_peaks.narrow.filtered.sorted.bed >> ~/peak_number_narrow.txt
+wc -l < C-I-16_peaks.narrow.filtered.sorted.bed >> ~/peak_number_narrow.txt
+wc -l < C-I-17_peaks.narrow.filtered.sorted.bed >> ~/peak_number_narrow.txt
+wc -l < C-I-18_peaks.narrow.filtered.sorted.bed >> ~/peak_number_narrow.txt
+wc -l < C-I-19_peaks.narrow.filtered.sorted.bed >> ~/peak_number_narrow.txt
+wc -l < C-I-20_peaks.narrow.filtered.sorted.bed >> ~/peak_number_narrow.txt
+wc -l < C-I-21_peaks.narrow.filtered.sorted.bed >> ~/peak_number_narrow.txt
+wc -l < C-I-22_peaks.narrow.filtered.sorted.bed >> ~/peak_number_narrow.txt
+wc -l < C-I-23_peaks.narrow.filtered.sorted.bed >> ~/peak_number_narrow.txt
+wc -l < C-I-24_peaks.narrow.filtered.sorted.bed >> ~/peak_number_narrow.txt
+wc -l < C-I-25_peaks.narrow.filtered.sorted.bed >> ~/peak_number_narrow.txt
+wc -l < C-I-26_peaks.narrow.filtered.sorted.bed >> ~/peak_number_narrow.txt
+wc -l < C-I-27_peaks.narrow.filtered.sorted.bed >> ~/peak_number_narrow.txt
+wc -l < C-I-28_peaks.narrow.filtered.sorted.bed >> ~/peak_number_narrow.txt
+
+cd ~/chip_data/macs2_sicer
+
+wc -l < C-I-1__sicer_corrected.bed >> ~/peak_number_sicer.txt
+wc -l < C-I-2__sicer_corrected.bed >> ~/peak_number_sicer.txt
+wc -l < C-I-3__sicer_corrected.bed >> ~/peak_number_sicer.txt
+wc -l < C-I-4__sicer_corrected.bed >> ~/peak_number_sicer.txt
+wc -l < C-I-5__sicer_corrected.bed >> ~/peak_number_sicer.txt
+wc -l < C-I-6__sicer_corrected.bed >> ~/peak_number_sicer.txt
+wc -l < C-I-7__sicer_corrected.bed >> ~/peak_number_sicer.txt
+wc -l < C-I-8__sicer_corrected.bed >> ~/peak_number_sicer.txt
+wc -l < C-I-9__sicer_corrected.bed >> ~/peak_number_sicer.txt
+wc -l < C-I-10_sicer_corrected.bed >> ~/peak_number_sicer.txt
+wc -l < C-I-11_sicer_corrected.bed >> ~/peak_number_sicer.txt
+wc -l < C-I-12_sicer_corrected.bed >> ~/peak_number_sicer.txt
+wc -l < C-I-13_sicer_corrected.bed >> ~/peak_number_sicer.txt
+wc -l < C-I-14_sicer_corrected.bed >> ~/peak_number_sicer.txt
+wc -l < C-I-15_sicer_corrected.bed >> ~/peak_number_sicer.txt
+wc -l < C-I-16_sicer_corrected.bed >> ~/peak_number_sicer.txt
+wc -l < C-I-17_sicer_corrected.bed >> ~/peak_number_sicer.txt
+wc -l < C-I-18_sicer_corrected.bed >> ~/peak_number_sicer.txt
+wc -l < C-I-19_sicer_corrected.bed >> ~/peak_number_sicer.txt
+wc -l < C-I-20_sicer_corrected.bed >> ~/peak_number_sicer.txt
+wc -l < C-I-21_sicer_corrected.bed >> ~/peak_number_sicer.txt
+wc -l < C-I-22_sicer_corrected.bed >> ~/peak_number_sicer.txt
+wc -l < C-I-23_sicer_corrected.bed >> ~/peak_number_sicer.txt
+wc -l < C-I-24_sicer_corrected.bed >> ~/peak_number_sicer.txt
+wc -l < C-I-25_sicer_corrected.bed >> ~/peak_number_sicer.txt
+wc -l < C-I-26_sicer_corrected.bed >> ~/peak_number_sicer.txt
+wc -l < C-I-27_sicer_corrected.bed >> ~/peak_number_sicer.txt
+wc -l < C-I-28_sicer_corrected.bed >> ~/peak_number_sicer.txt 
+
+
+
+
+
+
+
+
+
+
+
+
+

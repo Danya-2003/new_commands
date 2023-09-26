@@ -1,0 +1,109 @@
+############ ENCODE EXPERIMENT MATRIX
+https://www.encodeproject.org/matrix/?type=Experiment&control_type!=*&status=released&perturbed=false&assay_title=Histone+ChIP-seq
+
+#H3K9ac
+
+H3K9ac - fibroblast of dermis
+https://www.encodeproject.org/search/?type=Experiment&control_type!=*&status=released&perturbed=false&assay_title=Histone+ChIP-seq&target.label=H3K9ac&biosample_ontology.term_name=fibroblast+of+dermis
+
+H3K9ac - fibroblast of lung
+https://www.encodeproject.org/search/?type=Experiment&status=released&perturbed=false&assay_title=Histone+ChIP-seq&target.label=H3K9ac&biosample_ontology.term_name=fibroblast+of+lung
+
+
+
+#H3K9me3
+
+H3K9me3 - fibroblast of dermis
+https://www.encodeproject.org/search/?type=Experiment&status=released&perturbed=false&assay_title=Histone+ChIP-seq&target.label=H3K9me3&biosample_ontology.term_name=fibroblast+of+dermis
+
+H3K9ame3 - fibroblast of lung
+https://www.encodeproject.org/search/?type=Experiment&status=released&perturbed=false&assay_title=Histone+ChIP-seq&target.label=H3K9me3&biosample_ontology.term_name=fibroblast+of+lung
+
+H3K9me3 - foreskin fibroblast
+https://www.encodeproject.org/search/?type=Experiment&status=released&perturbed=false&assay_title=Histone+ChIP-seq&target.label=H3K9me3&biosample_ontology.term_name=foreskin+fibroblast
+
+
+
+#H3K27ac
+
+H3K27ac - fibroblast of dermis
+https://www.encodeproject.org/search/?type=Experiment&status=released&perturbed=false&assay_title=Histone+ChIP-seq&target.label=H3K27ac&biosample_ontology.term_name=fibroblast+of+dermis
+
+H3K27ac - fibroblast of lung
+https://www.encodeproject.org/search/?type=Experiment&status=released&perturbed=false&assay_title=Histone+ChIP-seq&target.label=H3K27ac&biosample_ontology.term_name=fibroblast+of+lung
+
+H3K27ac - foreskin fibroblast
+https://www.encodeproject.org/search/?type=Experiment&status=released&perturbed=false&assay_title=Histone+ChIP-seq&target.label=H3K27ac&biosample_ontology.term_name=foreskin+fibroblast
+
+H3K27ac - fibroblast of breast
+https://www.encodeproject.org/search/?type=Experiment&status=released&perturbed=false&assay_title=Histone+ChIP-seq&target.label=H3K27ac&biosample_ontology.term_name=fibroblast+of+breast
+
+H3K27ac - embryonic fibroblast
+https://www.encodeproject.org/search/?type=Experiment&status=released&perturbed=false&assay_title=Histone+ChIP-seq&target.label=H3K27ac&biosample_ontology.term_name=embryonic+fibroblast
+
+
+
+#H3K36me3
+
+H3K36me3 - fibroblast of dermis
+https://www.encodeproject.org/search/?type=Experiment&status=released&perturbed=false&assay_title=Histone+ChIP-seq&target.label=H3K36me3&biosample_ontology.classification=primary+cell&biosample_ontology.term_name=fibroblast+of+dermis
+
+H3K36me3 - fibroblast of lung
+https://www.encodeproject.org/search/?type=Experiment&status=released&perturbed=false&assay_title=Histone+ChIP-seq&target.label=H3K36me3&biosample_ontology.classification=primary+cell&biosample_ontology.term_name=fibroblast+of+lung
+
+H3K36me3 - foreskin fibroblast
+https://www.encodeproject.org/search/?type=Experiment&status=released&perturbed=false&assay_title=Histone+ChIP-seq&target.label=H3K36me3&biosample_ontology.classification=primary+cell&biosample_ontology.term_name=foreskin+fibroblast
+
+H3K36me3 - fibroblast of breast
+https://www.encodeproject.org/search/?type=Experiment&status=released&perturbed=false&assay_title=Histone+ChIP-seq&target.label=H3K36me3&biosample_ontology.classification=primary+cell&biosample_ontology.term_name=fibroblast+of+breast
+
+
+
+
+#H3K27me3
+
+H3K27me3 - fibroblast of dermis
+https://www.encodeproject.org/search/?type=Experiment&status=released&perturbed=false&assay_title=Histone+ChIP-seq&biosample_ontology.classification=primary+cell&target.label=H3K27me3&biosample_ontology.term_name=fibroblast+of+dermis
+
+H3K27me3 - fibroblast of lung
+https://www.encodeproject.org/search/?type=Experiment&status=released&perturbed=false&assay_title=Histone+ChIP-seq&biosample_ontology.classification=primary+cell&target.label=H3K27me3&biosample_ontology.term_name=fibroblast+of+lung
+
+H3K27me3 - foreskin fibroblast
+https://www.encodeproject.org/search/?type=Experiment&status=released&perturbed=false&assay_title=Histone+ChIP-seq&target.label=H3K36me3&biosample_ontology.classification=primary+cell&biosample_ontology.term_name=foreskin+fibroblast
+
+H3K27me3 - fibroblast of breast
+https://www.encodeproject.org/search/?type=Experiment&status=released&perturbed=false&assay_title=Histone+ChIP-seq&biosample_ontology.classification=primary+cell&target.label=H3K27me3&biosample_ontology.term_name=fibroblast+of+breast
+
+
+
+#H3K4me3
+
+H3K4me3 - fibroblast of lung
+https://www.encodeproject.org/search/?type=Experiment&status=released&perturbed=false&assay_title=Histone+ChIP-seq&target.label=H3K4me3&biosample_ontology.term_name=fibroblast+of+lung
+
+H3K4me3 - fibroblast of dermis
+https://www.encodeproject.org/search/?type=Experiment&status=released&perturbed=false&assay_title=Histone+ChIP-seq&target.label=H3K4me3&biosample_ontology.term_name=fibroblast+of+dermis
+
+H3K4me3 - fibroblast of breast
+https://www.encodeproject.org/search/?type=Experiment&status=released&perturbed=false&assay_title=Histone+ChIP-seq&target.label=H3K4me3&biosample_ontology.term_name=fibroblast+of+breast
+
+H3K4me3 - foreskin fibroblast
+https://www.encodeproject.org/search/?type=Experiment&status=released&perturbed=false&assay_title=Histone+ChIP-seq&target.label=H3K4me3&biosample_ontology.term_name=foreskin+fibroblast
+
+H3K4me3 - cardiac fibroblast
+https://www.encodeproject.org/search/?type=Experiment&status=released&perturbed=false&assay_title=Histone+ChIP-seq&target.label=H3K4me3&biosample_ontology.term_name=cardiac+fibroblast
+
+H3K4me3 - emryonic fibroblast
+https://www.encodeproject.org/search/?type=Experiment&status=released&perturbed=false&assay_title=Histone+ChIP-seq&target.label=H3K4me3&biosample_ontology.term_name=embryonic+fibroblast
+
+H3K4me3 - fibroblast of mammary gland
+https://www.encodeproject.org/search/?type=Experiment&status=released&perturbed=false&assay_title=Histone+ChIP-seq&target.label=H3K4me3&biosample_ontology.term_name=fibroblast+of+mammary+gland
+
+H3K4me3 - fibroblast of pulmonary artery
+https://www.encodeproject.org/search/?type=Experiment&status=released&perturbed=false&assay_title=Histone+ChIP-seq&target.label=H3K4me3&biosample_ontology.term_name=fibroblast+of+pulmonary+artery
+
+H3K4me3 - fibroblast of aorta adventa
+https://www.encodeproject.org/search/?type=Experiment&status=released&perturbed=false&assay_title=Histone+ChIP-seq&target.label=H3K4me3&biosample_ontology.term_name=fibroblast+of+the+aortic+adventitia
+
+H3K4me3 - fibroblast of villous mesenchyme
+https://www.encodeproject.org/search/?type=Experiment&status=released&perturbed=false&assay_title=Histone+ChIP-seq&target.label=H3K4me3&biosample_ontology.term_name=fibroblast+of+villous+mesenchyme

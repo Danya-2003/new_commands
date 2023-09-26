@@ -1,0 +1,118 @@
+bedtools intersect -a ~/f6_himorna/chip_peaks/CTD_01_genes.bed -b ~/f6_himorna/himorna/CTD-2587H24.5_himorna_minus.bed -wo -f 0.25 > ~/f6_himorna/intersect/CTD_01_genes_intersect.bed
+bedtools intersect -a ~/f6_himorna/chip_peaks/CTD_03_genes.bed -b ~/f6_himorna/himorna/CTD-2587H24.5_himorna_minus.bed -wo -f 0.25 > ~/f6_himorna/intersect/CTD_03_genes_intersect.bed
+
+bedtools intersect -a ~/f6_himorna/chip_peaks/CTD_01_peaks.bed -b ~/f6_himorna/himorna/CTD-2587H24.5_himorna_minus.bed -wo -f 0.25 > ~/f6_himorna/intersect/CTD_01_peaks_intersect.bed
+bedtools intersect -a ~/f6_himorna/chip_peaks/CTD_03_peaks.bed -b ~/f6_himorna/himorna/CTD-2587H24.5_himorna_minus.bed -wo -f 0.25 > ~/f6_himorna/intersect/CTD_03_peaks_intersect.bed
+
+bedtools intersect -a ~/f6_himorna/chip_peaks/CTD_01_peaks_fdr.bed -b ~/f6_himorna/himorna/CTD-2587H24.5_himorna_minus.bed -wo -f 0.25 > ~/f6_himorna/intersect/CTD_01_peaks_fdr_intersect.bed
+bedtools intersect -a ~/f6_himorna/chip_peaks/CTD_03_peaks_fdr.bed -b ~/f6_himorna/himorna/CTD-2587H24.5_himorna_minus.bed -wo -f 0.25 > ~/f6_himorna/intersect/CTD_03_peaks_fdr_intersect.bed
+
+bedtools intersect -a ~/f6_himorna/chip_peaks/RP11_03_genes.bed -b ~/f6_himorna/himorna/RP11_398K22.12_himorna_minus.bed -wo -f 0.25 > ~/f6_himorna/intersect/RP11_03_genes_intersect.bed
+bedtools intersect -a ~/f6_himorna/chip_peaks/RP11_05_genes.bed -b ~/f6_himorna/himorna/RP11_398K22.12_himorna_minus.bed -wo -f 0.25 > ~/f6_himorna/intersect/RP11_05_genes_intersect.bed
+
+bedtools intersect -a ~/f6_himorna/chip_peaks/RP11_03_peaks.bed -b ~/f6_himorna/himorna/RP11_398K22.12_himorna_minus.bed -wo -f 0.25 > ~/f6_himorna/intersect/RP11_03_peaks_intersect.bed
+bedtools intersect -a ~/f6_himorna/chip_peaks/RP11_05_peaks.bed -b ~/f6_himorna/himorna/RP11_398K22.12_himorna_minus.bed -wo -f 0.25 > ~/f6_himorna/intersect/RP11_05_peaks_intersect.bed
+
+bedtools intersect -a ~/f6_himorna/chip_peaks/RP11_03_peaks_fdr.bed -b ~/f6_himorna/himorna/RP11_398K22.12_himorna_minus.bed -wo -f 0.25 > ~/f6_himorna/intersect/RP11_03_peaks_fdr_intersect.bed
+bedtools intersect -a ~/f6_himorna/chip_peaks/RP11_05_peaks_fdr.bed -b ~/f6_himorna/himorna/RP11_398K22.12_himorna_minus.bed -wo -f 0.25 > ~/f6_himorna/intersect/RP11_05_peaks_fdr_intersect.bed
+
+
+Genome Browser
+
+track visibility=dense name="RP11_398K22.12_HIMORNA_peaks"  color=0,153,153   description="RP11_398K22.12_HIMORNA_peaks"
+https://raw.githubusercontent.com/Danya-2003/genome_browser/main/himorna/RP11-398K22.12_himorna_minus.bed
+
+track visibility=dense name="RP11_398K22.12_03_ChIP-seq_peaks"  color=0,118,154   description="RP11_398K22.12_ChIP-seq_peaks"
+https://raw.githubusercontent.com/Danya-2003/genome_browser/main/chip_peaks/RP11_03_peaks.bed
+
+track visibility=dense name="RP11_398K22.12_05_ChIP-seq_peaks"  color=0,118,154   description="RP11_398K22.12_ChIP-seq_peaks"
+https://raw.githubusercontent.com/Danya-2003/genome_browser/main/chip_peaks/RP11_05_peaks.bed
+
+track visibility=dense name="RP11_398K22.12_03_ChIP-seq_peaks_FDR"  color=0,77,154   description="RP11_398K22.12_03_ChIP-seq_peaks_FDR"
+https://raw.githubusercontent.com/Danya-2003/genome_browser/main/chip_peaks/RP11_03_peaks_fdr.bed
+
+track visibility=dense name="RP11_398K22.12_05_ChIP-seq_peaks_FDR"  color=0,77,154   description="RP11_398K22.12_05_ChIP-seq_peaks_FDR"
+https://raw.githubusercontent.com/Danya-2003/genome_browser/main/chip_peaks/RP11_05_peaks_fdr.bed
+
+track visibility=dense name="RP11_398K22.12_03_ChIP-seq_genes"  color=153,0,76   description="RP11_398K22.12_03_ChIP-seq_genes"
+https://raw.githubusercontent.com/Danya-2003/genome_browser/main/chip_peaks/RP11_03_genes.bed
+
+track visibility=dense name="RP11_398K22.12_05_ChIP-seq_genes"  color=153,0,76   description="RP11_398K22.12_05_ChIP-seq_genes"
+https://raw.githubusercontent.com/Danya-2003/genome_browser/main/chip_peaks/RP11_05_genes.bed
+
+
+chr20:58,638,923-58,742,663
+chr19:2,522,716-2,644,348
+chr19:3,310,870-3,495,592
+chr18:7,546,154-7,582,455
+chr18:57,564,427-57,611,021
+chr17:43,700,937-43,874,293
+chr17:81,154,987-81,511,785
+chr19:3,052,364-3,139,638
+
+
+track visibility=dense name="CTD-2587H24.5_HIMORNA_peaks"  color=0,153,153   description="CTD-2587H24.5_HIMORNA_peaks"
+https://raw.githubusercontent.com/Danya-2003/genome_browser/main/himorna/CTD-2587H24.5_himorna_minus.bed
+
+track visibility=dense name="CTD-2587H24.5_01_ChIP-seq_peaks"  color=0,118,154   description="CTD-2587H24.5_01_ChIP-seq_peaks"
+https://raw.githubusercontent.com/Danya-2003/genome_browser/main/chip_peaks/CTD_01_peaks.bed
+
+track visibility=dense name="CTD-2587H24.5_03_ChIP-seq_peaks"  color=0,118,154   description="CTD-2587H24.5_03_ChIP-seq_peaks"
+https://raw.githubusercontent.com/Danya-2003/genome_browser/main/chip_peaks/CTD_03_peaks.bed
+
+track visibility=dense name="CTD-2587H24.5_01_ChIP-seq_peaks_FDR"  color=0,77,154   description="CTD-2587H24.5_01_ChIP-seq_peaks_FDR"
+https://raw.githubusercontent.com/Danya-2003/genome_browser/main/chip_peaks/CTD_01_peaks_fdr.bed
+
+track visibility=dense name="CTD-2587H24.5_03_ChIP-seq_peaks_FDR"  color=0,77,154   description="CTD-2587H24.5_03_ChIP-seq_peaks_FDR"
+https://raw.githubusercontent.com/Danya-2003/genome_browser/main/chip_peaks/CTD_03_peaks_fdr.bed
+
+track visibility=dense name="CTD-2587H24.5_01_ChIP-seq_genes"  color=153,0,76   description="CTD-2587H24.5_01_ChIP-seq_genes"
+https://raw.githubusercontent.com/Danya-2003/genome_browser/main/chip_peaks/CTD_01_genes.bed
+
+track visibility=dense name="CTD-2587H24.5_03_ChIP-seq_genes"  color=153,0,76   description="CTD-2587H24.5_03_ChIP-seq_genes"
+https://raw.githubusercontent.com/Danya-2003/genome_browser/main/chip_peaks/CTD_03_genes.bed
+
+chr15:54,744,519-56,413,559
+chr17:60,607,979-66,581,888
+chr21:13,829,543-14,299,934
+
+
+### FISHER
+
+sort -k1,1 -k2,2n ~/f6_himorna/chip_peaks/CTD_01_genes.bed > ~/f6_himorna/chip_peaks/CTD_01_genes_sorted.bed
+sort -k1,1 -k2,2n ~/f6_himorna/chip_peaks/CTD_03_genes.bed > ~/f6_himorna/chip_peaks/CTD_03_genes_sorted.bed
+sort -k1,1 -k2,2n ~/f6_himorna/chip_peaks/CTD_01_peaks.bed > ~/f6_himorna/chip_peaks/CTD_01_peaks_sorted.bed
+sort -k1,1 -k2,2n ~/f6_himorna/chip_peaks/CTD_03_peaks.bed > ~/f6_himorna/chip_peaks/CTD_03_peaks_sorted.bed
+sort -k1,1 -k2,2n ~/f6_himorna/chip_peaks/CTD_01_peaks_fdr.bed > ~/f6_himorna/chip_peaks/CTD_01_peaks_fdr_sorted.bed
+sort -k1,1 -k2,2n ~/f6_himorna/chip_peaks/CTD_03_peaks_fdr.bed > ~/f6_himorna/chip_peaks/CTD_03_peaks_fdr_sorted.bed
+sort -k1,1 -k2,2n ~/f6_himorna/chip_peaks/RP11_03_genes.bed > ~/f6_himorna/chip_peaks/RP11_03_genes_sorted.bed
+sort -k1,1 -k2,2n ~/f6_himorna/chip_peaks/RP11_05_genes.bed > ~/f6_himorna/chip_peaks/RP11_05_genes_sorted.bed
+sort -k1,1 -k2,2n ~/f6_himorna/chip_peaks/RP11_03_peaks.bed > ~/f6_himorna/chip_peaks/RP11_03_peaks_sorted.bed
+sort -k1,1 -k2,2n ~/f6_himorna/chip_peaks/RP11_05_peaks.bed > ~/f6_himorna/chip_peaks/RP11_05_peaks_sorted.bed
+sort -k1,1 -k2,2n ~/f6_himorna/chip_peaks/RP11_03_peaks_fdr.bed > ~/f6_himorna/chip_peaks/RP11_03_peaks_fdr_sorted.bed
+sort -k1,1 -k2,2n ~/f6_himorna/chip_peaks/RP11_05_peaks_fdr.bed > ~/f6_himorna/chip_peaks/RP11_05_peaks_fdr_sorted.bed
+
+sort -k1,1 -k2,2n ~/f6_himorna/himorna/RP11_398K22.12_himorna_minus.bed > ~/f6_himorna/himorna/RP11_398K22.12_himorna_minus_sorted.bed
+
+sort -k1,1 -k2,2n ~/f6_himorna/himorna/CTD-2587H24.5_himorna_minus.bed > ~/f6_himorna/himorna/CTD-2587H24.5_himorna_minus_sorted.bed
+
+sort -k1,1 -k2,2n ~/hg38.chrom.sizes > ~/hg38.chrom.sorted.sizes
+
+bedtools fisher -a ~/f6_himorna/chip_peaks/CTD_01_genes_sorted.bed -b ~/f6_himorna/himorna/CTD-2587H24.5_himorna_minus_sorted.bed -g ~/hg38.chrom.sorted.sizes > ~/f6_himorna/fisher/CTD_01_genes_fisher
+bedtools fisher -a ~/f6_himorna/chip_peaks/CTD_03_genes_sorted.bed -b ~/f6_himorna/himorna/CTD-2587H24.5_himorna_minus_sorted.bed -g ~/hg38.chrom.sorted.sizes > ~/f6_himorna/fisher/CTD_03_genes_fisher
+
+bedtools fisher -a ~/f6_himorna/chip_peaks/CTD_01_peaks_sorted.bed -b ~/f6_himorna/himorna/CTD-2587H24.5_himorna_minus_sorted.bed -g ~/hg38.chrom.sorted.sizes > ~/f6_himorna/fisher/CTD_01_peaks_fisher
+bedtools fisher -a ~/f6_himorna/chip_peaks/CTD_03_peaks_sorted.bed -b ~/f6_himorna/himorna/CTD-2587H24.5_himorna_minus_sorted.bed -g ~/hg38.chrom.sorted.sizes > ~/f6_himorna/fisher/CTD_03_peaks_fisher
+
+bedtools fisher -a ~/f6_himorna/chip_peaks/CTD_01_peaks_fdr_sorted.bed -b ~/f6_himorna/himorna/CTD-2587H24.5_himorna_minus_sorted.bed -g ~/hg38.chrom.sorted.sizes > ~/f6_himorna/fisher/CTD_01_peaks_fdr_fisher
+bedtools fisher -a ~/f6_himorna/chip_peaks/CTD_03_peaks_fdr_sorted.bed -b ~/f6_himorna/himorna/CTD-2587H24.5_himorna_minus_sorted.bed -g ~/hg38.chrom.sorted.sizes > ~/f6_himorna/fisher/CTD_03_peaks_fdr_fisher
+
+bedtools fisher -a ~/f6_himorna/chip_peaks/RP11_03_genes_sorted.bed -b ~/f6_himorna/himorna/RP11_398K22.12_himorna_minus_sorted.bed -g ~/hg38.chrom.sorted.sizes > ~/f6_himorna/fisher/RP11_03_genes_fisher
+bedtools fisher -a ~/f6_himorna/chip_peaks/RP11_05_genes_sorted.bed -b ~/f6_himorna/himorna/RP11_398K22.12_himorna_minus_sorted.bed -g ~/hg38.chrom.sorted.sizes > ~/f6_himorna/fisher/RP11_05_genes_fisher
+
+bedtools fisher -a ~/f6_himorna/chip_peaks/RP11_03_peaks_sorted.bed -b ~/f6_himorna/himorna/RP11_398K22.12_himorna_minus_sorted.bed -g ~/hg38.chrom.sorted.sizes > ~/f6_himorna/fisher/RP11_03_peaks_fisher
+bedtools fisher -a ~/f6_himorna/chip_peaks/RP11_05_peaks_sorted.bed -b ~/f6_himorna/himorna/RP11_398K22.12_himorna_minus_sorted.bed -g ~/hg38.chrom.sorted.sizes > ~/f6_himorna/fisher/RP11_05_peaks_fisher
+
+bedtools fisher -a ~/f6_himorna/chip_peaks/RP11_03_peaks_fdr_sorted.bed -b ~/f6_himorna/himorna/RP11_398K22.12_himorna_minus_sorted.bed -g ~/hg38.chrom.sorted.sizes > ~/f6_himorna/fisher/RP11_03_peaks_fdr_fisher
+bedtools fisher -a ~/f6_himorna/chip_peaks/RP11_05_peaks_fdr_sorted.bed -b ~/f6_himorna/himorna/RP11_398K22.12_himorna_minus_sorted.bed -g ~/hg38.chrom.sorted.sizes > ~/f6_himorna/fisher/RP11_05_peaks_fdr_fisher
+

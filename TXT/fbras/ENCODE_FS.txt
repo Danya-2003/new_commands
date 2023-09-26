@@ -1,0 +1,119 @@
+FS - foreskin fibroblasts
+
+wget -O NHDF_ab_1.bam "https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSM733733&format=file&file=GSM733733%5Fhg19%5FwgEncodeBroadHistoneNhdfadH3k36me3StdAlnRep1%2Ebam"
+wget -O NHDF_ab_2.bam "https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSM733733&format=file&file=GSM733733%5Fhg19%5FwgEncodeBroadHistoneNhdfadH3k36me3StdAlnRep2%2Ebam"
+wget -O NHDF_nc_1.bam "https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSM733750&format=file&file=GSM733750%5Fhg19%5FwgEncodeBroadHistoneNhdfadControlStdAlnRep1%2Ebam"
+wget -O NHDF_nc_2.bam "https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSM733750&format=file&file=GSM733750%5Fhg19%5FwgEncodeBroadHistoneNhdfadControlStdAlnRep2%2Ebam"
+
+
+
+wget -O blacklist.bed "https://sites.google.com/site/anshulkundaje/projects/blacklists"
+
+wget -O NHDF_1.bed.gz "https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSM817238&format=file&file=GSM817238%5FUCSF%2DUBC%2EPenis%5FForeskin%5FFibroblast%5FPrimary%5FCells%2EH3K36me3%2Eskin01%2Ebed%2Egz"
+wget -O NHDF_2.bed.gz "https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSM817241&format=file&file=GSM817241%5FUCSF%2DUBC%2EPenis%5FForeskin%5FFibroblast%5FPrimary%5FCells%2EH3K36me3%2Eskin02%2Ebed%2Egz"
+
+
+gzip -d FS_2.bed.gz
+
+###### Peak-calling
+
+macs2 callpeak  -t FS_1.bed -n FS_1 --outdir fs  -f BED  -m 2 50  -g hs
+macs2 callpeak  -t FS_2.bed -n FS_2 --outdir fs  -f BED  -m 2 50  -g hs
+
+macs2 callpeak  -t FS_1.bed -n FS_1 --outdir fs  -f BED  -m 2 50  -g hs --broad
+macs2 callpeak  -t FS_2.bed -n FS_2 --outdir fs  -f BED  -m 2 50  -g hs --broad
+
+
+###### Correction
+
+dos2unix -n FS_1_peaks.narrowPeak FS_1_peaks_cor.narrowPeak
+dos2unix -n FS_2_peaks.narrowPeak FS_2_peaks_cor.narrowPeak
+dos2unix -n FS_1_peaks.broadPeak FS_1_peaks_cor.broadPeak
+dos2unix -n FS_2_peaks.broadPeak FS_2_peaks_cor.broadPeak
+
+mac2unix -n FS_1_peaks.narrowPeak FS_1_peaks_cor.narrowPeak
+mac2unix -n FS_2_peaks.narrowPeak FS_2_peaks_cor.narrowPeak
+mac2unix -n FS_1_peaks.broadPeak FS_1_peaks_cor.broadPeak
+mac2unix -n FS_2_peaks.broadPeak FS_2_peaks_cor.broadPeak
+
+###### Sorting????
+
+sort -k1,1 -k2,2n FS_1_peaks.narrowPeak > FS_1_peaks_sort.narrowPeak 
+sort -k1,1 -k2,2n FS_2_peaks.narrowPeak > FS_2_peaks_sort.narrowPeak 
+sort -k1,1 -k2,2n FS_1_peaks.broadPeak > FS_1_peaks_sort.broadPeak 
+sort -k1,1 -k2,2n FS_2_peaks.broadPeak > FS_2_peaks_sort.broadPeak 
+
+
+###### Intersections with blacklist hg19
+
+
+bedtools intersect -v -a FS_1_peaks.broadPeak  -b ../blacklist.bed > FS_1_broad_filtered.bed
+bedtools intersect -v -a FS_2_peaks.broadPeak  -b ../blacklist.bed > FS_2_broad_filtered.bed
+bedtools intersect -v -a FS_1_peaks.narrowPeak  -b ../blacklist.bed > FS_1_narrow_filtered.bed
+bedtools intersect -v -a FS_2_peaks.narrowPeak  -b ../blacklist.bed > FS_2_narrow_filtered.bed
+ 
+bedtools intersect -v -a FS_1_peaks_cor.broadPeak  -b ../blacklist.bed > FS_1_broad_filtered.bed
+bedtools intersect -v -a FS_2_peaks_cor.broadPeak  -b ../blacklist.bed > FS_2_broad_filtered.bed
+bedtools intersect -v -a FS_1_peaks_cor.narrowPeak  -b ../blacklist.bed > FS_1_narrow_filtered.bed
+bedtools intersect -v -a FS_2_peaks_cor.narrowPeak  -b ../blacklist.bed > FS_2_narrow_filtered.bed 
+
+bedtools intersect -v -a FS_1_peaks_sort.broadPeak  -b ../blacklist.bed > FS_1_broad_filtered.bed
+bedtools intersect -v -a FS_2_peaks_sort.broadPeak  -b ../blacklist.bed > FS_2_broad_filtered.bed
+bedtools intersect -v -a FS_1_peaks_sort.narrowPeak  -b ../blacklist.bed > FS_1_narrow_filtered.bed
+bedtools intersect -v -a FS_2_peaks_sort.narrowPeak  -b ../blacklist.bed > FS_2_narrow_filtered.bed 
+ 
+ERROR: Received illegal bin number 4294967295 from getBin call.
+ERROR: Unable to add record to tree.
+
+###### Sorting
+
+sort -k1,1 -k2,2n FS_1_broad_filtered.bed > results/FS_1_broad_filtered_sorted.bed 
+sort -k1,1 -k2,2n FS_2_broad_filtered.bed > results/FS_2_broad_filtered_sorted.bed 
+sort -k1,1 -k2,2n FS_2_narrow_filtered.bed > results/FS_2_narrow_filtered_sorted.bed 
+sort -k1,1 -k2,2n FS_1_narrow_filtered.bed > results/FS_1_narrow_filtered_sorted.bed 
+
+###### Intersections with nca files
+ 
+
+bedtools intersect -a FS_1_broad_filtered_sorted.bed -b /home/marakulina/CTD/peaks/NCA/nca_1_broad_sorted.bed -wa -wb > intersect/nhdf_1_1_nca_c1_broad.bed 
+bedtools intersect -a FS_1_narrow_filtered_sorted.bed -b /home/marakulina/CTD/peaks/NCA/nca_1_narrow_sorted.bed -wa -wb > intersect/nhdf_1_1_nca_1_narrow.bed 
+
+bedtools intersect -a FS_1_broad_filtered_sorted.bed -b /home/marakulina/CTD/peaks/NCA/nca_2_broad_sorted.bed -wa -wb > intersect/nhdf_1_1_nca_1_broad.bed 
+bedtools intersect -a FS_1_narrow_filtered_sorted.bed -b /home/marakulina/CTD/peaks/NCA/nca_2_narrow_sorted.bed -wa -wb > intersect/nhdf_1_1_nca_1_narrow.bed 
+
+bedtools intersect -a FS_2_broad_filtered_sorted.bed -b /home/marakulina/CTD/peaks/NCA/nca_1_broad_sorted.bed -wa -wb > intersect/nhdf_1_1_nca_1_broad.bed 
+bedtools intersect -a FS_2_narrow_filtered_sorted.bed -b /home/marakulina/CTD/peaks/NCA/nca_1_narrow_sorted.bed -wa -wb > intersect/nhdf_1_1_nca_1_narrow.bed 
+
+bedtools intersect -a FS_2_broad_filtered_sorted.bed -b /home/marakulina/CTD/peaks/NCA/nca_2_broad_sorted.bed -wa -wb > intersect/nhdf_1_1_nca_1_broad.bed 
+bedtools intersect -a FS_2_narrow_filtered_sorted.bed -b /home/marakulina/CTD/peaks/NCA/nca_2_narrow_sorted.bed -wa -wb > intersect/nhdf_1_1_nca_1_narrow.bed 
+
+
+###### Peak-calling with SICER2
+
+sicer  -t ../FS_1.bed  -s hg19 --cpu 16 --false_discovery_rate 0.05
+sicer  -t ../FS_2.bed  -s hg19 --cpu 16 --false_discovery_rate 0.05
+
+
+###### Intersections with blacklist hg38
+
+
+sed 's/[\t]*$//' FS_1_sicer.bed > FS_1_corrected.bed
+bedtools intersect -v -a FS_1_corrected.bed -b ../blacklist.bed >  FS_1_filtered.bed
+sed 's/[\t]*$//' FS_2_sicer.bed > FS_2_corrected.bed
+bedtools intersect -v -a FS_2_corrected.bed -b ../blacklist.bed >  FS_2_filtered.bed
+
+c
+###### Sorting
+
+
+sort -k1,1 -k2,2n FS_1_filtered.bed > results/FS_1_filtered_sorted.bed 
+sort -k1,1 -k2,2n FS_2_filtered.bed > results/FS_2_filtered_sorted.bed 
+
+###### Intersections with nca files
+
+
+bedtools intersect -a FS_1_filtered_sorted.bed -b /home/marakulina/CTD/peaks/NCA/nca_2_sicer_sorted.bed -wa -wb > intersect/FS_1_nca_2_sicer.bed 
+bedtools intersect -a FS_1_filtered_sorted.bed -b /home/marakulina/CTD/peaks/NCA/nca_1_sicer_sorted.bed -wa -wb > intersect/FS_1_nca_1_sicer.bed 
+
+bedtools intersect -a FS_2_filtered_sorted.bed -b /home/marakulina/CTD/peaks/NCA/nca_2_sicer_sorted.bed -wa -wb > intersect/FS_2_nca_2_sicer.bed 
+bedtools intersect -a FS_2_filtered_sorted.bed -b /home/marakulina/CTD/peaks/NCA/nca_1_sicer_sorted.bed -wa -wb > intersect/FS_2_nca_1_sicer.bed 

@@ -1,0 +1,76 @@
+rgt-TDF regiontest -r ~/for_triplexator/ENST00000591665.1.fa -bed ~/ctd_promoters/ctd_switch_01.bed -rn DNAAF3-AS1 -organism hg38 -o ~/for_triplexator/tdf/no_mask/ctd_switch_01_l_17 -n 100 -l 17 -f ~/ctd_promoters/ctd_unswitch_01_inverse.bed
+
+rgt-TDF regiontest -r ~/for_triplexator/DNAAF3-AS1_masked_duplexes_50_1643.fa -bed ~/ctd_promoters/ctd_switch_01.bed -rn DNAAF3-AS1 -organism hg38 -o ~/for_triplexator/tdf/50_1643/ctd_switch_01_l_17 -n 100 -l 17 -f ~/ctd_promoters/ctd_unswitch_01_inverse.bed
+
+rgt-TDF regiontest -r ~/for_triplexator/DNAAF3-AS1_masked_duplexes_70_1643.fa -bed ~/ctd_promoters/ctd_switch_01.bed -rn DNAAF3-AS1 -organism hg38 -o ~/for_triplexator/tdf/70_1643/ctd_switch_01_l_17 -n 100 -l 17 -f ~/ctd_promoters/ctd_unswitch_01_inverse.bed
+
+rgt-TDF regiontest -r ~/for_triplexator/DNAAF3-AS1_masked_duplexes_90_1643.fa -bed ~/ctd_promoters/ctd_switch_01.bed -rn DNAAF3-AS1 -organism hg38 -o ~/for_triplexator/tdf/90_1643/ctd_switch_01_l_17 -n 100 -l 17 -f ~/ctd_promoters/ctd_unswitch_01_inverse.bed
+
+
+
+rgt-TDF regiontest -r ~/for_triplexator/ENST00000591665.1.fa -bed ~/ctd_promoters/ctd_switch_01.bed -rn DNAAF3-AS1 -organism hg38 -o ~/for_triplexator/tdf/no_mask/ctd_switch_01_l_16 -n 100 -l 16 -f ~/ctd_promoters/ctd_unswitch_01_inverse.bed
+
+rgt-TDF regiontest -r ~/for_triplexator/DNAAF3-AS1_masked_duplexes_50_1643.fa -bed ~/ctd_promoters/ctd_switch_01.bed -rn DNAAF3-AS1 -organism hg38 -o ~/for_triplexator/tdf/50_1643/ctd_switch_01_l_16 -n 100 -l 16 -f ~/ctd_promoters/ctd_unswitch_01_inverse.bed
+
+rgt-TDF regiontest -r ~/for_triplexator/DNAAF3-AS1_masked_duplexes_70_1643.fa -bed ~/ctd_promoters/ctd_switch_01.bed -rn DNAAF3-AS1 -organism hg38 -o ~/for_triplexator/tdf/70_1643/ctd_switch_01_l_16 -n 100 -l 16 -f ~/ctd_promoters/ctd_unswitch_01_inverse.bed
+
+rgt-TDF regiontest -r ~/for_triplexator/DNAAF3-AS1_masked_duplexes_90_1643.fa -bed ~/ctd_promoters/ctd_switch_01.bed -rn DNAAF3-AS1 -organism hg38 -o ~/for_triplexator/tdf/90_1643/ctd_switch_01_l_16 -n 100 -l 16 -f ~/ctd_promoters/ctd_unswitch_01_inverse.bed
+
+
+
+rgt-TDF regiontest -r ~/for_triplexator/ENST00000591665.1.fa -bed ~/ctd_promoters/ctd_switch_01.bed -rn DNAAF3-AS1 -organism hg38 -o ~/for_triplexator/tdf/no_mask/ctd_switch_01_l_15 -n 100 -l 15 -f ~/ctd_promoters/ctd_unswitch_01_inverse.bed
+
+rgt-TDF regiontest -r ~/for_triplexator/DNAAF3-AS1_masked_duplexes_50_1643.fa -bed ~/ctd_promoters/ctd_switch_01.bed -rn DNAAF3-AS1 -organism hg38 -o ~/for_triplexator/tdf/50_1643/ctd_switch_01_l_15 -n 100 -l 15 -f ~/ctd_promoters/ctd_unswitch_01_inverse.bed
+
+rgt-TDF regiontest -r ~/for_triplexator/DNAAF3-AS1_masked_duplexes_70_1643.fa -bed ~/ctd_promoters/ctd_switch_01.bed -rn DNAAF3-AS1 -organism hg38 -o ~/for_triplexator/tdf/70_1643/ctd_switch_01_l_15 -n 100 -l 15 -f ~/ctd_promoters/ctd_unswitch_01_inverse.bed
+
+rgt-TDF regiontest -r ~/for_triplexator/DNAAF3-AS1_masked_duplexes_90_1643.fa -bed ~/ctd_promoters/ctd_switch_01.bed -rn DNAAF3-AS1 -organism hg38 -o ~/for_triplexator/tdf/90_1643/ctd_switch_01_l_15 -n 100 -l 15 -f ~/ctd_promoters/ctd_unswitch_01_inverse.bed
+
+
+
+rgt-TDF regiontest -r ~/for_triplexator/ENST00000591665.1.fa -bed ~/ctd_promoters/ctd_switch_01.bed -rn DNAAF3-AS1 -organism hg38 -o ~/for_triplexator/tdf/no_mask/ctd_switch_01_l_14 -n 100 -l 14 -f ~/ctd_promoters/ctd_unswitch_01_inverse.bed
+
+rgt-TDF regiontest -r ~/for_triplexator/DNAAF3-AS1_masked_duplexes_50_1643.fa -bed ~/ctd_promoters/ctd_switch_01.bed -rn DNAAF3-AS1 -organism hg38 -o ~/for_triplexator/tdf/50_1643/ctd_switch_01_l_14 -n 100 -l 14 -f ~/ctd_promoters/ctd_unswitch_01_inverse.bed
+
+rgt-TDF regiontest -r ~/for_triplexator/DNAAF3-AS1_masked_duplexes_70_1643.fa -bed ~/ctd_promoters/ctd_switch_01.bed -rn DNAAF3-AS1 -organism hg38 -o ~/for_triplexator/tdf/70_1643/ctd_switch_01_l_14 -n 100 -l 14 -f ~/ctd_promoters/ctd_unswitch_01_inverse.bed
+
+rgt-TDF regiontest -r ~/for_triplexator/DNAAF3-AS1_masked_duplexes_90_1643.fa -bed ~/ctd_promoters/ctd_switch_01.bed -rn DNAAF3-AS1 -organism hg38 -o ~/for_triplexator/tdf/90_1643/ctd_switch_01_l_14 -n 100 -l 14 -f ~/ctd_promoters/ctd_unswitch_01_inverse.bed
+
+
+rgt-TDF regiontest -r ~/for_triplexator/ENST00000591665.1.fa -bed ~/ctd_promoters/ctd_switch_03.bed -rn DNAAF3-AS1 -organism hg38 -o ~/for_triplexator/tdf/no_mask/ctd_switch_03_l_17 -n 100 -l 17 -f ~/ctd_promoters/ctd_unswitch_03_inverse.bed
+
+rgt-TDF regiontest -r ~/for_triplexator/DNAAF3-AS1_masked_duplexes_50_1643.fa -bed ~/ctd_promoters/ctd_switch_03.bed -rn DNAAF3-AS1 -organism hg38 -o ~/for_triplexator/tdf/50_1643/ctd_switch_03_l_17 -n 100 -l 17 -f ~/ctd_promoters/ctd_unswitch_03_inverse.bed
+
+rgt-TDF regiontest -r ~/for_triplexator/DNAAF3-AS1_masked_duplexes_70_1643.fa -bed ~/ctd_promoters/ctd_switch_03.bed -rn DNAAF3-AS1 -organism hg38 -o ~/for_triplexator/tdf/70_1643/ctd_switch_03_l_17 -n 100 -l 17 -f ~/ctd_promoters/ctd_unswitch_03_inverse.bed
+
+rgt-TDF regiontest -r ~/for_triplexator/DNAAF3-AS1_masked_duplexes_90_1643.fa -bed ~/ctd_promoters/ctd_switch_03.bed -rn DNAAF3-AS1 -organism hg38 -o ~/for_triplexator/tdf/90_1643/ctd_switch_03_l_17 -n 100 -l 17 -f ~/ctd_promoters/ctd_unswitch_03_inverse.bed
+
+
+
+rgt-TDF regiontest -r ~/for_triplexator/ENST00000591665.1.fa -bed ~/ctd_promoters/ctd_switch_03.bed -rn DNAAF3-AS1 -organism hg38 -o ~/for_triplexator/tdf/no_mask/ctd_switch_03_l_16 -n 100 -l 16 -f ~/ctd_promoters/ctd_unswitch_03_inverse.bed
+
+rgt-TDF regiontest -r ~/for_triplexator/DNAAF3-AS1_masked_duplexes_50_1643.fa -bed ~/ctd_promoters/ctd_switch_03.bed -rn DNAAF3-AS1 -organism hg38 -o ~/for_triplexator/tdf/50_1643/ctd_switch_03_l_16 -n 100 -l 16 -f ~/ctd_promoters/ctd_unswitch_03_inverse.bed
+
+rgt-TDF regiontest -r ~/for_triplexator/DNAAF3-AS1_masked_duplexes_70_1643.fa -bed ~/ctd_promoters/ctd_switch_03.bed -rn DNAAF3-AS1 -organism hg38 -o ~/for_triplexator/tdf/70_1643/ctd_switch_03_l_16 -n 100 -l 16 -f ~/ctd_promoters/ctd_unswitch_03_inverse.bed
+
+rgt-TDF regiontest -r ~/for_triplexator/DNAAF3-AS1_masked_duplexes_90_1643.fa -bed ~/ctd_promoters/ctd_switch_03.bed -rn DNAAF3-AS1 -organism hg38 -o ~/for_triplexator/tdf/90_1643/ctd_switch_03_l_16 -n 100 -l 16 -f ~/ctd_promoters/ctd_unswitch_03_inverse.bed
+
+
+
+rgt-TDF regiontest -r ~/for_triplexator/ENST00000591665.1.fa -bed ~/ctd_promoters/ctd_switch_03.bed -rn DNAAF3-AS1 -organism hg38 -o ~/for_triplexator/tdf/no_mask/ctd_switch_03_l_15 -n 100 -l 15 -f ~/ctd_promoters/ctd_unswitch_03_inverse.bed
+
+rgt-TDF regiontest -r ~/for_triplexator/DNAAF3-AS1_masked_duplexes_50_1643.fa -bed ~/ctd_promoters/ctd_switch_03.bed -rn DNAAF3-AS1 -organism hg38 -o ~/for_triplexator/tdf/50_1643/ctd_switch_03_l_15 -n 100 -l 15 -f ~/ctd_promoters/ctd_unswitch_03_inverse.bed
+
+rgt-TDF regiontest -r ~/for_triplexator/DNAAF3-AS1_masked_duplexes_70_1643.fa -bed ~/ctd_promoters/ctd_switch_03.bed -rn DNAAF3-AS1 -organism hg38 -o ~/for_triplexator/tdf/70_1643/ctd_switch_03_l_15 -n 100 -l 15 -f ~/ctd_promoters/ctd_unswitch_03_inverse.bed
+
+rgt-TDF regiontest -r ~/for_triplexator/DNAAF3-AS1_masked_duplexes_90_1643.fa -bed ~/ctd_promoters/ctd_switch_03.bed -rn DNAAF3-AS1 -organism hg38 -o ~/for_triplexator/tdf/90_1643/ctd_switch_03_l_15 -n 100 -l 15 -f ~/ctd_promoters/ctd_unswitch_03_inverse.bed
+
+
+
+rgt-TDF regiontest -r ~/for_triplexator/ENST00000591665.1.fa -bed ~/ctd_promoters/ctd_switch_03.bed -rn DNAAF3-AS1 -organism hg38 -o ~/for_triplexator/tdf/no_mask/ctd_switch_03_l_14 -n 100 -l 14 -f ~/ctd_promoters/ctd_unswitch_03_inverse.bed
+
+rgt-TDF regiontest -r ~/for_triplexator/DNAAF3-AS1_masked_duplexes_50_1643.fa -bed ~/ctd_promoters/ctd_switch_03.bed -rn DNAAF3-AS1 -organism hg38 -o ~/for_triplexator/tdf/50_1643/ctd_switch_03_l_14 -n 100 -l 14 -f ~/ctd_promoters/ctd_unswitch_03_inverse.bed
+
+rgt-TDF regiontest -r ~/for_triplexator/DNAAF3-AS1_masked_duplexes_70_1643.fa -bed ~/ctd_promoters/ctd_switch_03.bed -rn DNAAF3-AS1 -organism hg38 -o ~/for_triplexator/tdf/70_1643/ctd_switch_03_l_14 -n 100 -l 14 -f ~/ctd_promoters/ctd_unswitch_03_inverse.bed
+
+rgt-TDF regiontest -r ~/for_triplexator/DNAAF3-AS1_masked_duplexes_90_1643.fa -bed ~/ctd_promoters/ctd_switch_03.bed -rn DNAAF3-AS1 -organism hg38 -o ~/for_triplexator/tdf/90_1643/ctd_switch_03_l_14 -n 100 -l 14 -f ~/ctd_promoters/ctd_unswitch_03_inverse.bed

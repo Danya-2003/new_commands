@@ -1,0 +1,14 @@
+ssh -A webapp@buratino.autosome.ru
+deeployd46
+cd epifactors
+export RAILS_ENV=production
+/home/webapp/manage_unicorn.sh epifactors_v2 update_deploy epifactors2
+rvm use 2.5.3 do bundle install 
+rvm use 2.5.3 do bundle exec rake db:drop
+rvm use 2.5.3 do bundle exec rake db:setup
+rvm use 2.5.3 do bundle exec rake data:store_excel_to_db
+screen -S epifactors2
+rvm use 2.5.3 do bundle exec rake data:load_expressions
+Ctrl+A+D
+screen -r epifactors2
+screen -ls

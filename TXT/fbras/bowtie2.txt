@@ -1,0 +1,62 @@
+wget -O hg38_align.fa.gz "https://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/analysisSet/hg38.analysisSet.fa.gz"
+cd h38
+bowtie2-build hg38_align.fa.gz hg38
+
+
+bowtie2 -p 16 --local -x ~/h38/hg38 -1 ~/chip_fastq/trimmed/C-1_R1.fastq.gz -2 ~/chip_fastq/trimmed/C-1_R2.fastq.gz -S ~/chip_fastq/sam/C-1.sam 2> ~/chip_fastq/align_report/C-1.align.report 
+bowtie2 -p 4 --local -x ~/h38/hg38 -1 ~/chip_fastq/trimmed/C-2_R1.fastq.gz -2 ~/chip_fastq/trimmed/C-2_R2.fastq.gz -S ~/chip_fastq/sam/C-2.sam 2> ~/chip_fastq/align_report/C-2.align.report 
+bowtie2 -p 16 --local -x ~/h38/hg38 -1 ~/chip_fastq/trimmed/C-3_R1.fastq.gz -2 ~/chip_fastq/trimmed/C-3_R2.fastq.gz -S ~/chip_fastq/sam/C-3.sam 2> ~/chip_fastq/align_report/C-3.align.report 
+bowtie2 -p 16 --local -x ~/h38/hg38 -1 ~/chip_fastq/trimmed/C-4_R1.fastq.gz -2 ~/chip_fastq/trimmed/C-4_R2.fastq.gz -S ~/chip_fastq/sam/C-4.sam 2> ~/chip_fastq/align_report/C-4.align.report 
+bowtie2 -p 16 --local -x ~/h38/hg38 -1 ~/chip_fastq/trimmed/C-5_R1.fastq.gz -2 ~/chip_fastq/trimmed/C-5_R2.fastq.gz -S ~/chip_fastq/sam/C-5.sam 2> ~/chip_fastq/align_report/C-5.align.report 
+bowtie2 -p 16 --local -x ~/h38/hg38 -1 ~/chip_fastq/trimmed/C-6_R1.fastq.gz -2 ~/chip_fastq/trimmed/C-6_R2.fastq.gz -S ~/chip_fastq/sam/C-6.sam 2> ~/chip_fastq/align_report/C-6.align.report 
+bowtie2 -p 16 --local -x ~/h38/hg38 -1 ~/chip_fastq/trimmed/C-7_R1.fastq.gz -2 ~/chip_fastq/trimmed/C-7_R2.fastq.gz -S ~/chip_fastq/sam/C-7.sam 2> ~/chip_fastq/align_report/C-7.align.report 
+bowtie2 -p 16 --local -x ~/h38/hg38 -1 ~/chip_fastq/trimmed/C-8_R1.fastq.gz -2 ~/chip_fastq/trimmed/C-8_R2.fastq.gz -S ~/chip_fastq/sam/C-8.sam 2> ~/chip_fastq/align_report/C-8.align.report 
+bowtie2 -p 16 --local -x ~/h38/hg38 -1 ~/chip_fastq/trimmed/C-9_R1.fastq.gz -2 ~/chip_fastq/trimmed/C-9_R2.fastq.gz -S ~/chip_fastq/sam/C-9.sam 2> ~/chip_fastq/align_report/C-9.align.report 
+bowtie2 -p 16 --local -x ~/h38/hg38 -1 ~/chip_fastq/trimmed/C-10_R1.fastq.gz -2 ~/chip_fastq/trimmed/C-10_R2.fastq.gz -S ~/chip_fastq/sam/C-10.sam 2> ~/chip_fastq/align_report/C-10.align.report 
+bowtie2 -p 16 --local -x ~/h38/hg38 -1 ~/chip_fastq/trimmed/C-11_R1.fastq.gz -2 ~/chip_fastq/trimmed/C-11_R2.fastq.gz -S ~/chip_fastq/sam/C-11.sam 2> ~/chip_fastq/align_report/C-11.align.report 
+bowtie2 -p 16 --local -x ~/h38/hg38 -1 ~/chip_fastq/trimmed/C-12_R1.fastq.gz -2 ~/chip_fastq/trimmed/C-12_R2.fastq.gz -S ~/chip_fastq/sam/C-12.sam 2> ~/chip_fastq/align_report/C-12.align.report 
+bowtie2 -p 16 --local -x ~/h38/hg38 -1 ~/chip_fastq/trimmed/C-13_R1.fastq.gz -2 ~/chip_fastq/trimmed/C-13_R2.fastq.gz -S ~/chip_fastq/sam/C-13.sam 2> ~/chip_fastq/align_report/C-13.align.report 
+bowtie2 -p 16 --local -x ~/h38/hg38 -1 ~/chip_fastq/trimmed/C-14_R1.fastq.gz -2 ~/chip_fastq/trimmed/C-14_R2.fastq.gz -S ~/chip_fastq/sam/C-14.sam 2> ~/chip_fastq/align_report/C-14.align.report 
+bowtie2 -p 16 --local -x ~/h38/hg38 -1 ~/chip_fastq/trimmed/C-15_R1.fastq.gz -2 ~/chip_fastq/trimmed/C-15_R2.fastq.gz -S ~/chip_fastq/sam/C-15.sam 2> ~/chip_fastq/align_report/C-15.align.report 
+bowtie2 -p 16 --local -x ~/h38/hg38 -1 ~/chip_fastq/trimmed/C-16_R1.fastq.gz -2 ~/chip_fastq/trimmed/C-16_R2.fastq.gz -S ~/chip_fastq/sam/C-16.sam 2> ~/chip_fastq/align_report/C-16.align.report 
+bowtie2 -p 16 --local -x ~/h38/hg38 -1 ~/chip_fastq/trimmed/C-17_R1.fastq.gz -2 ~/chip_fastq/trimmed/C-17_R2.fastq.gz -S ~/chip_fastq/sam/C-17.sam 2> ~/chip_fastq/align_report/C-17.align.report 
+bowtie2 -p 16 --local -x ~/h38/hg38 -1 ~/chip_fastq/trimmed/C-18_R1.fastq.gz -2 ~/chip_fastq/trimmed/C-18_R2.fastq.gz -S ~/chip_fastq/sam/C-18.sam 2> ~/chip_fastq/align_report/C-18.align.report 
+bowtie2 -p 16 --local -x ~/h38/hg38 -1 ~/chip_fastq/trimmed/C-19_R1.fastq.gz -2 ~/chip_fastq/trimmed/C-19_R2.fastq.gz -S ~/chip_fastq/sam/C-19.sam 2> ~/chip_fastq/align_report/C-19.align.report 
+bowtie2 -p 16 --local -x ~/h38/hg38 -1 ~/chip_fastq/trimmed/C-20_R1.fastq.gz -2 ~/chip_fastq/trimmed/C-20_R2.fastq.gz -S ~/chip_fastq/sam/C-20.sam 2> ~/chip_fastq/align_report/C-20.align.report 
+bowtie2 -p 16 --local -x ~/h38/hg38 -1 ~/chip_fastq/trimmed/C-21_R1.fastq.gz -2 ~/chip_fastq/trimmed/C-21_R2.fastq.gz -S ~/chip_fastq/sam/C-21.sam 2> ~/chip_fastq/align_report/C-21.align.report 
+bowtie2 -p 16 --local -x ~/h38/hg38 -1 ~/chip_fastq/trimmed/C-22_R1.fastq.gz -2 ~/chip_fastq/trimmed/C-22_R2.fastq.gz -S ~/chip_fastq/sam/C-22.sam 2> ~/chip_fastq/align_report/C-22.align.report 
+bowtie2 -p 16 --local -x ~/h38/hg38 -1 ~/chip_fastq/trimmed/C-23_R1.fastq.gz -2 ~/chip_fastq/trimmed/C-23_R2.fastq.gz -S ~/chip_fastq/sam/C-23.sam 2> ~/chip_fastq/align_report/C-23.align.report 
+bowtie2 -p 16 --local -x ~/h38/hg38 -1 ~/chip_fastq/trimmed/C-24_R1.fastq.gz -2 ~/chip_fastq/trimmed/C-24_R2.fastq.gz -S ~/chip_fastq/sam/C-24.sam 2> ~/chip_fastq/align_report/C-24.align.report 
+bowtie2 -p 16 --local -x ~/h38/hg38 -1 ~/chip_fastq/trimmed/C-25_R1.fastq.gz -2 ~/chip_fastq/trimmed/C-25_R2.fastq.gz -S ~/chip_fastq/sam/C-25.sam 2> ~/chip_fastq/align_report/C-25.align.report 
+bowtie2 -p 16 --local -x ~/h38/hg38 -1 ~/chip_fastq/trimmed/C-26_R1.fastq.gz -2 ~/chip_fastq/trimmed/C-26_R2.fastq.gz -S ~/chip_fastq/sam/C-26.sam 2> ~/chip_fastq/align_report/C-26.align.report 
+bowtie2 -p 16 --local -x ~/h38/hg38 -1 ~/chip_fastq/trimmed/C-27_R1.fastq.gz -2 ~/chip_fastq/trimmed/C-27_R2.fastq.gz -S ~/chip_fastq/sam/C-27.sam 2> ~/chip_fastq/align_report/C-27.align.report 
+bowtie2 -p 16 --local -x ~/h38/hg38 -1 ~/chip_fastq/trimmed/C-28_R1.fastq.gz -2 ~/chip_fastq/trimmed/C-28_R2.fastq.gz -S ~/chip_fastq/sam/C-28.sam 2> ~/chip_fastq/align_report/C-28.align.report
+
+bowtie2 -p 16 --local -x ~/h38/hg38 -1 ~/chip_fastq/trimmed/I-1_R1.fastq.gz -2 ~/chip_fastq/trimmed/I-1_R2.fastq.gz -S ~/chip_fastq/sam/I-1.sam 2> ~/chip_fastq/align_report/I-1.align.report 
+bowtie2 -p 16 --local -x ~/h38/hg38 -1 ~/chip_fastq/trimmed/I-2_R1.fastq.gz -2 ~/chip_fastq/trimmed/I-2_R2.fastq.gz -S ~/chip_fastq/sam/I-2.sam 2> ~/chip_fastq/align_report/I-2.align.report 
+bowtie2 -p 16 --local -x ~/h38/hg38 -1 ~/chip_fastq/trimmed/I-3_R1.fastq.gz -2 ~/chip_fastq/trimmed/I-3_R2.fastq.gz -S ~/chip_fastq/sam/I-3.sam 2> ~/chip_fastq/align_report/I-3.align.report 
+bowtie2 -p 16 --local -x ~/h38/hg38 -1 ~/chip_fastq/trimmed/I-4_R1.fastq.gz -2 ~/chip_fastq/trimmed/I-4_R2.fastq.gz -S ~/chip_fastq/sam/I-4.sam 2> ~/chip_fastq/align_report/I-4.align.report 
+bowtie2 -p 16 --local -x ~/h38/hg38 -1 ~/chip_fastq/trimmed/I-5_R1.fastq.gz -2 ~/chip_fastq/trimmed/I-5_R2.fastq.gz -S ~/chip_fastq/sam/I-5.sam 2> ~/chip_fastq/align_report/I-5.align.report 
+bowtie2 -p 16 --local -x ~/h38/hg38 -1 ~/chip_fastq/trimmed/I-6_R1.fastq.gz -2 ~/chip_fastq/trimmed/I-6_R2.fastq.gz -S ~/chip_fastq/sam/I-6.sam 2> ~/chip_fastq/align_report/I-6.align.report 
+bowtie2 -p 16 --local -x ~/h38/hg38 -1 ~/chip_fastq/trimmed/I-7_R1.fastq.gz -2 ~/chip_fastq/trimmed/I-7_R2.fastq.gz -S ~/chip_fastq/sam/I-7.sam 2> ~/chip_fastq/align_report/I-7.align.report 
+bowtie2 -p 16 --local -x ~/h38/hg38 -1 ~/chip_fastq/trimmed/I-8_R1.fastq.gz -2 ~/chip_fastq/trimmed/I-8_R2.fastq.gz -S ~/chip_fastq/sam/I-8.sam 2> ~/chip_fastq/align_report/I-8.align.report 
+bowtie2 -p 16 --local -x ~/h38/hg38 -1 ~/chip_fastq/trimmed/I-9_R1.fastq.gz -2 ~/chip_fastq/trimmed/I-9_R2.fastq.gz -S ~/chip_fastq/sam/I-9.sam 2> ~/chip_fastq/align_report/I-9.align.report 
+bowtie2 -p 16 --local -x ~/h38/hg38 -1 ~/chip_fastq/trimmed/I-10_R1.fastq.gz -2 ~/chip_fastq/trimmed/I-10_R2.fastq.gz -S ~/chip_fastq/sam/I-10.sam 2> ~/chip_fastq/align_report/I-10.align.report 
+bowtie2 -p 16 --local -x ~/h38/hg38 -1 ~/chip_fastq/trimmed/I-11_R1.fastq.gz -2 ~/chip_fastq/trimmed/I-11_R2.fastq.gz -S ~/chip_fastq/sam/I-11.sam 2> ~/chip_fastq/align_report/I-11.align.report 
+bowtie2 -p 16 --local -x ~/h38/hg38 -1 ~/chip_fastq/trimmed/I-12_R1.fastq.gz -2 ~/chip_fastq/trimmed/I-12_R2.fastq.gz -S ~/chip_fastq/sam/I-12.sam 2> ~/chip_fastq/align_report/I-12.align.report 
+bowtie2 -p 16 --local -x ~/h38/hg38 -1 ~/chip_fastq/trimmed/I-13_R1.fastq.gz -2 ~/chip_fastq/trimmed/I-13_R2.fastq.gz -S ~/chip_fastq/sam/I-13.sam 2> ~/chip_fastq/align_report/I-13.align.report 
+bowtie2 -p 16 --local -x ~/h38/hg38 -1 ~/chip_fastq/trimmed/I-14_R1.fastq.gz -2 ~/chip_fastq/trimmed/I-14_R2.fastq.gz -S ~/chip_fastq/sam/I-14.sam 2> ~/chip_fastq/align_report/I-14.align.report 
+bowtie2 -p 16 --local -x ~/h38/hg38 -1 ~/chip_fastq/trimmed/I-15_R1.fastq.gz -2 ~/chip_fastq/trimmed/I-15_R2.fastq.gz -S ~/chip_fastq/sam/I-15.sam 2> ~/chip_fastq/align_report/I-15.align.report 
+bowtie2 -p 16 --local -x ~/h38/hg38 -1 ~/chip_fastq/trimmed/I-16_R1.fastq.gz -2 ~/chip_fastq/trimmed/I-16_R2.fastq.gz -S ~/chip_fastq/sam/I-16.sam 2> ~/chip_fastq/align_report/I-16.align.report 
+bowtie2 -p 16 --local -x ~/h38/hg38 -1 ~/chip_fastq/trimmed/I-17_R1.fastq.gz -2 ~/chip_fastq/trimmed/I-17_R2.fastq.gz -S ~/chip_fastq/sam/I-17.sam 2> ~/chip_fastq/align_report/I-17.align.report 
+bowtie2 -p 16 --local -x ~/h38/hg38 -1 ~/chip_fastq/trimmed/I-18_R1.fastq.gz -2 ~/chip_fastq/trimmed/I-18_R2.fastq.gz -S ~/chip_fastq/sam/I-18.sam 2> ~/chip_fastq/align_report/I-18.align.report 
+bowtie2 -p 16 --local -x ~/h38/hg38 -1 ~/chip_fastq/trimmed/I-19_R1.fastq.gz -2 ~/chip_fastq/trimmed/I-19_R2.fastq.gz -S ~/chip_fastq/sam/I-19.sam 2> ~/chip_fastq/align_report/I-19.align.report 
+bowtie2 -p 16 --local -x ~/h38/hg38 -1 ~/chip_fastq/trimmed/I-20_R1.fastq.gz -2 ~/chip_fastq/trimmed/I-20_R2.fastq.gz -S ~/chip_fastq/sam/I-20.sam 2> ~/chip_fastq/align_report/I-20.align.report 
+bowtie2 -p 16 --local -x ~/h38/hg38 -1 ~/chip_fastq/trimmed/I-21_R1.fastq.gz -2 ~/chip_fastq/trimmed/I-21_R2.fastq.gz -S ~/chip_fastq/sam/I-21.sam 2> ~/chip_fastq/align_report/I-21.align.report 
+bowtie2 -p 16 --local -x ~/h38/hg38 -1 ~/chip_fastq/trimmed/I-22_R1.fastq.gz -2 ~/chip_fastq/trimmed/I-22_R2.fastq.gz -S ~/chip_fastq/sam/I-22.sam 2> ~/chip_fastq/align_report/I-22.align.report 
+bowtie2 -p 16 --local -x ~/h38/hg38 -1 ~/chip_fastq/trimmed/I-23_R1.fastq.gz -2 ~/chip_fastq/trimmed/I-23_R2.fastq.gz -S ~/chip_fastq/sam/I-23.sam 2> ~/chip_fastq/align_report/I-23.align.report 
+bowtie2 -p 16 --local -x ~/h38/hg38 -1 ~/chip_fastq/trimmed/I-24_R1.fastq.gz -2 ~/chip_fastq/trimmed/I-24_R2.fastq.gz -S ~/chip_fastq/sam/I-24.sam 2> ~/chip_fastq/align_report/I-24.align.report 
+bowtie2 -p 16 --local -x ~/h38/hg38 -1 ~/chip_fastq/trimmed/I-25_R1.fastq.gz -2 ~/chip_fastq/trimmed/I-25_R2.fastq.gz -S ~/chip_fastq/sam/I-25.sam 2> ~/chip_fastq/align_report/I-25.align.report 
+bowtie2 -p 16 --local -x ~/h38/hg38 -1 ~/chip_fastq/trimmed/I-26_R1.fastq.gz -2 ~/chip_fastq/trimmed/I-26_R2.fastq.gz -S ~/chip_fastq/sam/I-26.sam 2> ~/chip_fastq/align_report/I-26.align.report 
+bowtie2 -p 16 --local -x ~/h38/hg38 -1 ~/chip_fastq/trimmed/I-27_R1.fastq.gz -2 ~/chip_fastq/trimmed/I-27_R2.fastq.gz -S ~/chip_fastq/sam/I-27.sam 2> ~/chip_fastq/align_report/I-27.align.report 
+bowtie2 -p 16 --local -x ~/h38/hg38 -1 ~/chip_fastq/trimmed/I-28_R1.fastq.gz -2 ~/chip_fastq/trimmed/I-28_R2.fastq.gz -S ~/chip_fastq/sam/I-28.sam 2> ~/chip_fastq/align_report/I-28.align.report 

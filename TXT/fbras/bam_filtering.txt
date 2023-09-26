@@ -1,0 +1,363 @@
+
+samtools view -@ 16 -b ~/chip/sam/C-1.sam > ~/chip/bam/C-1.bam
+samtools view -@ 16 -b ~/chip/sam/C-2.sam > ~/chip/bam/C-2.bam
+samtools view -@ 16 -b ~/chip/sam/C-3.sam > ~/chip/bam/C-3.bam
+samtools view -@ 16 -b ~/chip/sam/C-4.sam > ~/chip/bam/C-4.bam
+samtools view -@ 16 -b ~/chip/sam/C-5.sam > ~/chip/bam/C-5.bam
+samtools view -@ 16 -b ~/chip/sam/C-6.sam > ~/chip/bam/C-6.bam
+samtools view -@ 16 -b ~/chip/sam/C-7.sam > ~/chip/bam/C-7.bam
+samtools view -@ 16 -b ~/chip/sam/C-8.sam > ~/chip/bam/C-8.bam
+samtools view -@ 16 -b ~/chip/sam/C-9.sam > ~/chip/bam/C-9.bam
+samtools view -@ 16 -b ~/chip/sam/C-10.sam > ~/chip/bam/C-10.bam
+samtools view -@ 16 -b ~/chip/sam/C-11.sam > ~/chip/bam/C-11.bam
+samtools view -@ 16 -b ~/chip/sam/C-12.sam > ~/chip/bam/C-12.bam
+samtools view -@ 16 -b ~/chip/sam/C-13.sam > ~/chip/bam/C-13.bam
+samtools view -@ 16 -b ~/chip/sam/C-14.sam > ~/chip/bam/C-14.bam
+samtools view -@ 16 -b ~/chip/sam/C-15.sam > ~/chip/bam/C-15.bam
+samtools view -@ 16 -b ~/chip/sam/C-16.sam > ~/chip/bam/C-16.bam
+samtools view -@ 16 -b ~/chip/sam/C-17.sam > ~/chip/bam/C-17.bam
+samtools view -@ 16 -b ~/chip/sam/C-18.sam > ~/chip/bam/C-18.bam
+samtools view -@ 16 -b ~/chip/sam/C-19.sam > ~/chip/bam/C-19.bam
+samtools view -@ 16 -b ~/chip/sam/C-20.sam > ~/chip/bam/C-20.bam
+samtools view -@ 16 -b ~/chip/sam/C-21.sam > ~/chip/bam/C-21.bam
+samtools view -@ 16 -b ~/chip/sam/C-22.sam > ~/chip/bam/C-22.bam
+samtools view -@ 16 -b ~/chip/sam/C-23.sam > ~/chip/bam/C-23.bam
+samtools view -@ 16 -b ~/chip/sam/C-24.sam > ~/chip/bam/C-24.bam
+samtools view -@ 16 -b ~/chip/sam/C-25.sam > ~/chip/bam/C-25.bam
+samtools view -@ 16 -b ~/chip/sam/C-26.sam > ~/chip/bam/C-26.bam
+samtools view -@ 16 -b ~/chip/sam/C-27.sam > ~/chip/bam/C-27.bam
+samtools view -@ 16 -b ~/chip/sam/C-28.sam > ~/chip/bam/C-28.bam
+
+samtools view -@ 16 -b ~/chip/sam/I-1.sam > ~/chip/bam/I-1.bam
+samtools view -@ 16 -b ~/chip/sam/I-2.sam > ~/chip/bam/I-2.bam
+samtools view -@ 16 -b ~/chip/sam/I-3.sam > ~/chip/bam/I-3.bam
+samtools view -@ 16 -b ~/chip/sam/I-4.sam > ~/chip/bam/I-4.bam
+samtools view -@ 16 -b ~/chip/sam/I-5.sam > ~/chip/bam/I-5.bam
+samtools view -@ 16 -b ~/chip/sam/I-6.sam > ~/chip/bam/I-6.bam
+samtools view -@ 16 -b ~/chip/sam/I-7.sam > ~/chip/bam/I-7.bam
+samtools view -@ 16 -b ~/chip/sam/I-8.sam > ~/chip/bam/I-8.bam
+samtools view -@ 16 -b ~/chip/sam/I-9.sam > ~/chip/bam/I-9.bam
+samtools view -@ 16 -b ~/chip/sam/I-10.sam > ~/chip/bam/I-10.bam
+samtools view -@ 16 -b ~/chip/sam/I-11.sam > ~/chip/bam/I-11.bam
+samtools view -@ 16 -b ~/chip/sam/I-12.sam > ~/chip/bam/I-12.bam
+samtools view -@ 16 -b ~/chip/sam/I-13.sam > ~/chip/bam/I-13.bam
+samtools view -@ 16 -b ~/chip/sam/I-14.sam > ~/chip/bam/I-14.bam
+samtools view -@ 16 -b ~/chip/sam/I-15.sam > ~/chip/bam/I-15.bam
+samtools view -@ 16 -b ~/chip/sam/I-16.sam > ~/chip/bam/I-16.bam
+samtools view -@ 16 -b ~/chip/sam/I-17.sam > ~/chip/bam/I-17.bam
+samtools view -@ 16 -b ~/chip/sam/I-18.sam > ~/chip/bam/I-18.bam
+samtools view -@ 16 -b ~/chip/sam/I-19.sam > ~/chip/bam/I-19.bam
+samtools view -@ 16 -b ~/chip/sam/I-20.sam > ~/chip/bam/I-20.bam
+samtools view -@ 16 -b ~/chip/sam/I-21.sam > ~/chip/bam/I-21.bam
+samtools view -@ 16 -b ~/chip/sam/I-22.sam > ~/chip/bam/I-22.bam
+samtools view -@ 16 -b ~/chip/sam/I-23.sam > ~/chip/bam/I-23.bam
+samtools view -@ 16 -b ~/chip/sam/I-24.sam > ~/chip/bam/I-24.bam
+samtools view -@ 16 -b ~/chip/sam/I-25.sam > ~/chip/bam/I-25.bam
+samtools view -@ 16 -b ~/chip/sam/I-26.sam > ~/chip/bam/I-26.bam
+samtools view -@ 16 -b ~/chip/sam/I-27.sam > ~/chip/bam/I-27.bam
+samtools view -@ 16 -b ~/chip/sam/I-28.sam > ~/chip/bam/I-28.bam
+
+
+
+
+
+samtools sort -@ 16 -n ~/chip/bam/C-1.bam > ~/chip/bam_namesort/C-1.namesort.bam
+samtools sort -@ 16 -n ~/chip/bam/C-2.bam > ~/chip/bam_namesort/C-2.namesort.bam
+samtools sort -@ 16 -n ~/chip/bam/C-3.bam > ~/chip/bam_namesort/C-3.namesort.bam
+samtools sort -@ 16 -n ~/chip/bam/C-4.bam > ~/chip/bam_namesort/C-4.namesort.bam
+samtools sort -@ 16 -n ~/chip/bam/C-5.bam > ~/chip/bam_namesort/C-5.namesort.bam
+samtools sort -@ 16 -n ~/chip/bam/C-6.bam > ~/chip/bam_namesort/C-6.namesort.bam
+samtools sort -@ 16 -n ~/chip/bam/C-7.bam > ~/chip/bam_namesort/C-7.namesort.bam
+samtools sort -@ 16 -n ~/chip/bam/C-8.bam > ~/chip/bam_namesort/C-8.namesort.bam
+samtools sort -@ 16 -n ~/chip/bam/C-9.bam > ~/chip/bam_namesort/C-9.namesort.bam
+samtools sort -@ 16 -n ~/chip/bam/C-10.bam > ~/chip/bam_namesort/C-10.namesort.bam
+samtools sort -@ 16 -n ~/chip/bam/C-11.bam > ~/chip/bam_namesort/C-11.namesort.bam
+samtools sort -@ 16 -n ~/chip/bam/C-12.bam > ~/chip/bam_namesort/C-12.namesort.bam
+samtools sort -@ 16 -n ~/chip/bam/C-13.bam > ~/chip/bam_namesort/C-13.namesort.bam
+samtools sort -@ 16 -n ~/chip/bam/C-14.bam > ~/chip/bam_namesort/C-14.namesort.bam
+samtools sort -@ 16 -n ~/chip/bam/C-15.bam > ~/chip/bam_namesort/C-15.namesort.bam
+samtools sort -@ 16 -n ~/chip/bam/C-16.bam > ~/chip/bam_namesort/C-16.namesort.bam
+samtools sort -@ 16 -n ~/chip/bam/C-17.bam > ~/chip/bam_namesort/C-17.namesort.bam
+samtools sort -@ 16 -n ~/chip/bam/C-18.bam > ~/chip/bam_namesort/C-18.namesort.bam
+samtools sort -@ 16 -n ~/chip/bam/C-19.bam > ~/chip/bam_namesort/C-19.namesort.bam
+samtools sort -@ 16 -n ~/chip/bam/C-20.bam > ~/chip/bam_namesort/C-20.namesort.bam
+samtools sort -@ 16 -n ~/chip/bam/C-21.bam > ~/chip/bam_namesort/C-21.namesort.bam
+samtools sort -@ 16 -n ~/chip/bam/C-22.bam > ~/chip/bam_namesort/C-22.namesort.bam
+samtools sort -@ 16 -n ~/chip/bam/C-23.bam > ~/chip/bam_namesort/C-23.namesort.bam
+samtools sort -@ 16 -n ~/chip/bam/C-24.bam > ~/chip/bam_namesort/C-24.namesort.bam
+samtools sort -@ 16 -n ~/chip/bam/C-25.bam > ~/chip/bam_namesort/C-25.namesort.bam
+samtools sort -@ 16 -n ~/chip/bam/C-26.bam > ~/chip/bam_namesort/C-26.namesort.bam
+samtools sort -@ 16 -n ~/chip/bam/C-27.bam > ~/chip/bam_namesort/C-27.namesort.bam
+samtools sort -@ 16 -n ~/chip/bam/C-28.bam > ~/chip/bam_namesort/C-28.namesort.bam
+
+samtools sort -@ 16 -n ~/chip/bam/I-1.bam > ~/chip/bam_namesort/I-1.namesort.bam
+samtools sort -@ 16 -n ~/chip/bam/I-2.bam > ~/chip/bam_namesort/I-2.namesort.bam
+samtools sort -@ 16 -n ~/chip/bam/I-3.bam > ~/chip/bam_namesort/I-3.namesort.bam
+samtools sort -@ 16 -n ~/chip/bam/I-4.bam > ~/chip/bam_namesort/I-4.namesort.bam
+samtools sort -@ 16 -n ~/chip/bam/I-5.bam > ~/chip/bam_namesort/I-5.namesort.bam
+samtools sort -@ 16 -n ~/chip/bam/I-6.bam > ~/chip/bam_namesort/I-6.namesort.bam
+samtools sort -@ 16 -n ~/chip/bam/I-7.bam > ~/chip/bam_namesort/I-7.namesort.bam
+samtools sort -@ 16 -n ~/chip/bam/I-8.bam > ~/chip/bam_namesort/I-8.namesort.bam
+samtools sort -@ 16 -n ~/chip/bam/I-9.bam > ~/chip/bam_namesort/I-9.namesort.bam
+samtools sort -@ 16 -n ~/chip/bam/I-10.bam > ~/chip/bam_namesort/I-10.namesort.bam
+samtools sort -@ 16 -n ~/chip/bam/I-11.bam > ~/chip/bam_namesort/I-11.namesort.bam
+samtools sort -@ 16 -n ~/chip/bam/I-12.bam > ~/chip/bam_namesort/I-12.namesort.bam
+samtools sort -@ 16 -n ~/chip/bam/I-13.bam > ~/chip/bam_namesort/I-13.namesort.bam
+samtools sort -@ 16 -n ~/chip/bam/I-14.bam > ~/chip/bam_namesort/I-14.namesort.bam
+samtools sort -@ 16 -n ~/chip/bam/I-15.bam > ~/chip/bam_namesort/I-15.namesort.bam
+samtools sort -@ 16 -n ~/chip/bam/I-16.bam > ~/chip/bam_namesort/I-16.namesort.bam
+samtools sort -@ 16 -n ~/chip/bam/I-17.bam > ~/chip/bam_namesort/I-17.namesort.bam
+samtools sort -@ 16 -n ~/chip/bam/I-18.bam > ~/chip/bam_namesort/I-18.namesort.bam
+samtools sort -@ 16 -n ~/chip/bam/I-19.bam > ~/chip/bam_namesort/I-19.namesort.bam
+samtools sort -@ 16 -n ~/chip/bam/I-20.bam > ~/chip/bam_namesort/I-20.namesort.bam
+samtools sort -@ 16 -n ~/chip/bam/I-21.bam > ~/chip/bam_namesort/I-21.namesort.bam
+samtools sort -@ 16 -n ~/chip/bam/I-22.bam > ~/chip/bam_namesort/I-22.namesort.bam
+samtools sort -@ 16 -n ~/chip/bam/I-23.bam > ~/chip/bam_namesort/I-23.namesort.bam
+samtools sort -@ 16 -n ~/chip/bam/I-24.bam > ~/chip/bam_namesort/I-24.namesort.bam
+samtools sort -@ 16 -n ~/chip/bam/I-25.bam > ~/chip/bam_namesort/I-25.namesort.bam
+samtools sort -@ 16 -n ~/chip/bam/I-26.bam > ~/chip/bam_namesort/I-26.namesort.bam
+samtools sort -@ 16 -n ~/chip/bam/I-27.bam > ~/chip/bam_namesort/I-27.namesort.bam
+samtools sort -@ 16 -n ~/chip/bam/I-28.bam > ~/chip/bam_namesort/I-28.namesort.bam
+
+
+
+
+samtools fixmate -@ 24 -m ~/chip/bam_namesort/C-1.namesort.bam > ~/chip/bam_fixmate/C-1.fixmate.bam
+samtools fixmate -@ 24 -m ~/chip/bam_namesort/C-2.namesort.bam > ~/chip/bam_fixmate/C-2.fixmate.bam
+samtools fixmate -@ 24 -m ~/chip/bam_namesort/C-3.namesort.bam > ~/chip/bam_fixmate/C-3.fixmate.bam
+samtools fixmate -@ 24 -m ~/chip/bam_namesort/C-4.namesort.bam > ~/chip/bam_fixmate/C-4.fixmate.bam
+samtools fixmate -@ 24 -m ~/chip/bam_namesort/C-5.namesort.bam > ~/chip/bam_fixmate/C-5.fixmate.bam
+samtools fixmate -@ 24 -m ~/chip/bam_namesort/C-6.namesort.bam > ~/chip/bam_fixmate/C-6.fixmate.bam
+samtools fixmate -@ 24 -m ~/chip/bam_namesort/C-7.namesort.bam > ~/chip/bam_fixmate/C-7.fixmate.bam
+samtools fixmate -@ 24 -m ~/chip/bam_namesort/C-8.namesort.bam > ~/chip/bam_fixmate/C-8.fixmate.bam
+samtools fixmate -@ 24 -m ~/chip/bam_namesort/C-9.namesort.bam > ~/chip/bam_fixmate/C-9.fixmate.bam
+samtools fixmate -@ 24 -m ~/chip/bam_namesort/C-10.namesort.bam > ~/chip/bam_fixmate/C-10.fixmate.bam
+samtools fixmate -@ 24 -m ~/chip/bam_namesort/C-11.namesort.bam > ~/chip/bam_fixmate/C-11.fixmate.bam
+samtools fixmate -@ 24 -m ~/chip/bam_namesort/C-12.namesort.bam > ~/chip/bam_fixmate/C-12.fixmate.bam
+samtools fixmate -@ 24 -m ~/chip/bam_namesort/C-13.namesort.bam > ~/chip/bam_fixmate/C-13.fixmate.bam
+samtools fixmate -@ 24 -m ~/chip/bam_namesort/C-14.namesort.bam > ~/chip/bam_fixmate/C-14.fixmate.bam
+samtools fixmate -@ 24 -m ~/chip/bam_namesort/C-15.namesort.bam > ~/chip/bam_fixmate/C-15.fixmate.bam
+samtools fixmate -@ 24 -m ~/chip/bam_namesort/C-16.namesort.bam > ~/chip/bam_fixmate/C-16.fixmate.bam
+samtools fixmate -@ 24 -m ~/chip/bam_namesort/C-17.namesort.bam > ~/chip/bam_fixmate/C-17.fixmate.bam
+samtools fixmate -@ 24 -m ~/chip/bam_namesort/C-18.namesort.bam > ~/chip/bam_fixmate/C-18.fixmate.bam
+samtools fixmate -@ 24 -m ~/chip/bam_namesort/C-19.namesort.bam > ~/chip/bam_fixmate/C-19.fixmate.bam
+samtools fixmate -@ 24 -m ~/chip/bam_namesort/C-20.namesort.bam > ~/chip/bam_fixmate/C-20.fixmate.bam
+samtools fixmate -@ 24 -m ~/chip/bam_namesort/C-21.namesort.bam > ~/chip/bam_fixmate/C-21.fixmate.bam
+samtools fixmate -@ 24 -m ~/chip/bam_namesort/C-22.namesort.bam > ~/chip/bam_fixmate/C-22.fixmate.bam
+samtools fixmate -@ 24 -m ~/chip/bam_namesort/C-23.namesort.bam > ~/chip/bam_fixmate/C-23.fixmate.bam
+samtools fixmate -@ 24 -m ~/chip/bam_namesort/C-24.namesort.bam > ~/chip/bam_fixmate/C-24.fixmate.bam
+samtools fixmate -@ 24 -m ~/chip/bam_namesort/C-25.namesort.bam > ~/chip/bam_fixmate/C-25.fixmate.bam
+samtools fixmate -@ 24 -m ~/chip/bam_namesort/C-26.namesort.bam > ~/chip/bam_fixmate/C-26.fixmate.bam
+samtools fixmate -@ 24 -m ~/chip/bam_namesort/C-27.namesort.bam > ~/chip/bam_fixmate/C-27.fixmate.bam
+samtools fixmate -@ 24 -m ~/chip/bam_namesort/C-28.namesort.bam > ~/chip/bam_fixmate/C-28.fixmate.bam
+
+samtools fixmate -@ 24 -m ~/chip/bam_namesort/I-1.namesort.bam > ~/chip/bam_fixmate/I-1.fixmate.bam
+samtools fixmate -@ 24 -m ~/chip/bam_namesort/I-2.namesort.bam > ~/chip/bam_fixmate/I-2.fixmate.bam
+samtools fixmate -@ 24 -m ~/chip/bam_namesort/I-3.namesort.bam > ~/chip/bam_fixmate/I-3.fixmate.bam
+samtools fixmate -@ 24 -m ~/chip/bam_namesort/I-4.namesort.bam > ~/chip/bam_fixmate/I-4.fixmate.bam
+samtools fixmate -@ 24 -m ~/chip/bam_namesort/I-5.namesort.bam > ~/chip/bam_fixmate/I-5.fixmate.bam
+samtools fixmate -@ 24 -m ~/chip/bam_namesort/I-6.namesort.bam > ~/chip/bam_fixmate/I-6.fixmate.bam
+samtools fixmate -@ 24 -m ~/chip/bam_namesort/I-7.namesort.bam > ~/chip/bam_fixmate/I-7.fixmate.bam
+samtools fixmate -@ 24 -m ~/chip/bam_namesort/I-8.namesort.bam > ~/chip/bam_fixmate/I-8.fixmate.bam
+samtools fixmate -@ 24 -m ~/chip/bam_namesort/I-9.namesort.bam > ~/chip/bam_fixmate/I-9.fixmate.bam
+samtools fixmate -@ 24 -m ~/chip/bam_namesort/I-10.namesort.bam > ~/chip/bam_fixmate/I-10.fixmate.bam
+samtools fixmate -@ 24 -m ~/chip/bam_namesort/I-11.namesort.bam > ~/chip/bam_fixmate/I-11.fixmate.bam
+samtools fixmate -@ 24 -m ~/chip/bam_namesort/I-12.namesort.bam > ~/chip/bam_fixmate/I-12.fixmate.bam
+samtools fixmate -@ 24 -m ~/chip/bam_namesort/I-13.namesort.bam > ~/chip/bam_fixmate/I-13.fixmate.bam
+samtools fixmate -@ 24 -m ~/chip/bam_namesort/I-14.namesort.bam > ~/chip/bam_fixmate/I-14.fixmate.bam
+samtools fixmate -@ 24 -m ~/chip/bam_namesort/I-15.namesort.bam > ~/chip/bam_fixmate/I-15.fixmate.bam
+samtools fixmate -@ 24 -m ~/chip/bam_namesort/I-16.namesort.bam > ~/chip/bam_fixmate/I-16.fixmate.bam
+samtools fixmate -@ 24 -m ~/chip/bam_namesort/I-17.namesort.bam > ~/chip/bam_fixmate/I-17.fixmate.bam
+samtools fixmate -@ 24 -m ~/chip/bam_namesort/I-18.namesort.bam > ~/chip/bam_fixmate/I-18.fixmate.bam
+samtools fixmate -@ 24 -m ~/chip/bam_namesort/I-19.namesort.bam > ~/chip/bam_fixmate/I-19.fixmate.bam
+samtools fixmate -@ 24 -m ~/chip/bam_namesort/I-20.namesort.bam > ~/chip/bam_fixmate/I-20.fixmate.bam
+samtools fixmate -@ 24 -m ~/chip/bam_namesort/I-21.namesort.bam > ~/chip/bam_fixmate/I-21.fixmate.bam
+samtools fixmate -@ 24 -m ~/chip/bam_namesort/I-22.namesort.bam > ~/chip/bam_fixmate/I-22.fixmate.bam
+samtools fixmate -@ 24 -m ~/chip/bam_namesort/I-23.namesort.bam > ~/chip/bam_fixmate/I-23.fixmate.bam
+samtools fixmate -@ 24 -m ~/chip/bam_namesort/I-24.namesort.bam > ~/chip/bam_fixmate/I-24.fixmate.bam
+samtools fixmate -@ 24 -m ~/chip/bam_namesort/I-25.namesort.bam > ~/chip/bam_fixmate/I-25.fixmate.bam
+samtools fixmate -@ 24 -m ~/chip/bam_namesort/I-26.namesort.bam > ~/chip/bam_fixmate/I-26.fixmate.bam
+samtools fixmate -@ 24 -m ~/chip/bam_namesort/I-27.namesort.bam > ~/chip/bam_fixmate/I-27.fixmate.bam
+samtools fixmate -@ 24 -m ~/chip/bam_namesort/I-28.namesort.bam > ~/chip/bam_fixmate/I-28.fixmate.bam
+
+
+
+
+
+samtools sort -@ 24 -o bam ~/chip/bam_fixmate/C-1.fixmate.bam > ~/chip/bam_positionsort/C-1.positionsort.bam 
+samtools sort -@ 24 -o bam ~/chip/bam_fixmate/C-2.fixmate.bam > ~/chip/bam_positionsort/C-2.positionsort.bam 
+samtools sort -@ 24 -o bam ~/chip/bam_fixmate/C-3.fixmate.bam > ~/chip/bam_positionsort/C-3.positionsort.bam 
+samtools sort -@ 24 -o bam ~/chip/bam_fixmate/C-4.fixmate.bam > ~/chip/bam_positionsort/C-4.positionsort.bam 
+samtools sort -@ 24 -o bam ~/chip/bam_fixmate/C-5.fixmate.bam > ~/chip/bam_positionsort/C-5.positionsort.bam 
+samtools sort -@ 24 -o bam ~/chip/bam_fixmate/C-6.fixmate.bam > ~/chip/bam_positionsort/C-6.positionsort.bam 
+samtools sort -@ 24 -o bam ~/chip/bam_fixmate/C-7.fixmate.bam > ~/chip/bam_positionsort/C-7.positionsort.bam 
+samtools sort -@ 24 -o bam ~/chip/bam_fixmate/C-8.fixmate.bam > ~/chip/bam_positionsort/C-8.positionsort.bam 
+samtools sort -@ 24 -o bam ~/chip/bam_fixmate/C-9.fixmate.bam > ~/chip/bam_positionsort/C-9.positionsort.bam 
+samtools sort -@ 24 -o bam ~/chip/bam_fixmate/C-10.fixmate.bam > ~/chip/bam_positionsort/C-10.positionsort.bam 
+samtools sort -@ 24 -o bam ~/chip/bam_fixmate/C-11.fixmate.bam > ~/chip/bam_positionsort/C-11.positionsort.bam 
+samtools sort -@ 24 -o bam ~/chip/bam_fixmate/C-12.fixmate.bam > ~/chip/bam_positionsort/C-12.positionsort.bam 
+samtools sort -@ 24 -o bam ~/chip/bam_fixmate/C-13.fixmate.bam > ~/chip/bam_positionsort/C-13.positionsort.bam 
+samtools sort -@ 24 -o bam ~/chip/bam_fixmate/C-14.fixmate.bam > ~/chip/bam_positionsort/C-14.positionsort.bam 
+samtools sort -@ 24 -o bam ~/chip/bam_fixmate/C-15.fixmate.bam > ~/chip/bam_positionsort/C-15.positionsort.bam 
+samtools sort -@ 24 -o bam ~/chip/bam_fixmate/C-16.fixmate.bam > ~/chip/bam_positionsort/C-16.positionsort.bam 
+samtools sort -@ 24 -o bam ~/chip/bam_fixmate/C-17.fixmate.bam > ~/chip/bam_positionsort/C-17.positionsort.bam 
+samtools sort -@ 24 -o bam ~/chip/bam_fixmate/C-18.fixmate.bam > ~/chip/bam_positionsort/C-18.positionsort.bam 
+samtools sort -@ 24 -o bam ~/chip/bam_fixmate/C-19.fixmate.bam > ~/chip/bam_positionsort/C-19.positionsort.bam 
+samtools sort -@ 24 -o bam ~/chip/bam_fixmate/C-20.fixmate.bam > ~/chip/bam_positionsort/C-20.positionsort.bam 
+samtools sort -@ 24 -o bam ~/chip/bam_fixmate/C-21.fixmate.bam > ~/chip/bam_positionsort/C-21.positionsort.bam 
+samtools sort -@ 24 -o bam ~/chip/bam_fixmate/C-22.fixmate.bam > ~/chip/bam_positionsort/C-22.positionsort.bam 
+samtools sort -@ 24 -o bam ~/chip/bam_fixmate/C-23.fixmate.bam > ~/chip/bam_positionsort/C-23.positionsort.bam 
+samtools sort -@ 24 -o bam ~/chip/bam_fixmate/C-24.fixmate.bam > ~/chip/bam_positionsort/C-24.positionsort.bam 
+samtools sort -@ 24 -o bam ~/chip/bam_fixmate/C-25.fixmate.bam > ~/chip/bam_positionsort/C-25.positionsort.bam 
+samtools sort -@ 24 -o bam ~/chip/bam_fixmate/C-26.fixmate.bam > ~/chip/bam_positionsort/C-26.positionsort.bam 
+samtools sort -@ 24 -o bam ~/chip/bam_fixmate/C-27.fixmate.bam > ~/chip/bam_positionsort/C-27.positionsort.bam 
+samtools sort -@ 24 -o bam ~/chip/bam_fixmate/C-28.fixmate.bam > ~/chip/bam_positionsort/C-28.positionsort.bam
+
+samtools sort -@ 24 -o bam ~/chip/bam_fixmate/I-1.fixmate.bam > ~/chip/bam_positionsort/I-1.positionsort.bam 
+samtools sort -@ 24 -o bam ~/chip/bam_fixmate/I-2.fixmate.bam > ~/chip/bam_positionsort/I-2.positionsort.bam 
+samtools sort -@ 24 -o bam ~/chip/bam_fixmate/I-3.fixmate.bam > ~/chip/bam_positionsort/I-3.positionsort.bam 
+samtools sort -@ 24 -o bam ~/chip/bam_fixmate/I-4.fixmate.bam > ~/chip/bam_positionsort/I-4.positionsort.bam 
+samtools sort -@ 24 -o bam ~/chip/bam_fixmate/I-5.fixmate.bam > ~/chip/bam_positionsort/I-5.positionsort.bam 
+samtools sort -@ 24 -o bam ~/chip/bam_fixmate/I-6.fixmate.bam > ~/chip/bam_positionsort/I-6.positionsort.bam 
+samtools sort -@ 24 -o bam ~/chip/bam_fixmate/I-7.fixmate.bam > ~/chip/bam_positionsort/I-7.positionsort.bam 
+samtools sort -@ 24 -o bam ~/chip/bam_fixmate/I-8.fixmate.bam > ~/chip/bam_positionsort/I-8.positionsort.bam 
+samtools sort -@ 24 -o bam ~/chip/bam_fixmate/I-9.fixmate.bam > ~/chip/bam_positionsort/I-9.positionsort.bam 
+samtools sort -@ 24 -o bam ~/chip/bam_fixmate/I-10.fixmate.bam > ~/chip/bam_positionsort/I-10.positionsort.bam 
+samtools sort -@ 24 -o bam ~/chip/bam_fixmate/I-11.fixmate.bam > ~/chip/bam_positionsort/I-11.positionsort.bam 
+samtools sort -@ 24 -o bam ~/chip/bam_fixmate/I-12.fixmate.bam > ~/chip/bam_positionsort/I-12.positionsort.bam 
+samtools sort -@ 24 -o bam ~/chip/bam_fixmate/I-13.fixmate.bam > ~/chip/bam_positionsort/I-13.positionsort.bam 
+samtools sort -@ 24 -o bam ~/chip/bam_fixmate/I-14.fixmate.bam > ~/chip/bam_positionsort/I-14.positionsort.bam 
+samtools sort -@ 24 -o bam ~/chip/bam_fixmate/I-15.fixmate.bam > ~/chip/bam_positionsort/I-15.positionsort.bam 
+samtools sort -@ 24 -o bam ~/chip/bam_fixmate/I-16.fixmate.bam > ~/chip/bam_positionsort/I-16.positionsort.bam 
+samtools sort -@ 24 -o bam ~/chip/bam_fixmate/I-17.fixmate.bam > ~/chip/bam_positionsort/I-17.positionsort.bam 
+samtools sort -@ 24 -o bam ~/chip/bam_fixmate/I-18.fixmate.bam > ~/chip/bam_positionsort/I-18.positionsort.bam 
+samtools sort -@ 24 -o bam ~/chip/bam_fixmate/I-19.fixmate.bam > ~/chip/bam_positionsort/I-19.positionsort.bam 
+samtools sort -@ 24 -o bam ~/chip/bam_fixmate/I-20.fixmate.bam > ~/chip/bam_positionsort/I-20.positionsort.bam 
+samtools sort -@ 24 -o bam ~/chip/bam_fixmate/I-21.fixmate.bam > ~/chip/bam_positionsort/I-21.positionsort.bam 
+samtools sort -@ 24 -o bam ~/chip/bam_fixmate/I-22.fixmate.bam > ~/chip/bam_positionsort/I-22.positionsort.bam 
+samtools sort -@ 24 -o bam ~/chip/bam_fixmate/I-23.fixmate.bam > ~/chip/bam_positionsort/I-23.positionsort.bam 
+samtools sort -@ 24 -o bam ~/chip/bam_fixmate/I-24.fixmate.bam > ~/chip/bam_positionsort/I-24.positionsort.bam 
+samtools sort -@ 24 -o bam ~/chip/bam_fixmate/I-25.fixmate.bam > ~/chip/bam_positionsort/I-25.positionsort.bam 
+samtools sort -@ 24 -o bam ~/chip/bam_fixmate/I-26.fixmate.bam > ~/chip/bam_positionsort/I-26.positionsort.bam 
+samtools sort -@ 24 -o bam ~/chip/bam_fixmate/I-27.fixmate.bam > ~/chip/bam_positionsort/I-27.positionsort.bam 
+samtools sort -@ 24 -o bam ~/chip/bam_fixmate/I-28.fixmate.bam > ~/chip/bam_positionsort/I-28.positionsort.bam 
+
+
+
+
+
+ samtools markdup -@ 24 -r -s ~/chip/bam_positionsort/C-1.positionsort.bam ~/chip/bam_dedup/C-1.dedup.bam > ~/chip/bam_dedup/C-1.dedup_report.bam
+ samtools markdup -@ 24 -r -s ~/chip/bam_positionsort/C-2.positionsort.bam ~/chip/bam_dedup/C-2.dedup.bam > ~/chip/bam_dedup/C-2.dedup_report.bam
+ samtools markdup -@ 24 -r -s ~/chip/bam_positionsort/C-3.positionsort.bam ~/chip/bam_dedup/C-3.dedup.bam > ~/chip/bam_dedup/C-3.dedup_report.bam
+ samtools markdup -@ 24 -r -s ~/chip/bam_positionsort/C-4.positionsort.bam ~/chip/bam_dedup/C-4.dedup.bam > ~/chip/bam_dedup/C-4.dedup_report.bam
+ samtools markdup -@ 24 -r -s ~/chip/bam_positionsort/C-5.positionsort.bam ~/chip/bam_dedup/C-5.dedup.bam > ~/chip/bam_dedup/C-5.dedup_report.bam
+ samtools markdup -@ 24 -r -s ~/chip/bam_positionsort/C-6.positionsort.bam ~/chip/bam_dedup/C-6.dedup.bam > ~/chip/bam_dedup/C-6.dedup_report.bam
+ samtools markdup -@ 24 -r -s ~/chip/bam_positionsort/C-7.positionsort.bam ~/chip/bam_dedup/C-7.dedup.bam > ~/chip/bam_dedup/C-7.dedup_report.bam
+ samtools markdup -@ 24 -r -s ~/chip/bam_positionsort/C-8.positionsort.bam ~/chip/bam_dedup/C-8.dedup.bam > ~/chip/bam_dedup/C-8.dedup_report.bam
+ samtools markdup -@ 24 -r -s ~/chip/bam_positionsort/C-9.positionsort.bam ~/chip/bam_dedup/C-9.dedup.bam > ~/chip/bam_dedup/C-9.dedup_report.bam
+ samtools markdup -@ 24 -r -s ~/chip/bam_positionsort/C-10.positionsort.bam ~/chip/bam_dedup/C-10.dedup.bam > ~/chip/bam_dedup/C-10.dedup_report.bam
+ samtools markdup -@ 24 -r -s ~/chip/bam_positionsort/C-11.positionsort.bam ~/chip/bam_dedup/C-11.dedup.bam > ~/chip/bam_dedup/C-11.dedup_report.bam
+ samtools markdup -@ 24 -r -s ~/chip/bam_positionsort/C-12.positionsort.bam ~/chip/bam_dedup/C-12.dedup.bam > ~/chip/bam_dedup/C-12.dedup_report.bam
+ samtools markdup -@ 24 -r -s ~/chip/bam_positionsort/C-13.positionsort.bam ~/chip/bam_dedup/C-13.dedup.bam > ~/chip/bam_dedup/C-13.dedup_report.bam
+ samtools markdup -@ 24 -r -s ~/chip/bam_positionsort/C-14.positionsort.bam ~/chip/bam_dedup/C-14.dedup.bam > ~/chip/bam_dedup/C-14.dedup_report.bam
+ samtools markdup -@ 24 -r -s ~/chip/bam_positionsort/C-15.positionsort.bam ~/chip/bam_dedup/C-15.dedup.bam > ~/chip/bam_dedup/C-15.dedup_report.bam
+ samtools markdup -@ 24 -r -s ~/chip/bam_positionsort/C-16.positionsort.bam ~/chip/bam_dedup/C-16.dedup.bam > ~/chip/bam_dedup/C-16.dedup_report.bam
+ samtools markdup -@ 24 -r -s ~/chip/bam_positionsort/C-17.positionsort.bam ~/chip/bam_dedup/C-17.dedup.bam > ~/chip/bam_dedup/C-17.dedup_report.bam
+ samtools markdup -@ 24 -r -s ~/chip/bam_positionsort/C-18.positionsort.bam ~/chip/bam_dedup/C-18.dedup.bam > ~/chip/bam_dedup/C-18.dedup_report.bam
+ samtools markdup -@ 24 -r -s ~/chip/bam_positionsort/C-19.positionsort.bam ~/chip/bam_dedup/C-19.dedup.bam > ~/chip/bam_dedup/C-19.dedup_report.bam
+ samtools markdup -@ 24 -r -s ~/chip/bam_positionsort/C-20.positionsort.bam ~/chip/bam_dedup/C-20.dedup.bam > ~/chip/bam_dedup/C-20.dedup_report.bam
+ samtools markdup -@ 24 -r -s ~/chip/bam_positionsort/C-21.positionsort.bam ~/chip/bam_dedup/C-21.dedup.bam > ~/chip/bam_dedup/C-21.dedup_report.bam
+ samtools markdup -@ 24 -r -s ~/chip/bam_positionsort/C-22.positionsort.bam ~/chip/bam_dedup/C-22.dedup.bam > ~/chip/bam_dedup/C-22.dedup_report.bam
+ samtools markdup -@ 24 -r -s ~/chip/bam_positionsort/C-23.positionsort.bam ~/chip/bam_dedup/C-23.dedup.bam > ~/chip/bam_dedup/C-23.dedup_report.bam
+ samtools markdup -@ 24 -r -s ~/chip/bam_positionsort/C-24.positionsort.bam ~/chip/bam_dedup/C-24.dedup.bam > ~/chip/bam_dedup/C-24.dedup_report.bam
+ samtools markdup -@ 24 -r -s ~/chip/bam_positionsort/C-25.positionsort.bam ~/chip/bam_dedup/C-25.dedup.bam > ~/chip/bam_dedup/C-25.dedup_report.bam
+ samtools markdup -@ 24 -r -s ~/chip/bam_positionsort/C-26.positionsort.bam ~/chip/bam_dedup/C-26.dedup.bam > ~/chip/bam_dedup/C-26.dedup_report.bam
+ samtools markdup -@ 24 -r -s ~/chip/bam_positionsort/C-27.positionsort.bam ~/chip/bam_dedup/C-27.dedup.bam > ~/chip/bam_dedup/C-27.dedup_report.bam
+ samtools markdup -@ 24 -r -s ~/chip/bam_positionsort/C-28.positionsort.bam ~/chip/bam_dedup/C-28.dedup.bam > ~/chip/bam_dedup/C-28.dedup_report.bam
+ 
+ samtools markdup -@ 24 -r -s ~/chip/bam_positionsort/I-1.positionsort.bam ~/chip/bam_dedup/I-1.dedup.bam > ~/chip/bam_dedup/I-1.dedup_report.bam
+ samtools markdup -@ 24 -r -s ~/chip/bam_positionsort/I-2.positionsort.bam ~/chip/bam_dedup/I-2.dedup.bam > ~/chip/bam_dedup/I-2.dedup_report.bam
+ samtools markdup -@ 24 -r -s ~/chip/bam_positionsort/I-3.positionsort.bam ~/chip/bam_dedup/I-3.dedup.bam > ~/chip/bam_dedup/I-3.dedup_report.bam
+ samtools markdup -@ 24 -r -s ~/chip/bam_positionsort/I-4.positionsort.bam ~/chip/bam_dedup/I-4.dedup.bam > ~/chip/bam_dedup/I-4.dedup_report.bam
+ samtools markdup -@ 24 -r -s ~/chip/bam_positionsort/I-5.positionsort.bam ~/chip/bam_dedup/I-5.dedup.bam > ~/chip/bam_dedup/I-5.dedup_report.bam
+ samtools markdup -@ 24 -r -s ~/chip/bam_positionsort/I-6.positionsort.bam ~/chip/bam_dedup/I-6.dedup.bam > ~/chip/bam_dedup/I-6.dedup_report.bam
+ samtools markdup -@ 24 -r -s ~/chip/bam_positionsort/I-7.positionsort.bam ~/chip/bam_dedup/I-7.dedup.bam > ~/chip/bam_dedup/I-7.dedup_report.bam
+ samtools markdup -@ 24 -r -s ~/chip/bam_positionsort/I-8.positionsort.bam ~/chip/bam_dedup/I-8.dedup.bam > ~/chip/bam_dedup/I-8.dedup_report.bam
+ samtools markdup -@ 24 -r -s ~/chip/bam_positionsort/I-9.positionsort.bam ~/chip/bam_dedup/I-9.dedup.bam > ~/chip/bam_dedup/I-9.dedup_report.bam
+ samtools markdup -@ 24 -r -s ~/chip/bam_positionsort/I-10.positionsort.bam ~/chip/bam_dedup/I-10.dedup.bam > ~/chip/bam_dedup/I-10.dedup_report.bam
+ samtools markdup -@ 24 -r -s ~/chip/bam_positionsort/I-11.positionsort.bam ~/chip/bam_dedup/I-11.dedup.bam > ~/chip/bam_dedup/I-11.dedup_report.bam
+ samtools markdup -@ 24 -r -s ~/chip/bam_positionsort/I-12.positionsort.bam ~/chip/bam_dedup/I-12.dedup.bam > ~/chip/bam_dedup/I-12.dedup_report.bam
+ samtools markdup -@ 24 -r -s ~/chip/bam_positionsort/I-13.positionsort.bam ~/chip/bam_dedup/I-13.dedup.bam > ~/chip/bam_dedup/I-13.dedup_report.bam
+ samtools markdup -@ 24 -r -s ~/chip/bam_positionsort/I-14.positionsort.bam ~/chip/bam_dedup/I-14.dedup.bam > ~/chip/bam_dedup/I-14.dedup_report.bam
+ samtools markdup -@ 24 -r -s ~/chip/bam_positionsort/I-15.positionsort.bam ~/chip/bam_dedup/I-15.dedup.bam > ~/chip/bam_dedup/I-15.dedup_report.bam
+ samtools markdup -@ 24 -r -s ~/chip/bam_positionsort/I-16.positionsort.bam ~/chip/bam_dedup/I-16.dedup.bam > ~/chip/bam_dedup/I-16.dedup_report.bam
+ samtools markdup -@ 24 -r -s ~/chip/bam_positionsort/I-17.positionsort.bam ~/chip/bam_dedup/I-17.dedup.bam > ~/chip/bam_dedup/I-17.dedup_report.bam
+ samtools markdup -@ 24 -r -s ~/chip/bam_positionsort/I-18.positionsort.bam ~/chip/bam_dedup/I-18.dedup.bam > ~/chip/bam_dedup/I-18.dedup_report.bam
+ samtools markdup -@ 24 -r -s ~/chip/bam_positionsort/I-19.positionsort.bam ~/chip/bam_dedup/I-19.dedup.bam > ~/chip/bam_dedup/I-19.dedup_report.bam
+ samtools markdup -@ 24 -r -s ~/chip/bam_positionsort/I-20.positionsort.bam ~/chip/bam_dedup/I-20.dedup.bam > ~/chip/bam_dedup/I-20.dedup_report.bam
+ samtools markdup -@ 24 -r -s ~/chip/bam_positionsort/I-21.positionsort.bam ~/chip/bam_dedup/I-21.dedup.bam > ~/chip/bam_dedup/I-21.dedup_report.bam
+ samtools markdup -@ 24 -r -s ~/chip/bam_positionsort/I-22.positionsort.bam ~/chip/bam_dedup/I-22.dedup.bam > ~/chip/bam_dedup/I-22.dedup_report.bam
+ samtools markdup -@ 24 -r -s ~/chip/bam_positionsort/I-23.positionsort.bam ~/chip/bam_dedup/I-23.dedup.bam > ~/chip/bam_dedup/I-23.dedup_report.bam
+ samtools markdup -@ 24 -r -s ~/chip/bam_positionsort/I-24.positionsort.bam ~/chip/bam_dedup/I-24.dedup.bam > ~/chip/bam_dedup/I-24.dedup_report.bam
+ samtools markdup -@ 24 -r -s ~/chip/bam_positionsort/I-25.positionsort.bam ~/chip/bam_dedup/I-25.dedup.bam > ~/chip/bam_dedup/I-25.dedup_report.bam
+ samtools markdup -@ 24 -r -s ~/chip/bam_positionsort/I-26.positionsort.bam ~/chip/bam_dedup/I-26.dedup.bam > ~/chip/bam_dedup/I-26.dedup_report.bam
+ samtools markdup -@ 24 -r -s ~/chip/bam_positionsort/I-27.positionsort.bam ~/chip/bam_dedup/I-27.dedup.bam > ~/chip/bam_dedup/I-27.dedup_report.bam
+ samtools markdup -@ 24 -r -s ~/chip/bam_positionsort/I-28.positionsort.bam ~/chip/bam_dedup/I-28.dedup.bam > ~/chip/bam_dedup/I-28.dedup_report.bam
+
+
+ samtools view -b -F 4 ~/chip/bam_dedup/C-1.dedup.bam > ~/chip/bam_mapped/C-1.mapped.bam
+samtools view -b -F 4 ~/chip/bam_dedup/C-2.dedup.bam > ~/chip/bam_mapped/C-2.mapped.bam
+samtools view -b -F 4 ~/chip/bam_dedup/C-3.dedup.bam > ~/chip/bam_mapped/C-3.mapped.bam
+samtools view -b -F 4 ~/chip/bam_dedup/C-4.dedup.bam > ~/chip/bam_mapped/C-4.mapped.bam
+samtools view -b -F 4 ~/chip/bam_dedup/C-5.dedup.bam > ~/chip/bam_mapped/C-5.mapped.bam
+samtools view -b -F 4 ~/chip/bam_dedup/C-6.dedup.bam > ~/chip/bam_mapped/C-6.mapped.bam
+samtools view -b -F 4 ~/chip/bam_dedup/C-7.dedup.bam > ~/chip/bam_mapped/C-7.mapped.bam
+samtools view -b -F 4 ~/chip/bam_dedup/C-8.dedup.bam > ~/chip/bam_mapped/C-8.mapped.bam
+samtools view -b -F 4 ~/chip/bam_dedup/C-9.dedup.bam > ~/chip/bam_mapped/C-9.mapped.bam
+samtools view -b -F 4 ~/chip/bam_dedup/C-10.dedup.bam > ~/chip/bam_mapped/C-10.mapped.bam
+samtools view -b -F 4 ~/chip/bam_dedup/C-11.dedup.bam > ~/chip/bam_mapped/C-11.mapped.bam
+samtools view -b -F 4 ~/chip/bam_dedup/C-12.dedup.bam > ~/chip/bam_mapped/C-12.mapped.bam
+samtools view -b -F 4 ~/chip/bam_dedup/C-13.dedup.bam > ~/chip/bam_mapped/C-13.mapped.bam
+samtools view -b -F 4 ~/chip/bam_dedup/C-14.dedup.bam > ~/chip/bam_mapped/C-14.mapped.bam
+samtools view -b -F 4 ~/chip/bam_dedup/C-15.dedup.bam > ~/chip/bam_mapped/C-15.mapped.bam
+samtools view -b -F 4 ~/chip/bam_dedup/C-16.dedup.bam > ~/chip/bam_mapped/C-16.mapped.bam
+samtools view -b -F 4 ~/chip/bam_dedup/C-17.dedup.bam > ~/chip/bam_mapped/C-17.mapped.bam
+samtools view -b -F 4 ~/chip/bam_dedup/C-18.dedup.bam > ~/chip/bam_mapped/C-18.mapped.bam
+samtools view -b -F 4 ~/chip/bam_dedup/C-19.dedup.bam > ~/chip/bam_mapped/C-19.mapped.bam
+samtools view -b -F 4 ~/chip/bam_dedup/C-20.dedup.bam > ~/chip/bam_mapped/C-20.mapped.bam
+samtools view -b -F 4 ~/chip/bam_dedup/C-21.dedup.bam > ~/chip/bam_mapped/C-21.mapped.bam
+samtools view -b -F 4 ~/chip/bam_dedup/C-22.dedup.bam > ~/chip/bam_mapped/C-22.mapped.bam
+samtools view -b -F 4 ~/chip/bam_dedup/C-23.dedup.bam > ~/chip/bam_mapped/C-23.mapped.bam
+samtools view -b -F 4 ~/chip/bam_dedup/C-24.dedup.bam > ~/chip/bam_mapped/C-24.mapped.bam
+samtools view -b -F 4 ~/chip/bam_dedup/C-25.dedup.bam > ~/chip/bam_mapped/C-25.mapped.bam
+samtools view -b -F 4 ~/chip/bam_dedup/C-26.dedup.bam > ~/chip/bam_mapped/C-26.mapped.bam
+samtools view -b -F 4 ~/chip/bam_dedup/C-27.dedup.bam > ~/chip/bam_mapped/C-27.mapped.bam
+samtools view -b -F 4 ~/chip/bam_dedup/C-28.dedup.bam > ~/chip/bam_mapped/C-28.mapped.bam
+samtools view -b -F 4 ~/chip/bam_dedup/I-1.dedup.bam > ~/chip/bam_mapped/I-1.mapped.bam
+samtools view -b -F 4 ~/chip/bam_dedup/I-2.dedup.bam > ~/chip/bam_mapped/I-2.mapped.bam
+samtools view -b -F 4 ~/chip/bam_dedup/I-3.dedup.bam > ~/chip/bam_mapped/I-3.mapped.bam
+samtools view -b -F 4 ~/chip/bam_dedup/I-4.dedup.bam > ~/chip/bam_mapped/I-4.mapped.bam
+samtools view -b -F 4 ~/chip/bam_dedup/I-5.dedup.bam > ~/chip/bam_mapped/I-5.mapped.bam
+samtools view -b -F 4 ~/chip/bam_dedup/I-6.dedup.bam > ~/chip/bam_mapped/I-6.mapped.bam
+samtools view -b -F 4 ~/chip/bam_dedup/I-7.dedup.bam > ~/chip/bam_mapped/I-7.mapped.bam
+samtools view -b -F 4 ~/chip/bam_dedup/I-8.dedup.bam > ~/chip/bam_mapped/I-8.mapped.bam
+samtools view -b -F 4 ~/chip/bam_dedup/I-9.dedup.bam > ~/chip/bam_mapped/I-9.mapped.bam
+samtools view -b -F 4 ~/chip/bam_dedup/I-10.dedup.bam > ~/chip/bam_mapped/I-10.mapped.bam
+samtools view -b -F 4 ~/chip/bam_dedup/I-11.dedup.bam > ~/chip/bam_mapped/I-11.mapped.bam
+samtools view -b -F 4 ~/chip/bam_dedup/I-12.dedup.bam > ~/chip/bam_mapped/I-12.mapped.bam
+samtools view -b -F 4 ~/chip/bam_dedup/I-13.dedup.bam > ~/chip/bam_mapped/I-13.mapped.bam
+samtools view -b -F 4 ~/chip/bam_dedup/I-14.dedup.bam > ~/chip/bam_mapped/I-14.mapped.bam
+samtools view -b -F 4 ~/chip/bam_dedup/I-15.dedup.bam > ~/chip/bam_mapped/I-15.mapped.bam
+samtools view -b -F 4 ~/chip/bam_dedup/I-16.dedup.bam > ~/chip/bam_mapped/I-16.mapped.bam
+samtools view -b -F 4 ~/chip/bam_dedup/I-17.dedup.bam > ~/chip/bam_mapped/I-17.mapped.bam
+samtools view -b -F 4 ~/chip/bam_dedup/I-18.dedup.bam > ~/chip/bam_mapped/I-18.mapped.bam
+samtools view -b -F 4 ~/chip/bam_dedup/I-19.dedup.bam > ~/chip/bam_mapped/I-19.mapped.bam
+samtools view -b -F 4 ~/chip/bam_dedup/I-20.dedup.bam > ~/chip/bam_mapped/I-20.mapped.bam
+samtools view -b -F 4 ~/chip/bam_dedup/I-21.dedup.bam > ~/chip/bam_mapped/I-21.mapped.bam
+samtools view -b -F 4 ~/chip/bam_dedup/I-22.dedup.bam > ~/chip/bam_mapped/I-22.mapped.bam
+samtools view -b -F 4 ~/chip/bam_dedup/I-23.dedup.bam > ~/chip/bam_mapped/I-23.mapped.bam
+samtools view -b -F 4 ~/chip/bam_dedup/I-24.dedup.bam > ~/chip/bam_mapped/I-24.mapped.bam
+samtools view -b -F 4 ~/chip/bam_dedup/I-25.dedup.bam > ~/chip/bam_mapped/I-25.mapped.bam
+samtools view -b -F 4 ~/chip/bam_dedup/I-26.dedup.bam > ~/chip/bam_mapped/I-26.mapped.bam
+samtools view -b -F 4 ~/chip/bam_dedup/I-27.dedup.bam > ~/chip/bam_mapped/I-27.mapped.bam
+samtools view -b -F 4 ~/chip/bam_dedup/I-28.dedup.bam > ~/chip/bam_mapped/I-28.mapped.bam

@@ -1,0 +1,387 @@
+conda install -c anaconda numpy=1.8.0    
+conda install -c anaconda scipy=0.17.0
+conda install -c "conda-forge/label/testing" matplotlib
+conda install -c bioconda py2bit=0.1.0
+conda install -c bioconda pybigwig=0.2.1
+conda install -c bioconda pysam=0.8
+conda install -c bioconda deeptools
+pip install --upgrade deeptools
+pip install deeptoolsintervals
+
+bigwigCompare -b1 ~/chip_data/sambamba/C-1_.bam -b2 ~/chip_data/sambamba/I-1_.bam -o ~/deeptools_output/bigwigcompare/C-I-1_.bigWig -of bigwig 
+
+bigwigCompare -b1 ~/chip_data/sambamba/C-1_.bam -b2 ~/chip_data/sambamba/I-1_.bam -o ~/deeptools_output/bigwigcompare/C-I-1_.bigWig -of bigwig -bl ~/blacklist_hg38.bed
+
+computeMatrix scale-regions -S ~/deeptools_output/bigwigcompare/C-I-1_.bigWig -R ~/bed_f6_logexpr/all.bed -o ~/deeptools_output/computematrix/C-I-1_.mat.gz -a 2000 -b 2000
+
+plotProfile -m ~/deeptools_output/computematrix/C-I-1_.mat.gz -out ~/deeptools_output/plotprofile/C-I-1_without_blacklist.svg --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "FGD5-AS1_04_H3K9ac" --plotFileFormat svg
+
+
+###### bamCoverage -> bigwigCompare -> computeMatrix -> plotProfile
+
+######
+
+bamCoverage -b ~/chip_data/sambamba/C-1_.bam -o ~/deeptools_output/bamcoverage/C-1_.bigWig -of bigwig --normalizeUsing RPKM --effectiveGenomeSize 2862010578
+bamCoverage -b ~/chip_data/sambamba/C-2_.bam -o ~/deeptools_output/bamcoverage/C-2_.bigWig -of bigwig --normalizeUsing RPKM --effectiveGenomeSize 2862010578
+bamCoverage -b ~/chip_data/sambamba/C-3_.bam -o ~/deeptools_output/bamcoverage/C-3_.bigWig -of bigwig --normalizeUsing RPKM --effectiveGenomeSize 2862010578
+bamCoverage -b ~/chip_data/sambamba/C-4_.bam -o ~/deeptools_output/bamcoverage/C-4_.bigWig -of bigwig --normalizeUsing RPKM --effectiveGenomeSize 2862010578
+bamCoverage -b ~/chip_data/sambamba/C-5_.bam -o ~/deeptools_output/bamcoverage/C-5_.bigWig -of bigwig --normalizeUsing RPKM --effectiveGenomeSize 2862010578
+bamCoverage -b ~/chip_data/sambamba/C-6_.bam -o ~/deeptools_output/bamcoverage/C-6_.bigWig -of bigwig --normalizeUsing RPKM --effectiveGenomeSize 2862010578
+bamCoverage -b ~/chip_data/sambamba/C-7_.bam -o ~/deeptools_output/bamcoverage/C-7_.bigWig -of bigwig --normalizeUsing RPKM --effectiveGenomeSize 2862010578
+bamCoverage -b ~/chip_data/sambamba/C-8_.bam -o ~/deeptools_output/bamcoverage/C-8_.bigWig -of bigwig --normalizeUsing RPKM --effectiveGenomeSize 2862010578
+bamCoverage -b ~/chip_data/sambamba/C-9_.bam -o ~/deeptools_output/bamcoverage/C-9_.bigWig -of bigwig --normalizeUsing RPKM --effectiveGenomeSize 2862010578
+bamCoverage -b ~/chip_data/sambamba/C-10.bam -o ~/deeptools_output/bamcoverage/C-10.bigWig -of bigwig --normalizeUsing RPKM --effectiveGenomeSize 2862010578
+bamCoverage -b ~/chip_data/sambamba/C-11.bam -o ~/deeptools_output/bamcoverage/C-11.bigWig -of bigwig --normalizeUsing RPKM --effectiveGenomeSize 2862010578
+bamCoverage -b ~/chip_data/sambamba/C-12.bam -o ~/deeptools_output/bamcoverage/C-12.bigWig -of bigwig --normalizeUsing RPKM --effectiveGenomeSize 2862010578
+bamCoverage -b ~/chip_data/sambamba/C-13.bam -o ~/deeptools_output/bamcoverage/C-13.bigWig -of bigwig --normalizeUsing RPKM --effectiveGenomeSize 2862010578
+bamCoverage -b ~/chip_data/sambamba/C-14.bam -o ~/deeptools_output/bamcoverage/C-14.bigWig -of bigwig --normalizeUsing RPKM --effectiveGenomeSize 2862010578
+bamCoverage -b ~/chip_data/sambamba/C-15.bam -o ~/deeptools_output/bamcoverage/C-15.bigWig -of bigwig --normalizeUsing RPKM --effectiveGenomeSize 2862010578
+bamCoverage -b ~/chip_data/sambamba/C-16.bam -o ~/deeptools_output/bamcoverage/C-16.bigWig -of bigwig --normalizeUsing RPKM --effectiveGenomeSize 2862010578
+bamCoverage -b ~/chip_data/sambamba/C-17.bam -o ~/deeptools_output/bamcoverage/C-17.bigWig -of bigwig --normalizeUsing RPKM --effectiveGenomeSize 2862010578
+bamCoverage -b ~/chip_data/sambamba/C-18.bam -o ~/deeptools_output/bamcoverage/C-18.bigWig -of bigwig --normalizeUsing RPKM --effectiveGenomeSize 2862010578
+bamCoverage -b ~/chip_data/sambamba/C-19.bam -o ~/deeptools_output/bamcoverage/C-19.bigWig -of bigwig --normalizeUsing RPKM --effectiveGenomeSize 2862010578
+bamCoverage -b ~/chip_data/sambamba/C-20.bam -o ~/deeptools_output/bamcoverage/C-20.bigWig -of bigwig --normalizeUsing RPKM --effectiveGenomeSize 2862010578
+bamCoverage -b ~/chip_data/sambamba/C-21.bam -o ~/deeptools_output/bamcoverage/C-21.bigWig -of bigwig --normalizeUsing RPKM --effectiveGenomeSize 2862010578
+bamCoverage -b ~/chip_data/sambamba/C-22.bam -o ~/deeptools_output/bamcoverage/C-22.bigWig -of bigwig --normalizeUsing RPKM --effectiveGenomeSize 2862010578
+bamCoverage -b ~/chip_data/sambamba/C-23.bam -o ~/deeptools_output/bamcoverage/C-23.bigWig -of bigwig --normalizeUsing RPKM --effectiveGenomeSize 2862010578
+bamCoverage -b ~/chip_data/sambamba/C-24.bam -o ~/deeptools_output/bamcoverage/C-24.bigWig -of bigwig --normalizeUsing RPKM --effectiveGenomeSize 2862010578
+bamCoverage -b ~/chip_data/sambamba/C-25.bam -o ~/deeptools_output/bamcoverage/C-25.bigWig -of bigwig --normalizeUsing RPKM --effectiveGenomeSize 2862010578
+bamCoverage -b ~/chip_data/sambamba/C-26.bam -o ~/deeptools_output/bamcoverage/C-26.bigWig -of bigwig --normalizeUsing RPKM --effectiveGenomeSize 2862010578
+bamCoverage -b ~/chip_data/sambamba/C-27.bam -o ~/deeptools_output/bamcoverage/C-27.bigWig -of bigwig --normalizeUsing RPKM --effectiveGenomeSize 2862010578
+bamCoverage -b ~/chip_data/sambamba/C-28.bam -o ~/deeptools_output/bamcoverage/C-28.bigWig -of bigwig --normalizeUsing RPKM --effectiveGenomeSize 2862010578
+bamCoverage -b ~/chip_data/sambamba/I-1_.bam -o ~/deeptools_output/bamcoverage/I-1_.bigWig -of bigwig --normalizeUsing RPKM --effectiveGenomeSize 2862010578
+bamCoverage -b ~/chip_data/sambamba/I-2_.bam -o ~/deeptools_output/bamcoverage/I-2_.bigWig -of bigwig --normalizeUsing RPKM --effectiveGenomeSize 2862010578
+bamCoverage -b ~/chip_data/sambamba/I-3_.bam -o ~/deeptools_output/bamcoverage/I-3_.bigWig -of bigwig --normalizeUsing RPKM --effectiveGenomeSize 2862010578
+bamCoverage -b ~/chip_data/sambamba/I-4_.bam -o ~/deeptools_output/bamcoverage/I-4_.bigWig -of bigwig --normalizeUsing RPKM --effectiveGenomeSize 2862010578
+bamCoverage -b ~/chip_data/sambamba/I-5_.bam -o ~/deeptools_output/bamcoverage/I-5_.bigWig -of bigwig --normalizeUsing RPKM --effectiveGenomeSize 2862010578
+bamCoverage -b ~/chip_data/sambamba/I-6_.bam -o ~/deeptools_output/bamcoverage/I-6_.bigWig -of bigwig --normalizeUsing RPKM --effectiveGenomeSize 2862010578
+bamCoverage -b ~/chip_data/sambamba/I-7_.bam -o ~/deeptools_output/bamcoverage/I-7_.bigWig -of bigwig --normalizeUsing RPKM --effectiveGenomeSize 2862010578
+bamCoverage -b ~/chip_data/sambamba/I-8_.bam -o ~/deeptools_output/bamcoverage/I-8_.bigWig -of bigwig --normalizeUsing RPKM --effectiveGenomeSize 2862010578
+bamCoverage -b ~/chip_data/sambamba/I-9_.bam -o ~/deeptools_output/bamcoverage/I-9_.bigWig -of bigwig --normalizeUsing RPKM --effectiveGenomeSize 2862010578
+bamCoverage -b ~/chip_data/sambamba/I-10.bam -o ~/deeptools_output/bamcoverage/I-10.bigWig -of bigwig --normalizeUsing RPKM --effectiveGenomeSize 2862010578
+bamCoverage -b ~/chip_data/sambamba/I-11.bam -o ~/deeptools_output/bamcoverage/I-11.bigWig -of bigwig --normalizeUsing RPKM --effectiveGenomeSize 2862010578
+bamCoverage -b ~/chip_data/sambamba/I-12.bam -o ~/deeptools_output/bamcoverage/I-12.bigWig -of bigwig --normalizeUsing RPKM --effectiveGenomeSize 2862010578
+bamCoverage -b ~/chip_data/sambamba/I-13.bam -o ~/deeptools_output/bamcoverage/I-13.bigWig -of bigwig --normalizeUsing RPKM --effectiveGenomeSize 2862010578
+bamCoverage -b ~/chip_data/sambamba/I-14.bam -o ~/deeptools_output/bamcoverage/I-14.bigWig -of bigwig --normalizeUsing RPKM --effectiveGenomeSize 2862010578
+bamCoverage -b ~/chip_data/sambamba/I-15.bam -o ~/deeptools_output/bamcoverage/I-15.bigWig -of bigwig --normalizeUsing RPKM --effectiveGenomeSize 2862010578
+bamCoverage -b ~/chip_data/sambamba/I-16.bam -o ~/deeptools_output/bamcoverage/I-16.bigWig -of bigwig --normalizeUsing RPKM --effectiveGenomeSize 2862010578
+bamCoverage -b ~/chip_data/sambamba/I-17.bam -o ~/deeptools_output/bamcoverage/I-17.bigWig -of bigwig --normalizeUsing RPKM --effectiveGenomeSize 2862010578
+bamCoverage -b ~/chip_data/sambamba/I-18.bam -o ~/deeptools_output/bamcoverage/I-18.bigWig -of bigwig --normalizeUsing RPKM --effectiveGenomeSize 2862010578
+bamCoverage -b ~/chip_data/sambamba/I-19.bam -o ~/deeptools_output/bamcoverage/I-19.bigWig -of bigwig --normalizeUsing RPKM --effectiveGenomeSize 2862010578
+bamCoverage -b ~/chip_data/sambamba/I-20.bam -o ~/deeptools_output/bamcoverage/I-20.bigWig -of bigwig --normalizeUsing RPKM --effectiveGenomeSize 2862010578
+bamCoverage -b ~/chip_data/sambamba/I-21.bam -o ~/deeptools_output/bamcoverage/I-21.bigWig -of bigwig --normalizeUsing RPKM --effectiveGenomeSize 2862010578
+bamCoverage -b ~/chip_data/sambamba/I-22.bam -o ~/deeptools_output/bamcoverage/I-22.bigWig -of bigwig --normalizeUsing RPKM --effectiveGenomeSize 2862010578
+bamCoverage -b ~/chip_data/sambamba/I-23.bam -o ~/deeptools_output/bamcoverage/I-23.bigWig -of bigwig --normalizeUsing RPKM --effectiveGenomeSize 2862010578
+bamCoverage -b ~/chip_data/sambamba/I-24.bam -o ~/deeptools_output/bamcoverage/I-24.bigWig -of bigwig --normalizeUsing RPKM --effectiveGenomeSize 2862010578
+bamCoverage -b ~/chip_data/sambamba/I-25.bam -o ~/deeptools_output/bamcoverage/I-25.bigWig -of bigwig --normalizeUsing RPKM --effectiveGenomeSize 2862010578
+bamCoverage -b ~/chip_data/sambamba/I-26.bam -o ~/deeptools_output/bamcoverage/I-26.bigWig -of bigwig --normalizeUsing RPKM --effectiveGenomeSize 2862010578
+bamCoverage -b ~/chip_data/sambamba/I-27.bam -o ~/deeptools_output/bamcoverage/I-27.bigWig -of bigwig --normalizeUsing RPKM --effectiveGenomeSize 2862010578
+bamCoverage -b ~/chip_data/sambamba/I-28.bam -o ~/deeptools_output/bamcoverage/I-28.bigWig -of bigwig --normalizeUsing RPKM --effectiveGenomeSize 2862010578
+
+
+######
+
+bigwigCompare -b1 ~/deeptools_output/bamcoverage/C-1_.bigWig -b2 ~/deeptools_output/bamcoverage/I-1_.bigWig -o ~/deeptools_output/bigwigcompare/FGD5-AS1_04_H3K9ac.bigWig -of bigwig 
+bigwigCompare -b1 ~/deeptools_output/bamcoverage/C-2_.bigWig -b2 ~/deeptools_output/bamcoverage/I-2_.bigWig -o ~/deeptools_output/bigwigcompare/FGD5-AS1_AD03_H3K9ac.bigWig -of bigwig 
+
+bigwigCompare -b1 ~/deeptools_output/bamcoverage/C-3_.bigWig -b2 ~/deeptools_output/bamcoverage/I-3_.bigWig -o ~/deeptools_output/bigwigcompare/EMX2OS_AD02_H3K9ac.bigWig -of bigwig 
+bigwigCompare -b1 ~/deeptools_output/bamcoverage/C-4_.bigWig -b2 ~/deeptools_output/bamcoverage/I-4_.bigWig -o ~/deeptools_output/bigwigcompare/EMX2OS_AD04_H3K9ac.bigWig -of bigwig 
+
+bigwigCompare -b1 ~/deeptools_output/bamcoverage/C-5_.bigWig -b2 ~/deeptools_output/bamcoverage/I-5_.bigWig -o ~/deeptools_output/bigwigcompare/AC005592.2_02_H3K9me3.bigWig -of bigwig
+bigwigCompare -b1 ~/deeptools_output/bamcoverage/C-6_.bigWig -b2 ~/deeptools_output/bamcoverage/I-6_.bigWig -o ~/deeptools_output/bigwigcompare/AC005592.2_03_H3K9me3.bigWig -of bigwig
+
+bigwigCompare -b1 ~/deeptools_output/bamcoverage/C-7_.bigWig -b2 ~/deeptools_output/bamcoverage/I-7_.bigWig -o ~/deeptools_output/bigwigcompare/RP11-398K22.12_03_H3K27ac.bigWig -of bigwig
+bigwigCompare -b1 ~/deeptools_output/bamcoverage/C-8_.bigWig -b2 ~/deeptools_output/bamcoverage/I-8_.bigWig -o ~/deeptools_output/bigwigcompare/RP11-398K22.12_05_H3K27ac.bigWig -of bigwig
+
+bigwigCompare -b1 ~/deeptools_output/bamcoverage/C-9_.bigWig -b2 ~/deeptools_output/bamcoverage/I-9_.bigWig -o ~/deeptools_output/bigwigcompare/CTD-2587H24.5_01_H3K36me3.bigWig -of bigwig
+bigwigCompare -b1 ~/deeptools_output/bamcoverage/C-10.bigWig -b2 ~/deeptools_output/bamcoverage/I-10.bigWig -o ~/deeptools_output/bigwigcompare/CTD-2587H24.5_03_H3K36me3.bigWig -of bigwig
+
+bigwigCompare -b1 ~/deeptools_output/bamcoverage/C-11.bigWig -b2 ~/deeptools_output/bamcoverage/I-11.bigWig -o ~/deeptools_output/bigwigcompare/JPX_05_H3K9me3.bigWig -of bigwig
+bigwigCompare -b1 ~/deeptools_output/bamcoverage/C-12.bigWig -b2 ~/deeptools_output/bamcoverage/I-12.bigWig -o ~/deeptools_output/bigwigcompare/JPX_AD04_H3K9me3.bigWig -of bigwig
+
+bigwigCompare -b1 ~/deeptools_output/bamcoverage/C-13.bigWig -b2 ~/deeptools_output/bamcoverage/I-13.bigWig -o ~/deeptools_output/bigwigcompare/MAPKAPK5-AS1_06_H3K27me3.bigWig -of bigwig
+bigwigCompare -b1 ~/deeptools_output/bamcoverage/C-14.bigWig -b2 ~/deeptools_output/bamcoverage/I-14.bigWig -o ~/deeptools_output/bigwigcompare/MAPKAPK5-AS1_06_H3K4me3.bigWig -of bigwig
+
+bigwigCompare -b1 ~/deeptools_output/bamcoverage/C-15.bigWig -b2 ~/deeptools_output/bamcoverage/I-15.bigWig -o ~/deeptools_output/bigwigcompare/MAPKAPK5-AS1_AD04_H3K27me3.bigWig -of bigwig
+bigwigCompare -b1 ~/deeptools_output/bamcoverage/C-16.bigWig -b2 ~/deeptools_output/bamcoverage/I-16.bigWig -o ~/deeptools_output/bigwigcompare/MAPKAPK5-AS1_AD04_H3K4me3.bigWig -of bigwig
+
+bigwigCompare -b1 ~/deeptools_output/bamcoverage/C-17.bigWig -b2 ~/deeptools_output/bamcoverage/I-17.bigWig -o ~/deeptools_output/bigwigcompare/NCA_H3K9me3_1.bigWig -of bigwig
+bigwigCompare -b1 ~/deeptools_output/bamcoverage/C-18.bigWig -b2 ~/deeptools_output/bamcoverage/I-18.bigWig -o ~/deeptools_output/bigwigcompare/NCA_H3K9me3_2.bigWig -of bigwig
+
+bigwigCompare -b1 ~/deeptools_output/bamcoverage/C-19.bigWig -b2 ~/deeptools_output/bamcoverage/I-19.bigWig -o ~/deeptools_output/bigwigcompare/NCA_H3K36me3_1.bigWig -of bigwig
+bigwigCompare -b1 ~/deeptools_output/bamcoverage/C-20.bigWig -b2 ~/deeptools_output/bamcoverage/I-20.bigWig -o ~/deeptools_output/bigwigcompare/NCA_H3K36me3_2.bigWig -of bigwig
+
+bigwigCompare -b1 ~/deeptools_output/bamcoverage/C-21.bigWig -b2 ~/deeptools_output/bamcoverage/I-21.bigWig -o ~/deeptools_output/bigwigcompare/NCA_H3K9ac_1.bigWig -of bigwig
+bigwigCompare -b1 ~/deeptools_output/bamcoverage/C-22.bigWig -b2 ~/deeptools_output/bamcoverage/I-22.bigWig -o ~/deeptools_output/bigwigcompare/NCA_H3K9ac_2.bigWig -of bigwig
+
+bigwigCompare -b1 ~/deeptools_output/bamcoverage/C-23.bigWig -b2 ~/deeptools_output/bamcoverage/I-23.bigWig -o ~/deeptools_output/bigwigcompare/NCA_H3K27ac_1.bigWig -of bigwig
+bigwigCompare -b1 ~/deeptools_output/bamcoverage/C-24.bigWig -b2 ~/deeptools_output/bamcoverage/I-24.bigWig -o ~/deeptools_output/bigwigcompare/NCA_H3K27ac_2.bigWig -of bigwig
+
+bigwigCompare -b1 ~/deeptools_output/bamcoverage/C-25.bigWig -b2 ~/deeptools_output/bamcoverage/I-25.bigWig -o ~/deeptools_output/bigwigcompare/NCA_H3K27me3_1.bigWig -of bigwig
+bigwigCompare -b1 ~/deeptools_output/bamcoverage/C-26.bigWig -b2 ~/deeptools_output/bamcoverage/I-26.bigWig -o ~/deeptools_output/bigwigcompare/NCA_H3K4me3_1.bigWig -of bigwig
+
+bigwigCompare -b1 ~/deeptools_output/bamcoverage/C-27.bigWig -b2 ~/deeptools_output/bamcoverage/I-27.bigWig -o ~/deeptools_output/bigwigcompare/NCA_H3K27me3_2.bigWig -of bigwig
+bigwigCompare -b1 ~/deeptools_output/bamcoverage/C-28.bigWig -b2 ~/deeptools_output/bamcoverage/I-28.bigWig -o ~/deeptools_output/bigwigcompare/NCA_H3K4me3_2.bigWig -of bigwig
+
+
+
+### С разделением по экспрессии. Все ASO на одной картинке. Значения экспрессии, усредненные между двумя репликами.
+
+computeMatrix scale-regions -S ~/deeptools_output/bigwigcompare/NCA_H3K9ac_1.bigWig ~/deeptools_output/bigwigcompare/NCA_H3K9ac_2.bigWig ~/deeptools_output/bigwigcompare/FGD5-AS1_04_H3K9ac.bigWig ~/deeptools_output/bigwigcompare/FGD5-AS1_AD03_H3K9ac.bigWig -R ~/bed_f6_logexpr/fgd5_high.bed ~/bed_f6_logexpr/fgd5_low.bed ~/bed_f6_logexpr/fgd5_zero.bed -o ~/deeptools_output/computematrix_common/FGD5-AS1_H3K9ac.mat.gz -m 6000 -a 2000 -b 2000
+
+computeMatrix scale-regions -S ~/deeptools_output/bigwigcompare/NCA_H3K9ac_1.bigWig ~/deeptools_output/bigwigcompare/NCA_H3K9ac_2.bigWig ~/deeptools_output/bigwigcompare/EMX2OS_AD02_H3K9ac.bigWig ~/deeptools_output/bigwigcompare/EMX2OS_AD04_H3K9ac.bigWig -R ~/bed_f6_logexpr/emx2os_high.bed ~/bed_f6_logexpr/emx2os_low.bed ~/bed_f6_logexpr/emx2os_zero.bed -o ~/deeptools_output/computematrix_common/EMX2OS_H3K9ac.mat.gz -m 6000 -a 2000 -b 2000
+
+computeMatrix scale-regions -S ~/deeptools_output/bigwigcompare/NCA_H3K9me3_1.bigWig ~/deeptools_output/bigwigcompare/NCA_H3K9me3_2.bigWig ~/deeptools_output/bigwigcompare/AC005592.2_02_H3K9me3.bigWig ~/deeptools_output/bigwigcompare/AC005592.2_03_H3K9me3.bigWig -R ~/bed_f6_logexpr/ac_high.bed ~/bed_f6_logexpr/ac_low.bed ~/bed_f6_logexpr/ac_zero.bed -o ~/deeptools_output/computematrix_common/AC005592.2_H3K9me3.mat.gz -m 6000 -a 2000 -b 2000
+
+computeMatrix scale-regions -S ~/deeptools_output/bigwigcompare/NCA_H3K27ac_1.bigWig ~/deeptools_output/bigwigcompare/NCA_H3K27ac_2.bigWig ~/deeptools_output/bigwigcompare/RP11-398K22.12_03_H3K27ac.bigWig ~/deeptools_output/bigwigcompare/RP11-398K22.12_05_H3K27ac.bigWig -R ~/bed_f6_logexpr/rp11_high.bed ~/bed_f6_logexpr/rp11_low.bed ~/bed_f6_logexpr/rp11_zero.bed -o ~/deeptools_output/computematrix_common/RP11-398K22.12_H3K27ac.mat.gz -m 6000 -a 2000 -b 2000
+
+computeMatrix scale-regions -S ~/deeptools_output/bigwigcompare/NCA_H3K36me3_1.bigWig ~/deeptools_output/bigwigcompare/NCA_H3K36me3_2.bigWig ~/deeptools_output/bigwigcompare/CTD-2587H24.5_01_H3K36me3.bigWig ~/deeptools_output/bigwigcompare/CTD-2587H24.5_03_H3K36me3.bigWig -R ~/bed_f6_logexpr/ctd_high.bed ~/bed_f6_logexpr/ctd_low.bed ~/bed_f6_logexpr/ctd_zero.bed -o ~/deeptools_output/computematrix_common/CTD-2587H24.5_H3K36me3.mat.gz -m 6000 -a 2000 -b 2000
+
+computeMatrix scale-regions -S ~/deeptools_output/bigwigcompare/NCA_H3K9me3_1.bigWig ~/deeptools_output/bigwigcompare/NCA_H3K9me3_2.bigWig ~/deeptools_output/bigwigcompare/JPX_05_H3K9me3.bigWig ~/deeptools_output/bigwigcompare/JPX_AD04_H3K9me3.bigWig -R ~/bed_f6_logexpr/jpx_high.bed ~/bed_f6_logexpr/jpx_low.bed ~/bed_f6_logexpr/jpx_zero.bed -o ~/deeptools_output/computematrix_common/JPX_H3K9me3.mat.gz -m 6000 -a 2000 -b 2000
+
+computeMatrix scale-regions -S ~/deeptools_output/bigwigcompare/NCA_H3K27me3_1.bigWig ~/deeptools_output/bigwigcompare/NCA_H3K27me3_2.bigWig ~/deeptools_output/bigwigcompare/MAPKAPK5-AS1_06_H3K27me3.bigWig ~/deeptools_output/bigwigcompare/MAPKAPK5-AS1_AD04_H3K27me3.bigWig -R ~/bed_f6_logexpr/mapkapk_high.bed ~/bed_f6_logexpr/mapkapk_low.bed ~/bed_f6_logexpr/mapkapk_zero.bed -o ~/deeptools_output/computematrix_common/MAPKAPK5-AS1_H3K27me3.mat.gz -m 6000 -a 2000 -b 2000
+
+computeMatrix scale-regions -S ~/deeptools_output/bigwigcompare/NCA_H3K4me3_1.bigWig ~/deeptools_output/bigwigcompare/NCA_H3K4me3_2.bigWig ~/deeptools_output/bigwigcompare/MAPKAPK5-AS1_06_H3K4me3.bigWig ~/deeptools_output/bigwigcompare/MAPKAPK5-AS1_AD04_H3K4me3.bigWig -R ~/bed_f6_logexpr/mapkapk_high.bed ~/bed_f6_logexpr/mapkapk_low.bed ~/bed_f6_logexpr/mapkapk_zero.bed -o ~/deeptools_output/computematrix_common/MAPKAPK5-AS1_H3K4me3.mat.gz -m 6000 -a 2000 -b 2000
+
+
+plotProfile -m ~/deeptools_output/computematrix_common/FGD5-AS1_H3K9ac.mat.gz -out ~/deeptools_output/plotprofile_common/FGD5-AS1_H3K9ac.svg --numPlotsPerRow 2 --samplesLabel "NCA rep-1" "NCA rep-2" "KD ASO_04" "KD ASO_AD03" --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "FGD5-AS1_H3K9ac" --plotFileFormat svg
+
+plotProfile -m ~/deeptools_output/computematrix_common/EMX2OS_H3K9ac.mat.gz -out ~/deeptools_output/plotprofile_common/EMX2OS_H3K9ac.svg --numPlotsPerRow 2 --samplesLabel "NCA rep-1" "NCA rep-2" "KD ASO_AD02" "KD ASO_AD04" --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "EMX2OS_H3K9ac" --plotFileFormat svg
+
+plotProfile -m ~/deeptools_output/computematrix_common/AC005592.2_H3K9me3.mat.gz -out ~/deeptools_output/plotprofile_common/AC005592.2_H3K9me3.svg --numPlotsPerRow 2 --samplesLabel "NCA rep-1" "NCA rep-2" "KD ASO_02" "KD ASO_03" --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "AC005592.2_H3K9me3" --plotFileFormat svg
+
+plotProfile -m ~/deeptools_output/computematrix_common/RP11-398K22.12_H3K27ac.mat.gz -out ~/deeptools_output/plotprofile_common/RP11-398K22.12_H3K27ac.svg --numPlotsPerRow 2 --samplesLabel "NCA rep-1" "NCA rep-2" "KD ASO_03" "KD ASO_05" --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "RP11-398K22.12_H3K27ac" --plotFileFormat svg
+
+plotProfile -m ~/deeptools_output/computematrix_common/CTD-2587H24.5_H3K36me3.mat.gz -out ~/deeptools_output/plotprofile_common/CTD-2587H24.5_H3K36me3.svg --numPlotsPerRow 2 --samplesLabel "NCA rep-1" "NCA rep-2" "KD ASO_01" "KD ASO_03" --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "CTD-2587H24.5_H3K36me3" --plotFileFormat svg
+
+plotProfile -m ~/deeptools_output/computematrix_common/JPX_H3K9me3.mat.gz -out ~/deeptools_output/plotprofile_common/JPX_H3K9me3.svg --numPlotsPerRow 2 --samplesLabel "NCA rep-1" "NCA rep-2" "KD ASO_05" "KD ASO_AD04" --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "JPX_H3K9me3" --plotFileFormat svg
+
+plotProfile -m ~/deeptools_output/computematrix_common/MAPKAPK5-AS1_H3K27me3.mat.gz -out ~/deeptools_output/plotprofile_common/MAPKAPK5-AS1_H3K27me3.svg --numPlotsPerRow 2 --samplesLabel "NCA rep-1" "NCA rep-2" "KD ASO_06" "KD ASO_AD04" --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "MAPKAPK5-AS1_H3K27me3" --plotFileFormat svg
+
+plotProfile -m ~/deeptools_output/computematrix_common/MAPKAPK5-AS1_H3K4me3.mat.gz -out ~/deeptools_output/plotprofile_common/MAPKAPK5-AS1_H3K4me3.svg --numPlotsPerRow 2 --samplesLabel "NCA rep-1" "NCA rep-2" "KD ASO_06" "KD ASO_AD04" --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "MAPKAPK5-AS1_H3K4me3" --plotFileFormat svg
+
+
+plotProfile -m ~/deeptools_output/computematrix_common/FGD5-AS1_H3K9ac.mat.gz -out ~/deeptools_output/plotprofile_common/FGD5-AS1_H3K9ac_pergroup.svg --numPlotsPerRow 2 --samplesLabel "NCA rep-1" "NCA rep-2" "KD ASO_04" "KD ASO_AD03" --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "FGD5-AS1_H3K9ac" --plotFileFormat svg --perGroup
+
+plotProfile -m ~/deeptools_output/computematrix_common/EMX2OS_H3K9ac.mat.gz -out ~/deeptools_output/plotprofile_common/EMX2OS_H3K9ac_pergroup.svg --numPlotsPerRow 2 --samplesLabel "NCA rep-1" "NCA rep-2" "KD ASO_AD02" "KD ASO_AD04" --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "EMX2OS_H3K9ac" --plotFileFormat svg --perGroup
+
+plotProfile -m ~/deeptools_output/computematrix_common/AC005592.2_H3K9me3.mat.gz -out ~/deeptools_output/plotprofile_common/AC005592.2_H3K9me3_pergroup.svg --numPlotsPerRow 2 --samplesLabel "NCA rep-1" "NCA rep-2" "KD ASO_02" "KD ASO_03" --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "AC005592.2_H3K9me3" --plotFileFormat svg --perGroup
+
+plotProfile -m ~/deeptools_output/computematrix_common/RP11-398K22.12_H3K27ac.mat.gz -out ~/deeptools_output/plotprofile_common/RP11-398K22.12_H3K27ac_pergroup.svg --numPlotsPerRow 2 --samplesLabel "NCA rep-1" "NCA rep-2" "KD ASO_03" "KD ASO_05" --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "RP11-398K22.12_H3K27ac" --plotFileFormat svg --perGroup
+
+plotProfile -m ~/deeptools_output/computematrix_common/CTD-2587H24.5_H3K36me3.mat.gz -out ~/deeptools_output/plotprofile_common/CTD-2587H24.5_H3K36me3_pergroup.svg --numPlotsPerRow 2 --samplesLabel "NCA rep-1" "NCA rep-2" "KD ASO_01" "KD ASO_03" --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "CTD-2587H24.5_H3K36me3" --plotFileFormat svg --perGroup
+
+plotProfile -m ~/deeptools_output/computematrix_common/JPX_H3K9me3.mat.gz -out ~/deeptools_output/plotprofile_common/JPX_H3K9me3_pergroup.svg --numPlotsPerRow 2 --samplesLabel "NCA rep-1" "NCA rep-2" "KD ASO_05" "KD ASO_AD04" --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "JPX_H3K9me3" --plotFileFormat svg --perGroup
+
+plotProfile -m ~/deeptools_output/computematrix_common/MAPKAPK5-AS1_H3K27me3.mat.gz -out ~/deeptools_output/plotprofile_common/MAPKAPK5-AS1_H3K27me3_pergroup.svg --numPlotsPerRow 2 --samplesLabel "NCA rep-1" "NCA rep-2" "KD ASO_06" "KD ASO_AD04" --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "MAPKAPK5-AS1_H3K27me3" --plotFileFormat svg --perGroup
+
+plotProfile -m ~/deeptools_output/computematrix_common/MAPKAPK5-AS1_H3K4me3.mat.gz -out ~/deeptools_output/plotprofile_common/MAPKAPK5-AS1_H3K4me3_pergroup.svg --numPlotsPerRow 2 --samplesLabel "NCA rep-1" "NCA rep-2" "KD ASO_06" "KD ASO_AD04" --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "MAPKAPK5-AS1_H3K4me3" --plotFileFormat svg --perGroup
+
+
+### С разделением по экспрессии. Для каждой ASO свои дифэкспрессные гены.
+
+
+computeMatrix scale-regions -S ~/deeptools_output/bigwigcompare/NCA_H3K9ac_1.bigWig ~/deeptools_output/bigwigcompare/FGD5-AS1_04_H3K9ac.bigWig -R ~/bed_f6_logexpr/fgd5_04_high.bed ~/bed_f6_logexpr/fgd5_04_low.bed ~/bed_f6_logexpr/fgd5_04_zero.bed -o ~/deeptools_output/computematrix/FGD5-AS1_04_H3K9ac_expr.mat.gz -m 6000 -a 2000 -b 2000
+
+computeMatrix scale-regions -S ~/deeptools_output/bigwigcompare/NCA_H3K9ac_2.bigWig ~/deeptools_output/bigwigcompare/FGD5-AS1_AD03_H3K9ac.bigWig -R ~/bed_f6_logexpr/fgd5_ad03_high.bed ~/bed_f6_logexpr/fgd5_ad03_low.bed ~/bed_f6_logexpr/fgd5_ad03_zero.bed -o ~/deeptools_output/computematrix/FGD5-AS1_AD03_H3K9ac_expr.mat.gz -m 6000 -a 2000 -b 2000
+
+computeMatrix scale-regions -S ~/deeptools_output/bigwigcompare/NCA_H3K9ac_1.bigWig ~/deeptools_output/bigwigcompare/EMX2OS_AD02_H3K9ac.bigWig -R ~/bed_f6_logexpr/emx2os_ad02_high.bed ~/bed_f6_logexpr/emx2os_ad02_low.bed ~/bed_f6_logexpr/emx2os_ad02_zero.bed -o ~/deeptools_output/computematrix/EMX2OS_AD02_H3K9ac_expr.mat.gz -m 6000 -a 2000 -b 2000
+
+computeMatrix scale-regions -S ~/deeptools_output/bigwigcompare/NCA_H3K9ac_2.bigWig ~/deeptools_output/bigwigcompare/EMX2OS_AD04_H3K9ac.bigWig -R ~/bed_f6_logexpr/emx2os_ad04_high.bed ~/bed_f6_logexpr/emx2os_ad04_low.bed ~/bed_f6_logexpr/emx2os_ad04_zero.bed -o ~/deeptools_output/computematrix/EMX2OS_AD04_H3K9ac_expr.mat.gz -m 6000 -a 2000 -b 2000
+
+computeMatrix scale-regions -S ~/deeptools_output/bigwigcompare/NCA_H3K9me3_1.bigWig ~/deeptools_output/bigwigcompare/AC005592.2_02_H3K9me3.bigWig -R ~/bed_f6_logexpr/ac_02_high.bed ~/bed_f6_logexpr/ac_02_low.bed ~/bed_f6_logexpr/ac_02_zero.bed -o ~/deeptools_output/computematrix/AC005592.2_02_H3K9me3_expr.mat.gz -m 6000 -a 2000 -b 2000
+
+computeMatrix scale-regions -S ~/deeptools_output/bigwigcompare/NCA_H3K9me3_2.bigWig ~/deeptools_output/bigwigcompare/AC005592.2_03_H3K9me3.bigWig -R ~/bed_f6_logexpr/ac_03_high.bed ~/bed_f6_logexpr/ac_03_low.bed ~/bed_f6_logexpr/ac_03_zero.bed -o ~/deeptools_output/computematrix/AC005592.2_03_H3K9me3_expr.mat.gz -m 6000 -a 2000 -b 2000
+
+computeMatrix scale-regions -S ~/deeptools_output/bigwigcompare/NCA_H3K27ac_1.bigWig ~/deeptools_output/bigwigcompare/RP11-398K22.12_03_H3K27ac.bigWig -R ~/bed_f6_logexpr/rp11_03_high.bed ~/bed_f6_logexpr/rp11_03_low.bed ~/bed_f6_logexpr/rp11_03_zero.bed -o ~/deeptools_output/computematrix/RP11-398K22.12_03_H3K27ac_expr.mat.gz -m 6000 -a 2000 -b 2000
+
+computeMatrix scale-regions -S ~/deeptools_output/bigwigcompare/NCA_H3K27ac_2.bigWig ~/deeptools_output/bigwigcompare/RP11-398K22.12_05_H3K27ac.bigWig -R ~/bed_f6_logexpr/rp11_05_high.bed ~/bed_f6_logexpr/rp11_05_low.bed ~/bed_f6_logexpr/rp11_05_zero.bed -o ~/deeptools_output/computematrix/RP11-398K22.12_05_H3K27ac_expr.mat.gz -m 6000 -a 2000 -b 2000
+
+computeMatrix scale-regions -S ~/deeptools_output/bigwigcompare/NCA_H3K36me3_2.bigWig ~/deeptools_output/bigwigcompare/CTD-2587H24.5_01_H3K36me3.bigWig -R ~/bed_f6_logexpr/ctd_01_high.bed ~/bed_f6_logexpr/ctd_01_low.bed ~/bed_f6_logexpr/ctd_01_zero.bed -o ~/deeptools_output/computematrix/CTD-2587H24.5_01_H3K36me3_expr.mat.gz -m 6000 -a 2000 -b 2000
+
+computeMatrix scale-regions -S ~/deeptools_output/bigwigcompare/NCA_H3K36me3_1.bigWig ~/deeptools_output/bigwigcompare/CTD-2587H24.5_03_H3K36me3.bigWig -R ~/bed_f6_logexpr/ctd_03_high.bed ~/bed_f6_logexpr/ctd_03_low.bed ~/bed_f6_logexpr/ctd_03_zero.bed -o ~/deeptools_output/computematrix/CTD-2587H24.5_03_H3K36me3_expr.mat.gz -m 6000 -a 2000 -b 2000
+
+computeMatrix scale-regions -S ~/deeptools_output/bigwigcompare/NCA_H3K9me3_1.bigWig ~/deeptools_output/bigwigcompare/JPX_05_H3K9me3.bigWig -R ~/bed_f6_logexpr/jpx_05_high.bed ~/bed_f6_logexpr/jpx_05_low.bed ~/bed_f6_logexpr/jpx_05_zero.bed -o ~/deeptools_output/computematrix/JPX_05_H3K9me3_expr.mat.gz -m 6000 -a 2000 -b 2000
+
+computeMatrix scale-regions -S ~/deeptools_output/bigwigcompare/NCA_H3K9me3_2.bigWig ~/deeptools_output/bigwigcompare/JPX_AD04_H3K9me3.bigWig -R ~/bed_f6_logexpr/jpx_ad04_high.bed ~/bed_f6_logexpr/jpx_ad04_low.bed ~/bed_f6_logexpr/jpx_ad04_zero.bed -o ~/deeptools_output/computematrix/JPX_AD04_H3K9me3_expr.mat.gz -m 6000 -a 2000 -b 2000
+
+computeMatrix scale-regions -S ~/deeptools_output/bigwigcompare/NCA_H3K27me3_1.bigWig ~/deeptools_output/bigwigcompare/MAPKAPK5-AS1_06_H3K27me3.bigWig -R ~/bed_f6_logexpr/mapkapk_06_high.bed ~/bed_f6_logexpr/mapkapk_06_low.bed ~/bed_f6_logexpr/mapkapk_06_zero.bed -o ~/deeptools_output/computematrix/MAPKAPK5-AS1_06_H3K27me3_expr.mat.gz -m 6000 -a 2000 -b 2000
+
+computeMatrix scale-regions -S ~/deeptools_output/bigwigcompare/NCA_H3K27me3_2.bigWig ~/deeptools_output/bigwigcompare/MAPKAPK5-AS1_AD04_H3K27me3.bigWig -R ~/bed_f6_logexpr/mapkapk_ad04_high.bed ~/bed_f6_logexpr/mapkapk_ad04_low.bed ~/bed_f6_logexpr/mapkapk_ad04_zero.bed -o ~/deeptools_output/computematrix/MAPKAPK5-AS1_AD04_H3K27me3_expr.mat.gz -m 6000 -a 2000 -b 2000
+
+computeMatrix scale-regions -S ~/deeptools_output/bigwigcompare/NCA_H3K4me3_1.bigWig ~/deeptools_output/bigwigcompare/MAPKAPK5-AS1_06_H3K4me3.bigWig -R ~/bed_f6_logexpr/mapkapk_06_high.bed ~/bed_f6_logexpr/mapkapk_06_low.bed ~/bed_f6_logexpr/mapkapk_06_zero.bed -o ~/deeptools_output/computematrix/MAPKAPK5-AS1_06_H3K4me3_expr.mat.gz -m 6000 -a 2000 -b 2000
+
+computeMatrix scale-regions -S ~/deeptools_output/bigwigcompare/NCA_H3K4me3_2.bigWig ~/deeptools_output/bigwigcompare/MAPKAPK5-AS1_AD04_H3K4me3.bigWig -R ~/bed_f6_logexpr/mapkapk_ad04_high.bed ~/bed_f6_logexpr/mapkapk_ad04_low.bed ~/bed_f6_logexpr/mapkapk_ad04_zero.bed -o ~/deeptools_output/computematrix/MAPKAPK5-AS1_AD04_H3K4me3_expr.mat.gz -m 6000 -a 2000 -b 2000
+
+
+
+plotProfile -m ~/deeptools_output/computematrix/FGD5-AS1_04_H3K9ac_expr.mat.gz -out ~/deeptools_output/plotprofile/FGD5-AS1_04_H3K9ac.svg --perGroup --numPlotsPerRow 2 --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "FGD5-AS1_04_H3K9ac" --plotFileFormat svg
+
+plotProfile -m ~/deeptools_output/computematrix/FGD5-AS1_AD03_H3K9ac_expr.mat.gz -out ~/deeptools_output/plotprofile/FGD5-AS1_AD03_H3K9ac.svg --perGroup --numPlotsPerRow 2 --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "FGD5-AS1_AD03_H3K9ac" --plotFileFormat svg
+
+plotProfile -m ~/deeptools_output/computematrix/EMX2OS_AD02_H3K9ac_expr.mat.gz -out ~/deeptools_output/plotprofile/EMX2OS_AD02_H3K9ac.svg --perGroup --numPlotsPerRow 2 --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "EMX2OS_AD02_H3K9ac" --plotFileFormat svg
+
+plotProfile -m ~/deeptools_output/computematrix/EMX2OS_AD04_H3K9ac_expr.mat.gz -out ~/deeptools_output/plotprofile/EMX2OS_AD04_AD03_H3K9ac.svg --perGroup --numPlotsPerRow 2 --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "EMX2OS_AD04_H3K9ac" --plotFileFormat svg
+
+plotProfile -m ~/deeptools_output/computematrix/AC005592.2_02_H3K9me3_expr.mat.gz -out ~/deeptools_output/plotprofile/AC005592.2_02_H3K9me3.svg --perGroup --numPlotsPerRow 2 --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "AC005592.2_02_H3K9me3" --plotFileFormat svg
+
+plotProfile -m ~/deeptools_output/computematrix/AC005592.2_03_H3K9me3_expr.mat.gz -out ~/deeptools_output/plotprofile/AC005592.2_03_H3K9me3.svg --perGroup --numPlotsPerRow 2 --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "AC005592.2_03_H3K9me3" --plotFileFormat svg
+
+plotProfile -m ~/deeptools_output/computematrix/RP11-398K22.12_03_H3K27ac_expr.mat.gz -out ~/deeptools_output/plotprofile/RP11-398K22.12_03_H3K27ac.svg --perGroup --numPlotsPerRow 2 --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "RP11-398K22.12_03_H3K27ac" --plotFileFormat svg
+
+plotProfile -m ~/deeptools_output/computematrix/RP11-398K22.12_05_H3K27ac_expr.mat.gz -out ~/deeptools_output/plotprofile/RP11-398K22.12_05_H3K27ac.svg --perGroup --numPlotsPerRow 2 --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "RP11-398K22.12_05_H3K27ac" --plotFileFormat svg
+
+plotProfile -m ~/deeptools_output/computematrix/CTD-2587H24.5_01_H3K36me3_expr.mat.gz -out ~/deeptools_output/plotprofile/CTD-2587H24.5_01_H3K36me3.svg --perGroup --numPlotsPerRow 2 --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "CTD-2587H24.5_01_H3K36me3" --plotFileFormat svg
+
+plotProfile -m ~/deeptools_output/computematrix/CTD-2587H24.5_03_H3K36me3_expr.mat.gz -out ~/deeptools_output/plotprofile/CTD-2587H24.5_03_H3K36me3.svg --perGroup --numPlotsPerRow 2 --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "CTD-2587H24.5_03_H3K36me3" --plotFileFormat svg
+
+plotProfile -m ~/deeptools_output/computematrix/JPX_05_H3K9me3_expr.mat.gz -out ~/deeptools_output/plotprofile/JPX_05_H3K9me3.svg --perGroup --numPlotsPerRow 2 --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "JPX_05_H3K9me3" --plotFileFormat svg
+
+plotProfile -m ~/deeptools_output/computematrix/JPX_AD04_H3K9me3_expr.mat.gz -out ~/deeptools_output/plotprofile/JPX_AD04_H3K9me3.svg --perGroup --numPlotsPerRow 2 --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "JPX_AD04_H3K9me3" --plotFileFormat svg
+
+plotProfile -m ~/deeptools_output/computematrix/MAPKAPK5-AS1_06_H3K27me3_expr.mat.gz -out ~/deeptools_output/plotprofile/MAPKAPK5-AS1_06_H3K27me3.svg --perGroup --numPlotsPerRow 2 --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "MAPKAPK5-AS1_06_H3K27me3" --plotFileFormat svg
+
+plotProfile -m ~/deeptools_output/computematrix/MAPKAPK5-AS1_06_H3K4me3_expr.mat.gz -out ~/deeptools_output/plotprofile/MAPKAPK5-AS1_06_H3K4me3.svg --perGroup --numPlotsPerRow 2 --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "MAPKAPK5-AS1_06_H3K4me3" --plotFileFormat svg
+
+plotProfile -m ~/deeptools_output/computematrix/MAPKAPK5-AS1_AD04_H3K27me3_expr.mat.gz -out ~/deeptools_output/plotprofile/MAPKAPK5-AS1_AD04_H3K27me3.svg --perGroup --numPlotsPerRow 2 --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "MAPKAPK5-AS1_AD04_H3K27me3" --plotFileFormat svg
+
+plotProfile -m ~/deeptools_output/computematrix/MAPKAPK5-AS1_AD04_H3K4me3_expr.mat.gz -out ~/deeptools_output/plotprofile/MAPKAPK5-AS1_AD04_H3K4me3.svg --perGroup --numPlotsPerRow 2 --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "MAPKAPK5-AS1_AD04_H3K4me3" --plotFileFormat svg
+
+
+###### Везде используется одинаковые списки генов, выделенные по уровню log экспрессии в NCA (*)
+
+computeMatrix scale-regions -S ~/deeptools_output/bigwigcompare/NCA_H3K9ac_1.bigWig ~/deeptools_output/bigwigcompare/FGD5-AS1_04_H3K9ac.bigWig -R ~/bed_f6_logexpr/nc_high.bed ~/bed_f6_logexpr/nc_low.bed ~/bed_f6_logexpr/nc_zero.bed -o ~/deeptools_output/computematrix_nca/FGD5-AS1_04_H3K9ac_expr.mat.gz -m 6000 -a 2000 -b 2000
+
+computeMatrix scale-regions -S ~/deeptools_output/bigwigcompare/NCA_H3K9ac_2.bigWig ~/deeptools_output/bigwigcompare/FGD5-AS1_AD03_H3K9ac.bigWig -R ~/bed_f6_logexpr/nc_high.bed ~/bed_f6_logexpr/nc_low.bed ~/bed_f6_logexpr/nc_zero.bed -o ~/deeptools_output/computematrix_nca/FGD5-AS1_AD03_H3K9ac_expr.mat.gz -m 6000 -a 2000 -b 2000
+
+computeMatrix scale-regions -S ~/deeptools_output/bigwigcompare/NCA_H3K9ac_1.bigWig ~/deeptools_output/bigwigcompare/EMX2OS_AD02_H3K9ac.bigWig -R ~/bed_f6_logexpr/nc_high.bed ~/bed_f6_logexpr/nc_low.bed ~/bed_f6_logexpr/nc_zero.bed -o ~/deeptools_output/computematrix_nca/EMX2OS_AD02_H3K9ac_expr.mat.gz -m 6000 -a 2000 -b 2000
+
+computeMatrix scale-regions -S ~/deeptools_output/bigwigcompare/NCA_H3K9ac_2.bigWig ~/deeptools_output/bigwigcompare/EMX2OS_AD04_H3K9ac.bigWig -R ~/bed_f6_logexpr/nc_high.bed ~/bed_f6_logexpr/nc_low.bed ~/bed_f6_logexpr/nc_zero.bed -o ~/deeptools_output/computematrix_nca/EMX2OS_AD04_H3K9ac_expr.mat.gz -m 6000 -a 2000 -b 2000
+
+computeMatrix scale-regions -S ~/deeptools_output/bigwigcompare/NCA_H3K9me3_1.bigWig ~/deeptools_output/bigwigcompare/AC005592.2_02_H3K9me3.bigWig -R ~/bed_f6_logexpr/nc_high.bed ~/bed_f6_logexpr/nc_low.bed ~/bed_f6_logexpr/nc_zero.bed -o ~/deeptools_output/computematrix_nca/AC005592.2_02_H3K9me3_expr.mat.gz -m 6000 -a 2000 -b 2000
+
+computeMatrix scale-regions -S ~/deeptools_output/bigwigcompare/NCA_H3K9me3_2.bigWig ~/deeptools_output/bigwigcompare/AC005592.2_03_H3K9me3.bigWig -R ~/bed_f6_logexpr/nc_high.bed ~/bed_f6_logexpr/nc_low.bed ~/bed_f6_logexpr/nc_zero.bed -o ~/deeptools_output/computematrix_nca/AC005592.2_03_H3K9me3_expr.mat.gz -m 6000 -a 2000 -b 2000
+
+computeMatrix scale-regions -S ~/deeptools_output/bigwigcompare/NCA_H3K27ac_1.bigWig ~/deeptools_output/bigwigcompare/RP11-398K22.12_03_H3K27ac.bigWig -R ~/bed_f6_logexpr/nc_high.bed ~/bed_f6_logexpr/nc_low.bed ~/bed_f6_logexpr/nc_zero.bed -o ~/deeptools_output/computematrix_nca/RP11-398K22.12_03_H3K27ac_expr.mat.gz -m 6000 -a 2000 -b 2000
+
+computeMatrix scale-regions -S ~/deeptools_output/bigwigcompare/NCA_H3K27ac_2.bigWig ~/deeptools_output/bigwigcompare/RP11-398K22.12_05_H3K27ac.bigWig -R ~/bed_f6_logexpr/nc_high.bed ~/bed_f6_logexpr/nc_low.bed ~/bed_f6_logexpr/nc_zero.bed -o ~/deeptools_output/computematrix_nca/RP11-398K22.12_05_H3K27ac_expr.mat.gz -m 6000 -a 2000 -b 2000
+
+computeMatrix scale-regions -S ~/deeptools_output/bigwigcompare/NCA_H3K36me3_2.bigWig ~/deeptools_output/bigwigcompare/CTD-2587H24.5_01_H3K36me3.bigWig -R ~/bed_f6_logexpr/nc_high.bed ~/bed_f6_logexpr/nc_low.bed ~/bed_f6_logexpr/nc_zero.bed -o ~/deeptools_output/computematrix_nca/CTD-2587H24.5_01_H3K36me3_expr.mat.gz -m 6000 -a 2000 -b 2000
+
+computeMatrix scale-regions -S ~/deeptools_output/bigwigcompare/NCA_H3K36me3_1.bigWig ~/deeptools_output/bigwigcompare/CTD-2587H24.5_03_H3K36me3.bigWig -R ~/bed_f6_logexpr/nc_high.bed ~/bed_f6_logexpr/nc_low.bed ~/bed_f6_logexpr/nc_zero.bed -o ~/deeptools_output/computematrix_nca/CTD-2587H24.5_03_H3K36me3_expr.mat.gz -m 6000 -a 2000 -b 2000
+
+computeMatrix scale-regions -S ~/deeptools_output/bigwigcompare/NCA_H3K9me3_1.bigWig ~/deeptools_output/bigwigcompare/JPX_05_H3K9me3.bigWig -R ~/bed_f6_logexpr/nc_high.bed ~/bed_f6_logexpr/nc_low.bed ~/bed_f6_logexpr/nc_zero.bed -o ~/deeptools_output/computematrix_nca/JPX_05_H3K9me3_expr.mat.gz -m 6000 -a 2000 -b 2000
+
+computeMatrix scale-regions -S ~/deeptools_output/bigwigcompare/NCA_H3K9me3_2.bigWig ~/deeptools_output/bigwigcompare/JPX_AD04_H3K9me3.bigWig -R ~/bed_f6_logexpr/nc_high.bed ~/bed_f6_logexpr/nc_low.bed ~/bed_f6_logexpr/nc_zero.bed -o ~/deeptools_output/computematrix_nca/JPX_AD04_H3K9me3_expr.mat.gz -m 6000 -a 2000 -b 2000
+
+computeMatrix scale-regions -S ~/deeptools_output/bigwigcompare/NCA_H3K27me3_1.bigWig ~/deeptools_output/bigwigcompare/MAPKAPK5-AS1_06_H3K27me3.bigWig -R ~/bed_f6_logexpr/nc_high.bed ~/bed_f6_logexpr/nc_low.bed ~/bed_f6_logexpr/nc_zero.bed -o ~/deeptools_output/computematrix_nca/MAPKAPK5-AS1_06_H3K27me3_expr.mat.gz -m 6000 -a 2000 -b 2000
+
+computeMatrix scale-regions -S ~/deeptools_output/bigwigcompare/NCA_H3K27me3_2.bigWig ~/deeptools_output/bigwigcompare/MAPKAPK5-AS1_AD04_H3K27me3.bigWig -R ~/bed_f6_logexpr/nc_high.bed ~/bed_f6_logexpr/nc_low.bed ~/bed_f6_logexpr/nc_zero.bed -o ~/deeptools_output/computematrix_nca/MAPKAPK5-AS1_AD04_H3K27me3_expr.mat.gz -m 6000 -a 2000 -b 2000
+
+computeMatrix scale-regions -S ~/deeptools_output/bigwigcompare/NCA_H3K4me3_1.bigWig ~/deeptools_output/bigwigcompare/MAPKAPK5-AS1_06_H3K4me3.bigWig -R ~/bed_f6_logexpr/nc_high.bed ~/bed_f6_logexpr/nc_low.bed ~/bed_f6_logexpr/nc_zero.bed -o ~/deeptools_output/computematrix_nca/MAPKAPK5-AS1_06_H3K4me3_expr.mat.gz -m 6000 -a 2000 -b 2000
+
+computeMatrix scale-regions -S ~/deeptools_output/bigwigcompare/NCA_H3K4me3_2.bigWig ~/deeptools_output/bigwigcompare/MAPKAPK5-AS1_AD04_H3K4me3.bigWig -R ~/bed_f6_logexpr/nc_high.bed ~/bed_f6_logexpr/nc_low.bed ~/bed_f6_logexpr/nc_zero.bed -o ~/deeptools_output/computematrix_nca/MAPKAPK5-AS1_AD04_H3K4me3_expr.mat.gz -m 6000 -a 2000 -b 2000
+
+
+plotProfile -m ~/deeptools_output/computematrix_nca/FGD5-AS1_04_H3K9ac_expr.mat.gz -out ~/deeptools_output/plotprofile_nca/FGD5-AS1_04_H3K9ac_pergroup.svg --perGroup --numPlotsPerRow 2 --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "nca*FGD5-AS1_04_H3K9ac" --plotFileFormat svg
+
+plotProfile -m ~/deeptools_output/computematrix_nca/FGD5-AS1_AD03_H3K9ac_expr.mat.gz -out ~/deeptools_output/plotprofile_nca/FGD5-AS1_AD03_H3K9ac_pergroup.svg --perGroup --numPlotsPerRow 2 --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "nca*FGD5-AS1_AD03_H3K9ac" --plotFileFormat svg
+
+plotProfile -m ~/deeptools_output/computematrix_nca/EMX2OS_AD02_H3K9ac_expr.mat.gz -out ~/deeptools_output/plotprofile_nca/EMX2OS_AD02_H3K9ac_pergroup.svg --perGroup --numPlotsPerRow 2 --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "nca*EMX2OS_AD02_H3K9ac" --plotFileFormat svg
+
+plotProfile -m ~/deeptools_output/computematrix_nca/EMX2OS_AD04_H3K9ac_expr.mat.gz -out ~/deeptools_output/plotprofile_nca/EMX2OS_AD04_H3K9ac_pergroup.svg --perGroup --numPlotsPerRow 2 --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "nca*EMX2OS_AD04_H3K9ac" --plotFileFormat svg
+
+plotProfile -m ~/deeptools_output/computematrix_nca/AC005592.2_02_H3K9me3_expr.mat.gz -out ~/deeptools_output/plotprofile_nca/AC005592.2_02_H3K9me3_pergroup.svg --perGroup --numPlotsPerRow 2 --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "nca*AC005592.2_02_H3K9me3" --plotFileFormat svg
+
+plotProfile -m ~/deeptools_output/computematrix_nca/AC005592.2_03_H3K9me3_expr.mat.gz -out ~/deeptools_output/plotprofile_nca/AC005592.2_03_H3K9me3_pergroup.svg --perGroup --numPlotsPerRow 2 --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "nca*AC005592.2_03_H3K9me3" --plotFileFormat svg
+
+plotProfile -m ~/deeptools_output/computematrix_nca/RP11-398K22.12_03_H3K27ac_expr.mat.gz -out ~/deeptools_output/plotprofile_nca/RP11-398K22.12_03_H3K27ac_pergroup.svg --perGroup --numPlotsPerRow 2 --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "nca*RP11-398K22.12_03_H3K27ac" --plotFileFormat svg
+
+plotProfile -m ~/deeptools_output/computematrix_nca/RP11-398K22.12_05_H3K27ac_expr.mat.gz -out ~/deeptools_output/plotprofile_nca/RP11-398K22.12_05_H3K27ac_pergroup.svg --perGroup --numPlotsPerRow 2 --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "nca*RP11-398K22.12_05_H3K27ac" --plotFileFormat svg
+
+plotProfile -m ~/deeptools_output/computematrix_nca/CTD-2587H24.5_01_H3K36me3_expr.mat.gz -out ~/deeptools_output/plotprofile_nca/CTD-2587H24.5_01_H3K36me3_pergroup.svg --perGroup --numPlotsPerRow 2 --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "nca*CTD-2587H24.5_01_H3K36me3" --plotFileFormat svg
+
+plotProfile -m ~/deeptools_output/computematrix_nca/CTD-2587H24.5_03_H3K36me3_expr.mat.gz -out ~/deeptools_output/plotprofile_nca/CTD-2587H24.5_03_H3K36me3_pergroup.svg --perGroup --numPlotsPerRow 2 --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "nca*CTD-2587H24.5_03_H3K36me3" --plotFileFormat svg
+
+plotProfile -m ~/deeptools_output/computematrix_nca/JPX_05_H3K9me3_expr.mat.gz -out ~/deeptools_output/plotprofile_nca/JPX_05_H3K9me3_pergroup.svg --perGroup --numPlotsPerRow 2 --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "nca*JPX_05_H3K9me3" --plotFileFormat svg
+
+plotProfile -m ~/deeptools_output/computematrix_nca/JPX_AD04_H3K9me3_expr.mat.gz -out ~/deeptools_output/plotprofile_nca/JPX_AD04_H3K9me3_pergroup.svg --perGroup --numPlotsPerRow 2 --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "nca*JPX_AD04_H3K9me3" --plotFileFormat svg
+
+plotProfile -m ~/deeptools_output/computematrix_nca/MAPKAPK5-AS1_06_H3K27me3_expr.mat.gz -out ~/deeptools_output/plotprofile_nca/MAPKAPK5-AS1_06_H3K27me3_pergroup.svg --perGroup --numPlotsPerRow 2 --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "nca*MAPKAPK5-AS1_06_H3K27me3" --plotFileFormat svg
+
+plotProfile -m ~/deeptools_output/computematrix_nca/MAPKAPK5-AS1_06_H3K4me3_expr.mat.gz -out ~/deeptools_output/plotprofile_nca/MAPKAPK5-AS1_06_H3K4me3_pergroup.svg --perGroup --numPlotsPerRow 2 --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "nca*MAPKAPK5-AS1_06_H3K4me3" --plotFileFormat svg
+
+plotProfile -m ~/deeptools_output/computematrix_nca/MAPKAPK5-AS1_AD04_H3K27me3_expr.mat.gz -out ~/deeptools_output/plotprofile_nca/MAPKAPK5-AS1_AD04_H3K27me3_pergroup.svg --perGroup --numPlotsPerRow 2 --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "nca*MAPKAPK5-AS1_AD04_H3K27me3" --plotFileFormat svg
+
+plotProfile -m ~/deeptools_output/computematrix_nca/MAPKAPK5-AS1_AD04_H3K4me3_expr.mat.gz -out ~/deeptools_output/plotprofile_nca/MAPKAPK5-AS1_AD04_H3K4me3_pergroup.svg --perGroup --numPlotsPerRow 2 --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "nca*MAPKAPK5-AS1_AD04_H3K4me3" --plotFileFormat svg
+
+
+plotProfile -m ~/deeptools_output/computematrix_nca/FGD5-AS1_04_H3K9ac_expr.mat.gz -out ~/deeptools_output/plotprofile_nca/FGD5-AS1_04_H3K9ac.svg --numPlotsPerRow 2 --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "nca*FGD5-AS1_04_H3K9ac" --plotFileFormat svg
+
+plotProfile -m ~/deeptools_output/computematrix_nca/FGD5-AS1_AD03_H3K9ac_expr.mat.gz -out ~/deeptools_output/plotprofile_nca/FGD5-AS1_AD03_H3K9ac.svg --numPlotsPerRow 2 --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "nca*FGD5-AS1_AD03_H3K9ac" --plotFileFormat svg
+
+plotProfile -m ~/deeptools_output/computematrix_nca/EMX2OS_AD02_H3K9ac_expr.mat.gz -out ~/deeptools_output/plotprofile_nca/EMX2OS_AD02_H3K9ac.svg --numPlotsPerRow 2 --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "nca*EMX2OS_AD02_H3K9ac" --plotFileFormat svg
+
+plotProfile -m ~/deeptools_output/computematrix_nca/EMX2OS_AD04_H3K9ac_expr.mat.gz -out ~/deeptools_output/plotprofile_nca/EMX2OS_AD04_H3K9ac.svg --numPlotsPerRow 2 --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "nca*EMX2OS_AD04_H3K9ac" --plotFileFormat svg
+
+plotProfile -m ~/deeptools_output/computematrix_nca/AC005592.2_02_H3K9me3_expr.mat.gz -out ~/deeptools_output/plotprofile_nca/AC005592.2_02_H3K9me3.svg --numPlotsPerRow 2 --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "nca*AC005592.2_02_H3K9me3" --plotFileFormat svg
+
+plotProfile -m ~/deeptools_output/computematrix_nca/AC005592.2_03_H3K9me3_expr.mat.gz -out ~/deeptools_output/plotprofile_nca/AC005592.2_03_H3K9me3.svg --numPlotsPerRow 2 --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "nca*AC005592.2_03_H3K9me3" --plotFileFormat svg
+
+plotProfile -m ~/deeptools_output/computematrix_nca/RP11-398K22.12_03_H3K27ac_expr.mat.gz -out ~/deeptools_output/plotprofile_nca/RP11-398K22.12_03_H3K27ac.svg --numPlotsPerRow 2 --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "nca*RP11-398K22.12_03_H3K27ac" --plotFileFormat svg
+
+plotProfile -m ~/deeptools_output/computematrix_nca/RP11-398K22.12_05_H3K27ac_expr.mat.gz -out ~/deeptools_output/plotprofile_nca/RP11-398K22.12_05_H3K27ac.svg --numPlotsPerRow 2 --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "nca*RP11-398K22.12_05_H3K27ac" --plotFileFormat svg
+
+plotProfile -m ~/deeptools_output/computematrix_nca/CTD-2587H24.5_01_H3K36me3_expr.mat.gz -out ~/deeptools_output/plotprofile_nca/CTD-2587H24.5_01_H3K36me3.svg --numPlotsPerRow 2 --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "nca*CTD-2587H24.5_01_H3K36me3" --plotFileFormat svg
+
+plotProfile -m ~/deeptools_output/computematrix_nca/CTD-2587H24.5_03_H3K36me3_expr.mat.gz -out ~/deeptools_output/plotprofile_nca/CTD-2587H24.5_03_H3K36me3.svg --numPlotsPerRow 2 --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "nca*CTD-2587H24.5_03_H3K36me3" --plotFileFormat svg
+
+plotProfile -m ~/deeptools_output/computematrix_nca/JPX_05_H3K9me3_expr.mat.gz -out ~/deeptools_output/plotprofile_nca/JPX_05_H3K9me3.svg --numPlotsPerRow 2 --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "nca*JPX_05_H3K9me3" --plotFileFormat svg
+
+plotProfile -m ~/deeptools_output/computematrix_nca/JPX_AD04_H3K9me3_expr.mat.gz -out ~/deeptools_output/plotprofile_nca/JPX_AD04_H3K9me3.svg --numPlotsPerRow 2 --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "nca*JPX_AD04_H3K9me3" --plotFileFormat svg
+
+plotProfile -m ~/deeptools_output/computematrix_nca/MAPKAPK5-AS1_06_H3K27me3_expr.mat.gz -out ~/deeptools_output/plotprofile_nca/MAPKAPK5-AS1_06_H3K27me3.svg --numPlotsPerRow 2 --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "nca*MAPKAPK5-AS1_06_H3K27me3" --plotFileFormat svg
+
+plotProfile -m ~/deeptools_output/computematrix_nca/MAPKAPK5-AS1_06_H3K4me3_expr.mat.gz -out ~/deeptools_output/plotprofile_nca/MAPKAPK5-AS1_06_H3K4me3.svg --numPlotsPerRow 2 --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "nca*MAPKAPK5-AS1_06_H3K4me3" --plotFileFormat svg
+
+plotProfile -m ~/deeptools_output/computematrix_nca/MAPKAPK5-AS1_AD04_H3K27me3_expr.mat.gz -out ~/deeptools_output/plotprofile_nca/MAPKAPK5-AS1_AD04_H3K27me3.svg --numPlotsPerRow 2 --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "nca*MAPKAPK5-AS1_AD04_H3K27me3" --plotFileFormat svg
+
+plotProfile -m ~/deeptools_output/computematrix_nca/MAPKAPK5-AS1_AD04_H3K4me3_expr.mat.gz -out ~/deeptools_output/plotprofile_nca/MAPKAPK5-AS1_AD04_H3K4me3.svg --numPlotsPerRow 2 --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "nca*MAPKAPK5-AS1_AD04_H3K4me3" --plotFileFormat svg
+
+
+###### ENCHANCERS
+
+/home/ekalika/EMX2OS/enhancers.bed
+
+computeMatrix scale-regions -S ~/deeptools_output/bigwigcompare/NCA_H3K9ac_1.bigWig ~/deeptools_output/bigwigcompare/NCA_H3K9ac_2.bigWig ~/deeptools_output/bigwigcompare/FGD5-AS1_04_H3K9ac.bigWig ~/deeptools_output/bigwigcompare/FGD5-AS1_AD03_H3K9ac.bigWig -R /home/ekalika/EMX2OS/enhancers.bed -o ~/deeptools_output/computematrix_enchancers/FGD5-AS1_H3K9ac_enchancers.mat.gz -6000 -a 2000 -b 2000
+
+computeMatrix scale-regions -S ~/deeptools_output/bigwigcompare/NCA_H3K9ac_1.bigWig ~/deeptools_output/bigwigcompare/NCA_H3K9ac_2.bigWig ~/deeptools_output/bigwigcompare/EMX2OS_AD02_H3K9ac.bigWig ~/deeptools_output/bigwigcompare/EMX2OS_AD04_H3K9ac.bigWig -R /home/ekalika/EMX2OS/enhancers.bed -o ~/deeptools_output/computematrix_enchancers/EMX2OS_H3K9ac_enchancers.mat.gz -6000 -a 2000 -b 2000
+
+computeMatrix scale-regions -S ~/deeptools_output/bigwigcompare/NCA_H3K9me3_1.bigWig ~/deeptools_output/bigwigcompare/NCA_H3K9me3_2.bigWig ~/deeptools_output/bigwigcompare/AC005592.2_02_H3K9me3.bigWig ~/deeptools_output/bigwigcompare/AC005592.2_03_H3K9me3.bigWig -R /home/ekalika/EMX2OS/enhancers.bed -o ~/deeptools_output/computematrix_enchancers/AC005592.2_H3K9me3_enchancers.mat.gz -6000 -a 2000 -b 2000
+
+computeMatrix scale-regions -S ~/deeptools_output/bigwigcompare/NCA_H3K27ac_1.bigWig ~/deeptools_output/bigwigcompare/NCA_H3K27ac_2.bigWig ~/deeptools_output/bigwigcompare/RP11-398K22.12_03_H3K27ac.bigWig ~/deeptools_output/bigwigcompare/RP11-398K22.12_05_H3K27ac.bigWig -R /home/ekalika/EMX2OS/enhancers.bed -o ~/deeptools_output/computematrix_enchancers/RP11-398K22.12_H3K27ac_enchancers.mat.gz -6000 -a 2000 -b 2000
+
+computeMatrix scale-regions -S ~/deeptools_output/bigwigcompare/NCA_H3K36me3_1.bigWig ~/deeptools_output/bigwigcompare/NCA_H3K36me3_2.bigWig ~/deeptools_output/bigwigcompare/CTD-2587H24.5_01_H3K36me3.bigWig ~/deeptools_output/bigwigcompare/CTD-2587H24.5_03_H3K36me3.bigWig -R /home/ekalika/EMX2OS/enhancers.bed -o ~/deeptools_output/computematrix_enchancers/CTD-2587H24.5_H3K36me3_enchancers.mat.gz -6000 -a 2000 -b 2000
+
+computeMatrix scale-regions -S ~/deeptools_output/bigwigcompare/NCA_H3K9me3_1.bigWig ~/deeptools_output/bigwigcompare/NCA_H3K9me3_2.bigWig ~/deeptools_output/bigwigcompare/JPX_05_H3K9me3.bigWig ~/deeptools_output/bigwigcompare/JPX_AD04_H3K9me3.bigWig -R /home/ekalika/EMX2OS/enhancers.bed -o ~/deeptools_output/computematrix_enchancers/JPX_H3K9me3_enchancers.mat.gz -6000 -a 2000 -b 2000
+
+computeMatrix scale-regions -S ~/deeptools_output/bigwigcompare/NCA_H3K27me3_1.bigWig ~/deeptools_output/bigwigcompare/NCA_H3K27me3_2.bigWig ~/deeptools_output/bigwigcompare/MAPKAPK5-AS1_06_H3K27me3.bigWig ~/deeptools_output/bigwigcompare/MAPKAPK5-AS1_AD04_H3K27me3.bigWig -R /home/ekalika/EMX2OS/enhancers.bed -o ~/deeptools_output/computematrix_enchancers/MAPKAPK5-AS1_H3K27me3_enchancers.mat.gz -6000 -a 2000 -b 2000
+
+computeMatrix scale-regions -S ~/deeptools_output/bigwigcompare/NCA_H3K4me3_1.bigWig ~/deeptools_output/bigwigcompare/NCA_H3K4me3_2.bigWig ~/deeptools_output/bigwigcompare/MAPKAPK5-AS1_06_H3K4me3.bigWig ~/deeptools_output/bigwigcompare/MAPKAPK5-AS1_AD04_H3K4me3.bigWig -R /home/ekalika/EMX2OS/enhancers.bed -o ~/deeptools_output/computematrix_enchancers/MAPKAPK5-AS1_H3K4me3_enchancers.mat.gz -6000 -a 2000 -b 2000
+
+
+plotProfile -m ~/deeptools_output/computematrix_enchancers/FGD5-AS1_H3K9ac_enchancers.mat.gz -out ~/deeptools_output/plotprofile_enchancers/FGD5-AS1_H3K9ac_enchancers.svg --endLabel "3'-end" --startLabel "5'-end" --plotTitle "FGD5-AS1_H3K9ac_enchancers" --plotFileFormat svg
+
+plotProfile -m ~/deeptools_output/computematrix_enchancers/EMX2OS_H3K9ac_enchancers.mat.gz -out ~/deeptools_output/plotprofile_enchancers/EMX2OS_H3K9ac_enchancers.svg --endLabel "3'-end" --startLabel "5'-end" --plotTitle "EMX2OS_H3K9ac_enchancers" --plotFileFormat svg
+
+plotProfile -m ~/deeptools_output/computematrix_enchancers/AC005592.2_H3K9me3_enchancers.mat.gz -out ~/deeptools_output/plotprofile_enchancers/AC005592.2_H3K9me3_enchancers.svg --endLabel "3'-end" --startLabel "5'-end" --plotTitle "AC005592.2_H3K9me3_enchancers" --plotFileFormat svg
+
+plotProfile -m ~/deeptools_output/computematrix_enchancers/RP11-398K22.12_H3K27ac_enchancers.mat.gz -out ~/deeptools_output/plotprofile_enchancers/RP11-398K22.12_H3K27ac_enchancers.svg --endLabel "3'-end" --startLabel "5'-end" --plotTitle "RP11-398K22.12_H3K27ac_enchancers" --plotFileFormat svg
+
+plotProfile -m ~/deeptools_output/computematrix_enchancers/CTD-2587H24.5_H3K36me3_enchancers.mat.gz -out ~/deeptools_output/plotprofile_enchancers/CTD-2587H24.5_H3K36me3_enchancers.svg --endLabel "3'-end" --startLabel "5'-end" --plotTitle "CTD-2587H24.5_H3K36me3_enchancers" --plotFileFormat svg
+
+plotProfile -m ~/deeptools_output/computematrix_enchancers/JPX_H3K9me3_enchancers.mat.gz -out ~/deeptools_output/plotprofile_enchancers/JPX_H3K9me3_enchancers.svg --endLabel "3'-end" --startLabel "5'-end" --plotTitle "JPX_H3K9me3_enchancers" --plotFileFormat svg
+
+plotProfile -m ~/deeptools_output/computematrix_enchancers/MAPKAPK5-AS1_H3K27me3_enchancers.mat.gz -out ~/deeptools_output/plotprofile_enchancers/MAPKAPK5-AS1_H3K27me3_enchancers.svg --endLabel "3'-end" --startLabel "5'-end" --plotTitle "MAPKAPK5-AS1_H3K27me3_enchancers" --plotFileFormat svg
+
+plotProfile -m ~/deeptools_output/computematrix_enchancers/MAPKAPK5-AS1_H3K4me3_enchancers.mat.gz -out ~/deeptools_output/plotprofile_enchancers/MAPKAPK5-AS1_H3K4me3_enchancers.svg --endLabel "3'-end" --startLabel "5'-end" --plotTitle "MAPKAPK5-AS1_H3K4me3_enchancers" --plotFileFormat svg

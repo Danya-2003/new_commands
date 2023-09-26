@@ -1,0 +1,327 @@
+cp -R /data/budkina/chipseq_methylseq_rnaseq/ChipSeq_processing/bams/sorted_for_index /home/marakulina/chip_data/sorted_for_index
+
+screen -r ngsplot
+########## TSS
+
+ngs.plot.r -G hg38 -R tss -C ../chip_data/C-1_.sorted_for_index.bam:../chip_data/I-1_.sorted_for_index.bam -O ../ngsplot_output/chip/fgd5-as1_04.tss -T fgd5-as1_04_H3K9ac
+
+ngs.plot.r -G hg38 -R tss -C ../chip_data/C-2_.sorted_for_index.bam:../chip_data/I-2_.sorted_for_index.bam -O ../ngsplot_output/chip/fgd5-as1_ad03.tss -T fgd5-as1_ad03_H3K9ac
+
+ngs.plot.r -G hg38 -R tss -C ../chip_data/C-3_.sorted_for_index.bam:../chip_data/I-3_.sorted_for_index.bam -O ../ngsplot_output/chip/emx2os_ad02.tss -T emx2os_ad02_H3K9ac
+
+ngs.plot.r -G hg38 -R tss -C ../chip_data/C-4_.sorted_for_index.bam:../chip_data/I-4_.sorted_for_index.bam -O ../ngsplot_output/chip/emx2os_ad04.tss -T emx2os_ad04_H3K9ac
+
+ngs.plot.r -G hg38 -R tss -C ../chip_data/C-5_.sorted_for_index.bam:../chip_data/I-5_.sorted_for_index.bam -O ../ngsplot_output/chip/ac005592.2_02.tss -T ac005592.2_02_H3K9me3
+
+ngs.plot.r -G hg38 -R tss -C ../chip_data/C-6_.sorted_for_index.bam:../chip_data/I-6_.sorted_for_index.bam -O ../ngsplot_output/chip/ac005592.2_03.tss -T ac005592.2_03_H3K9me3
+
+ngs.plot.r -G hg38 -R tss -C ../chip_data/C-7_.sorted_for_index.bam:../chip_data/I-7_.sorted_for_index.bam -O ../ngsplot_output/chip/rp11-398k22.12_03.tss -T rp11-398k22.12_03_H3K27ac
+
+ngs.plot.r -G hg38 -R tss -C ../chip_data/C-8_.sorted_for_index.bam:../chip_data/I-8_.sorted_for_index.bam -O ../ngsplot_output/chip/rp11-398k22.12_05.tss -T rp11-398k22.12_05_H3K27ac
+
+ngs.plot.r -G hg38 -R tss -C ../chip_data/C-9_.sorted_for_index.bam:../chip_data/I-9_.sorted_for_index.bam -O ../ngsplot_output/chip/ctd-2587h24.5_01.tss -T ctd-2587h24.5_01_H3K36me3
+
+ngs.plot.r -G hg38 -R tss -C ../chip_data/C-10.sorted_for_index.bam:../chip_data/I-10.sorted_for_index.bam -O ../ngsplot_output/chip/ctd-2587h24.5_03.tss -T ctd-2587h24.5_03_H3K36me3
+
+ngs.plot.r -G hg38 -R tss -C ../chip_data/C-11.sorted_for_index.bam:../chip_data/I-11.sorted_for_index.bam -O ../ngsplot_output/chip/jpx_05.tss -T jpx_05_H3K9me3
+
+ngs.plot.r -G hg38 -R tss -C ../chip_data/C-12.sorted_for_index.bam:../chip_data/I-12.sorted_for_index.bam -O ../ngsplot_output/chip/jpx_ad04.tss -T jpx_ad04_H3K9me3
+
+ngs.plot.r -G hg38 -R tss -C ../chip_data/C-13.sorted_for_index.bam:../chip_data/I-13.sorted_for_index.bam -O ../ngsplot_output/chip/mapkapk5-as1_06_h3k27me3.tss -T mapkapk5-as1_06_H3K27me3
+
+ngs.plot.r -G hg38 -R tss -C ../chip_data/C-14.sorted_for_index.bam:../chip_data/I-14.sorted_for_index.bam -O ../ngsplot_output/chip/mapkapk5-as1_06_h3k4me3.tss -T mapkapk5-as1_06_H3K4me3
+
+ngs.plot.r -G hg38 -R tss -C ../chip_data/C-15.sorted_for_index.bam:../chip_data/I-15.sorted_for_index.bam -O ../ngsplot_output/chip/mapkapk5-as1_ad04_h3k27me3.tss -T mapkapk5-as1_ad04_K3K27me3
+
+ngs.plot.r -G hg38 -R tss -C ../chip_data/C-16.sorted_for_index.bam:../chip_data/I-16.sorted_for_index.bam -O ../ngsplot_output/chip/mapkapk5-as1_ad04_h3k4me3.tss -T mapkapk5-as1_ad04_H3K4me3
+
+ngs.plot.r -G hg38 -R tss -C ../chip_data/C-17.sorted_for_index.bam:../chip_data/I-17.sorted_for_index.bam -O ../ngsplot_output/chip/nca_h3k9me3_1.tss -T nca_H3K9me3_1
+
+ngs.plot.r -G hg38 -R tss -C ../chip_data/C-18.sorted_for_index.bam:../chip_data/I-18.sorted_for_index.bam -O ../ngsplot_output/chip/nca_h3k9me3_2.tss -T nca_H3K9me3_2
+
+ngs.plot.r -G hg38 -R tss -C ../chip_data/C-19.sorted_for_index.bam:../chip_data/I-19.sorted_for_index.bam -O ../ngsplot_output/chip/nca_h3k36me3_1.tss -T nca_H3K36me3_1
+
+ngs.plot.r -G hg38 -R tss -C ../chip_data/C-20.sorted_for_index.bam:../chip_data/I-20.sorted_for_index.bam -O ../ngsplot_output/chip/nca_h3k36me3_2.tss -T nca_H3K36me3_2
+
+ngs.plot.r -G hg38 -R tss -C ../chip_data/C-21.sorted_for_index.bam:../chip_data/I-21.sorted_for_index.bam -O ../ngsplot_output/chip/nca_h3k9ac_1.tss -T nca_H3K9ac_1
+
+ngs.plot.r -G hg38 -R tss -C ../chip_data/C-22.sorted_for_index.bam:../chip_data/I-22.sorted_for_index.bam -O ../ngsplot_output/chip/nca_h3k9ac_2.tss -T nca_H3K9ac_2
+
+ngs.plot.r -G hg38 -R tss -C ../chip_data/C-23.sorted_for_index.bam:../chip_data/I-23.sorted_for_index.bam -O ../ngsplot_output/chip/nca_h3k27ac_1.tss -T nca_H3K27ac_1
+
+ngs.plot.r -G hg38 -R tss -C ../chip_data/C-24.sorted_for_index.bam:../chip_data/I-24.sorted_for_index.bam -O ../ngsplot_output/chip/nca_h3k27ac_2.tss -T nca_H3K27ac_2
+
+ngs.plot.r -G hg38 -R tss -C ../chip_data/C-25.sorted_for_index.bam:../chip_data/I-25.sorted_for_index.bam -O ../ngsplot_output/chip/nca_h3k27me3_1.tss -T nca_H3K27me3_1
+
+ngs.plot.r -G hg38 -R tss -C ../chip_data/C-26.sorted_for_index.bam:../chip_data/I-26.sorted_for_index.bam -O ../ngsplot_output/chip/nca_h3k4me3_1.tss -T nca_H3K4me3_1
+
+ngs.plot.r -G hg38 -R tss -C ../chip_data/C-27.sorted_for_index.bam:../chip_data/I-27.sorted_for_index.bam -O ../ngsplot_output/chip/nca_h3k27me3_2.tss -T nca_H3K27me3_2
+
+ngs.plot.r -G hg38 -R tss -C ../chip_data/C-28.sorted_for_index.bam:../chip_data/I-28.sorted_for_index.bam -O ../ngsplot_output/chip/nca_h3k4me3_2.tss -T nca_H3K4me3_2
+
+
+
+
+########## Genebpdy
+
+
+ngs.plot.r -G hg38 -R genebody -C ../chip_data/C-1_.sorted_for_index.bam:../chip_data/I-1_.sorted_for_index.bam -O ../ngsplot_output/chip/fgd5-as1_04.genebody -T fgd5-as1_04_H3K9ac
+
+ngs.plot.r -G hg38 -R genebody -C ../chip_data/C-2_.sorted_for_index.bam:../chip_data/I-2_.sorted_for_index.bam -O ../ngsplot_output/chip/fgd5-as1_ad03.genebody -T fgd5-as1_ad03_H3K9ac
+
+ngs.plot.r -G hg38 -R genebody -C ../chip_data/C-3_.sorted_for_index.bam:../chip_data/I-3_.sorted_for_index.bam -O ../ngsplot_output/chip/emx2os_ad02.genebody -T emx2os_ad02_H3K9ac
+
+ngs.plot.r -G hg38 -R genebody -C ../chip_data/C-4_.sorted_for_index.bam:../chip_data/I-4_.sorted_for_index.bam -O ../ngsplot_output/chip/emx2os_ad04.genebody -T emx2os_ad04_H3K9ac
+
+ngs.plot.r -G hg38 -R genebody -C ../chip_data/C-5_.sorted_for_index.bam:../chip_data/I-5_.sorted_for_index.bam -O ../ngsplot_output/chip/ac005592.2_02.genebody -T ac005592.2_02_H3K9me3
+
+ngs.plot.r -G hg38 -R genebody -C ../chip_data/C-6_.sorted_for_index.bam:../chip_data/I-6_.sorted_for_index.bam -O ../ngsplot_output/chip/ac005592.2_03.genebody -T ac005592.2_03_H3K9me3
+
+ngs.plot.r -G hg38 -R genebody -C ../chip_data/C-7_.sorted_for_index.bam:../chip_data/I-7_.sorted_for_index.bam -O ../ngsplot_output/chip/rp11-398k22.12_03.genebody -T rp11-398k22.12_03_H3K27ac
+
+ngs.plot.r -G hg38 -R genebody -C ../chip_data/C-8_.sorted_for_index.bam:../chip_data/I-8_.sorted_for_index.bam -O ../ngsplot_output/chip/rp11-398k22.12_05.genebody -T rp11-398k22.12_05_H3K27ac
+
+ngs.plot.r -G hg38 -R genebody -C ../chip_data/C-9_.sorted_for_index.bam:../chip_data/I-9_.sorted_for_index.bam -O ../ngsplot_output/chip/ctd-2587h24.5_01.genebody -T ctd-2587h24.5_01_H3K36me3
+
+ngs.plot.r -G hg38 -R genebody -C ../chip_data/C-10.sorted_for_index.bam:../chip_data/I-10.sorted_for_index.bam -O ../ngsplot_output/chip/ctd-2587h24.5_03.genebody -T ctd-2587h24.5_03_H3K36me3
+
+ngs.plot.r -G hg38 -R genebody -C ../chip_data/C-11.sorted_for_index.bam:../chip_data/I-11.sorted_for_index.bam -O ../ngsplot_output/chip/jpx_05.genebody -T jpx_05_H3K9me3
+
+ngs.plot.r -G hg38 -R genebody -C ../chip_data/C-12.sorted_for_index.bam:../chip_data/I-12.sorted_for_index.bam -O ../ngsplot_output/chip/jpx_ad04.genebody -T jpx_ad04_H3K9me3
+
+ngs.plot.r -G hg38 -R genebody -C ../chip_data/C-13.sorted_for_index.bam:../chip_data/I-13.sorted_for_index.bam -O ../ngsplot_output/chip/mapkapk5-as1_06_h3k27me3.genebody -T mapkapk5-as1_06_H3K27me3
+
+ngs.plot.r -G hg38 -R genebody -C ../chip_data/C-14.sorted_for_index.bam:../chip_data/I-14.sorted_for_index.bam -O ../ngsplot_output/chip/mapkapk5-as1_06_h3k4me3.genebody -T mapkapk5-as1_06_H3K4me3
+
+ngs.plot.r -G hg38 -R genebody -C ../chip_data/C-15.sorted_for_index.bam:../chip_data/I-15.sorted_for_index.bam -O ../ngsplot_output/chip/mapkapk5-as1_ad04_h3k27me3.genebody -T mapkapk5-as1_ad04_K3K27me3
+
+ngs.plot.r -G hg38 -R genebody -C ../chip_data/C-16.sorted_for_index.bam:../chip_data/I-16.sorted_for_index.bam -O ../ngsplot_output/chip/mapkapk5-as1_ad04_h3k4me3.genebody -T mapkapk5-as1_ad04_H3K4me3
+
+ngs.plot.r -G hg38 -R genebody -C ../chip_data/C-17.sorted_for_index.bam:../chip_data/I-17.sorted_for_index.bam -O ../ngsplot_output/chip/nca_h3k9me3_1.genebody -T nca_H3K9me3_1
+
+ngs.plot.r -G hg38 -R genebody -C ../chip_data/C-18.sorted_for_index.bam:../chip_data/I-18.sorted_for_index.bam -O ../ngsplot_output/chip/nca_h3k9me3_2.genebody -T nca_H3K9me3_2
+
+ngs.plot.r -G hg38 -R genebody -C ../chip_data/C-19.sorted_for_index.bam:../chip_data/I-19.sorted_for_index.bam -O ../ngsplot_output/chip/nca_h3k36me3_1.genebody -T nca_H3K36me3_1
+
+ngs.plot.r -G hg38 -R genebody -C ../chip_data/C-20.sorted_for_index.bam:../chip_data/I-20.sorted_for_index.bam -O ../ngsplot_output/chip/nca_h3k36me3_2.genebody -T nca_H3K36me3_2
+
+ngs.plot.r -G hg38 -R genebody -C ../chip_data/C-21.sorted_for_index.bam:../chip_data/I-21.sorted_for_index.bam -O ../ngsplot_output/chip/nca_h3k9ac_1.genebody -T nca_H3K9ac_1
+
+ngs.plot.r -G hg38 -R genebody -C ../chip_data/C-22.sorted_for_index.bam:../chip_data/I-22.sorted_for_index.bam -O ../ngsplot_output/chip/nca_h3k9ac_2.genebody -T nca_H3K9ac_2
+
+ngs.plot.r -G hg38 -R genebody -C ../chip_data/C-23.sorted_for_index.bam:../chip_data/I-23.sorted_for_index.bam -O ../ngsplot_output/chip/nca_h3k27ac_1.genebody -T nca_H3K27ac_1
+
+ngs.plot.r -G hg38 -R genebody -C ../chip_data/C-24.sorted_for_index.bam:../chip_data/I-24.sorted_for_index.bam -O ../ngsplot_output/chip/nca_h3k27ac_2.genebody -T nca_H3K27ac_2
+
+ngs.plot.r -G hg38 -R genebody -C ../chip_data/C-25.sorted_for_index.bam:../chip_data/I-25.sorted_for_index.bam -O ../ngsplot_output/chip/nca_h3k27me3_1.genebody -T nca_H3K27me3_1
+
+ngs.plot.r -G hg38 -R genebody -C ../chip_data/C-26.sorted_for_index.bam:../chip_data/I-26.sorted_for_index.bam -O ../ngsplot_output/chip/nca_h3k4me3_1.genebody -T nca_H3K4me3_1
+
+ngs.plot.r -G hg38 -R genebody -C ../chip_data/C-27.sorted_for_index.bam:../chip_data/I-27.sorted_for_index.bam -O ../ngsplot_output/chip/nca_h3k27me3_2.genebody -T nca_H3K27me3_2
+
+ngs.plot.r -G hg38 -R genebody -C ../chip_data/C-28.sorted_for_index.bam:../chip_data/I-28.sorted_for_index.bam -O ../ngsplot_output/chip/nca_h3k4me3_2.genebody -T nca_H3K4me3_2
+
+
+
+
+
+########## NHDF_TSS
+ 
+ngs.plot.r -G hg38 -R tss -C ../encode_nhdf/NHDF_ab_1.bam:../encode_nhdf/NHDF_nc_1.bam -O ../ngsplot_output/nhdf/nhdf_1_1.tss -T nhdf_1_1_H3K36me3
+
+ngs.plot.r -G hg38 -R tss -C ../encode_nhdf/NHDF_ab_1.bam:../encode_nhdf/NHDF_nc_2.bam -O ../ngsplot_output/nhdf/nhdf_1_2.tss -T nhdf_1_2_H3K36me3 
+
+ngs.plot.r -G hg38 -R tss -C ../encode_nhdf/NHDF_ab_2.bam:../encode_nhdf/NHDF_nc_1.bam -O ../ngsplot_output/nhdf/nhdf_2_1.tss -T nhdf_2_1_H3K36me3 
+
+ngs.plot.r -G hg38 -R tss -C ../encode_nhdf/NHDF_ab_2.bam:../encode_nhdf/NHDF_nc_2.bam -O ../ngsplot_output/nhdf/nhdf_2_2.tss -T nhdf_1_1_H3K36me3 
+
+
+
+########## NHDF_GENEBODY
+
+ngs.plot.r -G hg38 -R genebody -C ../encode_nhdf/NHDF_ab_1.bam:../encode_nhdf/NHDF_nc_1.bam -O ../ngsplot_output/nhdf/nhdf_1_1.genebody -T nhdf_1_1_H3K36me3
+
+ngs.plot.r -G hg38 -R genebody -C ../encode_nhdf/NHDF_ab_1.bam:../encode_nhdf/NHDF_nc_2.bam -O ../ngsplot_output/nhdf/nhdf_1_2.genebody -T nhdf_1_2_H3K36me3 
+
+ngs.plot.r -G hg38 -R genebody -C ../encode_nhdf/NHDF_ab_2.bam:../encode_nhdf/NHDF_nc_1.bam -O ../ngsplot_output/nhdf/nhdf_2_1.genebody -T nhdf_2_1_H3K36me3 
+
+ngs.plot.r -G hg38 -R genebody -C ../encode_nhdf/NHDF_ab_2.bam:../encode_nhdf/NHDF_nc_2.bam -O ../ngsplot_output/nhdf/nhdf_2_2.genebody -T nhdf_1_1_H3K36me3 
+
+
+####################################################################################################################
+##########################################  AFTER SAMBAMBA  ########################################################
+####################################################################################################################
+
+########## TSS
+
+ngs.plot.r -G hg38 -R tss -C ../chip_data/sambamba/C-1_.bam:../chip_data/sambamba/I-1_.bam -O ../ngsplot_output/chip_sambamba/fgd5-as1_04.tss -T fgd5-as1_04_H3K9ac
+
+ngs.plot.r -G hg38 -R tss -C ../chip_data/sambamba/C-2_.bam:../chip_data/sambamba/I-2_.bam -O ../ngsplot_output/chip_sambamba/fgd5-as1_ad03.tss -T fgd5-as1_ad03_H3K9ac
+
+ngs.plot.r -G hg38 -R tss -C ../chip_data/sambamba/C-3_.bam:../chip_data/sambamba/I-3_.bam -O ../ngsplot_output/chip_sambamba/emx2os_ad02.tss -T emx2os_ad02_H3K9ac
+
+ngs.plot.r -G hg38 -R tss -C ../chip_data/sambamba/C-4_.bam:../chip_data/sambamba/I-4_.bam -O ../ngsplot_output/chip_sambamba/emx2os_ad04.tss -T emx2os_ad04_H3K9ac
+
+ngs.plot.r -G hg38 -R tss -C ../chip_data/sambamba/C-5_.bam:../chip_data/sambamba/I-5_.bam -O ../ngsplot_output/chip_sambamba/ac005592.2_02.tss -T ac005592.2_02_H3K9me3
+
+ngs.plot.r -G hg38 -R tss -C ../chip_data/sambamba/C-6_.bam:../chip_data/sambamba/I-6_.bam -O ../ngsplot_output/chip_sambamba/ac005592.2_03.tss -T ac005592.2_03_H3K9me3
+
+ngs.plot.r -G hg38 -R tss -C ../chip_data/sambamba/C-7_.bam:../chip_data/sambamba/I-7_.bam -O ../ngsplot_output/chip_sambamba/rp11-398k22.12_03.tss -T rp11-398k22.12_03_H3K27ac
+
+ngs.plot.r -G hg38 -R tss -C ../chip_data/sambamba/C-8_.bam:../chip_data/sambamba/I-8_.bam -O ../ngsplot_output/chip_sambamba/rp11-398k22.12_05.tss -T rp11-398k22.12_05_H3K27ac
+
+ngs.plot.r -G hg38 -R tss -C ../chip_data/sambamba/C-9_.bam:../chip_data/sambamba/I-9_.bam -O ../ngsplot_output/chip_sambamba/ctd-2587h24.5_01.tss -T ctd-2587h24.5_01_H3K36me3
+
+ngs.plot.r -G hg38 -R tss -C ../chip_data/sambamba/C-10.bam:../chip_data/sambamba/I-10.bam -O ../ngsplot_output/chip_sambamba/ctd-2587h24.5_03.tss -T ctd-2587h24.5_03_H3K36me3
+
+ngs.plot.r -G hg38 -R tss -C ../chip_data/sambamba/C-11.bam:../chip_data/sambamba/I-11.bam -O ../ngsplot_output/chip_sambamba/jpx_05.tss -T jpx_05_H3K9me3
+
+ngs.plot.r -G hg38 -R tss -C ../chip_data/sambamba/C-12.bam:../chip_data/sambamba/I-12.bam -O ../ngsplot_output/chip_sambamba/jpx_ad04.tss -T jpx_ad04_H3K9me3
+
+ngs.plot.r -G hg38 -R tss -C ../chip_data/sambamba/C-13.bam:../chip_data/sambamba/I-13.bam -O ../ngsplot_output/chip_sambamba/mapkapk5-as1_06_h3k27me3.tss -T mapkapk5-as1_06_H3K27me3
+
+ngs.plot.r -G hg38 -R tss -C ../chip_data/sambamba/C-14.bam:../chip_data/sambamba/I-14.bam -O ../ngsplot_output/chip_sambamba/mapkapk5-as1_06_h3k4me3.tss -T mapkapk5-as1_06_H3K4me3
+
+ngs.plot.r -G hg38 -R tss -C ../chip_data/sambamba/C-15.bam:../chip_data/sambamba/I-15.bam -O ../ngsplot_output/chip_sambamba/mapkapk5-as1_ad04_h3k27me3.tss -T mapkapk5-as1_ad04_K3K27me3
+
+ngs.plot.r -G hg38 -R tss -C ../chip_data/sambamba/C-16.bam:../chip_data/sambamba/I-16.bam -O ../ngsplot_output/chip_sambamba/mapkapk5-as1_ad04_h3k4me3.tss -T mapkapk5-as1_ad04_H3K4me3
+
+ngs.plot.r -G hg38 -R tss -C ../chip_data/sambamba/C-17.bam:../chip_data/sambamba/I-17.bam -O ../ngsplot_output/chip_sambamba/nca_h3k9me3_1.tss -T nca_H3K9me3_1
+
+ngs.plot.r -G hg38 -R tss -C ../chip_data/sambamba/C-18.bam:../chip_data/sambamba/I-18.bam -O ../ngsplot_output/chip_sambamba/nca_h3k9me3_2.tss -T nca_H3K9me3_2
+
+ngs.plot.r -G hg38 -R tss -C ../chip_data/sambamba/C-19.bam:../chip_data/sambamba/I-19.bam -O ../ngsplot_output/chip_sambamba/nca_h3k36me3_1.tss -T nca_H3K36me3_1
+
+ngs.plot.r -G hg38 -R tss -C ../chip_data/sambamba/C-20.bam:../chip_data/sambamba/I-20.bam -O ../ngsplot_output/chip_sambamba/nca_h3k36me3_2.tss -T nca_H3K36me3_2
+
+ngs.plot.r -G hg38 -R tss -C ../chip_data/sambamba/C-21.bam:../chip_data/sambamba/I-21.bam -O ../ngsplot_output/chip_sambamba/nca_h3k9ac_1.tss -T nca_H3K9ac_1
+
+ngs.plot.r -G hg38 -R tss -C ../chip_data/sambamba/C-22.bam:../chip_data/sambamba/I-22.bam -O ../ngsplot_output/chip_sambamba/nca_h3k9ac_2.tss -T nca_H3K9ac_2
+
+ngs.plot.r -G hg38 -R tss -C ../chip_data/sambamba/C-23.bam:../chip_data/sambamba/I-23.bam -O ../ngsplot_output/chip_sambamba/nca_h3k27ac_1.tss -T nca_H3K27ac_1
+
+ngs.plot.r -G hg38 -R tss -C ../chip_data/sambamba/C-24.bam:../chip_data/sambamba/I-24.bam -O ../ngsplot_output/chip_sambamba/nca_h3k27ac_2.tss -T nca_H3K27ac_2
+
+ngs.plot.r -G hg38 -R tss -C ../chip_data/sambamba/C-25.bam:../chip_data/sambamba/I-25.bam -O ../ngsplot_output/chip_sambamba/nca_h3k27me3_1.tss -T nca_H3K27me3_1
+
+ngs.plot.r -G hg38 -R tss -C ../chip_data/sambamba/C-26.bam:../chip_data/sambamba/I-26.bam -O ../ngsplot_output/chip_sambamba/nca_h3k4me3_1.tss -T nca_H3K4me3_1
+
+ngs.plot.r -G hg38 -R tss -C ../chip_data/sambamba/C-27.bam:../chip_data/sambamba/I-27.bam -O ../ngsplot_output/chip_sambamba/nca_h3k27me3_2.tss -T nca_H3K27me3_2
+
+ngs.plot.r -G hg38 -R tss -C ../chip_data/sambamba/C-28.bam:../chip_data/sambamba/I-28.bam -O ../ngsplot_output/chip_sambamba/nca_h3k4me3_2.tss -T nca_H3K4me3_2
+
+
+
+
+########## Genebody
+
+
+ngs.plot.r -G hg38 -R genebody -C ../chip_data/sambamba/C-1_.bam:../chip_data/sambamba/I-1_.bam -O ../ngsplot_output/chip_sambamba/fgd5-as1_04.genebody -T fgd5-as1_04_H3K9ac
+
+ngs.plot.r -G hg38 -R genebody -C ../chip_data/sambamba/C-2_.bam:../chip_data/sambamba/I-2_.bam -O ../ngsplot_output/chip_sambamba/fgd5-as1_ad03.genebody -T fgd5-as1_ad03_H3K9ac
+
+ngs.plot.r -G hg38 -R genebody -C ../chip_data/sambamba/C-3_.bam:../chip_data/sambamba/I-3_.bam -O ../ngsplot_output/chip_sambamba/emx2os_ad02.genebody -T emx2os_ad02_H3K9ac
+
+ngs.plot.r -G hg38 -R genebody -C ../chip_data/sambamba/C-4_.bam:../chip_data/sambamba/I-4_.bam -O ../ngsplot_output/chip_sambamba/emx2os_ad04.genebody -T emx2os_ad04_H3K9ac
+
+ngs.plot.r -G hg38 -R genebody -C ../chip_data/sambamba/C-5_.bam:../chip_data/sambamba/I-5_.bam -O ../ngsplot_output/chip_sambamba/ac005592.2_02.genebody -T ac005592.2_02_H3K9me3
+
+ngs.plot.r -G hg38 -R genebody -C ../chip_data/sambamba/C-6_.bam:../chip_data/sambamba/I-6_.bam -O ../ngsplot_output/chip_sambamba/ac005592.2_03.genebody -T ac005592.2_03_H3K9me3
+
+ngs.plot.r -G hg38 -R genebody -C ../chip_data/sambamba/C-7_.bam:../chip_data/sambamba/I-7_.bam -O ../ngsplot_output/chip_sambamba/rp11-398k22.12_03.genebody -T rp11-398k22.12_03_H3K27ac
+
+ngs.plot.r -G hg38 -R genebody -C ../chip_data/sambamba/C-8_.bam:../chip_data/sambamba/I-8_.bam -O ../ngsplot_output/chip_sambamba/rp11-398k22.12_05.genebody -T rp11-398k22.12_05_H3K27ac
+
+ngs.plot.r -G hg38 -R genebody -C ../chip_data/sambamba/C-9_.bam:../chip_data/sambamba/I-9_.bam -O ../ngsplot_output/chip_sambamba/ctd-2587h24.5_01.genebody -T ctd-2587h24.5_01_H3K36me3
+
+ngs.plot.r -G hg38 -R genebody -C ../chip_data/sambamba/C-10.bam:../chip_data/sambamba/I-10.bam -O ../ngsplot_output/chip_sambamba/ctd-2587h24.5_03.genebody -T ctd-2587h24.5_03_H3K36me3
+
+ngs.plot.r -G hg38 -R genebody -C ../chip_data/sambamba/C-11.bam:../chip_data/sambamba/I-11.bam -O ../ngsplot_output/chip_sambamba/jpx_05.genebody -T jpx_05_H3K9me3
+
+ngs.plot.r -G hg38 -R genebody -C ../chip_data/sambamba/C-12.bam:../chip_data/sambamba/I-12.bam -O ../ngsplot_output/chip_sambamba/jpx_ad04.genebody -T jpx_ad04_H3K9me3
+
+ngs.plot.r -G hg38 -R genebody -C ../chip_data/sambamba/C-13.bam:../chip_data/sambamba/I-13.bam -O ../ngsplot_output/chip_sambamba/mapkapk5-as1_06_h3k27me3.genebody -T mapkapk5-as1_06_H3K27me3
+
+ngs.plot.r -G hg38 -R genebody -C ../chip_data/sambamba/C-14.bam:../chip_data/sambamba/I-14.bam -O ../ngsplot_output/chip_sambamba/mapkapk5-as1_06_h3k4me3.genebody -T mapkapk5-as1_06_H3K4me3
+
+ngs.plot.r -G hg38 -R genebody -C ../chip_data/sambamba/C-15.bam:../chip_data/sambamba/I-15.bam -O ../ngsplot_output/chip_sambamba/mapkapk5-as1_ad04_h3k27me3.genebody -T mapkapk5-as1_ad04_K3K27me3
+
+ngs.plot.r -G hg38 -R genebody -C ../chip_data/sambamba/C-16.bam:../chip_data/sambamba/I-16.bam -O ../ngsplot_output/chip_sambamba/mapkapk5-as1_ad04_h3k4me3.genebody -T mapkapk5-as1_ad04_H3K4me3
+
+ngs.plot.r -G hg38 -R genebody -C ../chip_data/sambamba/C-17.bam:../chip_data/sambamba/I-17.bam -O ../ngsplot_output/chip_sambamba/nca_h3k9me3_1.genebody -T nca_H3K9me3_1
+
+ngs.plot.r -G hg38 -R genebody -C ../chip_data/sambamba/C-18.bam:../chip_data/sambamba/I-18.bam -O ../ngsplot_output/chip_sambamba/nca_h3k9me3_2.genebody -T nca_H3K9me3_2
+
+ngs.plot.r -G hg38 -R genebody -C ../chip_data/sambamba/C-19.bam:../chip_data/sambamba/I-19.bam -O ../ngsplot_output/chip_sambamba/nca_h3k36me3_1.genebody -T nca_H3K36me3_1
+
+ngs.plot.r -G hg38 -R genebody -C ../chip_data/sambamba/C-20.bam:../chip_data/sambamba/I-20.bam -O ../ngsplot_output/chip_sambamba/nca_h3k36me3_2.genebody -T nca_H3K36me3_2
+
+ngs.plot.r -G hg38 -R genebody -C ../chip_data/sambamba/C-21.bam:../chip_data/sambamba/I-21.bam -O ../ngsplot_output/chip_sambamba/nca_h3k9ac_1.genebody -T nca_H3K9ac_1
+
+ngs.plot.r -G hg38 -R genebody -C ../chip_data/sambamba/C-22.bam:../chip_data/sambamba/I-22.bam -O ../ngsplot_output/chip_sambamba/nca_h3k9ac_2.genebody -T nca_H3K9ac_2
+
+ngs.plot.r -G hg38 -R genebody -C ../chip_data/sambamba/C-23.bam:../chip_data/sambamba/I-23.bam -O ../ngsplot_output/chip_sambamba/nca_h3k27ac_1.genebody -T nca_H3K27ac_1
+
+ngs.plot.r -G hg38 -R genebody -C ../chip_data/sambamba/C-24.bam:../chip_data/sambamba/I-24.bam -O ../ngsplot_output/chip_sambamba/nca_h3k27ac_2.genebody -T nca_H3K27ac_2
+
+ngs.plot.r -G hg38 -R genebody -C ../chip_data/sambamba/C-25.bam:../chip_data/sambamba/I-25.bam -O ../ngsplot_output/chip_sambamba/nca_h3k27me3_1.genebody -T nca_H3K27me3_1
+
+ngs.plot.r -G hg38 -R genebody -C ../chip_data/sambamba/C-26.bam:../chip_data/sambamba/I-26.bam -O ../ngsplot_output/chip_sambamba/nca_h3k4me3_1.genebody -T nca_H3K4me3_1
+
+ngs.plot.r -G hg38 -R genebody -C ../chip_data/sambamba/C-27.bam:../chip_data/sambamba/I-27.bam -O ../ngsplot_output/chip_sambamba/nca_h3k27me3_2.genebody -T nca_H3K27me3_2
+
+ngs.plot.r -G hg38 -R genebody -C ../chip_data/sambamba/C-28.bam:../chip_data/sambamba/I-28.bam -O ../ngsplot_output/chip_sambamba/nca_h3k4me3_2.genebody -T nca_H3K4me3_2
+
+
+####################################################################################################################
+#############################################  NHDF_ENCODE  ########################################################
+####################################################################################################################
+
+########## Genebody
+
+ngs.plot.r -G hg19 -R tss -C ~/encode/nhdf_h3k9ac_1.bam:~/encode/nhdf_nca_1.bam -O ../ngsplot_output/nhdf/nhdf_h3k9ac_1_nca_1.tss -T h3k9ac_1_nca_1
+ngs.plot.r -G hg19 -R tss -C ~/encode/nhdf_h3k9ac_2.bam:~/encode/nhdf_nca_1.bam -O ../ngsplot_output/nhdf/nhdf_h3k9ac_2_nca_1.tss -T h3k9ac_2_nca_1
+ngs.plot.r -G hg19 -R tss -C ~/encode/nhdf_h3k27ac_1.bam:~/encode/nhdf_nca_1.bam -O ../ngsplot_output/nhdf/nhdf_h3k27ac_1_nca_1.tss -T h3k27ac_1_nca_1
+ngs.plot.r -G hg19 -R tss -C ~/encode/nhdf_h3k27ac_2.bam:~/encode/nhdf_nca_1.bam -O ../ngsplot_output/nhdf/nhdf_h3k27ac_2_nca_1.tss -T h3k27ac_2_nca_1
+ngs.plot.r -G hg19 -R tss -C ~/encode/nhdf_h3k36me3_1.bam:~/encode/nhdf_nca_1.bam -O ../ngsplot_output/nhdf/nhdf_h3k36me3_1_nca_1.tss -T h3k36me3_1_nca_1
+ngs.plot.r -G hg19 -R tss -C ~/encode/nhdf_h3k36me3_2.bam:~/encode/nhdf_nca_1.bam -O ../ngsplot_output/nhdf/nhdf_h3k36me3_2_nca_1.tss -T h3k36me3_2_nca_1
+ngs.plot.r -G hg19 -R tss -C ~/encode/nhdf_h3k27me3_1.bam:~/encode/nhdf_nca_1.bam -O ../ngsplot_output/nhdf/nhdf_h3k27me3_1_nca_1.tss -T h3k27me3_1_nca_1
+ngs.plot.r -G hg19 -R tss -C ~/encode/nhdf_h3k27me3_2.bam:~/encode/nhdf_nca_1.bam -O ../ngsplot_output/nhdf/nhdf_h3k27me3_2_nca_1.tss -T h3k27me3_2_nca_1
+ngs.plot.r -G hg19 -R tss -C ~/encode/nhdf_h3k4me3_1.bam:~/encode/nhdf_nca_1.bam -O ../ngsplot_output/nhdf/nhdf_h3k4me3_1_nca_1.tss -T h3k4me3_1_nca_1
+ngs.plot.r -G hg19 -R tss -C ~/encode/nhdf_h3k4me3_2.bam:~/encode/nhdf_nca_1.bam -O ../ngsplot_output/nhdf/nhdf_h3k4me3_2_nca_1.tss -T h3k4me3_2_nca_1
+
+ngs.plot.r -G hg19 -R tss -C ~/encode/nhdf_h3k9ac_1.bam:~/encode/nhdf_nca_2.bam -O ../ngsplot_output/nhdf/nhdf_h3k9ac_1_nca_2.tss -T h3k9ac_1_nca_2
+ngs.plot.r -G hg19 -R tss -C ~/encode/nhdf_h3k9ac_2.bam:~/encode/nhdf_nca_2.bam -O ../ngsplot_output/nhdf/nhdf_h3k9ac_2_nca_2.tss -T h3k9ac_2_nca_2
+ngs.plot.r -G hg19 -R tss -C ~/encode/nhdf_h3k27ac_1.bam:~/encode/nhdf_nca_2.bam -O ../ngsplot_output/nhdf/nhdf_h3k27ac_1_nca_2.tss -T h3k27ac_1_nca_2
+ngs.plot.r -G hg19 -R tss -C ~/encode/nhdf_h3k27ac_2.bam:~/encode/nhdf_nca_2.bam -O ../ngsplot_output/nhdf/nhdf_h3k27ac_2_nca_2.tss -T h3k27ac_2_nca_2
+ngs.plot.r -G hg19 -R tss -C ~/encode/nhdf_h3k36me3_1.bam:~/encode/nhdf_nca_2.bam -O ../ngsplot_output/nhdf/nhdf_h3k36me3_1_nca_2.tss -T h3k36me3_1_nca_2
+ngs.plot.r -G hg19 -R tss -C ~/encode/nhdf_h3k36me3_2.bam:~/encode/nhdf_nca_2.bam -O ../ngsplot_output/nhdf/nhdf_h3k36me3_2_nca_2.tss -T h3k36me3_2_nca_2
+ngs.plot.r -G hg19 -R tss -C ~/encode/nhdf_h3k27me3_1.bam:~/encode/nhdf_nca_2.bam -O ../ngsplot_output/nhdf/nhdf_h3k27me3_1_nca_2.tss -T h3k27me3_1_nca_2
+ngs.plot.r -G hg19 -R tss -C ~/encode/nhdf_h3k27me3_2.bam:~/encode/nhdf_nca_2.bam -O ../ngsplot_output/nhdf/nhdf_h3k27me3_2_nca_2.tss -T h3k27me3_2_nca_2
+ngs.plot.r -G hg19 -R tss -C ~/encode/nhdf_h3k4me3_1.bam:~/encode/nhdf_nca_2.bam -O ../ngsplot_output/nhdf/nhdf_h3k4me3_1_nca_2.tss -T h3k4me3_1_nca_2
+ngs.plot.r -G hg19 -R tss -C ~/encode/nhdf_h3k4me3_2.bam:~/encode/nhdf_nca_2.bam -O ../ngsplot_output/nhdf/nhdf_h3k4me3_2_nca_2.tss -T h3k4me3_2_nca_2
+
+
+########## Genebody
+
+ngs.plot.r -G hg19 -R genebody -C ~/encode/nhdf_h3k9ac_1.bam:~/encode/nhdf_nca_1.bam -O ../ngsplot_output/nhdf/nhdf_h3k9ac_1_nca_1.genebody -T h3k9ac_1_nca_1
+ngs.plot.r -G hg19 -R genebody -C ~/encode/nhdf_h3k9ac_2.bam:~/encode/nhdf_nca_1.bam -O ../ngsplot_output/nhdf/nhdf_h3k9ac_2_nca_1.genebody -T h3k9ac_2_nca_1
+ngs.plot.r -G hg19 -R genebody -C ~/encode/nhdf_h3k27ac_1.bam:~/encode/nhdf_nca_1.bam -O ../ngsplot_output/nhdf/nhdf_h3k27ac_1_nca_1.genebody -T h3k27ac_1_nca_1
+ngs.plot.r -G hg19 -R genebody -C ~/encode/nhdf_h3k27ac_2.bam:~/encode/nhdf_nca_1.bam -O ../ngsplot_output/nhdf/nhdf_h3k27ac_2_nca_1.genebody -T h3k27ac_2_nca_1
+ngs.plot.r -G hg19 -R genebody -C ~/encode/nhdf_h3k36me3_1.bam:~/encode/nhdf_nca_1.bam -O ../ngsplot_output/nhdf/nhdf_h3k36me3_1_nca_1.genebody -T h3k36me3_1_nca_1
+ngs.plot.r -G hg19 -R genebody -C ~/encode/nhdf_h3k36me3_2.bam:~/encode/nhdf_nca_1.bam -O ../ngsplot_output/nhdf/nhdf_h3k36me3_2_nca_1.genebody -T h3k36me3_2_nca_1
+ngs.plot.r -G hg19 -R genebody -C ~/encode/nhdf_h3k27me3_1.bam:~/encode/nhdf_nca_1.bam -O ../ngsplot_output/nhdf/nhdf_h3k27me3_1_nca_1.genebody -T h3k27me3_1_nca_1
+ngs.plot.r -G hg19 -R genebody -C ~/encode/nhdf_h3k27me3_2.bam:~/encode/nhdf_nca_1.bam -O ../ngsplot_output/nhdf/nhdf_h3k27me3_2_nca_1.genebody -T h3k27me3_2_nca_1
+ngs.plot.r -G hg19 -R genebody -C ~/encode/nhdf_h3k4me3_1.bam:~/encode/nhdf_nca_1.bam -O ../ngsplot_output/nhdf/nhdf_h3k4me3_1_nca_1.genebody -T h3k4me3_1_nca_1
+ngs.plot.r -G hg19 -R genebody -C ~/encode/nhdf_h3k4me3_2.bam:~/encode/nhdf_nca_1.bam -O ../ngsplot_output/nhdf/nhdf_h3k4me3_2_nca_1.genebody -T h3k4me3_2_nca_1
+
+ngs.plot.r -G hg19 -R genebody -C ~/encode/nhdf_h3k9ac_1.bam:~/encode/nhdf_nca_2.bam -O ../ngsplot_output/nhdf/nhdf_h3k9ac_1_nca_2.genebody -T h3k9ac_1_nca_2
+ngs.plot.r -G hg19 -R genebody -C ~/encode/nhdf_h3k9ac_2.bam:~/encode/nhdf_nca_2.bam -O ../ngsplot_output/nhdf/nhdf_h3k9ac_2_nca_2.genebody -T h3k9ac_2_nca_2
+ngs.plot.r -G hg19 -R genebody -C ~/encode/nhdf_h3k27ac_1.bam:~/encode/nhdf_nca_2.bam -O ../ngsplot_output/nhdf/nhdf_h3k27ac_1_nca_2.genebody -T h3k27ac_1_nca_2
+ngs.plot.r -G hg19 -R genebody -C ~/encode/nhdf_h3k27ac_2.bam:~/encode/nhdf_nca_2.bam -O ../ngsplot_output/nhdf/nhdf_h3k27ac_2_nca_2.genebody -T h3k27ac_2_nca_2
+ngs.plot.r -G hg19 -R genebody -C ~/encode/nhdf_h3k36me3_1.bam:~/encode/nhdf_nca_2.bam -O ../ngsplot_output/nhdf/nhdf_h3k36me3_1_nca_2.genebody -T h3k36me3_1_nca_2
+ngs.plot.r -G hg19 -R genebody -C ~/encode/nhdf_h3k36me3_2.bam:~/encode/nhdf_nca_2.bam -O ../ngsplot_output/nhdf/nhdf_h3k36me3_2_nca_2.genebody -T h3k36me3_2_nca_2
+ngs.plot.r -G hg19 -R genebody -C ~/encode/nhdf_h3k27me3_1.bam:~/encode/nhdf_nca_2.bam -O ../ngsplot_output/nhdf/nhdf_h3k27me3_1_nca_2.genebody -T h3k27me3_1_nca_2
+ngs.plot.r -G hg19 -R genebody -C ~/encode/nhdf_h3k27me3_2.bam:~/encode/nhdf_nca_2.bam -O ../ngsplot_output/nhdf/nhdf_h3k27me3_2_nca_2.genebody -T h3k27me3_2_nca_2
+ngs.plot.r -G hg19 -R genebody -C ~/encode/nhdf_h3k4me3_1.bam:~/encode/nhdf_nca_2.bam -O ../ngsplot_output/nhdf/nhdf_h3k4me3_1_nca_2.genebody -T h3k4me3_1_nca_2
+ngs.plot.r -G hg19 -R genebody -C ~/encode/nhdf_h3k4me3_2.bam:~/encode/nhdf_nca_2.bam -O ../ngsplot_output/nhdf/nhdf_h3k4me3_2_nca_2.genebody -T h3k4me3_2_nca_2

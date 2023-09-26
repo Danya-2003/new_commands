@@ -1,0 +1,149 @@
+bedtools intersect -a ~/chip_data/sambamba/C-1_.bam -b ~/filter_bam/fgd5_162.bed -wa > ~/chip_data/sambamba/filtered/C-1_.bam 
+bedtools intersect -a ~/chip_data/sambamba/C-2_.bam -b ~/filter_bam/fgd5_162.bed -wa > ~/chip_data/sambamba/filtered/C-2_.bam 
+bedtools intersect -a ~/chip_data/sambamba/C-21.bam -b ~/filter_bam/fgd5_162.bed -wa > ~/chip_data/sambamba/filtered/C-21-1-2.bam 
+bedtools intersect -a ~/chip_data/sambamba/C-22.bam -b ~/filter_bam/fgd5_162.bed -wa > ~/chip_data/sambamba/filtered/C-22-1-2.bam 
+bedtools intersect -a ~/chip_data/sambamba/I-1_.bam -b ~/filter_bam/fgd5_162.bed -wa > ~/chip_data/sambamba/filtered/I-1_.bam 
+bedtools intersect -a ~/chip_data/sambamba/I-2_.bam -b ~/filter_bam/fgd5_162.bed -wa > ~/chip_data/sambamba/filtered/I-2_.bam 
+bedtools intersect -a ~/chip_data/sambamba/I-21.bam -b ~/filter_bam/fgd5_162.bed -wa > ~/chip_data/sambamba/filtered/I-21-1-2.bam 
+bedtools intersect -a ~/chip_data/sambamba/I-22.bam -b ~/filter_bam/fgd5_162.bed -wa > ~/chip_data/sambamba/filtered/I-22-1-2.bam 
+
+bedtools intersect -a ~/chip_data/sambamba/C-3_.bam -b ~/filter_bam/emx2os_166.bed -wa > ~/chip_data/sambamba/filtered/C-3_.bam
+bedtools intersect -a ~/chip_data/sambamba/C-4_.bam -b ~/filter_bam/emx2os_166.bed -wa > ~/chip_data/sambamba/filtered/C-4_.bam
+bedtools intersect -a ~/chip_data/sambamba/C-21.bam -b ~/filter_bam/emx2os_166.bed -wa > ~/chip_data/sambamba/filtered/C-21-3-4.bam
+bedtools intersect -a ~/chip_data/sambamba/C-22.bam -b ~/filter_bam/emx2os_166.bed -wa > ~/chip_data/sambamba/filtered/C-22-3-4.bam
+bedtools intersect -a ~/chip_data/sambamba/I-3_.bam -b ~/filter_bam/emx2os_166.bed -wa > ~/chip_data/sambamba/filtered/I-3_.bam
+bedtools intersect -a ~/chip_data/sambamba/I-4_.bam -b ~/filter_bam/emx2os_166.bed -wa > ~/chip_data/sambamba/filtered/I-4_.bam
+bedtools intersect -a ~/chip_data/sambamba/I-21.bam -b ~/filter_bam/emx2os_166.bed -wa > ~/chip_data/sambamba/filtered/I-21-3-4.bam
+bedtools intersect -a ~/chip_data/sambamba/I-22.bam -b ~/filter_bam/emx2os_166.bed -wa > ~/chip_data/sambamba/filtered/I-2.bam
+
+bedtools intersect -a ~/chip_data/sambamba/C-5_.bam -b ~/filter_bam/ac_127.bed -wa > ~/chip_data/sambamba/filtered/C-5_.bam
+bedtools intersect -a ~/chip_data/sambamba/C-6_.bam -b ~/filter_bam/ac_127.bed -wa > ~/chip_data/sambamba/filtered/C-6_.bam
+bedtools intersect -a ~/chip_data/sambamba/C-17.bam -b ~/filter_bam/ac_127.bed -wa > ~/chip_data/sambamba/filtered/C-17-5-6.bam
+bedtools intersect -a ~/chip_data/sambamba/C-18.bam -b ~/filter_bam/ac_127.bed -wa > ~/chip_data/sambamba/filtered/C-18-5-6.bam
+bedtools intersect -a ~/chip_data/sambamba/I-5_.bam -b ~/filter_bam/ac_127.bed -wa > ~/chip_data/sambamba/filtered/I-5_.bam
+bedtools intersect -a ~/chip_data/sambamba/I-6_.bam -b ~/filter_bam/ac_127.bed -wa > ~/chip_data/sambamba/filtered/I-6_.bam
+bedtools intersect -a ~/chip_data/sambamba/I-17.bam -b ~/filter_bam/ac_127.bed -wa > ~/chip_data/sambamba/filtered/I-17-5-6.bam
+bedtools intersect -a ~/chip_data/sambamba/I-18.bam -b ~/filter_bam/ac_127.bed -wa > ~/chip_data/sambamba/filtered/I-18-5-6.bam
+
+bedtools intersect -a ~/chip_data/sambamba/C-7_.bam -b ~/filter_bam/rp11_67.bed -wa > ~/chip_data/sambamba/filtered/C-7_.bam
+bedtools intersect -a ~/chip_data/sambamba/C-8_.bam -b ~/filter_bam/rp11_67.bed -wa > ~/chip_data/sambamba/filtered/C-8_.bam
+bedtools intersect -a ~/chip_data/sambamba/C-23.bam -b ~/filter_bam/rp11_67.bed -wa > ~/chip_data/sambamba/filtered/C-23.bam
+bedtools intersect -a ~/chip_data/sambamba/C-24.bam -b ~/filter_bam/rp11_67.bed -wa > ~/chip_data/sambamba/filtered/C-24.bam
+bedtools intersect -a ~/chip_data/sambamba/I-7_.bam -b ~/filter_bam/rp11_67.bed -wa > ~/chip_data/sambamba/filtered/I-7_.bam
+bedtools intersect -a ~/chip_data/sambamba/I-8_.bam -b ~/filter_bam/rp11_67.bed -wa > ~/chip_data/sambamba/filtered/I-8_.bam
+bedtools intersect -a ~/chip_data/sambamba/I-23.bam -b ~/filter_bam/rp11_67.bed -wa > ~/chip_data/sambamba/filtered/I-23.bam
+bedtools intersect -a ~/chip_data/sambamba/I-24.bam -b ~/filter_bam/rp11_67.bed -wa > ~/chip_data/sambamba/filtered/I-24.bam
+
+bedtools intersect -a ~/chip_data/sambamba/C-9_.bam -b ~/filter_bam/ctd_46.bed -wa > ~/chip_data/sambamba/filtered/C-9_.bam
+bedtools intersect -a ~/chip_data/sambamba/C-10.bam -b ~/filter_bam/ctd_46.bed -wa > ~/chip_data/sambamba/filtered/C-10.bam
+bedtools intersect -a ~/chip_data/sambamba/C-19.bam -b ~/filter_bam/ctd_46.bed -wa > ~/chip_data/sambamba/filtered/C-19.bam
+bedtools intersect -a ~/chip_data/sambamba/C-20.bam -b ~/filter_bam/ctd_46.bed -wa > ~/chip_data/sambamba/filtered/C-20.bam
+bedtools intersect -a ~/chip_data/sambamba/I-9_.bam -b ~/filter_bam/ctd_46.bed -wa > ~/chip_data/sambamba/filtered/I-9_.bam
+bedtools intersect -a ~/chip_data/sambamba/I-10.bam -b ~/filter_bam/ctd_46.bed -wa > ~/chip_data/sambamba/filtered/I-10.bam
+bedtools intersect -a ~/chip_data/sambamba/I-19.bam -b ~/filter_bam/ctd_46.bed -wa > ~/chip_data/sambamba/filtered/I-19.bam
+bedtools intersect -a ~/chip_data/sambamba/I-20.bam -b ~/filter_bam/ctd_46.bed -wa > ~/chip_data/sambamba/filtered/I-20.bam
+
+bedtools intersect -a ~/chip_data/sambamba/C-11.bam -b ~/filter_bam/jpx_53.bed -wa > ~/chip_data/sambamba/filtered/C-11.bam
+bedtools intersect -a ~/chip_data/sambamba/C-12.bam -b ~/filter_bam/jpx_53.bed -wa > ~/chip_data/sambamba/filtered/C-12.bam
+bedtools intersect -a ~/chip_data/sambamba/C-17.bam -b ~/filter_bam/jpx_53.bed -wa > ~/chip_data/sambamba/filtered/C-17-11-12.bam
+bedtools intersect -a ~/chip_data/sambamba/C-18.bam -b ~/filter_bam/jpx_53.bed -wa > ~/chip_data/sambamba/filtered/C-18-11-12.bam
+bedtools intersect -a ~/chip_data/sambamba/I-11.bam -b ~/filter_bam/jpx_53.bed -wa > ~/chip_data/sambamba/filtered/I-11.bam
+bedtools intersect -a ~/chip_data/sambamba/I-12.bam -b ~/filter_bam/jpx_53.bed -wa > ~/chip_data/sambamba/filtered/I-12.bam
+bedtools intersect -a ~/chip_data/sambamba/I-17.bam -b ~/filter_bam/jpx_53.bed -wa > ~/chip_data/sambamba/filtered/I-17-11-12.bam
+bedtools intersect -a ~/chip_data/sambamba/I-18.bam -b ~/filter_bam/jpx_53.bed -wa > ~/chip_data/sambamba/filtered/I-18-11-12.bam
+
+bedtools intersect -a ~/chip_data/sambamba/C-13.bam -b ~/filter_bam/mapkapk5_h3k27_227.bed -wa > ~/chip_data/sambamba/filtered/C-13.bam
+bedtools intersect -a ~/chip_data/sambamba/C-15.bam -b ~/filter_bam/mapkapk5_h3k27_227.bed -wa > ~/chip_data/sambamba/filtered/C-15.bam
+bedtools intersect -a ~/chip_data/sambamba/C-25.bam -b ~/filter_bam/mapkapk5_h3k27_227.bed -wa > ~/chip_data/sambamba/filtered/C-25.bam
+bedtools intersect -a ~/chip_data/sambamba/C-27.bam -b ~/filter_bam/mapkapk5_h3k27_227.bed -wa > ~/chip_data/sambamba/filtered/C-27.bam
+bedtools intersect -a ~/chip_data/sambamba/I-13.bam -b ~/filter_bam/mapkapk5_h3k27_227.bed -wa > ~/chip_data/sambamba/filtered/I-13.bam
+bedtools intersect -a ~/chip_data/sambamba/I-15.bam -b ~/filter_bam/mapkapk5_h3k27_227.bed -wa > ~/chip_data/sambamba/filtered/I-15.bam
+bedtools intersect -a ~/chip_data/sambamba/I-25.bam -b ~/filter_bam/mapkapk5_h3k27_227.bed -wa > ~/chip_data/sambamba/filtered/I-25.bam
+bedtools intersect -a ~/chip_data/sambamba/I-27.bam -b ~/filter_bam/mapkapk5_h3k27_227.bed -wa > ~/chip_data/sambamba/filtered/I-27.bam
+
+bedtools intersect -a ~/chip_data/sambamba/C-14.bam -b ~/filter_bam/mapkapk5_h3k4_53.bed -wa > ~/chip_data/sambamba/filtered/C-14.bam
+bedtools intersect -a ~/chip_data/sambamba/C-16.bam -b ~/filter_bam/mapkapk5_h3k4_53.bed -wa > ~/chip_data/sambamba/filtered/C-16.bam
+bedtools intersect -a ~/chip_data/sambamba/C-26.bam -b ~/filter_bam/mapkapk5_h3k4_53.bed -wa > ~/chip_data/sambamba/filtered/C-26.bam
+bedtools intersect -a ~/chip_data/sambamba/C-28.bam -b ~/filter_bam/mapkapk5_h3k4_53.bed -wa > ~/chip_data/sambamba/filtered/C-28.bam
+bedtools intersect -a ~/chip_data/sambamba/I-14.bam -b ~/filter_bam/mapkapk5_h3k4_53.bed -wa > ~/chip_data/sambamba/filtered/I-14.bam
+bedtools intersect -a ~/chip_data/sambamba/I-16.bam -b ~/filter_bam/mapkapk5_h3k4_53.bed -wa > ~/chip_data/sambamba/filtered/I-16.bam
+bedtools intersect -a ~/chip_data/sambamba/I-26.bam -b ~/filter_bam/mapkapk5_h3k4_53.bed -wa > ~/chip_data/sambamba/filtered/I-26.bam
+bedtools intersect -a ~/chip_data/sambamba/I-28.bam -b ~/filter_bam/mapkapk5_h3k4_53.bed -wa > ~/chip_data/sambamba/filtered/I-28.bam
+
+
+
+
+
+samtools index ~/chip_data/sambamba/filtered/C-1_.bam 
+samtools index ~/chip_data/sambamba/filtered/C-2_.bam 
+samtools index ~/chip_data/sambamba/filtered/C-21-1-2.bam 
+samtools index ~/chip_data/sambamba/filtered/C-22-1-2.bam 
+samtools index ~/chip_data/sambamba/filtered/I-1_.bam 
+samtools index ~/chip_data/sambamba/filtered/I-2_.bam 
+samtools index ~/chip_data/sambamba/filtered/I-21-1-2.bam 
+samtools index ~/chip_data/sambamba/filtered/I-22-1-2.bam 
+
+samtools index ~/chip_data/sambamba/filtered/C-3_.bam 
+samtools index ~/chip_data/sambamba/filtered/C-4_.bam 
+samtools index ~/chip_data/sambamba/filtered/C-21-3-4.bam 
+samtools index ~/chip_data/sambamba/filtered/C-22-3-4.bam 
+samtools index ~/chip_data/sambamba/filtered/I-3_.bam 
+samtools index ~/chip_data/sambamba/filtered/I-4_.bam 
+samtools index ~/chip_data/sambamba/filtered/I-21-3-4.bam 
+samtools index ~/chip_data/sambamba/filtered/I-22-3-4.bam 
+
+samtools index ~/chip_data/sambamba/filtered/C-5_.bam
+samtools index ~/chip_data/sambamba/filtered/C-6_.bam
+samtools index ~/chip_data/sambamba/filtered/C-17-5-6.bam
+samtools index ~/chip_data/sambamba/filtered/C-18-5-6.bam
+samtools index ~/chip_data/sambamba/filtered/I-5_.bam
+samtools index ~/chip_data/sambamba/filtered/I-6_.bam
+samtools index ~/chip_data/sambamba/filtered/I-17-5-6.bam
+samtools index ~/chip_data/sambamba/filtered/I-18-5-6.bam
+
+samtools index ~/chip_data/sambamba/filtered/C-7_.bam
+samtools index ~/chip_data/sambamba/filtered/C-8_.bam
+samtools index ~/chip_data/sambamba/filtered/C-23.bam
+samtools index ~/chip_data/sambamba/filtered/C-24.bam
+samtools index ~/chip_data/sambamba/filtered/I-7_.bam
+samtools index ~/chip_data/sambamba/filtered/I-8_.bam
+samtools index ~/chip_data/sambamba/filtered/I-23.bam
+samtools index ~/chip_data/sambamba/filtered/I-24.bam
+
+samtools index ~/chip_data/sambamba/filtered/C-9_.bam
+samtools index ~/chip_data/sambamba/filtered/C-10.bam
+samtools index ~/chip_data/sambamba/filtered/C-19.bam
+samtools index ~/chip_data/sambamba/filtered/C-20.bam
+samtools index ~/chip_data/sambamba/filtered/I-9_.bam
+samtools index ~/chip_data/sambamba/filtered/I-10.bam
+samtools index ~/chip_data/sambamba/filtered/I-19.bam
+samtools index ~/chip_data/sambamba/filtered/I-20.bam
+
+samtools index ~/chip_data/sambamba/filtered/C-11.bam
+samtools index ~/chip_data/sambamba/filtered/C-12.bam
+samtools index ~/chip_data/sambamba/filtered/C-17-11-12.bam
+samtools index ~/chip_data/sambamba/filtered/C-18-11-12.bam
+samtools index ~/chip_data/sambamba/filtered/I-11.bam
+samtools index ~/chip_data/sambamba/filtered/I-12.bam
+samtools index ~/chip_data/sambamba/filtered/I-17-11-12.bam
+samtools index ~/chip_data/sambamba/filtered/I-18-11-12.bam
+
+samtools index ~/chip_data/sambamba/filtered/C-13.bam
+samtools index ~/chip_data/sambamba/filtered/C-15.bam
+samtools index ~/chip_data/sambamba/filtered/C-25.bam
+samtools index ~/chip_data/sambamba/filtered/C-27.bam
+samtools index ~/chip_data/sambamba/filtered/I-13.bam
+samtools index ~/chip_data/sambamba/filtered/I-15.bam
+samtools index ~/chip_data/sambamba/filtered/I-25.bam
+samtools index ~/chip_data/sambamba/filtered/I-27.bam
+
+samtools index ~/chip_data/sambamba/filtered/C-14.bam
+samtools index ~/chip_data/sambamba/filtered/C-16.bam
+samtools index ~/chip_data/sambamba/filtered/C-26.bam
+samtools index ~/chip_data/sambamba/filtered/C-28.bam
+samtools index ~/chip_data/sambamba/filtered/I-14.bam
+samtools index ~/chip_data/sambamba/filtered/I-16.bam
+samtools index ~/chip_data/sambamba/filtered/I-26.bam
+samtools index ~/chip_data/sambamba/filtered/I-28.bam
+
+

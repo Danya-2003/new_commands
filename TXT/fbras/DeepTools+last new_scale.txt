@@ -1,0 +1,185 @@
+######
+
+bamCoverage -b ~/chip_data/sambamba/C-1_.bam -o ~/deeptools_output_new_scale/bamcoverage/C-1_.bigWig -of bigwig -bl ~/blacklist_hg38.bed --normalizeUsing RPKM --effectiveGenomeSize 2862010578 --scaleFactor 0.16044956
+bamCoverage -b ~/chip_data/sambamba/C-2_.bam -o ~/deeptools_output_new_scale/bamcoverage/C-2_.bigWig -of bigwig -bl ~/blacklist_hg38.bed --normalizeUsing RPKM --effectiveGenomeSize 2862010578 --scaleFactor 0.15107581
+bamCoverage -b ~/chip_data/sambamba/C-3_.bam -o ~/deeptools_output_new_scale/bamcoverage/C-3_.bigWig -of bigwig -bl ~/blacklist_hg38.bed --normalizeUsing RPKM --effectiveGenomeSize 2862010578 --scaleFactor 0.15749566
+bamCoverage -b ~/chip_data/sambamba/C-4_.bam -o ~/deeptools_output_new_scale/bamcoverage/C-4_.bigWig -of bigwig -bl ~/blacklist_hg38.bed --normalizeUsing RPKM --effectiveGenomeSize 2862010578 --scaleFactor 0.14774776
+bamCoverage -b ~/chip_data/sambamba/C-5_.bam -o ~/deeptools_output_new_scale/bamcoverage/C-5_.bigWig -of bigwig -bl ~/blacklist_hg38.bed --normalizeUsing RPKM --effectiveGenomeSize 2862010578 --scaleFactor 0.03874198
+bamCoverage -b ~/chip_data/sambamba/C-6_.bam -o ~/deeptools_output_new_scale/bamcoverage/C-6_.bigWig -of bigwig -bl ~/blacklist_hg38.bed --normalizeUsing RPKM --effectiveGenomeSize 2862010578 --scaleFactor 0.04218134
+bamCoverage -b ~/chip_data/sambamba/C-7_.bam -o ~/deeptools_output_new_scale/bamcoverage/C-7_.bigWig -of bigwig -bl ~/blacklist_hg38.bed --normalizeUsing RPKM --effectiveGenomeSize 2862010578 --scaleFactor 0.04036956
+bamCoverage -b ~/chip_data/sambamba/C-8_.bam -o ~/deeptools_output_new_scale/bamcoverage/C-8_.bigWig -of bigwig -bl ~/blacklist_hg38.bed --normalizeUsing RPKM --effectiveGenomeSize 2862010578 --scaleFactor 0.06429134
+bamCoverage -b ~/chip_data/sambamba/C-9_.bam -o ~/deeptools_output_new_scale/bamcoverage/C-9_.bigWig -of bigwig -bl ~/blacklist_hg38.bed --normalizeUsing RPKM --effectiveGenomeSize 2862010578 --scaleFactor 0.04765349
+bamCoverage -b ~/chip_data/sambamba/C-10.bam -o ~/deeptools_output_new_scale/bamcoverage/C-10.bigWig -of bigwig -bl ~/blacklist_hg38.bed --normalizeUsing RPKM --effectiveGenomeSize 2862010578 --scaleFactor 0.08100039
+bamCoverage -b ~/chip_data/sambamba/C-11.bam -o ~/deeptools_output_new_scale/bamcoverage/C-11.bigWig -of bigwig -bl ~/blacklist_hg38.bed --normalizeUsing RPKM --effectiveGenomeSize 2862010578 --scaleFactor 0.05398767
+bamCoverage -b ~/chip_data/sambamba/C-12.bam -o ~/deeptools_output_new_scale/bamcoverage/C-12.bigWig -of bigwig -bl ~/blacklist_hg38.bed --normalizeUsing RPKM --effectiveGenomeSize 2862010578 --scaleFactor 0.06757562
+bamCoverage -b ~/chip_data/sambamba/C-13.bam -o ~/deeptools_output_new_scale/bamcoverage/C-13.bigWig -of bigwig -bl ~/blacklist_hg38.bed --normalizeUsing RPKM --effectiveGenomeSize 2862010578 --scaleFactor 0.15681634
+bamCoverage -b ~/chip_data/sambamba/C-14.bam -o ~/deeptools_output_new_scale/bamcoverage/C-14.bigWig -of bigwig -bl ~/blacklist_hg38.bed --normalizeUsing RPKM --effectiveGenomeSize 2862010578 --scaleFactor 0.10145959
+bamCoverage -b ~/chip_data/sambamba/C-15.bam -o ~/deeptools_output_new_scale/bamcoverage/C-15.bigWig -of bigwig -bl ~/blacklist_hg38.bed --normalizeUsing RPKM --effectiveGenomeSize 2862010578 --scaleFactor 0.15705036
+bamCoverage -b ~/chip_data/sambamba/C-16.bam -o ~/deeptools_output_new_scale/bamcoverage/C-16.bigWig -of bigwig -bl ~/blacklist_hg38.bed --normalizeUsing RPKM --effectiveGenomeSize 2862010578 --scaleFactor 0.18702895
+
+bamCoverage -b ~/chip_data/sambamba/C-17.bam -o ~/deeptools_output_new_scale/bamcoverage/C-17-5-6.bigWig -of bigwig -bl ~/blacklist_hg38.bed --normalizeUsing RPKM --effectiveGenomeSize 2862010578 --scaleFactor 0.03287793
+bamCoverage -b ~/chip_data/sambamba/C-18.bam -o ~/deeptools_output_new_scale/bamcoverage/C-18-5-6.bigWig -of bigwig -bl ~/blacklist_hg38.bed --normalizeUsing RPKM --effectiveGenomeSize 2862010578 --scaleFactor 0.05860782
+bamCoverage -b ~/chip_data/sambamba/C-17.bam -o ~/deeptools_output_new_scale/bamcoverage/C--17-11-12.bigWig -of bigwig -bl ~/blacklist_hg38.bed --normalizeUsing RPKM --effectiveGenomeSize 2862010578 --scaleFactor 0.04538561
+bamCoverage -b ~/chip_data/sambamba/C-18.bam -o ~/deeptools_output_new_scale/bamcoverage/C-18-11-12.bigWig -of bigwig -bl ~/blacklist_hg38.bed --normalizeUsing RPKM --effectiveGenomeSize 2862010578 --scaleFactor 0.04960937
+
+bamCoverage -b ~/chip_data/sambamba/C-19.bam -o ~/deeptools_output_new_scale/bamcoverage/C-19.bigWig -of bigwig -bl ~/blacklist_hg38.bed --normalizeUsing RPKM --effectiveGenomeSize 2862010578 --scaleFactor 0.12082797
+bamCoverage -b ~/chip_data/sambamba/C-20.bam -o ~/deeptools_output_new_scale/bamcoverage/C-20.bigWig -of bigwig -bl ~/blacklist_hg38.bed --normalizeUsing RPKM --effectiveGenomeSize 2862010578 --scaleFactor 0.09077898
+
+bamCoverage -b ~/chip_data/sambamba/C-21.bam -o ~/deeptools_output_new_scale/bamcoverage/C-21-1-2.bigWig -of bigwig -bl ~/blacklist_hg38.bed --normalizeUsing RPKM --effectiveGenomeSize 2862010578 --scaleFactor 0.08300346
+bamCoverage -b ~/chip_data/sambamba/C-22.bam -o ~/deeptools_output_new_scale/bamcoverage/C-22-1-2.bigWig -of bigwig -bl ~/blacklist_hg38.bed --normalizeUsing RPKM --effectiveGenomeSize 2862010578 --scaleFactor 0.10603268
+bamCoverage -b ~/chip_data/sambamba/C-21.bam -o ~/deeptools_output_new_scale/bamcoverage/C-21-3-4.bigWig -of bigwig -bl ~/blacklist_hg38.bed --normalizeUsing RPKM --effectiveGenomeSize 2862010578 --scaleFactor 0.08361883
+bamCoverage -b ~/chip_data/sambamba/C-22.bam -o ~/deeptools_output_new_scale/bamcoverage/C-22-3-4.bigWig -of bigwig -bl ~/blacklist_hg38.bed --normalizeUsing RPKM --effectiveGenomeSize 2862010578 --scaleFactor 0.10537224
+
+bamCoverage -b ~/chip_data/sambamba/C-23.bam -o ~/deeptools_output_new_scale/bamcoverage/C-23.bigWig -of bigwig -bl ~/blacklist_hg38.bed --normalizeUsing RPKM --effectiveGenomeSize 2862010578 --scaleFactor 0.05359702
+bamCoverage -b ~/chip_data/sambamba/C-24.bam -o ~/deeptools_output_new_scale/bamcoverage/C-24.bigWig -of bigwig -bl ~/blacklist_hg38.bed --normalizeUsing RPKM --effectiveGenomeSize 2862010578 --scaleFactor 0.03815374
+
+bamCoverage -b ~/chip_data/sambamba/C-25.bam -o ~/deeptools_output_new_scale/bamcoverage/C-25.bigWig -of bigwig -bl ~/blacklist_hg38.bed --normalizeUsing RPKM --effectiveGenomeSize 2862010578 --scaleFactor 0.11017689
+bamCoverage -b ~/chip_data/sambamba/C-26.bam -o ~/deeptools_output_new_scale/bamcoverage/C-26.bigWig -of bigwig -bl ~/blacklist_hg38.bed --normalizeUsing RPKM --effectiveGenomeSize 2862010578 --scaleFactor 0.18774018
+bamCoverage -b ~/chip_data/sambamba/C-27.bam -o ~/deeptools_output_new_scale/bamcoverage/C-27.bigWig -of bigwig -bl ~/blacklist_hg38.bed --normalizeUsing RPKM --effectiveGenomeSize 2862010578 --scaleFactor 0.04705958
+bamCoverage -b ~/chip_data/sambamba/C-28.bam -o ~/deeptools_output_new_scale/bamcoverage/C-28.bigWig -of bigwig -bl ~/blacklist_hg38.bed --normalizeUsing RPKM --effectiveGenomeSize 2862010578 --scaleFactor 0.11241708
+
+
+bamCoverage -b ~/chip_data/sambamba/I-1_.bam -o ~/deeptools_output_new_scale/bamcoverage/I-1_.bigWig -of bigwig -bl ~/blacklist_hg38.bed --normalizeUsing RPKM --effectiveGenomeSize 2862010578 --scaleFactor 0.07432685
+bamCoverage -b ~/chip_data/sambamba/I-2_.bam -o ~/deeptools_output_new_scale/bamcoverage/I-2_.bigWig -of bigwig -bl ~/blacklist_hg38.bed --normalizeUsing RPKM --effectiveGenomeSize 2862010578 --scaleFactor 0.065954
+bamCoverage -b ~/chip_data/sambamba/I-3_.bam -o ~/deeptools_output_new_scale/bamcoverage/I-3_.bigWig -of bigwig -bl ~/blacklist_hg38.bed --normalizeUsing RPKM --effectiveGenomeSize 2862010578 --scaleFactor 0.0726895
+bamCoverage -b ~/chip_data/sambamba/I-4_.bam -o ~/deeptools_output_new_scale/bamcoverage/I-4_.bigWig -of bigwig -bl ~/blacklist_hg38.bed --normalizeUsing RPKM --effectiveGenomeSize 2862010578 --scaleFactor 0.0645011
+bamCoverage -b ~/chip_data/sambamba/I-5_.bam -o ~/deeptools_output_new_scale/bamcoverage/I-5_.bigWig -of bigwig -bl ~/blacklist_hg38.bed --normalizeUsing RPKM --effectiveGenomeSize 2862010578 --scaleFactor 0.0639279
+bamCoverage -b ~/chip_data/sambamba/I-6_.bam -o ~/deeptools_output_new_scale/bamcoverage/I-6_.bigWig -of bigwig -bl ~/blacklist_hg38.bed --normalizeUsing RPKM --effectiveGenomeSize 2862010578 --scaleFactor 0.03854324
+bamCoverage -b ~/chip_data/sambamba/I-7_.bam -o ~/deeptools_output_new_scale/bamcoverage/I-7_.bigWig -of bigwig -bl ~/blacklist_hg38.bed --normalizeUsing RPKM --effectiveGenomeSize 2862010578 --scaleFactor 0.04487719
+bamCoverage -b ~/chip_data/sambamba/I-8_.bam -o ~/deeptools_output_new_scale/bamcoverage/I-8_.bigWig -of bigwig -bl ~/blacklist_hg38.bed --normalizeUsing RPKM --effectiveGenomeSize 2862010578 --scaleFactor 0.04082575
+bamCoverage -b ~/chip_data/sambamba/I-9_.bam -o ~/deeptools_output_new_scale/bamcoverage/I-9_.bigWig -of bigwig -bl ~/blacklist_hg38.bed --normalizeUsing RPKM --effectiveGenomeSize 2862010578 --scaleFactor 0.0576708
+bamCoverage -b ~/chip_data/sambamba/I-10.bam -o ~/deeptools_output_new_scale/bamcoverage/I-10.bigWig -of bigwig -bl ~/blacklist_hg38.bed --normalizeUsing RPKM --effectiveGenomeSize 2862010578 --scaleFactor 0.06821695
+bamCoverage -b ~/chip_data/sambamba/I-11.bam -o ~/deeptools_output_new_scale/bamcoverage/I-11.bigWig -of bigwig -bl ~/blacklist_hg38.bed --normalizeUsing RPKM --effectiveGenomeSize 2862010578 --scaleFactor 0.13018192
+bamCoverage -b ~/chip_data/sambamba/I-12.bam -o ~/deeptools_output_new_scale/bamcoverage/I-12.bigWig -of bigwig -bl ~/blacklist_hg38.bed --normalizeUsing RPKM --effectiveGenomeSize 2862010578 --scaleFactor 0.14239346
+bamCoverage -b ~/chip_data/sambamba/I-13.bam -o ~/deeptools_output_new_scale/bamcoverage/I-13.bigWig -of bigwig -bl ~/blacklist_hg38.bed --normalizeUsing RPKM --effectiveGenomeSize 2862010578 --scaleFactor 0.06570109
+bamCoverage -b ~/chip_data/sambamba/I-14.bam -o ~/deeptools_output_new_scale/bamcoverage/I-14.bigWig -of bigwig -bl ~/blacklist_hg38.bed --normalizeUsing RPKM --effectiveGenomeSize 2862010578 --scaleFactor 0.03410546
+bamCoverage -b ~/chip_data/sambamba/I-15.bam -o ~/deeptools_output_new_scale/bamcoverage/I-15.bigWig -of bigwig -bl ~/blacklist_hg38.bed --normalizeUsing RPKM --effectiveGenomeSize 2862010578 --scaleFactor 0.04204257
+bamCoverage -b ~/chip_data/sambamba/I-16.bam -o ~/deeptools_output_new_scale/bamcoverage/I-16.bigWig -of bigwig -bl ~/blacklist_hg38.bed --normalizeUsing RPKM --effectiveGenomeSize 2862010578 --scaleFactor 0.05302759
+
+bamCoverage -b ~/chip_data/sambamba/I-17.bam -o ~/deeptools_output_new_scale/bamcoverage/I-17-5-6.bigWig -of bigwig -bl ~/blacklist_hg38.bed --normalizeUsing RPKM --effectiveGenomeSize 2862010578 --scaleFactor 0.0517534
+bamCoverage -b ~/chip_data/sambamba/I-18.bam -o ~/deeptools_output_new_scale/bamcoverage/I-18-5-6.bigWig -of bigwig -bl ~/blacklist_hg38.bed --normalizeUsing RPKM --effectiveGenomeSize 2862010578 --scaleFactor 0.02661719
+bamCoverage -b ~/chip_data/sambamba/I-17.bam -o ~/deeptools_output_new_scale/bamcoverage/I--17-11-12.bigWig -of bigwig -bl ~/blacklist_hg38.bed --normalizeUsing RPKM --effectiveGenomeSize 2862010578 --scaleFactor 0.07274442 
+bamCoverage -b ~/chip_data/sambamba/I-18.bam -o ~/deeptools_output_new_scale/bamcoverage/I-18-11-12.bigWig -of bigwig -bl ~/blacklist_hg38.bed --normalizeUsing RPKM --effectiveGenomeSize 2862010578 --scaleFactor 0.04388911
+
+bamCoverage -b ~/chip_data/sambamba/I-19.bam -o ~/deeptools_output_new_scale/bamcoverage/I-19.bigWig -of bigwig -bl ~/blacklist_hg38.bed --normalizeUsing RPKM --effectiveGenomeSize 2862010578 --scaleFactor 0.09957369
+bamCoverage -b ~/chip_data/sambamba/I-20.bam -o ~/deeptools_output_new_scale/bamcoverage/I-20.bigWig -of bigwig -bl ~/blacklist_hg38.bed --normalizeUsing RPKM --effectiveGenomeSize 2862010578 --scaleFactor 0.09044679
+
+bamCoverage -b ~/chip_data/sambamba/I-21.bam -o ~/deeptools_output_new_scale/bamcoverage/I-21-1-2.bigWig -of bigwig -bl ~/blacklist_hg38.bed --normalizeUsing RPKM --effectiveGenomeSize 2862010578 --scaleFactor 0.08883905
+bamCoverage -b ~/chip_data/sambamba/I-22.bam -o ~/deeptools_output_new_scale/bamcoverage/I-22-1-2.bigWig -of bigwig -bl ~/blacklist_hg38.bed --normalizeUsing RPKM --effectiveGenomeSize 2862010578 --scaleFactor 0.05131608
+bamCoverage -b ~/chip_data/sambamba/I-21.bam -o ~/deeptools_output_new_scale/bamcoverage/I-21-3-4.bigWig -of bigwig -bl ~/blacklist_hg38.bed --normalizeUsing RPKM --effectiveGenomeSize 2862010578 --scaleFactor 0.08304948
+bamCoverage -b ~/chip_data/sambamba/I-22.bam -o ~/deeptools_output_new_scale/bamcoverage/I-22-3-4.bigWig -of bigwig -bl ~/blacklist_hg38.bed --normalizeUsing RPKM --effectiveGenomeSize 2862010578 --scaleFactor 0.04226578
+
+bamCoverage -b ~/chip_data/sambamba/I-23.bam -o ~/deeptools_output_new_scale/bamcoverage/I-23.bigWig -of bigwig -bl ~/blacklist_hg38.bed --normalizeUsing RPKM --effectiveGenomeSize 2862010578 --scaleFactor 0.07464284
+bamCoverage -b ~/chip_data/sambamba/I-24.bam -o ~/deeptools_output_new_scale/bamcoverage/I-24.bigWig -of bigwig -bl ~/blacklist_hg38.bed --normalizeUsing RPKM --effectiveGenomeSize 2862010578 --scaleFactor 0.02359214
+
+bamCoverage -b ~/chip_data/sambamba/I-25.bam -o ~/deeptools_output_new_scale/bamcoverage/I-25.bigWig -of bigwig -bl ~/blacklist_hg38.bed --normalizeUsing RPKM --effectiveGenomeSize 2862010578 --scaleFactor 0.0426345
+bamCoverage -b ~/chip_data/sambamba/I-26.bam -o ~/deeptools_output_new_scale/bamcoverage/I-26.bigWig -of bigwig -bl ~/blacklist_hg38.bed --normalizeUsing RPKM --effectiveGenomeSize 2862010578 --scaleFactor 0.13215796
+bamCoverage -b ~/chip_data/sambamba/I-27.bam -o ~/deeptools_output_new_scale/bamcoverage/I-27.bigWig -of bigwig -bl ~/blacklist_hg38.bed --normalizeUsing RPKM --effectiveGenomeSize 2862010578 --scaleFactor 0.03031699
+bamCoverage -b ~/chip_data/sambamba/I-28.bam -o ~/deeptools_output_new_scale/bamcoverage/I-28.bigWig -of bigwig -bl ~/blacklist_hg38.bed --normalizeUsing RPKM --effectiveGenomeSize 2862010578 --scaleFactor 0.09435876
+
+
+#######
+
+bigwigCompare -b1 ~/deeptools_output_new_scale/bamcoverage/C-1_.bigWig -b2 ~/deeptools_output_new_scale/bamcoverage/I-1_.bigWig -o ~/deeptools_output_new_scale/bigwigcompare/FGD5-AS1_04_H3K9ac.bigWig -of bigwig 
+bigwigCompare -b1 ~/deeptools_output_new_scale/bamcoverage/C-2_.bigWig -b2 ~/deeptools_output_new_scale/bamcoverage/I-2_.bigWig -o ~/deeptools_output_new_scale/bigwigcompare/FGD5-AS1_AD03_H3K9ac.bigWig -of bigwig 
+
+bigwigCompare -b1 ~/deeptools_output_new_scale/bamcoverage/C-3_.bigWig -b2 ~/deeptools_output_new_scale/bamcoverage/I-3_.bigWig -o ~/deeptools_output_new_scale/bigwigcompare/EMX2OS_AD02_H3K9ac.bigWig -of bigwig 
+bigwigCompare -b1 ~/deeptools_output_new_scale/bamcoverage/C-4_.bigWig -b2 ~/deeptools_output_new_scale/bamcoverage/I-4_.bigWig -o ~/deeptools_output_new_scale/bigwigcompare/EMX2OS_AD04_H3K9ac.bigWig -of bigwig 
+
+bigwigCompare -b1 ~/deeptools_output_new_scale/bamcoverage/C-5_.bigWig -b2 ~/deeptools_output_new_scale/bamcoverage/I-5_.bigWig -o ~/deeptools_output_new_scale/bigwigcompare/AC005592.2_02_H3K9me3.bigWig -of bigwig
+bigwigCompare -b1 ~/deeptools_output_new_scale/bamcoverage/C-6_.bigWig -b2 ~/deeptools_output_new_scale/bamcoverage/I-6_.bigWig -o ~/deeptools_output_new_scale/bigwigcompare/AC005592.2_03_H3K9me3.bigWig -of bigwig
+
+bigwigCompare -b1 ~/deeptools_output_new_scale/bamcoverage/C-7_.bigWig -b2 ~/deeptools_output_new_scale/bamcoverage/I-7_.bigWig -o ~/deeptools_output_new_scale/bigwigcompare/RP11-398K22.12_03_H3K27ac.bigWig -of bigwig
+bigwigCompare -b1 ~/deeptools_output_new_scale/bamcoverage/C-8_.bigWig -b2 ~/deeptools_output_new_scale/bamcoverage/I-8_.bigWig -o ~/deeptools_output_new_scale/bigwigcompare/RP11-398K22.12_05_H3K27ac.bigWig -of bigwig
+
+bigwigCompare -b1 ~/deeptools_output_new_scale/bamcoverage/C-9_.bigWig -b2 ~/deeptools_output_new_scale/bamcoverage/I-9_.bigWig -o ~/deeptools_output_new_scale/bigwigcompare/CTD-2587H24.5_01_H3K36me3.bigWig -of bigwig
+bigwigCompare -b1 ~/deeptools_output_new_scale/bamcoverage/C-10.bigWig -b2 ~/deeptools_output_new_scale/bamcoverage/I-10.bigWig -o ~/deeptools_output_new_scale/bigwigcompare/CTD-2587H24.5_03_H3K36me3.bigWig -of bigwig
+
+bigwigCompare -b1 ~/deeptools_output_new_scale/bamcoverage/C-11.bigWig -b2 ~/deeptools_output_new_scale/bamcoverage/I-11.bigWig -o ~/deeptools_output_new_scale/bigwigcompare/JPX_05_H3K9me3.bigWig -of bigwig
+bigwigCompare -b1 ~/deeptools_output_new_scale/bamcoverage/C-12.bigWig -b2 ~/deeptools_output_new_scale/bamcoverage/I-12.bigWig -o ~/deeptools_output_new_scale/bigwigcompare/JPX_AD04_H3K9me3.bigWig -of bigwig
+
+bigwigCompare -b1 ~/deeptools_output_new_scale/bamcoverage/C-13.bigWig -b2 ~/deeptools_output_new_scale/bamcoverage/I-13.bigWig -o ~/deeptools_output_new_scale/bigwigcompare/MAPKAPK5-AS1_06_H3K27me3.bigWig -of bigwig
+bigwigCompare -b1 ~/deeptools_output_new_scale/bamcoverage/C-14.bigWig -b2 ~/deeptools_output_new_scale/bamcoverage/I-14.bigWig -o ~/deeptools_output_new_scale/bigwigcompare/MAPKAPK5-AS1_06_H3K4me3.bigWig -of bigwig
+
+bigwigCompare -b1 ~/deeptools_output_new_scale/bamcoverage/C-15.bigWig -b2 ~/deeptools_output_new_scale/bamcoverage/I-15.bigWig -o ~/deeptools_output_new_scale/bigwigcompare/MAPKAPK5-AS1_AD04_H3K27me3.bigWig -of bigwig
+bigwigCompare -b1 ~/deeptools_output_new_scale/bamcoverage/C-16.bigWig -b2 ~/deeptools_output_new_scale/bamcoverage/I-16.bigWig -o ~/deeptools_output_new_scale/bigwigcompare/MAPKAPK5-AS1_AD04_H3K4me3.bigWig -of bigwig
+
+bigwigCompare -b1 ~/deeptools_output_new_scale/bamcoverage/C-17-5-6.bigWig -b2 ~/deeptools_output_new_scale/bamcoverage/I-17-5-6.bigWig -o ~/deeptools_output_new_scale/bigwigcompare/NCA_AC005592.2_H3K9me3_1.bigWig -of bigwig
+bigwigCompare -b1 ~/deeptools_output_new_scale/bamcoverage/C-18-5-6.bigWig -b2 ~/deeptools_output_new_scale/bamcoverage/I-18-5-6.bigWig -o ~/deeptools_output_new_scale/bigwigcompare/NCA_AC005592.2_H3K9me3_2.bigWig -of bigwig
+
+bigwigCompare -b1 ~/deeptools_output_new_scale/bamcoverage/C-17-11-12.bigWig -b2 ~/deeptools_output_new_scale/bamcoverage/I-17-11-12.bigWig -o ~/deeptools_output_new_scale/bigwigcompare/NCA_JPX_H3K9me3_1.bigWig -of bigwig
+bigwigCompare -b1 ~/deeptools_output_new_scale/bamcoverage/C-18-11-12.bigWig -b2 ~/deeptools_output_new_scale/bamcoverage/I-18-11-12.bigWig -o ~/deeptools_output_new_scale/bigwigcompare/NCA_JPX_H3K9me3_2.bigWig -of bigwig
+
+bigwigCompare -b1 ~/deeptools_output_new_scale/bamcoverage/C-19.bigWig -b2 ~/deeptools_output_new_scale/bamcoverage/I-19.bigWig -o ~/deeptools_output_new_scale/bigwigcompare/NCA_CTD-2587H24.5_H3K36me3_1.bigWig -of bigwig
+bigwigCompare -b1 ~/deeptools_output_new_scale/bamcoverage/C-20.bigWig -b2 ~/deeptools_output_new_scale/bamcoverage/I-20.bigWig -o ~/deeptools_output_new_scale/bigwigcompare/NCA_CTD-2587H24.5_H3K36me3_2.bigWig -of bigwig
+
+bigwigCompare -b1 ~/deeptools_output_new_scale/bamcoverage/C-21-1-2.bigWig -b2 ~/deeptools_output_new_scale/bamcoverage/I-21-1-2.bigWig -o ~/deeptools_output_new_scale/bigwigcompare/NCA_FGD5-AS1_H3K9ac_1.bigWig -of bigwig
+bigwigCompare -b1 ~/deeptools_output_new_scale/bamcoverage/C-22-1-2.bigWig -b2 ~/deeptools_output_new_scale/bamcoverage/I-22-1-2.bigWig -o ~/deeptools_output_new_scale/bigwigcompare/NCA_FGD5-AS1_H3K9ac_2.bigWig -of bigwig
+
+bigwigCompare -b1 ~/deeptools_output_new_scale/bamcoverage/C-21-3-4.bigWig -b2 ~/deeptools_output_new_scale/bamcoverage/I-21-3-4.bigWig -o ~/deeptools_output_new_scale/bigwigcompare/NCA_EMX2OS_H3K9ac_1.bigWig -of bigwig
+bigwigCompare -b1 ~/deeptools_output_new_scale/bamcoverage/C-22-3-4.bigWig -b2 ~/deeptools_output_new_scale/bamcoverage/I-22-3-4.bigWig -o ~/deeptools_output_new_scale/bigwigcompare/NCA_EMX2OS_H3K9ac_2.bigWig -of bigwig
+
+bigwigCompare -b1 ~/deeptools_output_new_scale/bamcoverage/C-23.bigWig -b2 ~/deeptools_output_new_scale/bamcoverage/I-23.bigWig -o ~/deeptools_output_new_scale/bigwigcompare/NCA_RP11-398K22.12_H3K27ac_1.bigWig -of bigwig
+bigwigCompare -b1 ~/deeptools_output_new_scale/bamcoverage/C-24.bigWig -b2 ~/deeptools_output_new_scale/bamcoverage/I-24.bigWig -o ~/deeptools_output_new_scale/bigwigcompare/NCA_RP11-398K22.12_H3K27ac_2.bigWig -of bigwig
+
+bigwigCompare -b1 ~/deeptools_output_new_scale/bamcoverage/C-25.bigWig -b2 ~/deeptools_output_new_scale/bamcoverage/I-25.bigWig -o ~/deeptools_output_new_scale/bigwigcompare/NCA_MAPKAPK5-AS1_H3K27me3_1.bigWig -of bigwig
+bigwigCompare -b1 ~/deeptools_output_new_scale/bamcoverage/C-26.bigWig -b2 ~/deeptools_output_new_scale/bamcoverage/I-26.bigWig -o ~/deeptools_output_new_scale/bigwigcompare/NCA_MAPKAPK5-AS1_H3K4me3_1.bigWig -of bigwig
+
+bigwigCompare -b1 ~/deeptools_output_new_scale/bamcoverage/C-27.bigWig -b2 ~/deeptools_output_new_scale/bamcoverage/I-27.bigWig -o ~/deeptools_output_new_scale/bigwigcompare/NCA_MAPKAPK5-AS1_H3K27me3_2.bigWig -of bigwig
+bigwigCompare -b1 ~/deeptools_output_new_scale/bamcoverage/C-28.bigWig -b2 ~/deeptools_output_new_scale/bamcoverage/I-28.bigWig -o ~/deeptools_output_new_scale/bigwigcompare/NCA_MAPKAPK5-AS1_H3K4me3_2.bigWig -of bigwig
+
+### С разделением по экспрессии. Все ASO на одной картинке. Значения экспрессии, усредненные между двумя репликами.
+
+computeMatrix scale-regions -S ~/deeptools_output_new_scale/bigwigcompare/NCA_FGD5-AS1_H3K9ac_1.bigWig ~/deeptools_output_new_scale/bigwigcompare/NCA_FGD5-AS1_H3K9ac_2.bigWig ~/deeptools_output_new_scale/bigwigcompare/FGD5-AS1_04_H3K9ac.bigWig ~/deeptools_output_new_scale/bigwigcompare/FGD5-AS1_AD03_H3K9ac.bigWig -R ~/bed_f6_logexpr/fgd5_high.bed ~/bed_f6_logexpr/fgd5_low.bed ~/bed_f6_logexpr/fgd5_zero.bed -o ~/deeptools_output_new_scale/computematrix_common/FGD5-AS1_H3K9ac.mat.gz -m 6000 -a 2000 -b 2000
+
+computeMatrix scale-regions -S ~/deeptools_output_new_scale/bigwigcompare/NCA_EMX2OS_H3K9ac_1.bigWig ~/deeptools_output_new_scale/bigwigcompare/NCA_EMX2OS_H3K9ac_2.bigWig ~/deeptools_output_new_scale/bigwigcompare/EMX2OS_AD02_H3K9ac.bigWig ~/deeptools_output_new_scale/bigwigcompare/EMX2OS_AD04_H3K9ac.bigWig -R ~/bed_f6_logexpr/emx2os_high.bed ~/bed_f6_logexpr/emx2os_low.bed ~/bed_f6_logexpr/emx2os_zero.bed -o ~/deeptools_output_new_scale/computematrix_common/EMX2OS_H3K9ac.mat.gz -m 6000 -a 2000 -b 2000
+
+computeMatrix scale-regions -S ~/deeptools_output_new_scale/bigwigcompare/NCA_AC005592.2_H3K9me3_1.bigWig ~/deeptools_output_new_scale/bigwigcompare/NCA_AC005592.2_H3K9me3_2.bigWig ~/deeptools_output_new_scale/bigwigcompare/AC005592.2_02_H3K9me3.bigWig ~/deeptools_output_new_scale/bigwigcompare/AC005592.2_03_H3K9me3.bigWig -R ~/bed_f6_logexpr/ac_high.bed ~/bed_f6_logexpr/ac_low.bed ~/bed_f6_logexpr/ac_zero.bed -o ~/deeptools_output_new_scale/computematrix_common/AC005592.2_H3K9me3.mat.gz -m 6000 -a 2000 -b 2000
+
+computeMatrix scale-regions -S ~/deeptools_output_new_scale/bigwigcompare/NCA_RP11-398K22.12_H3K27ac_1.bigWig ~/deeptools_output_new_scale/bigwigcompare/NCA_RP11-398K22.12_H3K27ac_2.bigWig ~/deeptools_output_new_scale/bigwigcompare/RP11-398K22.12_03_H3K27ac.bigWig ~/deeptools_output_new_scale/bigwigcompare/RP11-398K22.12_05_H3K27ac.bigWig -R ~/bed_f6_logexpr/rp11_high.bed ~/bed_f6_logexpr/rp11_low.bed ~/bed_f6_logexpr/rp11_zero.bed -o ~/deeptools_output_new_scale/computematrix_common/RP11-398K22.12_H3K27ac.mat.gz -m 6000 -a 2000 -b 2000
+
+computeMatrix scale-regions -S ~/deeptools_output_new_scale/bigwigcompare/NCA_CTD-2587H24.5_H3K36me3_1.bigWig ~/deeptools_output_new_scale/bigwigcompare/NCA_CTD-2587H24.5_H3K36me3_2.bigWig ~/deeptools_output_new_scale/bigwigcompare/CTD-2587H24.5_01_H3K36me3.bigWig ~/deeptools_output_new_scale/bigwigcompare/CTD-2587H24.5_03_H3K36me3.bigWig -R ~/bed_f6_logexpr/ctd_high.bed ~/bed_f6_logexpr/ctd_low.bed ~/bed_f6_logexpr/ctd_zero.bed -o ~/deeptools_output_new_scale/computematrix_common/CTD-2587H24.5_H3K36me3.mat.gz -m 6000 -a 2000 -b 2000
+
+computeMatrix scale-regions -S ~/deeptools_output_new_scale/bigwigcompare/NCA_JPX_H3K9me3_1.bigWig ~/deeptools_output_new_scale/bigwigcompare/NCA_JPX_H3K9me3_2.bigWig ~/deeptools_output_new_scale/bigwigcompare/JPX_05_H3K9me3.bigWig ~/deeptools_output_new_scale/bigwigcompare/JPX_AD04_H3K9me3.bigWig -R ~/bed_f6_logexpr/jpx_high.bed ~/bed_f6_logexpr/jpx_low.bed ~/bed_f6_logexpr/jpx_zero.bed -o ~/deeptools_output_new_scale/computematrix_common/JPX_H3K9me3.mat.gz -m 6000 -a 2000 -b 2000
+
+computeMatrix scale-regions -S ~/deeptools_output_new_scale/bigwigcompare/NCA_MAPKAPK5-AS1_H3K27me3_1.bigWig ~/deeptools_output_new_scale/bigwigcompare/NCA_MAPKAPK5-AS1_H3K27me3_2.bigWig ~/deeptools_output_new_scale/bigwigcompare/MAPKAPK5-AS1_06_H3K27me3.bigWig ~/deeptools_output_new_scale/bigwigcompare/MAPKAPK5-AS1_AD04_H3K27me3.bigWig -R ~/bed_f6_logexpr/mapkapk_high.bed ~/bed_f6_logexpr/mapkapk_low.bed ~/bed_f6_logexpr/mapkapk_zero.bed -o ~/deeptools_output_new_scale/computematrix_common/MAPKAPK5-AS1_H3K27me3.mat.gz -m 6000 -a 2000 -b 2000
+
+computeMatrix scale-regions -S ~/deeptools_output_new_scale/bigwigcompare/NCA_MAPKAPK5-AS1_H3K4me3_1.bigWig ~/deeptools_output_new_scale/bigwigcompare/NCA_MAPKAPK5-AS1_H3K4me3_2.bigWig ~/deeptools_output_new_scale/bigwigcompare/MAPKAPK5-AS1_06_H3K4me3.bigWig ~/deeptools_output_new_scale/bigwigcompare/MAPKAPK5-AS1_AD04_H3K4me3.bigWig -R ~/bed_f6_logexpr/mapkapk_high.bed ~/bed_f6_logexpr/mapkapk_low.bed ~/bed_f6_logexpr/mapkapk_zero.bed -o ~/deeptools_output_new_scale/computematrix_common/MAPKAPK5-AS1_H3K4me3.mat.gz -m 6000 -a 2000 -b 2000
+
+
+plotProfile -m ~/deeptools_output_new_scale/computematrix_common/FGD5-AS1_H3K9ac.mat.gz -out ~/deeptools_output_new_scale/plotprofile_common/FGD5-AS1_H3K9ac.svg --numPlotsPerRow 2 --samplesLabel "NCA rep-1" "NCA rep-2" "KD ASO_04" "KD ASO_AD03" --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "FGD5-AS1_H3K9ac" --plotFileFormat svg
+
+plotProfile -m ~/deeptools_output_new_scale/computematrix_common/EMX2OS_H3K9ac.mat.gz -out ~/deeptools_output_new_scale/plotprofile_common/EMX2OS_H3K9ac.svg --numPlotsPerRow 2 --samplesLabel "NCA rep-1" "NCA rep-2" "KD ASO_AD02" "KD ASO_AD04" --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "EMX2OS_H3K9ac" --plotFileFormat svg
+
+plotProfile -m ~/deeptools_output_new_scale/computematrix_common/AC005592.2_H3K9me3.mat.gz -out ~/deeptools_output_new_scale/plotprofile_common/AC005592.2_H3K9me3.svg --numPlotsPerRow 2 --samplesLabel "NCA rep-1" "NCA rep-2" "KD ASO_02" "KD ASO_03" --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "AC005592.2_H3K9me3" --plotFileFormat svg
+
+plotProfile -m ~/deeptools_output_new_scale/computematrix_common/RP11-398K22.12_H3K27ac.mat.gz -out ~/deeptools_output_new_scale/plotprofile_common/RP11-398K22.12_H3K27ac.svg --numPlotsPerRow 2 --samplesLabel "NCA rep-1" "NCA rep-2" "KD ASO_03" "KD ASO_05" --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "RP11-398K22.12_H3K27ac" --plotFileFormat svg
+
+plotProfile -m ~/deeptools_output_new_scale/computematrix_common/CTD-2587H24.5_H3K36me3.mat.gz -out ~/deeptools_output_new_scale/plotprofile_common/CTD-2587H24.5_H3K36me3.svg --numPlotsPerRow 2 --samplesLabel "NCA rep-1" "NCA rep-2" "KD ASO_01" "KD ASO_03" --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "CTD-2587H24.5_H3K36me3" --plotFileFormat svg
+
+plotProfile -m ~/deeptools_output_new_scale/computematrix_common/JPX_H3K9me3.mat.gz -out ~/deeptools_output_new_scale/plotprofile_common/JPX_H3K9me3.svg --numPlotsPerRow 2 --samplesLabel "NCA rep-1" "NCA rep-2" "KD ASO_05" "KD ASO_AD04" --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "JPX_H3K9me3" --plotFileFormat svg
+
+plotProfile -m ~/deeptools_output_new_scale/computematrix_common/MAPKAPK5-AS1_H3K27me3.mat.gz -out ~/deeptools_output_new_scale/plotprofile_common/MAPKAPK5-AS1_H3K27me3.svg --numPlotsPerRow 2 --samplesLabel "NCA rep-1" "NCA rep-2" "KD ASO_06" "KD ASO_AD04" --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "MAPKAPK5-AS1_H3K27me3" --plotFileFormat svg
+
+plotProfile -m ~/deeptools_output_new_scale/computematrix_common/MAPKAPK5-AS1_H3K4me3.mat.gz -out ~/deeptools_output_new_scale/plotprofile_common/MAPKAPK5-AS1_H3K4me3.svg --numPlotsPerRow 2 --samplesLabel "NCA rep-1" "NCA rep-2" "KD ASO_06" "KD ASO_AD04" --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "MAPKAPK5-AS1_H3K4me3" --plotFileFormat svg
+
+
+plotProfile -m ~/deeptools_output_new_scale/computematrix_common/FGD5-AS1_H3K9ac.mat.gz -out ~/deeptools_output_new_scale/plotprofile_common/FGD5-AS1_H3K9ac_pergroup.svg --numPlotsPerRow 2 --samplesLabel "NCA rep-1" "NCA rep-2" "KD ASO_04" "KD ASO_AD03" --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "FGD5-AS1_H3K9ac" --plotFileFormat svg --perGroup
+
+plotProfile -m ~/deeptools_output_new_scale/computematrix_common/EMX2OS_H3K9ac.mat.gz -out ~/deeptools_output_new_scale/plotprofile_common/EMX2OS_H3K9ac_pergroup.svg --numPlotsPerRow 2 --samplesLabel "NCA rep-1" "NCA rep-2" "KD ASO_AD02" "KD ASO_AD04" --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "EMX2OS_H3K9ac" --plotFileFormat svg --perGroup
+
+plotProfile -m ~/deeptools_output_new_scale/computematrix_common/AC005592.2_H3K9me3.mat.gz -out ~/deeptools_output_new_scale/plotprofile_common/AC005592.2_H3K9me3_pergroup.svg --numPlotsPerRow 2 --samplesLabel "NCA rep-1" "NCA rep-2" "KD ASO_02" "KD ASO_03" --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "AC005592.2_H3K9me3" --plotFileFormat svg --perGroup
+
+plotProfile -m ~/deeptools_output_new_scale/computematrix_common/RP11-398K22.12_H3K27ac.mat.gz -out ~/deeptools_output_new_scale/plotprofile_common/RP11-398K22.12_H3K27ac_pergroup.svg --numPlotsPerRow 2 --samplesLabel "NCA rep-1" "NCA rep-2" "KD ASO_03" "KD ASO_05" --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "RP11-398K22.12_H3K27ac" --plotFileFormat svg --perGroup
+
+plotProfile -m ~/deeptools_output_new_scale/computematrix_common/CTD-2587H24.5_H3K36me3.mat.gz -out ~/deeptools_output_new_scale/plotprofile_common/CTD-2587H24.5_H3K36me3_pergroup.svg --numPlotsPerRow 2 --samplesLabel "NCA rep-1" "NCA rep-2" "KD ASO_01" "KD ASO_03" --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "CTD-2587H24.5_H3K36me3" --plotFileFormat svg --perGroup
+
+plotProfile -m ~/deeptools_output_new_scale/computematrix_common/JPX_H3K9me3.mat.gz -out ~/deeptools_output_new_scale/plotprofile_common/JPX_H3K9me3_pergroup.svg --numPlotsPerRow 2 --samplesLabel "NCA rep-1" "NCA rep-2" "KD ASO_05" "KD ASO_AD04" --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "JPX_H3K9me3" --plotFileFormat svg --perGroup
+
+plotProfile -m ~/deeptools_output_new_scale/computematrix_common/MAPKAPK5-AS1_H3K27me3.mat.gz -out ~/deeptools_output_new_scale/plotprofile_common/MAPKAPK5-AS1_H3K27me3_pergroup.svg --numPlotsPerRow 2 --samplesLabel "NCA rep-1" "NCA rep-2" "KD ASO_06" "KD ASO_AD04" --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "MAPKAPK5-AS1_H3K27me3" --plotFileFormat svg --perGroup
+
+plotProfile -m ~/deeptools_output_new_scale/computematrix_common/MAPKAPK5-AS1_H3K4me3.mat.gz -out ~/deeptools_output_new_scale/plotprofile_common/MAPKAPK5-AS1_H3K4me3_pergroup.svg --numPlotsPerRow 2 --samplesLabel "NCA rep-1" "NCA rep-2" "KD ASO_06" "KD ASO_AD04" --regionsLabel "high expressed genes" "low expressed genes" "unexpressed genes" --endLabel "3'-end" --startLabel "5'-end" --plotTitle "MAPKAPK5-AS1_H3K4me3" --plotFileFormat svg --perGroup
+
+
+
+

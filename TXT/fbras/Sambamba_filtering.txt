@@ -1,0 +1,116 @@
+
+sambamba view -h -t 2 -f bam -F "[XS] == null and not unmapped and not duplicate" C-1_.sorted_for_index.bam > sambamba/C-1_.bam
+
+sambamba view -h -t 2 -f bam -F "[XS] == null and not unmapped and not duplicate" C-2_.sorted_for_index.bam > sambamba/C-2_.bam
+
+sambamba view -h -t 2 -f bam -F "[XS] == null and not unmapped and not duplicate" C-3_.sorted_for_index.bam > sambamba/C-3_.bam
+
+sambamba view -h -t 2 -f bam -F "[XS] == null and not unmapped and not duplicate" C-4_.sorted_for_index.bam > sambamba/C-4_.bam
+
+sambamba view -h -t 2 -f bam -F "[XS] == null and not unmapped and not duplicate" C-5_.sorted_for_index.bam > sambamba/C-5_.bam
+
+sambamba view -h -t 2 -f bam -F "[XS] == null and not unmapped and not duplicate" C-6_.sorted_for_index.bam > sambamba/C-6_.bam
+
+sambamba view -h -t 2 -f bam -F "[XS] == null and not unmapped and not duplicate" C-7_.sorted_for_index.bam > sambamba/C-7_.bam
+
+sambamba view -h -t 2 -f bam -F "[XS] == null and not unmapped and not duplicate" C-8_.sorted_for_index.bam > sambamba/C-8_.bam
+
+sambamba view -h -t 2 -f bam -F "[XS] == null and not unmapped and not duplicate" C-9_.sorted_for_index.bam > sambamba/C-9_.bam
+
+sambamba view -h -t 2 -f bam -F "[XS] == null and not unmapped and not duplicate" C-10.sorted_for_index.bam > sambamba/C-10.bam
+
+sambamba view -h -t 2 -f bam -F "[XS] == null and not unmapped and not duplicate" C-11.sorted_for_index.bam > sambamba/C-11.bam
+
+sambamba view -h -t 2 -f bam -F "[XS] == null and not unmapped and not duplicate" C-12.sorted_for_index.bam > sambamba/C-12.bam
+
+sambamba view -h -t 2 -f bam -F "[XS] == null and not unmapped and not duplicate" C-13.sorted_for_index.bam > sambamba/C-13.bam
+
+sambamba view -h -t 2 -f bam -F "[XS] == null and not unmapped and not duplicate" C-14.sorted_for_index.bam > sambamba/C-14.bam
+
+sambamba view -h -t 2 -f bam -F "[XS] == null and not unmapped and not duplicate" C-15.sorted_for_index.bam > sambamba/C-15.bam
+
+sambamba view -h -t 2 -f bam -F "[XS] == null and not unmapped and not duplicate" C-16.sorted_for_index.bam > sambamba/C-16.bam
+
+sambamba view -h -t 2 -f bam -F "[XS] == null and not unmapped and not duplicate" C-17.sorted_for_index.bam > sambamba/C-17.bam
+
+sambamba view -h -t 2 -f bam -F "[XS] == null and not unmapped and not duplicate" C-18.sorted_for_index.bam > sambamba/C-18.bam
+
+sambamba view -h -t 2 -f bam -F "[XS] == null and not unmapped and not duplicate" C-19.sorted_for_index.bam > sambamba/C-19.bam
+
+sambamba view -h -t 2 -f bam -F "[XS] == null and not unmapped and not duplicate" C-20.sorted_for_index.bam > sambamba/C-20.bam
+
+sambamba view -h -t 2 -f bam -F "[XS] == null and not unmapped and not duplicate" C-21.sorted_for_index.bam > sambamba/C-21.bam
+
+sambamba view -h -t 2 -f bam -F "[XS] == null and not unmapped and not duplicate" C-22.sorted_for_index.bam > sambamba/C-22.bam
+
+sambamba view -h -t 2 -f bam -F "[XS] == null and not unmapped and not duplicate" C-23.sorted_for_index.bam > sambamba/C-23.bam
+
+sambamba view -h -t 2 -f bam -F "[XS] == null and not unmapped and not duplicate" C-24.sorted_for_index.bam > sambamba/C-24.bam
+
+sambamba view -h -t 2 -f bam -F "[XS] == null and not unmapped and not duplicate" C-25.sorted_for_index.bam > sambamba/C-25.bam
+
+sambamba view -h -t 2 -f bam -F "[XS] == null and not unmapped and not duplicate" C-26.sorted_for_index.bam > sambamba/C-26.bam
+
+sambamba view -h -t 2 -f bam -F "[XS] == null and not unmapped and not duplicate" C-27.sorted_for_index.bam > sambamba/C-27.bam
+
+sambamba view -h -t 2 -f bam -F "[XS] == null and not unmapped and not duplicate" C-28.sorted_for_index.bam > sambamba/C-28.bam
+
+
+
+
+
+sambamba view -h -t 2 -f bam -F "[XS] == null and not unmapped and not duplicate" I-1_.sorted_for_index.bam > sambamba/I-1_.bam
+
+sambamba view -h -t 2 -f bam -F "[XS] == null and not unmapped and not duplicate" I-2_.sorted_for_index.bam > sambamba/I-2_.bam
+
+sambamba view -h -t 2 -f bam -F "[XS] == null and not unmapped and not duplicate" I-3_.sorted_for_index.bam > sambamba/I-3_.bam
+
+sambamba view -h -t 2 -f bam -F "[XS] == null and not unmapped and not duplicate" I-4_.sorted_for_index.bam > sambamba/I-4_.bam
+
+sambamba view -h -t 2 -f bam -F "[XS] == null and not unmapped and not duplicate" I-5_.sorted_for_index.bam > sambamba/I-5_.bam
+
+sambamba view -h -t 2 -f bam -F "[XS] == null and not unmapped and not duplicate" I-6_.sorted_for_index.bam > sambamba/I-6_.bam
+
+sambamba view -h -t 2 -f bam -F "[XS] == null and not unmapped and not duplicate" I-7_.sorted_for_index.bam > sambamba/I-7_.bam
+
+sambamba view -h -t 2 -f bam -F "[XS] == null and not unmapped and not duplicate" I-8_.sorted_for_index.bam > sambamba/I-8_.bam
+
+sambamba view -h -t 2 -f bam -F "[XS] == null and not unmapped and not duplicate" I-9_.sorted_for_index.bam > sambamba/I-9_.bam
+
+sambamba view -h -t 2 -f bam -F "[XS] == null and not unmapped and not duplicate" I-10.sorted_for_index.bam > sambamba/I-10.bam
+
+sambamba view -h -t 2 -f bam -F "[XS] == null and not unmapped and not duplicate" I-11.sorted_for_index.bam > sambamba/I-11.bam
+
+sambamba view -h -t 2 -f bam -F "[XS] == null and not unmapped and not duplicate" I-12.sorted_for_index.bam > sambamba/I-12.bam
+
+sambamba view -h -t 2 -f bam -F "[XS] == null and not unmapped and not duplicate" I-13.sorted_for_index.bam > sambamba/I-13.bam
+
+sambamba view -h -t 2 -f bam -F "[XS] == null and not unmapped and not duplicate" I-14.sorted_for_index.bam > sambamba/I-14.bam
+
+sambamba view -h -t 2 -f bam -F "[XS] == null and not unmapped and not duplicate" I-15.sorted_for_index.bam > sambamba/I-15.bam
+
+sambamba view -h -t 2 -f bam -F "[XS] == null and not unmapped and not duplicate" I-16.sorted_for_index.bam > sambamba/I-16.bam
+
+sambamba view -h -t 2 -f bam -F "[XS] == null and not unmapped and not duplicate" I-17.sorted_for_index.bam > sambamba/I-17.bam
+
+sambamba view -h -t 2 -f bam -F "[XS] == null and not unmapped and not duplicate" I-18.sorted_for_index.bam > sambamba/I-18.bam
+
+sambamba view -h -t 2 -f bam -F "[XS] == null and not unmapped and not duplicate" I-19.sorted_for_index.bam > sambamba/I-19.bam
+
+sambamba view -h -t 2 -f bam -F "[XS] == null and not unmapped and not duplicate" I-20.sorted_for_index.bam > sambamba/I-20.bam
+
+sambamba view -h -t 2 -f bam -F "[XS] == null and not unmapped and not duplicate" I-21.sorted_for_index.bam > sambamba/I-21.bam
+
+sambamba view -h -t 2 -f bam -F "[XS] == null and not unmapped and not duplicate" I-22.sorted_for_index.bam > sambamba/I-22.bam
+
+sambamba view -h -t 2 -f bam -F "[XS] == null and not unmapped and not duplicate" I-23.sorted_for_index.bam > sambamba/I-23.bam
+
+sambamba view -h -t 2 -f bam -F "[XS] == null and not unmapped and not duplicate" I-24.sorted_for_index.bam > sambamba/I-24.bam
+
+sambamba view -h -t 2 -f bam -F "[XS] == null and not unmapped and not duplicate" I-25.sorted_for_index.bam > sambamba/I-25.bam
+
+sambamba view -h -t 2 -f bam -F "[XS] == null and not unmapped and not duplicate" I-26.sorted_for_index.bam > sambamba/I-26.bam
+
+sambamba view -h -t 2 -f bam -F "[XS] == null and not unmapped and not duplicate" I-27.sorted_for_index.bam > sambamba/I-27.bam
+
+sambamba view -h -t 2 -f bam -F "[XS] == null and not unmapped and not duplicate" I-28.sorted_for_index.bam > sambamba/I-28.bam
